@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import PrimeVue from "primevue/config";
 import Sidebar from "primevue/sidebar";
+import Button from "primevue/button";
+import Ripple from "primevue/ripple";
 import App from "./App.vue";
 import router from "./router";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -15,6 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
+  faFacebook,
   faJs,
   faVuejs,
   faCss3,
@@ -39,13 +42,16 @@ library.add(
   faVuejs,
   faCss3,
   faHtml5,
-  faBars
+  faBars,
+  faFacebook
 );
 
 app.use(createPinia());
 app.use(router);
 app.use(PrimeVue, { ripple: true });
+app.directive("ripple", Ripple);
 app.component("Sidebar-Prime", Sidebar);
+app.component("Button-Prime", Button);
 app.component("font-awesome-icon", FontAwesomeIcon);
 
 app.mount("#app");

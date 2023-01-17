@@ -1,7 +1,13 @@
 <template>
-  <div class="min-w-full bg-white py-5 lg:py-8 sticky top-0">
-    <div class="max-w-screen-2xl flex lg:justify-between m-auto justify-end">
-      <div class="cursor-pointer hidden lg:block" @click="$router.push('/')">
+  <div class="min-w-full bg-white py-5 lg:py-8 sticky top-0 z-50">
+    <div
+      class="max-w-screen-2xl flex lg:justify-between m-auto justify-end px-4 xl:px-24"
+    >
+      <div
+        class="p-ripple cursor-pointer hidden lg:block"
+        @click="$router.push('/')"
+        v-ripple
+      >
         <h1 class="text-3xl font-bold text-blue-500">Nguyen Tien Hoach</h1>
       </div>
       <Sidebar-Prime
@@ -12,25 +18,29 @@
       >
         <ul class="text-black grid grid-cols-1 content-around min-h-full">
           <li
+            v-ripple
             @click="$router.push('/')"
-            class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
+            class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
           >
             Nguyen Tien Hoach
           </li>
           <li
+            v-ripple
             @click="$router.push('/work')"
-            class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
+            class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
           >
             Works
           </li>
           <li
+            v-ripple
             @click="$router.push('/about')"
-            class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
+            class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
           >
             About
           </li>
           <li
-            class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
+            v-ripple
+            class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
           >
             Resume
           </li>
@@ -38,19 +48,22 @@
       </Sidebar-Prime>
       <ul class="text-black hidden lg:flex">
         <li
+          v-ripple
           @click="$router.push('/work')"
-          class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
+          class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
         >
           Works
         </li>
         <li
+          v-ripple
           @click="$router.push('/about')"
-          class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
+          class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
         >
           About
         </li>
         <li
-          class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
+          v-ripple
+          class="p-ripple text-3xl ml-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
         >
           Resume
         </li>

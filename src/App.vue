@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import TheNavbar from "./components/TheNavbar.vue";
+import TheFooter from "./components/TheFooter.vue";
 </script>
 
 <template>
+  <TheNavbar />
   <main class="max-w-screen-2xl m-auto p-4 container xl:px-24">
-    <TheNavbar />
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
       </transition>
     </router-view>
   </main>
+  <TheFooter />
 </template>
 
 <style>
