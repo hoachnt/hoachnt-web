@@ -1,24 +1,33 @@
 <script setup lang="ts">
-import { ref } from "@vue/reactivity";
-
-const display = ref(false);
+import TheNavbar from "./components/TheNavbar.vue";
 </script>
 
 <template>
-  <main>
-    <Button-Prime
-      label="Primary"
-      class="min-w-screen p-button-sm"
-      @click="display = true"
-    ></Button-Prime>
-    <Dialog-Prime header="Header" v-model:visible="display">
-      Content
-      <template #footer>
-        <Button-Prime label="No" />
-        <Button-Prime label="Yes" autofocus />
-      </template>
-    </Dialog-Prime>
+  <main class="max-w-screen-2xl m-auto px-24">
+    <TheNavbar />
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </main>
 </template>
 
-<style scoped></style>
+<style>
+@font-face {
+  font-family: sfPro;
+  src: url(./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYREGULAR.OTF);
+}
+body {
+  font-family: sfPro;
+  color: #fff;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
