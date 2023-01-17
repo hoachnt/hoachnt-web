@@ -1,17 +1,18 @@
 <template>
-  <div class="min-w-full bg-white py-8 sticky top-0">
-    <div class="max-w-screen-2xl flex justify-between m-auto">
-      <div class="cursor-pointer" @click="$router.push('/')">
+  <div class="min-w-full bg-white py-5 lg:py-8 sticky top-0">
+    <div class="max-w-screen-2xl flex lg:justify-between m-auto justify-end">
+      <div class="cursor-pointer hidden lg:block" @click="$router.push('/')">
         <h1 class="text-3xl font-bold text-blue-500">Nguyen Tien Hoach</h1>
       </div>
-      <ul class="flex text-black">
+      <ul class="text-black hidden lg:flex">
         <li
-          @click="$router.push('/works')"
+          @click="$router.push('/work')"
           class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
         >
           Works
         </li>
         <li
+          @click="$router.push('/about')"
           class="text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
         >
           About
@@ -22,6 +23,10 @@
           Resume
         </li>
       </ul>
+      <font-awesome-icon
+        icon="fa-solid fa-bars"
+        class="text-black text-3xl lg:hidden cursor-pointer"
+      />
     </div>
   </div>
 </template>

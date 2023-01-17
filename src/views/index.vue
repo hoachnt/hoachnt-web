@@ -3,9 +3,10 @@
     <h1 class="main-text text-center font-extrabold text-black">
       Frontend Developer
     </h1>
-    <div class="grid gap-4 grid-cols-2 grid-rows-3">
+    <div class="grid gap-4 grid-cols-1 xl:grid-cols-2 grid-rows-3">
       <div
-        class="offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-1000 ease-in-out p-8 flex items-center justify-center overflow-hidden"
+        @click="$router.push('/about')"
+        class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden"
       >
         <h2 class="hover-offer uppercase text-5xl extrabold">
           Learn more about me
@@ -22,44 +23,158 @@
         </div>
       </div>
       <div
-        class="bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-1000 ease-in-out"
-      ></div>
-      <div class="h-72 rounded-3xl grid gap-4 grid-cols-2 grid-row-1">
-        <div
-          class="bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-300 ease"
-        ></div>
-        <div
-          class="bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-300 ease"
-        ></div>
+        class="cursor-pointer offer-block hidden md:block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out py-14 px-8 overflow-hidden"
+      >
+        <span class="uppercase font-semibold text-sm">What i do</span>
+        <div class="flex justify-between mt-6">
+          <div class="text-center">
+            <h2 class="text-2xl font-bold">Analytics</h2>
+            <font-awesome-icon
+              icon="fa-solid fa-database"
+              class="text-6xl mt-6"
+            />
+          </div>
+          <div class="text-center">
+            <h2 class="text-2xl font-bold">Web Development</h2>
+            <font-awesome-icon icon="fa-solid fa-code" class="text-6xl mt-6" />
+          </div>
+          <div class="text-center">
+            <h2 class="text-2xl font-bold">Automation</h2>
+            <font-awesome-icon icon="fa-solid fa-play" class="text-6xl mt-6" />
+          </div>
+        </div>
       </div>
       <div
-        class="bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-300 ease"
-      ></div>
+        class="h-72 rounded-3xl grid gap-4 grid-cols-1 md:grid-cols-2 grid-row-2"
+      >
+        <div
+          @click="$router.push('/work')"
+          class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center"
+        >
+          <h2 class="hover-offer text-4xl font-bold capitalize">
+            View all My Works
+          </h2>
+          <div class="offer min-w-full">
+            <font-awesome-icon
+              icon="fa-solid fa-layer-group"
+              class="text-6xl mb-8"
+            />
+            <div class="flex items-center justify-between min-w-full">
+              <h2 class="capitalize text-3xl font-bold">See my work</h2>
+              <font-awesome-icon
+                icon="fa-solid fa-arrow-right"
+                class="text-2xl"
+              />
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://github.com/hoach-linux"
+          class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center justify-center flex-col"
+        >
+          <font-awesome-icon
+            icon="fa-brands fa-github"
+            class="github-icon text-6xl"
+          />
+          <div
+            class="hover-offer h-0 flex items-center justify-between min-w-full text-center"
+          >
+            <h2 class="capitalize text-3xl font-bold">Let's connect</h2>
+            <font-awesome-icon
+              icon="fa-solid fa-arrow-right"
+              class="text-2xl"
+            />
+          </div>
+        </a>
+      </div>
+      <a
+        href="https://github.com/hoach-linux"
+        class="cursor-pointer offer-block md:hidden bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center justify-center flex-col"
+      >
+        <font-awesome-icon
+          icon="fa-brands fa-github"
+          class="github-icon text-6xl"
+        />
+        <div
+          class="hover-offer h-0 flex items-center justify-between min-w-full text-center"
+        >
+          <h2 class="capitalize text-3xl font-bold">Let's connect</h2>
+          <font-awesome-icon icon="fa-solid fa-arrow-right" class="text-2xl" />
+        </div>
+      </a>
+      <div
+        class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-white transition duration-700 ease-in-out p-8 overflow-hidden"
+      >
+        <h2 class="text-3xl font-bold capitalize mb-16">My skills</h2>
+        <ul class="flex justify-between">
+          <li class="hover:scale-125 transition duration-300 ease">
+            <font-awesome-icon
+              icon="fa-brands fa-js"
+              class="text-6xl text-yellow-300"
+            />
+          </li>
+          <li class="hover:scale-125 transition duration-300 ease">
+            <font-awesome-icon
+              icon="fa-brands fa-vuejs"
+              class="text-6xl text-green-400"
+            />
+          </li>
+          <li class="hover:scale-125 transition duration-300 ease">
+            <font-awesome-icon
+              icon="fa-brands fa-css3"
+              class="text-6xl text-blue-500"
+            />
+          </li>
+          <li class="hover:scale-125 transition duration-300 ease">
+            <font-awesome-icon
+              icon="fa-brands fa-html5"
+              class="text-6xl text-orange-600"
+            />
+          </li>
+        </ul>
+      </div>
     </div>
   </main>
 </template>
 <script setup lang="ts"></script>
 <style>
 .main-text {
-  font-size: 162px;
+  font-size: 8.45vw;
 }
 .offer-block {
-  transition: 1s ease-in-out;
+  transition: 0.7s cubic-bezier(0.3, -0.01, 0, 0.98);
+}
+.github-icon {
+  transition: 0.7s cubic-bezier(0.3, -0.01, 0, 0.98);
 }
 .hover-offer {
   opacity: 0;
   max-width: 0;
   transform: translateY(50%);
+  transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
 }
 .offer-block:hover > .hover-offer {
   opacity: 1;
   max-width: auto;
   transform: translateY(0);
-  transition: 0.7s ease-in-out;
+  transition: 0.7s cubic-bezier(0.3, -0.01, 0, 0.98);
+}
+.offer-block:hover > .github-icon {
+  margin-bottom: 30px;
+  transition: 0.7s cubic-bezier(0.3, -0.01, 0, 0.98);
+}
+.offer {
+  transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
 }
 .offer-block:hover > .offer {
   opacity: 0;
-  transform: translateY(50%);
-  transition: 0.5s ease-in-out;
+  transform: translateY(-50%);
+  transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
+}
+@media screen and (max-width: 560px) {
+  .main-text {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
 }
 </style>

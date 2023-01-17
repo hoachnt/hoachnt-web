@@ -3,7 +3,7 @@ import TheNavbar from "./components/TheNavbar.vue";
 </script>
 
 <template>
-  <main class="max-w-screen-2xl m-auto px-24">
+  <main class="max-w-screen-2xl m-auto p-4 container xl:px-24">
     <TheNavbar />
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
@@ -24,10 +24,11 @@ body {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease-in-out;
+  transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
 }
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+  transform: scale(0.8);
 }
 </style>
