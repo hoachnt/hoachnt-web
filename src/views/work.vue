@@ -1,5 +1,5 @@
 <template>
   <div></div>
 </template>
-<script setup lang></script>
+<script setup lang="ts"></script>
 <style lang=""></style>

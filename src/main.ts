@@ -1,8 +1,7 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import PrimeVue from "primevue/config";
-import Button from "primevue/button";
-import Dialog from "primevue/dialog";
+import Sidebar from "primevue/sidebar";
 import App from "./App.vue";
 import router from "./router";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -46,8 +45,7 @@ library.add(
 app.use(createPinia());
 app.use(router);
 app.use(PrimeVue, { ripple: true });
-app.component("Button-Prime", Button);
-app.component("Dialog-Prime", Dialog);
+app.component("Sidebar-Prime", Sidebar);
 app.component("font-awesome-icon", FontAwesomeIcon);
 
 app.mount("#app");
