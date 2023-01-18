@@ -7,6 +7,7 @@ import Ripple from "primevue/ripple";
 import Tag from "primevue/tag";
 import App from "./App.vue";
 import router from "./router";
+import { MotionPlugin } from "@vueuse/motion";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faArrowRight,
@@ -50,6 +51,7 @@ library.add(
 app.use(createPinia());
 app.use(router);
 app.use(PrimeVue, { ripple: true });
+app.use(MotionPlugin);
 app.directive("ripple", Ripple);
 app.component("Sidebar-Prime", Sidebar);
 app.component("Button-Prime", Button);

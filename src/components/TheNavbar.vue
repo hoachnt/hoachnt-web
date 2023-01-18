@@ -8,7 +8,7 @@
         @click="$router.push('/')"
         v-ripple
       >
-        <h1 class="text-3xl font-bold text-blue-500">Nguyen Tien Hoach</h1>
+        <h1 class="text-3xl font-bold text-blue-600">Nguyen Tien Hoach</h1>
       </div>
       <Sidebar-Prime
         v-model:visible="visibleBottom"

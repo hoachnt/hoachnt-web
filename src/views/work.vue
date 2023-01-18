@@ -9,6 +9,7 @@
       <a
         href="https://h-institution.netlify.app"
         v-ripple
+        v-motion-pop-visible-once
         class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden"
       >
         <h2 class="hover-offer capitalize text-5xl extrabold">View the case</h2>
@@ -28,6 +29,7 @@
       <a
         href="https://www.vuagac.com/"
         v-ripple
+        v-motion-pop-visible-once
         class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden"
       >
         <h2 class="hover-offer capitalize text-5xl extrabold">View the case</h2>
@@ -47,6 +49,7 @@
       <a
         href="https://dinoland-hoach.surge.sh/"
         v-ripple
+        v-motion-pop-visible-once
         class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden"
       >
         <h2 class="hover-offer capitalize text-5xl extrabold">View the case</h2>
@@ -66,6 +69,7 @@
       <a
         href="https://podcast-app-93c2f.web.app/"
         v-ripple
+        v-motion-pop-visible-once
         class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden"
       >
         <h2 class="hover-offer capitalize text-5xl extrabold">View the case</h2>

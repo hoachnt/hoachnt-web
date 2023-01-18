@@ -6,6 +6,7 @@
     <div class="grid gap-4 grid-cols-1 xl:grid-cols-2 grid-rows-2">
       <div
         v-ripple
+        v-motion-pop-visible-once
         @click="$router.push('/about')"
         class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden"
       >
@@ -25,6 +26,7 @@
       </div>
       <div
         v-ripple
+        v-motion-pop-visible-once
         class="p-ripple cursor-pointer offer-block hidden md:block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out py-14 px-8 overflow-hidden"
       >
         <span class="uppercase font-semibold text-sm">What i do</span>
@@ -51,6 +53,7 @@
       >
         <div
           v-ripple
+          v-motion-pop-visible-once
           @click="$router.push('/work')"
           class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center"
         >
@@ -73,6 +76,7 @@
         </div>
         <a
           v-ripple
+          v-motion-pop-visible-once
           href="https://github.com/hoach-linux"
           class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center justify-center flex-col"
         >
@@ -93,6 +97,7 @@
       </div>
       <a
         v-ripple
+        v-motion-pop-visible-once
         href="https://github.com/hoach-linux"
         class="p-ripple cursor-pointer offer-block md:hidden bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center justify-center flex-col"
       >
@@ -109,6 +114,7 @@
       </a>
       <div
         v-ripple
+        v-motion-pop-visible-once
         class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden"
       >
         <h2 class="text-3xl font-bold capitalize mb-16">My skills</h2>
