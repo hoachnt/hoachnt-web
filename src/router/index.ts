@@ -9,21 +9,32 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: Home,
+      meta: {
+        title: "Nguyen Tien Hoach",
+      },
     },
     {
       path: "/work",
       name: "work",
       component: Work,
+      meta: {
+        title: "Work | Nguyen Tien Hoach",
+      },
     },
     {
       path: "/about",
       name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import("@/views/about.vue"),
+      meta: {
+        title: "About | Nguyen Tien Hoach",
+      },
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title}`;
+  next();
 });
 
 export default router;
