@@ -9,36 +9,51 @@
       <div
         v-ripple
         v-motion-pop
-        class="p-ripple col-span-2 cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden"
-      >
-        <h2 class="hover-offer capitalize text-5xl extrabold">View the case</h2>
-        <div class="offer min-w-full">
-          <div class="main-offer flex items-center justify-between">
-            <h2 class="text-4xl font-bold capitalize">H-Institution</h2>
-            <font-awesome-icon
-              icon="fa-solid fa-arrow-right"
-              class="text-2xl"
-            />
-          </div>
-          <Tag-Prime class="text-sm font-semibold my-5 uppercase">
-            Web app / Vuejs / Nuxt / Tailwind Css / Vuetify
-          </Tag-Prime>
-        </div>
-      </div>
+        class="me p-ripple col-span-3 xl:col-span-2 cursor-pointer offer-block h-72 rounded-3xl p-8 flex items-center justify-center overflow-hidden"
+      ></div>
       <div
         v-ripple
         v-motion-pop
-        @click="$router.push('/about')"
-        class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl p-8 flex items-center justify-center overflow-hidden"
+        class="p-ripple cursor-pointer col-span-3 xl:col-span-1 offer-block bg-black h-72 rounded-3xl p-8 flex items-center justify-center overflow-hidden"
       >
         <div class="min-w-full">
           <h2 class="text-4xl font-bold">Hey, I'm Hoach 👋</h2>
           <div class="main-offer flex items-center justify-between">
             <p class="text-2xl my-5">Frontend Developer</p>
-            <font-awesome-icon
-              icon="fa-solid fa-arrow-right"
-              class="text-2xl"
-            />
+          </div>
+        </div>
+      </div>
+      <div
+        v-ripple
+        v-motion-pop
+        class="p-ripple cursor-pointer col-span-3 offer-block bg-black rounded-3xl p-8"
+      >
+        <div class="min-w-full">
+          <h2 class="text-3xl font-extrabold">About me</h2>
+          <div class="main-offer flex items-center justify-between mt-5">
+            <p class="text-2xl">
+              I'm a <span class="text-blue-600">Front End Developer</span> and
+              focus on what people see on the site. I like to create visual
+              experiences that connect with people. I enjoy working with my
+              <span class="text-blue-600 capitalize">clients as partners</span>
+              when we solve a problem they have.
+            </p>
+          </div>
+          <div class="main-offer flex items-center justify-between mt-5">
+            <p class="text-2xl">
+              I have <span class="text-blue-600">3 years experience</span> in
+              front-end development. My skills: HTML, CSS, SCSS, JAVASCRIPT,
+              VUEJS, NUXTJS, TYPESCRIPT, GIT
+            </p>
+          </div>
+          <div class="main-offer flex items-center justify-between mt-5">
+            <p class="text-2xl">
+              My skills:
+              <span class="text-blue-600"
+                >HTML, CSS, SCSS, JAVASCRIPT, VUEJS, NUXTJS, TYPESCRIPT,
+                GIT</span
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -49,5 +64,8 @@
 <style scoped>
 .main-text {
   font-size: 17vw;
+}
+.me {
+  background: url(../assets/img/me.jpg) no-repeat top/cover;
 }
 </style>

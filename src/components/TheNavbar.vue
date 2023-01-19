@@ -20,7 +20,7 @@
           <li
             v-ripple
             @click="$router.push('/')"
-            class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
+            class="p-ripple text-3xl mx-4 font-bold text-blue-600 transition duration-300 cursor-pointer"
           >
             Nguyen Tien Hoach
           </li>
