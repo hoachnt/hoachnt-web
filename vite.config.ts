@@ -8,14 +8,18 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
+      injectRegister: "auto",
       registerType: "autoUpdate",
       devOptions: {
         enabled: true,
       },
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+      },
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
       manifest: {
         name: "Nguyen Tien Hoach",
-        short_name: "NAPP",
+        short_name: "Nguyen",
         description: "Website about Nguyen Tien Hoach",
         theme_color: "#2563eb",
         icons: [
