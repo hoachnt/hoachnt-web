@@ -20,7 +20,7 @@ export default defineConfig({
         short_name: "Nguyen",
         description: "Website about Nguyen Tien Hoach",
         theme_color: "#2563eb",
-        background_color: "#2563eb",
+        background_color: "#000000",
         start_url: "/",
         display: "standalone",
         icons: [
