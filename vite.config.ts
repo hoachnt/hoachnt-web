@@ -1,13 +1,17 @@
 import { fileURLToPath, URL } from "node:url";
-import { VitePWA } from "vite-plugin-pwa";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
+      mode: "development",
+      base: "/",
+      srcDir: "src",
+      filename: "sw.ts",
       registerType: "autoUpdate",
       injectRegister: "auto",
       devOptions: {
@@ -17,13 +21,15 @@ export default defineConfig({
         cleanupOutdatedCaches: true,
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       },
-      includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
+      includeAssets: ["favicon.ico"],
+      strategies: "injectManifest",
       manifest: {
         name: "Nguyen Tien Hoach",
         short_name: "Nguyen",
         description: "Website about Nguyen Tien Hoach",
         theme_color: "#2563eb",
         background_color: "#2563eb",
+        start_url: "/",
         display: "standalone",
         icons: [
           {

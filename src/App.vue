@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import TheNavbar from "./components/TheNavbar.vue";
 import TheFooter from "./components/TheFooter.vue";
+import ReloadPWA from "./components/ReloadPWA.vue";
 </script>
 
 <template>
+  <ReloadPWA />
   <TheNavbar />
   <main class="max-w-screen-2xl m-auto p-4 container xl:px-24">
     <router-view v-slot="{ Component }">
