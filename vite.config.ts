@@ -8,21 +8,13 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      mode: "development",
-      base: "/",
-      srcDir: "src",
-      filename: "sw.ts",
       registerType: "autoUpdate",
       injectRegister: "auto",
-      devOptions: {
-        enabled: true,
-      },
       workbox: {
         cleanupOutdatedCaches: true,
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       },
       includeAssets: ["favicon.ico"],
-      strategies: "injectManifest",
       manifest: {
         name: "Nguyen Tien Hoach",
         short_name: "Nguyen",
