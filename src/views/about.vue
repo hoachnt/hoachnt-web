@@ -42,8 +42,7 @@
           <div class="main-offer flex items-center justify-between mt-5">
             <p class="text-2xl">
               I have <span class="text-blue-600">3 years experience</span> in
-              front-end development. My skills: HTML, CSS, SCSS, JAVASCRIPT,
-              VUEJS, NUXTJS, TYPESCRIPT, GIT
+              front-end development.
             </p>
           </div>
           <div class="main-offer flex items-center justify-between mt-5">
