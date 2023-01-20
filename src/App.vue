@@ -19,6 +19,7 @@ import TheFooter from "./components/TheFooter.vue";
 @font-face {
   font-family: sfPro;
   src: url(./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYREGULAR.OTF);
+  font-display: swap;
 }
 body {
   font-family: sfPro;
