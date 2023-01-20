@@ -3,7 +3,7 @@
     <h1
       class="main-text leading-none text-center font-extrabold text-black capitalize mb-14"
     >
-      All work
+      All works
     </h1>
     <div class="grid gap-4 grid-cols-1 xl:grid-cols-2 grid-rows-1">
       <a
