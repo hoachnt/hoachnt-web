@@ -42,7 +42,12 @@
             v-ripple
             class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
           >
-            Resume
+            <form
+              method="get"
+              action="../assets/img/Nguyen-Tien-Hoach_resume.pdf"
+            >
+              <button type="submit">Resume</button>
+            </form>
           </li>
         </ul>
       </Sidebar-Prime>
@@ -65,7 +70,12 @@
           v-ripple
           class="p-ripple text-3xl ml-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
         >
-          Resume
+          <form
+            method="get"
+            action="../assets/img/Nguyen-Tien-Hoach_resume.pdf"
+          >
+            <button type="submit">Resume</button>
+          </form>
         </li>
       </ul>
       <font-awesome-icon
