@@ -17,10 +17,12 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/vue-fontawesome": "^3.0.2",
     "@vueuse/motion": "^2.0.0-beta.12",
+    "axios": "^1.2.3",
     "pinia": "^2.0.28",
     "primeicons": "^6.0.1",
     "primevue": "^3.22.1",
     "vue": "^3.2.45",
+    "vue-axios": "^3.5.2",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

@@ -39,15 +39,11 @@
             About
           </li>
           <li
+            @click="download"
             v-ripple
             class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
           >
-            <form
-              method="get"
-              action="../assets/img/Nguyen-Tien-Hoach_resume.pdf"
-            >
-              <button type="submit">Resume</button>
-            </form>
+            Resume
           </li>
         </ul>
       </Sidebar-Prime>
@@ -67,15 +63,11 @@
           About
         </li>
         <li
+          @click="download"
           v-ripple
           class="p-ripple text-3xl ml-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
         >
-          <form
-            method="get"
-            action="../assets/img/Nguyen-Tien-Hoach_resume.pdf"
-          >
-            <button type="submit">Resume</button>
-          </form>
+          Resume
         </li>
       </ul>
       <font-awesome-icon
@@ -87,9 +79,26 @@
   </div>
 </template>
 <script setup lang="ts">
+import axios from "axios";
 import { ref } from "vue";
 
 const visibleBottom = ref(false);
+
+const download = async () => {
+  let response = await axios({
+    url: "https://directus.hoach.skryonline.com/assets/8eab6914-528f-4384-95ae-370561da3158",
+    method: "GET",
+    responseType: "blob",
+  });
+  let fileURL = window.URL.createObjectURL(new Blob([response.data]));
+  let fileLink = document.createElement("a");
+
+  fileLink.href = fileURL;
+  fileLink.setAttribute("download", "Nguyen-Tien-Hoach_Resume.pdf");
+  document.body.appendChild(fileLink);
+
+  fileLink.click();
+};
 </script>
 <style>
 .bottom-bar {

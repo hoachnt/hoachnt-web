@@ -1,5 +1,7 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import axios from "axios";
+import VueAxios from "vue-axios";
 import PrimeVue from "primevue/config";
 import Sidebar from "primevue/sidebar";
 import Button from "primevue/button";
@@ -49,6 +51,7 @@ library.add(
 );
 
 app.use(createPinia());
+app.use(VueAxios, axios);
 app.use(router);
 app.use(PrimeVue, { ripple: true });
 app.use(MotionPlugin);
