@@ -65,6 +65,6 @@
   font-size: 17vw;
 }
 .me {
-  background: url(../assets/img/me.jpg) no-repeat top/cover;
+  background: url(../assets/img/me.webp) no-repeat top/cover;
 }
 </style>
