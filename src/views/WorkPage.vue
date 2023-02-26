@@ -7,6 +7,26 @@
     </h1>
     <div class="grid gap-4 grid-cols-1 xl:grid-cols-2 grid-rows-1">
       <a
+        href="https://sim10so.netlify.app/"
+        v-ripple
+        v-motion-pop
+        class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden"
+      >
+        <h2 class="hover-offer capitalize text-5xl extrabold">View the case</h2>
+        <div class="offer min-w-full">
+          <div class="main-offer flex items-center justify-between">
+            <h2 class="text-4xl font-bold capitalize">sim10so</h2>
+            <font-awesome-icon
+              icon="fa-solid fa-arrow-right"
+              class="text-2xl"
+            />
+          </div>
+          <Tag-Prime class="text-sm font-semibold my-5 uppercase">
+            Web app / Reactjs / Nextui / MUI
+          </Tag-Prime>
+        </div>
+      </a>
+      <a
         href="https://h-institution.netlify.app"
         v-ripple
         v-motion-pop
