@@ -58,37 +58,56 @@
         >
           <div class="min-w-full" id="skills">
             <h2 class="text-3xl font-extrabold">My skills</h2>
-            <div
-              class="main-offer flex items-center justify-between flex-wrap mt-5"
-            >
-              <span class="text-orange-500 text-5xl"
-                ><font-awesome-icon icon="fa-brands fa-html5" />
-              </span>
-              <span class="text-5xl text-blue-500">
-                <font-awesome-icon icon="fa-brands fa-css3" />
-              </span>
-              <span class="text-5xl text-yellow-500">
-                <font-awesome-icon icon="fa-brands fa-js" />
-              </span>
+            <div class="main-offer mt-5">
+              <button
+                class="capitalize rounded-full tracking-widest bg-white py-1 text-black min-w-full text-2xl mb-2"
+              >
+                Programming Languages
+              </button>
+              <div class="flex items-center justify-between flex-wrap">
+                <span class="text-orange-500 text-5xl"
+                  ><font-awesome-icon icon="fa-brands fa-html5" />
+                </span>
+                <span class="text-5xl text-blue-500">
+                  <font-awesome-icon icon="fa-brands fa-css3" />
+                </span>
+                <span class="text-5xl text-yellow-500">
+                  <font-awesome-icon icon="fa-brands fa-js" />
+                </span>
+              </div>
             </div>
-            <div class="main-offer flex items-center justify-around mt-5">
-              <span class="text-green-500 text-5xl">
-                <font-awesome-icon icon="fa-brands fa-vuejs" />
-              </span>
-              <span class="text-sky-300 text-5xl">
-                <font-awesome-icon icon="fa-brands fa-react" />
-              </span>
+            <div class="main-offer mt-5">
+              <button
+                class="capitalize rounded-full tracking-widest bg-white py-1 text-black min-w-full text-2xl mb-2"
+              >
+                Frameworks
+              </button>
+              <div class="flex items-center justify-around flex-wrap">
+                <span class="text-green-500 text-5xl">
+                  <font-awesome-icon icon="fa-brands fa-vuejs" />
+                </span>
+                <span class="text-sky-300 text-5xl">
+                  <font-awesome-icon icon="fa-brands fa-react" />
+                </span>
+              </div>
             </div>
-            <div class="main-offer flex items-center justify-between mt-5">
-              <span class="text-5xl text-orange-600"
-                ><font-awesome-icon icon="fa-brands fa-git-alt" />
-              </span>
-              <span class="text-5xl"
-                ><font-awesome-icon icon="fa-brands fa-github" />
-              </span>
-              <span class="text-5xl text-pink-500">
-                <font-awesome-icon icon="fa-brands fa-sass" />
-              </span>
+            <div class="main-offer mt-5">
+              <button
+                class="capitalize rounded-full tracking-widest bg-white py-1 text-black min-w-full text-2xl mb-2"
+              >
+                Tools
+              </button>
+              <div class="flex items-center justify-between flex-wrap">
+                <span class="text-5xl text-orange-600"
+                  ><font-awesome-icon icon="fa-brands fa-git-alt" />
+                </span>
+                <span class="text-5xl"
+                  ><font-awesome-icon icon="fa-brands fa-github" />
+                </span>
+                <span class="text-5xl text-pink-500">
+                  <font-awesome-icon icon="fa-brands fa-sass" />
+                </span>
+              </div>
             </div>
           </div>
         </div>
