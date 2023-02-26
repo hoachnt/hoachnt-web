@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/views/index.vue";
-import Work from "@/views/work.vue";
+import Home from "@/views/IndexPage.vue";
+import Work from "@/views/WorkPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,7 +24,7 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
-      component: () => import("@/views/about.vue"),
+      component: () => import("@/views/AboutPage.vue"),
       meta: {
         title: "About | Nguyen Tien Hoach",
       },
