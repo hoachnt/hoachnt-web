@@ -113,6 +113,7 @@
         </div>
       </a>
       <div
+        @click="$router.push('/about#skills')"
         v-ripple
         v-motion-pop
         class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden"

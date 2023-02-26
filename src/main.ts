@@ -26,6 +26,9 @@ import {
   faVuejs,
   faCss3,
   faHtml5,
+  faGitAlt,
+  faSass,
+  faReact,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -47,7 +50,10 @@ library.add(
   faCss3,
   faHtml5,
   faBars,
-  faFacebook
+  faFacebook,
+  faGitAlt,
+  faSass,
+  faReact
 );
 
 app.use(createPinia());

@@ -57,23 +57,48 @@
           v-motion-pop
           class="p-ripple cursor-pointer col-span-2 offer-block bg-black rounded-3xl p-8"
         >
-          <div class="min-w-full">
+          <div class="min-w-full" id="skills">
             <h2 class="text-3xl font-extrabold">My skills</h2>
             <div
               class="main-offer flex items-center justify-between flex-wrap mt-5"
             >
-              <p class="text-2xl text-blue-600">Programming language:</p>
-              <span class="text-white text-xl"
-                >HTML, CSS, JAVASCRIPT, TYPESCRIPT</span
-              >
+              <p class="text-2xl">Languages:</p>
+              <div class="flex gap-5">
+                <span class="text-orange-500 text-4xl"
+                  ><font-awesome-icon icon="fa-brands fa-html5" />
+                </span>
+                <span class="text-4xl text-blue-500">
+                  <font-awesome-icon icon="fa-brands fa-css3" />
+                </span>
+                <span class="text-4xl text-yellow-500">
+                  <font-awesome-icon icon="fa-brands fa-js" />
+                </span>
+              </div>
             </div>
             <div class="main-offer flex items-center justify-between mt-5">
-              <p class="text-2xl text-green-600">Frameworks:</p>
-              <span class="text-white text-xl">Vuejs, Nuxtjs</span>
+              <p class="text-2xl">Frameworks:</p>
+              <div class="flex gap-5">
+                <span class="text-green-500 text-4xl">
+                  <font-awesome-icon icon="fa-brands fa-vuejs" />
+                </span>
+                <span class="text-sky-300 text-4xl">
+                  <font-awesome-icon icon="fa-brands fa-react" />
+                </span>
+              </div>
             </div>
             <div class="main-offer flex items-center justify-between mt-5">
-              <p class="text-2xl text-white-600">Tools:</p>
-              <span class="text-white text-xl">GIT, Github, SCSS</span>
+              <p class="text-2xl text-white">Tools:</p>
+              <div class="flex gap-5">
+                <span class="text-4xl text-orange-600"
+                  ><font-awesome-icon icon="fa-brands fa-git-alt" />
+                </span>
+                <span class="text-4xl"
+                  ><font-awesome-icon icon="fa-brands fa-github" />
+                </span>
+                <span class="text-4xl text-pink-500">
+                  <font-awesome-icon icon="fa-brands fa-sass" />
+                </span>
+              </div>
             </div>
           </div>
         </div>
