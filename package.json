@@ -25,6 +25,7 @@
     "vuetify": "^3.1.7"
   },
   "devDependencies": {
+    "@mdi/font": "^7.1.96",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/node": "^18.11.12",
     "@vitejs/plugin-vue": "^4.0.0",
