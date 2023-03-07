@@ -1,82 +1,28 @@
 <template>
-  <div class="min-w-full bg-white py-5 lg:py-8 sticky top-0 z-50">
-    <div
-      class="max-w-screen-2xl flex lg:justify-between m-auto justify-end px-4 xl:px-24"
-    >
-      <div
-        class="p-ripple cursor-pointer hidden lg:block"
-        @click="$router.push('/')"
-        v-ripple
-      >
-        <h1 class="text-3xl font-bold text-blue-600">Nguyen Tien Hoach</h1>
+  <v-app-bar :elevation="2">
+    <template v-slot:prepend>
+      <v-app-bar-nav-icon class="md:hidden" @click.stop="visibleBottom = !visibleBottom">
+        <font-awesome-icon icon="fa-solid fa-bars" />
+      </v-app-bar-nav-icon>
+    </template>
+    <v-app-bar-title @click="$router.push('/')">Nguyen Tien Hoach</v-app-bar-title>
+    <template v-slot:append>
+      <div class="hidden md:block">
+        <v-btn @click="$router.push('/')">Home</v-btn>
+        <v-btn @click="$router.push('/work')">Works</v-btn>
+        <v-btn @click="$router.push('/about')">About</v-btn>
+        <v-btn @click="download">Resume</v-btn>
       </div>
-      <Sidebar-Prime
-        v-model:visible="visibleBottom"
-        :baseZIndex="10000"
-        class="bottom-bar rounded-t-3xl"
-        position="bottom"
-      >
-        <ul class="text-black grid grid-cols-1 content-around min-h-full">
-          <li
-            v-ripple
-            @click="$router.push('/')"
-            class="p-ripple text-3xl mx-4 font-bold text-blue-600 transition duration-300 cursor-pointer"
-          >
-            Nguyen Tien Hoach
-          </li>
-          <li
-            v-ripple
-            @click="$router.push('/work')"
-            class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
-          >
-            Works
-          </li>
-          <li
-            v-ripple
-            @click="$router.push('/about')"
-            class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
-          >
-            About
-          </li>
-          <li
-            @click="download"
-            v-ripple
-            class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
-          >
-            Resume
-          </li>
-        </ul>
-      </Sidebar-Prime>
-      <ul class="text-black hidden lg:flex">
-        <li
-          v-ripple
-          @click="$router.push('/work')"
-          class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
-        >
-          Works
-        </li>
-        <li
-          v-ripple
-          @click="$router.push('/about')"
-          class="p-ripple text-3xl mx-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
-        >
-          About
-        </li>
-        <li
-          @click="download"
-          v-ripple
-          class="p-ripple text-3xl ml-4 font-bold hover:text-blue-600 transition duration-300 cursor-pointer"
-        >
-          Resume
-        </li>
-      </ul>
-      <font-awesome-icon
-        @click="visibleBottom = true"
-        icon="fa-solid fa-bars"
-        class="text-black text-3xl lg:hidden cursor-pointer"
-      />
-    </div>
-  </div>
+    </template>
+  </v-app-bar>
+  <v-navigation-drawer v-model="visibleBottom" location="bottom" temporary>
+    <v-list>
+      <v-list-item @click="$router.push('/')">Home</v-list-item>
+      <v-list-item @click="$router.push('/work')">Works</v-list-item>
+      <v-list-item @click="$router.push('/about')">About</v-list-item>
+      <v-list-item @click="download">Resume</v-list-item>
+    </v-list>
+  </v-navigation-drawer>
 </template>
 <script setup lang="ts">
 import axios from "axios";

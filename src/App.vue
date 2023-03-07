@@ -4,15 +4,17 @@ import TheFooter from "./components/TheFooter.vue";
 </script>
 
 <template>
-  <TheNavbar />
-  <main class="max-w-screen-2xl m-auto p-4 container xl:px-24">
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-  </main>
-  <TheFooter />
+  <v-app>
+    <TheNavbar />
+    <main class="max-w-screen-2xl m-auto p-4 container xl:px-24 mt-20">
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </main>
+    <TheFooter />
+  </v-app>
 </template>
 
 <style>
@@ -21,14 +23,17 @@ import TheFooter from "./components/TheFooter.vue";
   src: url(./assets/fonts/sf-pro-display-cufonfonts/SFPRODISPLAYREGULAR.OTF);
   font-display: swap;
 }
+
 body {
   font-family: sfPro;
   color: #fff;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

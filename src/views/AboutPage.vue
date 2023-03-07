@@ -1,19 +1,17 @@
 <template>
   <main>
     <h1
-      class="main-text leading-none text-center font-extrabold text-black capitalize mb-14"
+      class="main-text leading-none text-center font-extrabold text-white capitalize mb-14"
     >
       About me
     </h1>
     <div class="grid gap-4">
       <div class="grid gap-4 grid-cols-1 xl:grid-cols-3">
         <div
-          v-ripple
           v-motion-pop
           class="me p-ripple col-span-3 xl:col-span-2 cursor-pointer offer-block h-72 rounded-3xl p-8 flex items-center justify-center overflow-hidden"
         ></div>
         <div
-          v-ripple
           v-motion-pop
           class="p-ripple cursor-pointer col-span-3 xl:col-span-1 offer-block bg-black h-72 rounded-3xl p-8 flex items-center justify-center overflow-hidden"
         >
@@ -27,7 +25,6 @@
       </div>
       <div class="grid gap-4 grid-cols-1 xl:grid-cols-4">
         <div
-          v-ripple
           v-motion-pop
           class="p-ripple cursor-pointer col-span-2 offer-block bg-black rounded-3xl p-8"
         >
