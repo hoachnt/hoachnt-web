@@ -21,7 +21,6 @@
         </div>
       </v-lazy>
       <v-lazy :options="{ 'threshold': 0.5 }" transition="fade-transition">
-
         <div class="grid gap-4 grid-cols-1 xl:grid-cols-4">
           <div v-motion-pop class="cursor-pointer col-span-2 offer-block bg-black rounded-3xl p-8">
             <div class="min-w-full">
@@ -46,7 +45,7 @@
           <div v-motion-pop class="col-span-2 offer-block bg-black rounded-3xl p-8">
             <div class="min-w-full" id="skills">
               <h2 class="text-3xl font-extrabold">My skills</h2>
-              <v-carousel :show-arrows="false" hide-delimiter-background height="200">
+              <v-carousel show-arrows="hover" hide-delimiter-background height="200">
                 <v-carousel-item>
                   <v-sheet height="100%" tile color="black">
                     <div class="main-offer flex justify-center items-center w-full h-full">
