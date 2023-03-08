@@ -8,18 +8,20 @@
     <v-app-bar-title @click="$router.push('/')">Nguyen Tien Hoach</v-app-bar-title>
     <template v-slot:append>
       <div class="hidden md:block">
-        <v-btn @click="$router.push('/')">Home</v-btn>
-        <v-btn @click="$router.push('/work')">Works</v-btn>
-        <v-btn @click="$router.push('/about')">About</v-btn>
-        <v-btn @click="download">Resume</v-btn>
+        <v-tabs color="blue" v-model="tab" fixed-tabs>
+          <v-tab @click="$router.push(tabItem.value)" v-for="tabItem in tabs" :key="tabItem.value"
+            :value="tabItem.value">{{
+              tabItem.text }}</v-tab>
+          <v-tab @click="download">Resume</v-tab>
+        </v-tabs>
       </div>
     </template>
   </v-app-bar>
   <v-navigation-drawer v-model="visibleBottom" location="bottom" temporary>
     <v-list>
-      <v-list-item @click="$router.push('/')">Home</v-list-item>
-      <v-list-item @click="$router.push('/work')">Works</v-list-item>
-      <v-list-item @click="$router.push('/about')">About</v-list-item>
+      <v-list-subheader>NGUYEN TIEN HOACH</v-list-subheader>
+      <v-list-item active-color="primary" @click="$router.push(tabItem.value)" v-for="tabItem in tabs">{{ tabItem.text
+      }}</v-list-item>
       <v-list-item @click="download">Resume</v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -29,6 +31,12 @@ import axios from "axios";
 import { ref } from "vue";
 
 const visibleBottom = ref(false);
+const tab = ref(window.location.pathname)
+const tabs = ref([
+  { text: "Home", value: "/", },
+  { text: "Works", value: "/work", },
+  { text: "About", value: "/about", },
+])
 
 const download = async () => {
   let response = await axios({
