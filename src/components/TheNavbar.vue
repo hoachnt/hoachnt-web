@@ -1,7 +1,7 @@
 <template>
   <v-app-bar :elevation="0">
     <template v-slot:prepend>
-      <v-app-bar-nav-icon class="md:hidden" @click.stop="visibleBottom = !visibleBottom">
+      <v-app-bar-nav-icon class="md:hidden" @click.stop="visibleBottom = !visibleBottom" color="white">
         <font-awesome-icon icon="fa-solid fa-bars" />
       </v-app-bar-nav-icon>
     </template>
