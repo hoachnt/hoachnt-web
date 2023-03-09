@@ -34,7 +34,7 @@ const visibleBottom = ref(false);
 const tab = ref(window.location.pathname)
 const tabs = ref([
   { text: "Home", value: "/", },
-  { text: "Works", value: "/work", },
+  { text: "Works", value: "/works", },
   { text: "About", value: "/about", },
 ])
 const route = useRoute()

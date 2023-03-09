@@ -39,7 +39,7 @@
       </div>
       <v-lazy :options="{ 'threshold': 0.5 }" transition="fade-transition">
         <div class="h-72 rounded-3xl grid gap-4 grid-cols-1 md:grid-cols-2 grid-row-2">
-          <div v-motion-pop @click="$router.push('/work')"
+          <div v-motion-pop @click="$router.push('/works')"
             class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center">
             <h2 class="hover-offer text-4xl font-bold capitalize">
               View all My Works

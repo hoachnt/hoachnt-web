@@ -14,8 +14,8 @@ const router = createRouter({
       },
     },
     {
-      path: "/work",
-      name: "work",
+      path: "/works",
+      name: "works",
       component: Work,
       meta: {
         title: "Work | Nguyen Tien Hoach",
