@@ -19,17 +19,17 @@
   </v-app-bar>
   <v-navigation-drawer v-model="visibleBottom" location="bottom" temporary>
     <v-list v-model="tab">
-      <v-list-subheader>NGUYEN TIEN HOACH</v-list-subheader>
-      <v-list-item @click="$router.push(tabItem.value)" v-for="tabItem in tabs" :key="tabItem.value"
-        :value="tabItem.value">{{ tabItem.text
-        }}</v-list-item>
+      <v-list-subheader class="uppercase">{{ drawerHeader }}</v-list-subheader>
+      <v-list-item @click="$router.push(tabItem.value)" v-for="tabItem in tabs" :key="tabItem.value">{{ tabItem.text
+      }}</v-list-item>
       <v-list-item @click="download">Resume</v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
 <script setup lang="ts">
 import axios from "axios";
-import { ref } from "vue";
+import { ref, watch } from "vue";
+import { useRoute } from "vue-router";
 const visibleBottom = ref(false);
 const tab = ref(window.location.pathname)
 const tabs = ref([
@@ -37,6 +37,13 @@ const tabs = ref([
   { text: "Works", value: "/work", },
   { text: "About", value: "/about", },
 ])
+const route = useRoute()
+const drawerHeader: any = ref("Nguyen Tien Hoach")
+
+watch(() => route.path, (currentTab: string) => {
+  tab.value = currentTab
+  drawerHeader.value = route.name
+})
 
 const download = async () => {
   let response = await axios({
