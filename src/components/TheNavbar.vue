@@ -18,10 +18,11 @@
     </template>
   </v-app-bar>
   <v-navigation-drawer v-model="visibleBottom" location="bottom" temporary>
-    <v-list>
+    <v-list v-model="tab">
       <v-list-subheader>NGUYEN TIEN HOACH</v-list-subheader>
-      <v-list-item active-color="primary" @click="$router.push(tabItem.value)" v-for="tabItem in tabs">{{ tabItem.text
-      }}</v-list-item>
+      <v-list-item @click="$router.push(tabItem.value)" v-for="tabItem in tabs" :key="tabItem.value"
+        :value="tabItem.value">{{ tabItem.text
+        }}</v-list-item>
       <v-list-item @click="download">Resume</v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -29,7 +30,6 @@
 <script setup lang="ts">
 import axios from "axios";
 import { ref } from "vue";
-
 const visibleBottom = ref(false);
 const tab = ref(window.location.pathname)
 const tabs = ref([
