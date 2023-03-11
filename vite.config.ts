@@ -10,9 +10,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vuetify(),
-    chunkSplitPlugin({
-      strategy: 'all-in-one'
-    }),
+    chunkSplitPlugin(),
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "auto",
