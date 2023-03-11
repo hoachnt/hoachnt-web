@@ -6,7 +6,7 @@
     <div class="grid gap-4 grid-cols-1 xl:grid-cols-2 grid-rows-2">
       <v-lazy :options="{ 'threshold': 0.5 }" transition="fade-transition">
         <div v-motion-pop @click="$router.push('/about')"
-          class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
+          class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
           <h2 class="hover-offer uppercase text-5xl extrabold">
             Learn more about me
           </h2>
@@ -20,7 +20,7 @@
         </div>
       </v-lazy>
       <div v-motion-pop
-        class="p-ripple cursor-pointer offer-block hidden md:block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out py-14 px-8 overflow-hidden">
+        class="cursor-pointer offer-block hidden md:block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out py-14 px-8 overflow-hidden">
         <span class="uppercase font-semibold text-sm">What i do</span>
         <div class="flex justify-between mt-6">
           <div class="text-center">
@@ -40,7 +40,7 @@
       <v-lazy :options="{ 'threshold': 0.5 }" transition="fade-transition">
         <div class="h-72 rounded-3xl grid gap-4 grid-cols-1 md:grid-cols-2 grid-row-2">
           <div v-motion-pop @click="$router.push('/works')"
-            class="p-ripple cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center">
+            class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 overflow-hidden flex items-center">
             <h2 class="hover-offer text-4xl font-bold capitalize">
               View all My Works
             </h2>
