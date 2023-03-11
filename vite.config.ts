@@ -11,7 +11,7 @@ export default defineConfig({
     vue(),
     vuetify(),
     chunkSplitPlugin({
-      strategy: 'unbundle'
+      strategy: 'all-in-one'
     }),
     VitePWA({
       registerType: "autoUpdate",
