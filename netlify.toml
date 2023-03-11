@@ -1,5 +1,4 @@
 [build.environment]
-  NPM_FLAGS = "--force"
   NODE_VERSION = "18.12.1"
 
 [build]
