@@ -97,47 +97,6 @@
 </template>
 <script setup lang="ts"></script>
 <style>
-.main-text {
-  font-size: 8.45vw;
-}
-
-.offer-block {
-  transition: 0.7s cubic-bezier(0.3, -0.01, 0, 0.98);
-}
-
-.github-icon {
-  transition: 0.7s cubic-bezier(0.3, -0.01, 0, 0.98);
-}
-
-.hover-offer {
-  opacity: 0;
-  max-width: 0;
-  transform: translateY(50%);
-  transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
-}
-
-.offer-block:hover>.hover-offer {
-  opacity: 1;
-  max-width: auto;
-  transform: translateY(0);
-  transition: 0.7s cubic-bezier(0.3, -0.01, 0, 0.98);
-}
-
-.offer-block:hover>.github-icon {
-  margin-bottom: 30px;
-  transition: 0.7s cubic-bezier(0.3, -0.01, 0, 0.98);
-}
-
-.offer {
-  transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
-}
-
-.offer-block:hover>.offer {
-  opacity: 0;
-  transform: translateY(-50%);
-  transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
-}
-
 @media screen and (max-width: 560px) {
   .main-text {
     font-size: 40px;
