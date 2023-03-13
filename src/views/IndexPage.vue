@@ -47,7 +47,7 @@
             <div class="offer min-w-full">
               <font-awesome-icon icon="fa-solid fa-layer-group" class="text-6xl mb-8" />
               <div class="flex items-center justify-between min-w-full">
-                <h2 class="capitalize text-3xl font-bold">See my work</h2>
+                <h2 class="capitalize text-3xl font-bold">See my works</h2>
                 <font-awesome-icon icon="fa-solid fa-arrow-right" class="text-2xl" />
               </div>
             </div>
