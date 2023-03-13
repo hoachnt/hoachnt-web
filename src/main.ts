@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import { inject } from '@vercel/analytics';
 import axios from "axios";
 import VueAxios from "vue-axios";
 import App from "./App.vue";
@@ -56,5 +57,6 @@ app.use(router);
 app.use(vuetify)
 app.use(MotionPlugin);
 app.component("font-awesome-icon", FontAwesomeIcon);
-
 app.mount("#app");
+
+inject();
