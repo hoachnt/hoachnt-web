@@ -31,12 +31,12 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: 0.5s cubic-bezier(0.3, -0.01, 0, 0.98);
+  transition: 0.5s cubic-bezier(.1, .2, .3, 1);
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(1.1);
 }
 </style>
