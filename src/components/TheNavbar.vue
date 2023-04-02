@@ -12,8 +12,9 @@
     <v-app-bar-title @click="$router.push('/')"
       >Nguyen Tien Hoach</v-app-bar-title
     >
+
     <template v-slot:append>
-      <div class="hidden md:block">
+      <div class="hidden md:block flex">
         <v-tabs color="blue" v-model="tab" fixed-tabs>
           <v-tab
             @click="$router.push(tabItem.value)"
@@ -25,11 +26,19 @@
           <v-tab @click="download">Resume</v-tab>
         </v-tabs>
       </div>
+      <v-app-bar-nav-icon href="https://blog.hoachnt.com/">
+        <v-icon>mdi-post</v-icon>
+      </v-app-bar-nav-icon>
     </template>
   </v-app-bar>
-  <v-navigation-drawer v-model="visibleBottom" location="bottom" temporary class="rounded-t-3xl">
+  <v-navigation-drawer
+    v-model="visibleBottom"
+    location="bottom"
+    temporary
+  >
     <v-list v-model="tab">
       <v-list-subheader class="uppercase">{{ drawerHeader }}</v-list-subheader>
+      <v-divider></v-divider>
       <v-list-item
         @click="$router.push(tabItem.value)"
         v-for="tabItem in tabs"
