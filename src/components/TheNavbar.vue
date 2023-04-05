@@ -28,14 +28,11 @@
       </div>
       <v-app-bar-nav-icon href="https://blog.hoachnt.com/">
         <v-icon>mdi-post</v-icon>
+        <v-tooltip activator="parent" location="bottom">My Blog</v-tooltip>
       </v-app-bar-nav-icon>
     </template>
   </v-app-bar>
-  <v-navigation-drawer
-    v-model="visibleBottom"
-    location="bottom"
-    temporary
-  >
+  <v-navigation-drawer v-model="visibleBottom" location="bottom" temporary>
     <v-list v-model="tab">
       <v-list-subheader class="uppercase">{{ drawerHeader }}</v-list-subheader>
       <v-divider></v-divider>
