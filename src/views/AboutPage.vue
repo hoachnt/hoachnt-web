@@ -10,7 +10,7 @@
             class="me col-span-3 xl:col-span-2 cursor-pointer offer-block h-72 rounded-3xl p-8 flex items-center justify-center overflow-hidden">
           </div>
           <div v-motion-pop
-            class="cursor-pointer col-span-3 xl:col-span-1 offer-block bg-black h-72 rounded-3xl p-8 flex items-center justify-center overflow-hidden">
+            class="cursor-pointer col-span-3 xl:col-span-1 offer-block bg-white h-72 rounded-3xl p-8 flex items-center justify-center overflow-hidden">
             <div class="min-w-full">
               <h2 class="text-4xl font-bold">Hey, I'm Hoach 👋</h2>
               <div class="main-offer flex items-center justify-between">
@@ -22,7 +22,7 @@
       </v-lazy>
       <v-lazy :options="{ 'threshold': 0.5 }" transition="fade-transition">
         <div class="grid gap-4 grid-cols-1 xl:grid-cols-4">
-          <div v-motion-pop class="cursor-pointer col-span-2 offer-block bg-black rounded-3xl p-8">
+          <div v-motion-pop class="cursor-pointer col-span-2 offer-block bg-white rounded-3xl p-8">
             <div class="min-w-full">
               <h2 class="text-3xl font-extrabold">About me</h2>
               <div class="main-offer flex items-center justify-between mt-5">
@@ -42,12 +42,12 @@
               </div>
             </div>
           </div>
-          <div v-motion-pop class="col-span-2 offer-block bg-black rounded-3xl p-8">
+          <div v-motion-pop class="col-span-2 offer-block bg-white rounded-3xl p-8">
             <div class="min-w-full" id="skills">
               <h2 class="text-3xl font-extrabold">My skills</h2>
               <v-carousel show-arrows="hover" hide-delimiter-background height="200">
                 <v-carousel-item>
-                  <v-sheet height="100%" tile color="black">
+                  <v-sheet height="100%" tile color="white">
                     <div class="main-offer flex justify-center items-center w-full h-full">
                       <div class="flex items-center flex-wrap">
                         <span class="text-orange-500 text-5xl mx-6">
@@ -64,7 +64,7 @@
                   </v-sheet>
                 </v-carousel-item>
                 <v-carousel-item>
-                  <v-sheet height="100%" tile color="black">
+                  <v-sheet height="100%" tile color="white">
                     <div class="main-offer flex justify-center items-center w-full h-full">
                       <div class="flex items-center flex-wrap">
                         <span class="text-green-500 text-5xl mx-10">
@@ -79,7 +79,7 @@
                   </v-sheet>
                 </v-carousel-item>
                 <v-carousel-item>
-                  <v-sheet height="100%" tile color="black">
+                  <v-sheet height="100%" tile color="white">
                     <div class="main-offer flex justify-center items-center w-full h-full">
                       <div class="flex items-center flex-wrap">
                         <span class="text-orange-600 text-5xl mx-6">

@@ -8,6 +8,8 @@ const myCustomDarkTheme = {
     dark: true,
     colors: {
         primary: '#ffffff',
+        background: "#000",
+        surface: "#000"
     }
 }
 

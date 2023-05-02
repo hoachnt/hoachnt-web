@@ -6,7 +6,7 @@
     <div class="grid gap-4 grid-cols-1 xl:grid-cols-2 grid-rows-1">
       <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
         <a href="https://simdep10so.vn/" v-motion-pop
-          class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
+          class="cursor-pointer offer-block bg-white h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
           <h2 class="hover-offer capitalize text-5xl extrabold">
             View the case
           </h2>
@@ -25,7 +25,7 @@
       </v-lazy>
       <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
         <a href="https://h-institution.netlify.app" v-motion-pop
-          class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
+          class="cursor-pointer offer-block bg-white h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
           <h2 class="hover-offer capitalize text-5xl extrabold">
             View the case
           </h2>
@@ -44,7 +44,7 @@
       </v-lazy>
       <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
         <a href="https://www.vuagac.com/" v-motion-pop
-          class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
+          class="cursor-pointer offer-block bg-white h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
           <h2 class="hover-offer capitalize text-5xl extrabold">
             View the case
           </h2>
@@ -63,7 +63,7 @@
       </v-lazy>
       <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
         <a href="https://dinoland-hoach.surge.sh/" v-motion-pop
-          class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
+          class="cursor-pointer offer-block bg-white h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
           <h2 class="hover-offer capitalize text-5xl extrabold">
             View the case
           </h2>
@@ -82,7 +82,7 @@
       </v-lazy>
       <v-lazy :options="{ threshold: 0.5 }" transition="fade-transition">
         <a href="https://podcast-app-93c2f.web.app/" v-motion-pop
-          class="cursor-pointer offer-block bg-black h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
+          class="cursor-pointer offer-block bg-white h-72 rounded-3xl hover:bg-blue-600 transition duration-700 ease-in-out p-8 flex items-center justify-center overflow-hidden">
           <h2 class="hover-offer capitalize text-5xl extrabold">
             View the case
           </h2>
