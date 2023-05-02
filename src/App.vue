@@ -37,6 +37,6 @@ body {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: scale(1.1);
+  transform: scale(0.9);
 }
 </style>

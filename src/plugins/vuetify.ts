@@ -11,7 +11,6 @@ const myCustomDarkTheme = {
     }
 }
 
-
 export const vuetify = createVuetify({
     blueprint: md3,
     icons: {
