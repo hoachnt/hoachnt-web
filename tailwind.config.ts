@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
