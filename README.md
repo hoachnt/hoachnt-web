@@ -1,46 +1,50 @@
-# portfolio
+# Zooper
 
-This template should help get you started developing with Vue 3 in Vite.
+Zooper is a beautiful personal portfolio template for developers, programmers, freelancers and designers.
 
-## Recommended IDE Setup
+![Zooper template home preview](https://zooper.pages.dev/preview.jpg)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Type Support for `.vue` Imports in TS
+## Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+Full features blog 📝.
+CMS ready 🚀.
+Super fast ⚡.
+SEO friendly 📈.
+Fully responsive 📱.
+Dark mode 🌗.
+Syntax highlighting 🌈.
+Social media links 🔗.
+Code preview playground 🎮.
+Uses page 🧑‍💻
+Bookmarks 📑.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Roadmap
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Comments
+Tags
+Categories
+Pagination
+Sitemap
+RSS feeds
+Search
+Likes
 
-## Customize configuration
+## Tech Stack
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+1. Nuxt JS
+2. Tailwind CSS
+3. Vue
+4. Nuxt Content Module
+5. Shiki JS ES
 
-## Project Setup
+## Installation
 
-```sh
-npm install
-```
+1. `git clone` this repo or click on `Use this template` button.
+2. `cd` into the project directory.
+3. Run `yarn install` to install the dependencies.
+4. Run `yarn dev` to start the development server.
 
-### Compile and Hot-Reload for Development
+## Contributing
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
