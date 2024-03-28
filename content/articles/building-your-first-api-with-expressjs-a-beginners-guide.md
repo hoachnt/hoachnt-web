@@ -30,17 +30,15 @@ This creates a new directory for your project and initializes a new Node.js proj
 Install Express.js using npm (Node Package Manager):
 
 ```bash
-Copy code
 npm install express --save
-This command installs Express.js and adds it to your project's dependencies.
 ```
+This command installs Express.js and adds it to your project's dependencies.
 
 ## Step 3: Creating Your First Express Server
 
 Create a file named app.js in your project directory. This file will be the entry point of your API. Add the following code to app.js:
 
 ```js
-Copy code
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -61,7 +59,6 @@ This code creates a basic Express server that listens on port 3000 and responds 
 Run your server using Node.js:
 
 ```bash
-Copy code
 node app.js
 Visit http://localhost:3000 in your browser. You should see the message "Hello World!".
 ```
@@ -73,7 +70,6 @@ Now, let's expand our server to act as a simple API. For example, let's create a
 Add the following code to your app.js:
 
 ```javascript
-Copy code
 let users = [{ name: "Alice" }, { name: "Bob" }];
 
 app.get('/users', (req, res) => {
