@@ -11,8 +11,8 @@ const languages = [{
     disabled: true
 }]
 
-const language = ref('en')
-const { setLocale } = useI18n()
+const { locale, setLocale } = useI18n()
+const language = ref(locale)
 
 watch(language, (newLanguage) => {
     setLocale(newLanguage)
