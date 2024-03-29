@@ -9,7 +9,11 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxthq/studio",
     "@vueuse/nuxt",
+    "@nuxtjs/i18n",
   ],
+  i18n: {
+    vueI18n: "./i18n.config.ts",
+  },
   ui: {
     icons: ["heroicons", "lucide"],
   },

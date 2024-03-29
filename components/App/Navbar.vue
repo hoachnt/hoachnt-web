@@ -29,6 +29,9 @@
         </li>
         <li class="flex-1"></li>
         <li>
+          <AppLanguageSelect />
+        </li>
+        <li>
           <AppThemeToggle />
         </li>
       </ul>
