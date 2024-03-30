@@ -6,7 +6,6 @@ const onBeforeEnter = async () => {
 }
 </script>
 
-
 <template>
   <NuxtLoadingIndicator color="#facc15" />
   <AppNavbar />
@@ -37,4 +36,5 @@ const onBeforeEnter = async () => {
   opacity: 0;
   transform: translateY(5px);
 }
+
 </style>
