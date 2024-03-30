@@ -1,9 +1,22 @@
+<script setup lang="ts">
+const { finalizePendingLocaleChange } = useI18n()
+
+const onBeforeEnter = async () => {
+  await finalizePendingLocaleChange()
+}
+</script>
+
+
 <template>
   <NuxtLoadingIndicator color="#facc15" />
   <AppNavbar />
   <div class="h-32"></div>
   <UContainer>
-    <NuxtPage />
+    <NuxtPage :transition="{
+      name: 'page',
+      mode: 'out-in',
+      onBeforeEnter
+    }" />
   </UContainer>
   <div class="h-32"></div>
   <AppFooter />

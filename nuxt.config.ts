@@ -13,6 +13,27 @@ export default defineNuxtConfig({
   ],
   i18n: {
     vueI18n: "./i18n.config.ts",
+    skipSettingLocaleOnNavigate: true,
+    defaultLocale: "en",
+    strategy: "prefix_except_default",
+    locales: [
+      {
+        name: "English",
+        value: "en",
+        code: "en",
+      },
+      {
+        name: "Русский",
+        value: "ru",
+        code: "ru",
+      },
+      {
+        name: "Vietnamese",
+        value: "vn",
+        code: "vn",
+        disabled: true,
+      },
+    ],
   },
   ui: {
     icons: ["heroicons", "lucide"],

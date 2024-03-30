@@ -1,27 +1,17 @@
 <script setup lang="ts">
-const languages = [{
-    name: 'English',
-    value: 'en'
-}, {
-    name: 'Русский',
-    value: 'ru',
-}, {
-    name: 'Vietnamese',
-    value: 'vn',
-    disabled: true
-}]
+const { locale, locales, setLocale, t } = useI18n()
 
-const { locale, setLocale } = useI18n()
-const language = ref(locale)
+const selectLanguage = computed(() => t("navbar.selectLanguage"))
 
-watch(language, (newLanguage) => {
+watch(locale, (newLanguage) => {
     setLocale(newLanguage)
 })
+
 </script>
 
 <template>
-    <UTooltip text="Select language" :ui="{ popper: { strategy: 'absolute' } }">
-        <USelect v-model="language" :options="languages" option-attribute="name">
+    <UTooltip :text="selectLanguage" :ui="{ popper: { strategy: 'absolute' } }">
+        <USelect v-model="locale" :options="locales" option-attribute="name">
             <template #leading>
                 <Icon aria-hidden="true" name="heroicons-solid:language" class="w-5 h-5" />
             </template>

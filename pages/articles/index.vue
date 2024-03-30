@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <AppHeader class="mb-16" title="Articles" :description="description" />
+    <AppHeader class="mb-16" :title="$t('articles.articles')" :description="$t('articles.description')" />
     <ul class="space-y-16">
       <li v-for="(article, id) in articles" :key="id">
         <AppArticleCard :article="article" />
