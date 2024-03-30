@@ -28,10 +28,9 @@ export default defineNuxtConfig({
         code: "ru",
       },
       {
-        name: "Vietnamese",
+        name: "Tiếng việt",
         value: "vn",
         code: "vn",
-        disabled: true,
       },
     ],
   },
