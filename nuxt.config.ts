@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "@vueuse/nuxt",
     "@nuxtjs/i18n",
+    '@vueuse/nuxt',
   ],
   i18n: {
     vueI18n: "./i18n.config.ts",

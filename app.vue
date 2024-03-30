@@ -8,6 +8,7 @@ const onBeforeEnter = async () => {
 
 <template>
   <NuxtLoadingIndicator color="#facc15" />
+  <AppCursor />
   <AppNavbar />
   <div class="h-32"></div>
   <UContainer>
@@ -22,6 +23,13 @@ const onBeforeEnter = async () => {
 </template>
 
 <style>
+* {
+  cursor: none;
+}
+body {
+  overflow-x: hidden;
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: all 0.2s;
@@ -36,5 +44,4 @@ const onBeforeEnter = async () => {
   opacity: 0;
   transform: translateY(5px);
 }
-
 </style>
