@@ -1,7 +1,7 @@
 <template>
-    <div ref="cursor" :class="[isCursorOut || isMobile ? 'hidden' : '']" class="cursor"
+    <div ref="cursor" :class="[isLeft || isMobile ? 'hidden' : 'show']" class="cursor"
         :style="{ left: (cursorPosition.left - 4) + 'px', top: (cursorPosition.top - 4) + 'px' }" />
-    <div ref="aura" :class="[isCursorOut || isMobile ? 'hidden' : '']" class="aura"
+    <div ref="aura" :class="[isLeft || isMobile ? 'hidden' : 'show']" class="aura"
         :style="{ left: (auraPosition.left - 23) + 'px', top: (auraPosition.top - 23) + 'px' }" />
 
 </template>
@@ -18,9 +18,8 @@ const auraPosition = reactive({
 })
 const cursor = ref(null)
 const aura = ref(null)
-const isCursorOut = ref(true)
 const { x, y } = usePointer()
-
+const isLeft = usePageLeave()
 
 const isMobile = computed(() => {
     return screen.width <= 760;
@@ -35,23 +34,13 @@ watch(y, (newY) => {
     setTimeout(() => auraPosition.top = newY, 80)
 })
 
-const hiddenCursor = () => isCursorOut.value = true
-const showCursor = () => isCursorOut.value = false
-
-onMounted(() => {
-    document.body.addEventListener("mouseleave", hiddenCursor)
-    document.body.addEventListener("mouseenter", showCursor)
-    document.addEventListener("scroll", hiddenCursor)
-    document.addEventListener("scrollend", showCursor)
-})
-
 </script>
 
 <style scoped>
 .cursor,
 .aura {
-    scale: 1;
-    opacity: 1;
+    scale: 0;
+    opacity: 0;
     position: fixed;
     border-radius: 100%;
     transition: 5s cubic-bezier(.75, -1.27, .3, 2.33) scale, 2s cubic-bezier(.75, -1.27, .3, 2.33) opacity;
@@ -73,6 +62,13 @@ onMounted(() => {
 .aura.hidden {
     scale: 0;
     opacity: 0;
+    transition: 5s cubic-bezier(.75, -1.27, .3, 2.33) scale, 2s cubic-bezier(.75, -1.27, .3, 2.33) opacity;
+}
+
+.cursor.show,
+.aura.show {
+    scale: 1;
+    opacity: 1;
     transition: 5s cubic-bezier(.75, -1.27, .3, 2.33) scale, 2s cubic-bezier(.75, -1.27, .3, 2.33) opacity;
 }
 
