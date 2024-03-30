@@ -1,8 +1,8 @@
 <template>
     <div ref="cursorContainer" id="cursorContainer" />
-    <div ref="cursor" :class="[isCursorOut ? 'hidden' : '']" class="cursor"
+    <div ref="cursor" :class="[isCursorOut || isMobile ? 'hidden' : '']" class="cursor"
         :style="{ left: (cursorPosition.left - 4) + 'px', top: (cursorPosition.top - 4) + 'px' }" />
-    <div ref="aura" :class="[ isCursorOut ? 'hidden' : '' ]" class="aura"
+    <div ref="aura" :class="[isCursorOut || isMobile ? 'hidden' : '']" class="aura"
         :style="{ left: (auraPosition.left - 23) + 'px', top: (auraPosition.top - 23) + 'px' }" />
 
 </template>
@@ -23,6 +23,10 @@ const aura = ref(null)
 const isCursorOut = ref(true)
 
 const { x, y } = useMouseInElement(cursorContainer)
+
+const isMobile = computed(() => {
+    return screen.width <= 760;
+});
 
 watch(x, (newX) => {
     cursorPosition.left = newX
