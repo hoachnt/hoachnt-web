@@ -1,5 +1,4 @@
 <template>
-    <div ref="cursorContainer" id="cursorContainer" />
     <div ref="cursor" :class="[isCursorOut || isMobile ? 'hidden' : '']" class="cursor"
         :style="{ left: (cursorPosition.left - 4) + 'px', top: (cursorPosition.top - 4) + 'px' }" />
     <div ref="aura" :class="[isCursorOut || isMobile ? 'hidden' : '']" class="aura"
@@ -17,12 +16,11 @@ const auraPosition = reactive({
     top: 0,
     left: 0
 })
-const cursorContainer = ref(null)
 const cursor = ref(null)
 const aura = ref(null)
 const isCursorOut = ref(true)
+const { x, y } = usePointer()
 
-const { x, y } = useMouseInElement(cursorContainer)
 
 const isMobile = computed(() => {
     return screen.width <= 760;
@@ -54,7 +52,7 @@ onMounted(() => {
 .aura {
     scale: 1;
     opacity: 1;
-    position: absolute;
+    position: fixed;
     border-radius: 100%;
     transition: 5s cubic-bezier(.75, -1.27, .3, 2.33) scale, 2s cubic-bezier(.75, -1.27, .3, 2.33) opacity;
     user-select: none;
