@@ -47,10 +47,15 @@ watch(y, (newY) => {
 onUpdated(() => {
     if (window.innerWidth > 760) {
         const links = document.getElementsByTagName('a')
+        const buttons = document.getElementsByTagName('button')
 
         Array.from(links).forEach((link) => {
             link.addEventListener('mouseover', () => isActive.value = true)
             link.addEventListener('mouseout', () => isActive.value = false)
+        });
+        Array.from(buttons).forEach((button) => {
+            button.addEventListener('mouseover', () => isActive.value = true)
+            button.addEventListener('mouseout', () => isActive.value = false)
         });
     }
 

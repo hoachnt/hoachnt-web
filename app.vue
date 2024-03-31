@@ -26,7 +26,7 @@ const onBeforeEnter = async () => {
 
 <style>
 * {
-  cursor: none;
+  cursor: none !important;
 }
 
 body {
