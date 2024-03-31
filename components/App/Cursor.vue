@@ -45,11 +45,15 @@ watch(y, (newY) => {
 })
 
 onUpdated(() => {
-    const links = document.getElementsByTagName('a')
-    Array.from(links).forEach((link) => {
-        link.addEventListener('mouseover', () => isActive.value = true)
-        link.addEventListener('mouseout', () => isActive.value = false)
-    });
+    if (window.innerWidth > 760) {
+        const links = document.getElementsByTagName('a')
+
+        Array.from(links).forEach((link) => {
+            link.addEventListener('mouseover', () => isActive.value = true)
+            link.addEventListener('mouseout', () => isActive.value = false)
+        });
+    }
+
 })
 
 onMounted(() => {
