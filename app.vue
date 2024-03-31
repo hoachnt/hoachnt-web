@@ -8,7 +8,9 @@ const onBeforeEnter = async () => {
 
 <template>
   <NuxtLoadingIndicator color="#facc15" />
-  <AppCursor />
+  <ClientOnly>
+    <AppCursor />
+  </ClientOnly>
   <AppNavbar />
   <div class="h-32"></div>
   <UContainer>
