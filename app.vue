@@ -26,6 +26,7 @@ const onBeforeEnter = async () => {
 * {
   cursor: none;
 }
+
 body {
   overflow-x: hidden;
 }
