@@ -16,8 +16,9 @@ useSeoMeta({
   title: "Articles | Nguyen Tien Hoach",
   description,
 });
+const localePath = useLocalePath()
 
 const { data: articles } = await useAsyncData("all-articles", () =>
-  queryContent("/articles").sort({ published: -1 }).find()
+  queryContent(localePath("/articles")).sort({ published: -1 }).find()
 );
 </script>
