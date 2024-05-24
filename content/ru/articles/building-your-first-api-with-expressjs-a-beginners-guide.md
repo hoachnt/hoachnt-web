@@ -61,7 +61,7 @@ app.listen(port, () => {
 Запустите свой сервер с помощью Node.js:
 
 ```баш
-узел app.js
+node app.js
 Посетите http://localhost:3000 в своем браузере. Вы должны увидеть сообщение «Hello World!».
 ```
 

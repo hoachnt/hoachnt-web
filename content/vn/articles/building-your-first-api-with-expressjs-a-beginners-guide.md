@@ -30,7 +30,7 @@ Thao tác này sẽ tạo một thư mục mới cho dự án của bạn và kh
 Cài đặt Express.js bằng npm (Trình quản lý gói nút):
 
 ```bash
-npm cài đặt nhanh --save
+npm install express --save
 ```
 
 Lệnh này cài đặt Express.js và thêm nó vào phần phụ thuộc của dự án của bạn.
@@ -41,15 +41,15 @@ Tạo một tệp có tên app.js trong thư mục dự án của bạn. Tệp n
 
 ```js
 const express = require('express');
-const ứng dụng = express();
-cổng const = 3000;
+const app = express();
+const port = 3000;
 
 app.get('/', (req, res) => {
- res.send('Xin chào thế giới!');
+  res.send('Hello World!');
 });
 
 app.listen(port, () => {
- console.log(`Ví dụ ứng dụng đang nghe tại http://localhost:${port}`);
+  console.log(`Example app listening at http://localhost:${port}`);
 });
 ```
 
@@ -60,7 +60,7 @@ Mã này tạo một máy chủ Express cơ bản lắng nghe trên cổng 3000 
 Chạy máy chủ của bạn bằng Node.js:
 
 ```bash
-nút app.js
+node app.js
 Truy cập http://localhost:3000 trong trình duyệt của bạn. Bạn sẽ thấy thông báo "Xin chào thế giới!".
 ```
 
@@ -71,10 +71,10 @@ Bây giờ, hãy mở rộng máy chủ của chúng tôi để hoạt động n
 Thêm mã sau vào app.js của bạn:
 
 ```javascript
-hãy để người dùng = [{ tên: "Alice" }, { tên: "Bob" }];
+let users = [{ name: "Alice" }, { name: "Bob" }];
 
 app.get('/users', (req, res) => {
- res.json(người dùng);
+  res.json(users);
 });
 ```
 

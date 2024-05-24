@@ -16,9 +16,9 @@ Chuyển đổi SVG thành PNG trong JavaScript bằng cách sử dụng phần 
    Bạn cần một phần tử canvas để vẽ SVG của mình lên. Đây có thể là canvas hiện có trong HTML của bạn hoặc canvas được tạo động bằng JavaScript:
 
 ```js
-hãy canvas = document.createElement("canvas");
-canvas.width = 500; // Đặt chiều rộng canvas
-canvas.height = 500; // Đặt chiều cao của canvas
+let canvas = document.createElement("canvas");
+canvas.width = 500; // Set the canvas width
+canvas.height = 500; // Set the canvas height
 ```
 
 Đặt chiều rộng và chiều cao của khung vẽ để phù hợp với kích thước mong muốn của PNG cuối cùng của bạn.
@@ -27,10 +27,10 @@ canvas.height = 500; // Đặt chiều cao của canvas
    Để vẽ SVG lên canvas, bạn cần chuyển SVG thành hình ảnh rồi vẽ hình ảnh đó lên canvas. Điều này có thể được thực hiện bằng cách sử dụng đối tượng Image trong JavaScript:
 
 ```js
-hãy để img = Hình ảnh mới();
-img.onload = hàm () {
- hãy để ctx = canvas.getContext("2d");
- ctx.drawImage(img, 0, 0);
+let img = new Image();
+img.onload = function () {
+  let ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
 };
 img.src = "data:image/svg+xml;base64," + btoa(svgString);
 ```
@@ -41,7 +41,7 @@ Trong mã này, hãy thay thế svgString bằng mã SVG của bạn. Nếu bạ
    Khi SVG của bạn được hiển thị trên khung vẽ, bạn có thể chuyển đổi khung vẽ thành hình ảnh PNG:
 
 ```js
-hãy để pngUrl = canvas.toDataURL("image/png");
+let pngUrl = canvas.toDataURL("image/png");
 ```
 
 PNGUrl này là chuỗi được mã hóa base64 đại diện cho hình ảnh PNG của bạn.
@@ -50,12 +50,12 @@ PNGUrl này là chuỗi được mã hóa base64 đại diện cho hình ảnh P
    Bây giờ bạn đã có PNG ở định dạng base64, bạn có thể sử dụng nó khi cần trong ứng dụng của mình. Ví dụ: bạn có thể hiển thị nó trong phần tử <img> hoặc tải xuống:
 
 ```js
-hãy để imgElement = document.createElement("img");
+let imgElement = document.createElement("img");
 imgElement.src = pngUrl;
 document.body.appendChild(imgElement);
 
-// Để tải hình ảnh
-hãy downloadLink = document.createElement("a");
+// To download the image
+let downloadLink = document.createElement("a");
 downloadLink.href = pngUrl;
 downloadLink.download = "image.png";
 downloadLink.click();
