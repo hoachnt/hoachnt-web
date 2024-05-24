@@ -42,8 +42,8 @@ npm install express --save
 
 ```js
 const express = require('express');
-константное приложение = экспресс();
-константный порт = 3000;
+const app = express();
+const port = 3000;
 
 app.get('/', (req, res) => {
  res.send('Привет, мир!');
@@ -72,10 +72,10 @@ app.listen(port, () => {
 Добавьте следующий код в свой app.js:
 
 ```Javascript
-let пользователи = [{ name: "Алиса" }, { name: "Боб" }];
+let users = [{ name: "Алиса" }, { name: "Боб" }];
 
 app.get('/users', (req, res) => {
- res.json(пользователи);
+ res.json(users);
 });
 ```
 

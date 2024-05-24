@@ -16,9 +16,9 @@ slug: "how-to-convert-a-svg-to-png-using-canvas"
    Вам нужен элемент холста, на котором можно нарисовать SVG. Это может быть существующий холст в вашем HTML или холст, созданный динамически с помощью JavaScript:
 
 ```js
-пусть холст = document.createElement("холст");
-холст.ширина = 500; // Устанавливаем ширину холста
-холст.высота = 500; // Устанавливаем высоту холста
+let canvas = document.createElement("canvas");
+canvas.width = 500; // Устанавливаем ширину холста
+canvas.height = 500; // Устанавливаем высоту холста
 ```
 
 Установите ширину и высоту холста, чтобы они соответствовали желаемым размерам вашего окончательного PNG.
@@ -27,12 +27,12 @@ slug: "how-to-convert-a-svg-to-png-using-canvas"
    Чтобы нарисовать SVG на холсте, вам необходимо преобразовать SVG в изображение, а затем нарисовать это изображение на холсте. Это можно сделать с помощью объекта Image в JavaScript:
 
 ```js
-пусть img = новое изображение();
-img.onload = функция () {
- let ctx = Canvas.getContext("2d");
- ctx.drawImage(img, 0, 0);
+let img = new Image();
+img.onload = function () {
+  let ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
 };
-img.src = "data:image/svg+xml;base64", + btoa(svgString);
+img.src = "data:image/svg+xml;base64," + btoa(svgString);
 ```
 
 В этом коде замените svgString своим кодом SVG. Если вы используете внешний файл SVG, убедитесь, что файл прочитан и преобразован в строку base64.
@@ -41,7 +41,7 @@ img.src = "data:image/svg+xml;base64", + btoa(svgString);
    Как только ваш SVG будет отображен на холсте, вы можете преобразовать холст в изображение PNG:
 
 ```js
-let pngUrl = Canvas.toDataURL("изображение/png");
+let pngUrl = canvas.toDataURL("image/png");
 ```
 
 Этот pngUrl представляет собой строку в кодировке Base64, представляющую ваше изображение PNG.
@@ -54,11 +54,11 @@ let imgElement = document.createElement("img");
 imgElement.src = pngUrl;
 document.body.appendChild(imgElement);
 
-// Чтобы загрузить изображение
-пусть downloadLink = document.createElement("a");
+// To download the image
+let downloadLink = document.createElement("a");
 downloadLink.href = pngUrl;
 downloadLink.download = "image.png";
-скачатьСсылка.клик();
+downloadLink.click();
 ```
 
 ### Дополнительные соображения
