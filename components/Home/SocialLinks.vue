@@ -22,5 +22,10 @@ const links = [
     url: "https://github.com/hoachnt",
     icon: "mdi:github",
   },
+  {
+    name: "Telegram",
+    url: "https://t.me/hoachnt",
+    icon: "mdi:telegram"
+  }
 ];
 </script>
