@@ -8,9 +8,9 @@ const onBeforeEnter = async () => {
 
 <template>
   <NuxtLoadingIndicator color="#facc15" />
-  <ClientOnly>
+  <!-- <ClientOnly>
     <AppCursor />
-  </ClientOnly>
+  </ClientOnly> -->
   <AppNavbar />
   <div class="h-32"></div>
   <UContainer>
@@ -27,10 +27,6 @@ const onBeforeEnter = async () => {
 </template>
 
 <style>
-* {
-  cursor: none !important;
-}
-
 body {
   overflow-x: hidden;
 }
