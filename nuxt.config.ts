@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  routeRules: {
+    "/": { prerender: true },
+  },
   modules: [
     "@nuxt/ui",
     "nuxt-icon",
@@ -10,33 +13,33 @@ export default defineNuxtConfig({
     "@nuxthq/studio",
     "@vueuse/nuxt",
     "@nuxtjs/i18n",
-    '@vueuse/nuxt',
+    "@vueuse/nuxt",
   ],
   i18n: {
     vueI18n: "./i18n.config.ts",
     skipSettingLocaleOnNavigate: true,
     defaultLocale: "en",
     lazy: true,
-    langDir: 'lang',
+    langDir: "lang",
     strategy: "prefix_except_default",
     locales: [
       {
         name: "English",
         value: "en",
         code: "en",
-        file: "en.ts"
+        file: "en.ts",
       },
       {
         name: "Русский",
         value: "ru",
         code: "ru",
-        file: "ru.ts"
+        file: "ru.ts",
       },
       {
         name: "Tiếng việt",
         value: "vn",
         code: "vn",
-        file: "vn.ts"
+        file: "vn.ts",
       },
     ],
   },
