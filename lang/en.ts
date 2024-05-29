@@ -31,6 +31,6 @@ export default {
   },
   cursor: {
     title: "Attention!",
-    description: "Hover over the site.",
+    description: "Hover over the site to see the cursor.",
   },
 };

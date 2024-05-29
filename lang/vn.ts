@@ -31,6 +31,6 @@ export default {
   },
   cursor: {
     title: "Chú ý!",
-    description: "Di chuột qua trang web.",
+    description: "Di chuột qua trang web để  nhìn thấy con trỏ.",
   },
 };
