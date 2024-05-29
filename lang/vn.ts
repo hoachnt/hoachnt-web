@@ -29,4 +29,8 @@ export default {
     selectLanguage: "Chọn ngôn ngữ",
     toggleTheme: "Đổi giao diện",
   },
+  cursor: {
+    title: "Chú ý!",
+    description: "Di chuột qua trang web.",
+  },
 };

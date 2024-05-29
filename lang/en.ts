@@ -29,4 +29,8 @@ export default {
     selectLanguage: "Select language",
     toggleTheme: "Toggle theme",
   },
+  cursor: {
+    title: "Attention!",
+    description: "Hover over the site.",
+  },
 };

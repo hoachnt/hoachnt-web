@@ -30,4 +30,8 @@ export default {
     selectLanguage: "Выбрать язык",
     toggleTheme: "Сменить тему",
   },
+  cursor: {
+    title: "Внимание!",
+    description: "Наведите курсор на сайт.",
+  },
 };
