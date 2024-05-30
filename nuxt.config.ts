@@ -1,7 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   routeRules: {
-    "/": { prerender: true },
     "/projects": { prerender: true },
     "/articles": { prerender: true },
     "/lab": { prerender: true },
