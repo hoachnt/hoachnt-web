@@ -3,10 +3,13 @@ export default {
     name: "Nguyen Tien Hoach",
     hello: "Hello",
     aboutMeText1:
-      "My name is Nguyen Tien Hoach. I'm an independent software developer currently living in Vietnam. I'm a Fullstack developer. My main tools are golang, vue and react.",
+      "My name is Nguyen Tien Hoach. I'm an independent software developer currently living in Vietnam.",
     aboutMeText2:
+      "I'm a Fullstack developer. My main tools are golang, vue and react.",
+    aboutMeText3:
       "In addition to programming, I enjoy reading manga and manhwa (my favorite is Legend of the Northern Blade).",
     followMeOn: "You can follow me on",
+    contactsForWork: "To work with me",
   },
   projects: {
     projects: "Projects",

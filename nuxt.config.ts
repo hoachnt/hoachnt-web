@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   routeRules: {
     "/": { prerender: true },
+    "/projects": { prerender: true },
+    "/articles": { prerender: true },
+    "/lab": { prerender: true },
   },
   modules: [
     "@nuxt/ui",
@@ -42,6 +45,12 @@ export default defineNuxtConfig({
         file: "vn.ts",
       },
     ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      redirectOn: "root", // recommended
+      alwaysRedirect: true,
+    },
   },
   ui: {
     icons: ["heroicons", "lucide"],

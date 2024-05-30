@@ -3,10 +3,13 @@ export default {
     name: "Nguyễn Tiến Hoạch",
     hello: "Xin chào",
     aboutMeText1:
-      "Tôi tên là Nguyễn Tiến Hoạch. Tôi là một nhà phát triển phần mềm độc lập hiện đang sống ở Việt Nam. Tôi là nhà phát triển Fullstack. Công cụ chính của tôi là golang, vue và React.",
+      "Tôi là Nguyễn Tiến Hoạch. Tôi là một nhà phát triển phần mềm độc lập hiện đang sống ở Việt Nam.",
     aboutMeText2:
+      "Tôi là nhà phát triển Fullstack. Công cụ chính của tôi là golang, vue và react.",
+    aboutMeText3:
       "Ngoài lập trình, tôi thích đọc manga và manhwa (tôi thích nhất là Legend of the Northern Blade).",
     followMeOn: "Bạn có thể theo dõi tôi ở đây",
+    contactsForWork: "Để làm việc với tôi",
   },
   projects: {
     projects: "Dự án",
