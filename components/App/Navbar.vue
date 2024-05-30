@@ -14,7 +14,11 @@
               class="relative px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400"
               active-class="text-primary-600 dark:text-primary-400"
             >
-              <Icon aria-hidden="true" :name="item.icon" class="w-5 h-5 z-10" />
+              <Icon
+                aria-hidden="true"
+                :name="$route.path === item.path ? item.iconActive : item.icon"
+                class="w-5 h-5 z-10"
+              />
               <span
                 v-if="$route.path === item.path"
                 class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary-500/0 via-primary-500/70 to-primary-500/0 dark:from-primary-400/0 dark:via-primary-400/40 dark:to-primary-400/0"
@@ -62,21 +66,25 @@ const items = computed(() => {
       name: t("navbar.home"),
       path: localePath("/"),
       icon: "solar:home-smile-outline",
+      iconActive: "solar:home-smile-bold",
     },
     {
       name: t("navbar.projects"),
       path: localePath("/projects"),
-      icon: "solar:folder-with-files-outline",
+      icon: "solar:folder-outline",
+      iconActive: "solar:folder-bold",
     },
     {
       name: t("navbar.articles"),
       path: localePath("/articles"),
-      icon: "solar:document-add-outline",
+      icon: "solar:document-outline",
+      iconActive: "solar:document-bold",
     },
     {
       name: t("navbar.lab"),
       path: localePath("/lab"),
       icon: "heroicons:beaker",
+      iconActive: "heroicons:beaker-solid",
     },
   ];
 });
