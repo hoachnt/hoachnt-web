@@ -32,3 +32,8 @@ useSeoMeta({
     "I'm an independent software developer currently living in Vietnam. I'm a Fullstack developer. My main tools are golang, vue and react.",
 });
 </script>
+<style scoped>
+h1 {
+  view-transition-name: header;
+}
+</style>

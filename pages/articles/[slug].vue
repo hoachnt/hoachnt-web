@@ -12,11 +12,13 @@
     </div>
   </main>
 </template>
-<script setup>
-</script>
-<style>
+<script setup></script>
+<style scoped>
 .prose h2 a,
 .prose h3 a {
   @apply no-underline;
+}
+h1 {
+  view-transition-name: header;
 }
 </style>

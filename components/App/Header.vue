@@ -23,3 +23,9 @@ defineProps({
   },
 });
 </script>
+
+<style scoped>
+h1 {
+  view-transition-name: header;
+}
+</style>

@@ -35,7 +35,7 @@ watchEffect(() => (colorMode.value = state.value));
 <template>
   <UTooltip :text="toggleTheme" :ui="{ popper: { strategy: 'absolute' } }">
     <button
-      class="px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400 relative ml-3"
+      class="px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400 relative"
       @click="next()"
     >
       <Transition name="slide-up">

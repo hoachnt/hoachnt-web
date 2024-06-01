@@ -35,14 +35,14 @@
         <li>
           <AppLanguageSelect />
         </li>
-        <li>
+        <li class="flex items-center justify-center ml-3">
           <ClientOnly fallback-tag="i">
             <AppThemeToggle />
             <template #fallback>
               <Icon
                 aria-hidden="true"
                 name="solar:laptop-minimalistic-bold"
-                class="w-5 h-5 ml-3"
+                class="w-5 h-5"
               />
             </template>
           </ClientOnly>

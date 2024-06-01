@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const { finalizePendingLocaleChange } = useI18n();
+// const { finalizePendingLocaleChange } = useI18n();
 
-const onBeforeEnter = async () => {
-  await finalizePendingLocaleChange();
-};
+// const onBeforeEnter = async () => {
+//   await finalizePendingLocaleChange();
+// };
 </script>
 
 <template>
@@ -14,13 +14,14 @@ const onBeforeEnter = async () => {
   <AppNavbar />
   <div class="h-32"></div>
   <UContainer>
-    <NuxtPage
+    <!-- <NuxtPage
       :transition="{
         name: 'page',
         mode: 'out-in',
         onBeforeEnter,
       }"
-    />
+    /> -->
+    <NuxtPage />
   </UContainer>
   <div class="h-32"></div>
   <AppFooter />
