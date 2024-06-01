@@ -42,7 +42,7 @@
               <Icon
                 aria-hidden="true"
                 name="solar:laptop-minimalistic-bold"
-                class="w-5 h-5 mx-3"
+                class="w-5 h-5 ml-3"
               />
             </template>
           </ClientOnly>

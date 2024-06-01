@@ -5,6 +5,9 @@ export default defineNuxtConfig({
     "/articles": { prerender: true },
     "/lab": { prerender: true },
   },
+  experimental: {
+    viewTransition: true,
+  },
   modules: [
     "@nuxt/ui",
     "nuxt-icon",
