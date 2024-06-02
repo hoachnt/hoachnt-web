@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     "/lab": { prerender: true },
   },
   experimental: {
-    viewTransition: "always",
+    viewTransition: true,
   },
   modules: [
     "@nuxt/ui",
