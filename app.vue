@@ -20,7 +20,7 @@ const onAfterEnter = () => {
     <NuxtPage
       :transition="{
         // name: 'page',
-        // mode: 'out-in',
+        mode: 'out-in',
         onBeforeEnter,
         onAfterEnter,
       }"
