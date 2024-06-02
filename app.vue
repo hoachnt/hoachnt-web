@@ -1,12 +1,18 @@
 <script setup lang="ts">
+const route = useRoute();
 // const { finalizePendingLocaleChange } = useI18n();
 
 // const onBeforeEnter = async () => {
 //   await finalizePendingLocaleChange();
 // };
-// const onAfterEnter = () => {
-//   window.scrollTo(0, 0);
-// };
+const onAfterEnter = () => {
+  window.scrollTo(0, 0);
+};
+
+watch(
+  () => route.path,
+  () => onAfterEnter()
+);
 </script>
 
 <template>
