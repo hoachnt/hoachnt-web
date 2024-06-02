@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const route = useRoute();
-// const { finalizePendingLocaleChange } = useI18n();
+const { finalizePendingLocaleChange } = useI18n();
 
-// const onBeforeEnter = async () => {
-//   await finalizePendingLocaleChange();
-// };
+const onBeforeEnter = async () => {
+  await finalizePendingLocaleChange();
+};
 const onAfterEnter = () => {
   window.scrollTo(0, 0);
 };
@@ -23,17 +23,9 @@ watch(
   <AppNavbar />
   <div class="h-32"></div>
   <UContainer>
-    <!-- <NuxtPage
-      :transition="{
-        name: 'page',
-        mode: 'out-in',
-        onBeforeEnter,
-        onAfterEnter,
-      }"
-    /> -->
     <NuxtPage />
   </UContainer>
-  <div class="h-32"></div>
+  <div class="h-4"></div>
   <AppFooter />
 </template>
 
