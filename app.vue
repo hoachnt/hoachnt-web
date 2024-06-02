@@ -1,12 +1,12 @@
 <script setup lang="ts">
-const { finalizePendingLocaleChange } = useI18n();
+// const { finalizePendingLocaleChange } = useI18n();
 
-const onBeforeEnter = async () => {
-  await finalizePendingLocaleChange();
-};
-const onAfterEnter = () => {
-  window.scrollTo(0, 0);
-};
+// const onBeforeEnter = async () => {
+//   await finalizePendingLocaleChange();
+// };
+// const onAfterEnter = () => {
+//   window.scrollTo(0, 0);
+// };
 </script>
 
 <template>
@@ -17,14 +17,14 @@ const onAfterEnter = () => {
   <AppNavbar />
   <div class="h-32"></div>
   <UContainer>
-    <NuxtPage
+    <!-- <NuxtPage
       :transition="{
-        // name: 'page',
-        // mode: 'out-in',
+        name: 'page',
+        mode: 'out-in',
         onBeforeEnter,
         onAfterEnter,
       }"
-    />
+    /> -->
     <NuxtPage />
   </UContainer>
   <div class="h-32"></div>
