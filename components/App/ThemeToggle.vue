@@ -5,10 +5,16 @@ import { watchEffect } from "vue-demi";
 const { t } = useI18n();
 const colorMode = useColorMode({
   emitAuto: true,
+  modes: {
+    cafe: "cafe",
+  },
 });
-const { state, next } = useCycleList(["dark", "light", "auto"] as const, {
-  initialValue: colorMode,
-});
+const { state, next } = useCycleList(
+  ["dark", "light", "auto", "cafe"] as const,
+  {
+    initialValue: colorMode,
+  }
+);
 
 const toggleTheme = computed(() => t("navbar.toggleTheme"));
 
@@ -16,6 +22,10 @@ watchEffect(() => (colorMode.value = state.value));
 </script>
 
 <style>
+html.cafe {
+  filter: sepia(0.9) hue-rotate(315deg) brightness(0.9);
+}
+
 .slide-up-enter-active,
 .slide-up-leave-active {
   transition: all 0.25s ease-out;
@@ -40,7 +50,7 @@ watchEffect(() => (colorMode.value = state.value));
     >
       <Transition name="slide-up">
         <Icon
-          v-if="state === 'auto'"
+          v-if="state === 'cafe'"
           aria-hidden="true"
           name="solar:moon-bold"
           class="w-5 h-5 absolute"
@@ -59,6 +69,13 @@ watchEffect(() => (colorMode.value = state.value));
           name="solar:laptop-minimalistic-bold"
           class="w-5 h-5 absolute"
           :key="3"
+        />
+        <Icon
+          v-else-if="state === 'auto'"
+          aria-hidden="true"
+          name="solar:tea-cup-bold"
+          class="w-5 h-5 absolute"
+          :key="4"
         />
       </Transition>
       <span class="sr-only">Toggle theme</span>
