@@ -1,8 +1,8 @@
 <template>
   <div ref="headerRef" :style="styles" class="fixed top-0 w-full z-50">
-    <nav class="mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+    <nav class="mx-auto px-4 sm:px-6 lg:px-8 min-w-[397px] max-w-2xl overflow-x-auto overflow-y-hidden bg-inherit backdrop-blur-md">
       <ul
-        class="overflow-x-auto overflow-y-hidden flex items-center my-4 px-3 text-sm font-medium text-gray-800 rounded-full shadow-lg bg-white/90 shadow-gray-800/5 ring-1 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/20 ring-gray-900/5"
+        class="flex items-center my-9 px-3 text-sm font-medium text-gray-800 rounded-full shadow-lg bg-white/90 shadow-gray-800/5 ring-1 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/20 ring-gray-900/5"
       >
         <li v-for="item in items" :key="item.path">
           <UTooltip
@@ -32,7 +32,7 @@
           </UTooltip>
         </li>
         <li class="flex-1"></li>
-        <li>
+        <li class="ml-3">
           <AppLanguageSelect />
         </li>
         <li class="flex items-center justify-center ml-3">
