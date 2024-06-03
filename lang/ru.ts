@@ -20,6 +20,10 @@ export default {
     articles: "Статьи",
     description: "Статьи, которые мне показались интересными.",
   },
+  bookmarks: {
+    bookmarks: "Закладки",
+    description: "Удивительные вещи, которые я нашел в Интернете.",
+  },
   lab: {
     lab: "Лаб",
     description:
@@ -29,6 +33,7 @@ export default {
     home: "Главный",
     projects: "Проекты",
     articles: "Статьи",
+    bookmarks: "Закладки",
     lab: "Лаб",
     selectLanguage: "Выбрать язык",
     toggleTheme: "Сменить тему",

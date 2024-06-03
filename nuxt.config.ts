@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     "/projects": { prerender: true },
     "/articles": { prerender: true },
     "/lab": { prerender: true },
+    "/bookmarks": { prerender: true },
   },
   experimental: {
     viewTransition: true,

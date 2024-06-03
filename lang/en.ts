@@ -20,6 +20,10 @@ export default {
     articles: "Articles",
     description: "Articles that I found interesting.",
   },
+  bookmarks: {
+    bookmarks: "Bookmarks",
+    description: "Awesome things I've found on the internet."
+  },
   lab: {
     lab: "Lab",
     description: "Some random experiments with UI I find in my free time.",
@@ -29,6 +33,7 @@ export default {
     projects: "Projects",
     articles: "Articles",
     lab: "Lab",
+    bookmarks: "Bookmarks",
     selectLanguage: "Select language",
     toggleTheme: "Toggle theme",
   },

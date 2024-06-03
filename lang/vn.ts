@@ -20,6 +20,10 @@ export default {
     articles: "Bài viết",
     description: "Những bài viết mà tôi thấy thú vị.",
   },
+  bookmarks: {
+    bookmarks: "Dấu trang",
+    description: "Những điều tuyệt vời tôi đã tìm thấy trên internet.",
+  },
   lab: {
     lab: "Thí nghiệm",
     description: "Một số thử nghiệm UI ngẫu nhiên tôi tìm thấy khi rảnh rỗi.",
@@ -28,6 +32,7 @@ export default {
     home: "Trang chủ",
     projects: "Dự án",
     articles: "Bài viết",
+    bookmarks: "Dấu trang",
     lab: "Thí nghiệm",
     selectLanguage: "Chọn ngôn ngữ",
     toggleTheme: "Đổi giao diện",

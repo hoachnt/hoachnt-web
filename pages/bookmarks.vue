@@ -1,6 +1,10 @@
 <template>
   <main class="min-h-screen">
-    <AppHeader class="mb-8" title="Bookmarks" :description="description" />
+    <AppHeader
+      class="mb-8"
+      :title="$t('bookmarks.bookmarks')"
+      :description="$t('bookmarks.description')"
+    />
     <ul class="space-y-2">
       <li v-for="bookmark in bookmarks" :key="bookmark.id">
         <a
@@ -27,8 +31,7 @@
 </template>
 
 <script setup>
-const description =
-  "Awesome things I've found on the internet.";
+const description = "Awesome things I've found on the internet.";
 useSeoMeta({
   title: "Bookmarks | Nguyen Tien Hoach",
   description,
