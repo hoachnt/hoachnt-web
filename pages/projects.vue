@@ -23,7 +23,9 @@ useSeoMeta({
   description,
 });
 
+const localePath = useLocalePath();
+
 const { data: projects } = await useAsyncData("projects-all", () =>
-  queryContent("/projects").find()
+  queryContent(localePath("/projects")).find()
 );
 </script>
