@@ -29,7 +29,7 @@
               ></span>
               <span
                 v-if="$route.path === item.path"
-                class="active-bg absolute h-8 w-8 z-0 rounded-full bg-gray-100 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                class="active-bg absolute h-8 w-8 z-0 rounded-full bg-gray-500/10 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               ></span>
               <span class="sr-only">{{ item.name }}</span>
             </ULink>
