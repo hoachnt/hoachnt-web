@@ -1,8 +1,8 @@
 <template>
   <div
     ref="headerRef"
-    :style="styles"
-    class="fixed top-0 w-full z-50 overflow-x-auto overflow-y-hidden bg-inherit backdrop-blur-md"
+    :style="[styles]"
+    class="nav-wrapper fixed top-0 w-full z-50 overflow-x-auto overflow-y-hidden bg-inherit backdrop-blur-md"
   >
     <nav class="mx-auto px-4 sm:px-6 lg:px-8 min-w-[397px] max-w-2xl">
       <ul
@@ -99,3 +99,13 @@ const items = computed(() => {
   ];
 });
 </script>
+
+<style>
+.nav-wrapper {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.nav-wrapper::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+</style>
