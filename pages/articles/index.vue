@@ -20,8 +20,13 @@ useSeoMeta({
   description,
 });
 const localePath = useLocalePath();
+const route = useRoute();
 
-const { data: articles } = await useAsyncData("all-articles", () =>
-  queryContent(localePath("/articles")).sort({ published: -1 }).find()
+const { data: articles } = await useAsyncData(
+  "all-articles",
+  () => queryContent(localePath("/articles")).sort({ published: -1 }).find(),
+  {
+    watch: [route.path],
+  }
 );
 </script>

@@ -24,25 +24,31 @@ useSeoMeta({
 });
 
 const localePath = useLocalePath();
+const route = useRoute();
 
-const { data: projects } = await useAsyncData("projects-all", () =>
-  queryContent(localePath("/projects"))
-    .find()
-    .then((response) =>
-      response.sort((a, b) => {
-        const nameA = a._id.toUpperCase();
-        const nameB = b._id.toUpperCase();
+const { data: projects } = await useAsyncData(
+  "projects-all",
+  () =>
+    queryContent(localePath("/projects"))
+      .find()
+      .then((response) =>
+        response.sort((a, b) => {
+          const nameA = a._id.toUpperCase();
+          const nameB = b._id.toUpperCase();
 
-        if (nameA < nameB) {
-          return 1;
-        }
+          if (nameA < nameB) {
+            return 1;
+          }
 
-        if (nameA > nameB) {
-          return -1;
-        }
+          if (nameA > nameB) {
+            return -1;
+          }
 
-        return 0;
-      })
-    )
+          return 0;
+        })
+      ),
+  {
+    watch: [route.path],
+  }
 );
 </script>
