@@ -8,15 +8,8 @@ export default defineNuxtConfig({
   },
   experimental: {
     viewTransition: true,
-    sharedPrerenderData: true,
   },
-  nitro: {
-    debug: true,
-    prerender: {
-      crawlLinks: true,
-      concurrency: 1,
-    },
-  },
+  
   modules: [
     "@nuxt/ui",
     "nuxt-icon",
