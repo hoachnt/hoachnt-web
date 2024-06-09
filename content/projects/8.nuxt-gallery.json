@@ -1,0 +1,8 @@
+{
+  "name": "Nuxt Gallery",
+  "url": "https://nuxtd-gallery.netlify.app/",
+  "description": "Nuxt gallery + directus",
+  "thumbnail": "/projects/nuxt-gallery.png",
+  "status": "Active",
+  "opensource": true
+}

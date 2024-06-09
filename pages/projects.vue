@@ -26,6 +26,23 @@ useSeoMeta({
 const localePath = useLocalePath();
 
 const { data: projects } = await useAsyncData("projects-all", () =>
-  queryContent(localePath("/projects")).find()
+  queryContent(localePath("/projects"))
+    .find()
+    .then((response) =>
+      response.sort((a, b) => {
+        const nameA = a._id.toUpperCase();
+        const nameB = b._id.toUpperCase();
+
+        if (nameA < nameB) {
+          return 1;
+        }
+
+        if (nameA > nameB) {
+          return -1;
+        }
+
+        return 0;
+      })
+    )
 );
 </script>
