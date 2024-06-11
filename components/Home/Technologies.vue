@@ -3,7 +3,7 @@
     <h2 class="uppercase text-xs font-semibold text-gray-400 mb-4">
       {{ $t("home.technologyStack") }}
     </h2>
-    <div class="grid grid-cols-4 gap-3 sm:grid-cols-5 sm:gap-4">
+    <div class="list grid grid-cols-4 gap-3 sm:grid-cols-5 sm:gap-4">
       <UCard
         v-for="(technology, index) in technologies"
         :key="index"
@@ -29,7 +29,7 @@
             padding: 'px-4 py-4 sm:px-6',
           },
         }"
-        class="duration-150 ease-in-out transition-all md:hover:rounded-3xl md:hover:animate-none md:hover:scale-110"
+        class="item duration-150 ease-in-out transition-all md:hover:rounded-3xl md:hover:animate-none md:hover:scale-110"
       >
         <Icon :name="technology.icon" class="w-full h-full" />
       </UCard>
@@ -47,4 +47,11 @@ const technologies = [
 ];
 </script>
 
-<style></style>
+<style scoped>
+.list:hover .item {
+  filter: blur(2px);
+}
+.item:hover {
+  filter: blur(0) !important;
+}
+</style>
