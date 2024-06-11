@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
+  experimental: {
+    viewTransition: true,
+  },
   devtools: { enabled: true },
   routeRules: {
     "/projects": { prerender: true },
@@ -6,10 +9,12 @@ export default defineNuxtConfig({
     "/lab": { prerender: true },
     "/bookmarks": { prerender: true },
   },
-  experimental: {
-    viewTransition: true,
-  },
-  
+  // nitro: {
+  //   prerender: {
+  //     crawlLinks: true,
+  //   },
+  // },
+
   modules: [
     "@nuxt/ui",
     "nuxt-icon",
@@ -26,7 +31,6 @@ export default defineNuxtConfig({
     vueI18n: "./i18n.config.ts",
     skipSettingLocaleOnNavigate: true,
     defaultLocale: "en",
-    lazy: true,
     langDir: "lang",
     strategy: "prefix_except_default",
     locales: [
