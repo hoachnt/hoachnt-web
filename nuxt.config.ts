@@ -4,9 +4,6 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   routeRules: {
-    "/projects": { prerender: true },
-    "/articles": { prerender: true },
-    "/lab": { prerender: true },
     "/bookmarks": { prerender: true },
   },
   // nitro: {
