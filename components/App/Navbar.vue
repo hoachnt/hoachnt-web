@@ -116,12 +116,17 @@ const items = computed(() => {
 }
 .nav-list,
 .nav-item {
-  transition: .1s ease-in;
+  transition: 0.1s ease-in;
 }
 .nav-list:hover li {
   filter: blur(2px);
 }
 .nav-item:hover {
   filter: blur(0) !important;
+}
+@media only screen and (max-width: 768px) {
+  .nav-list:hover li {
+    filter: blur(0);
+  }
 }
 </style>
