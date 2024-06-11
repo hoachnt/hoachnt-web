@@ -29,7 +29,7 @@
 useSeoMeta({
   title: "Nguyen Tien Hoach",
   description:
-    "I'm an independent software developer currently living in Vietnam. I'm a Fullstack developer. My main tools are golang, vue and react.",
+    "I'm an independent software developer currently living in Vietnam. I'm a Fullstack developer.",
 });
 </script>
 <style scoped>

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const title = "Nguyen Tien Hoach";
+const description =
+  "I'm a Fullstack independent software developer currently living in Vietnam.";
+
 const route = useRoute();
 const { finalizePendingLocaleChange } = useI18n();
 
@@ -13,6 +17,16 @@ watch(
   () => route.path,
   () => onAfterEnter()
 );
+
+useSeoMeta({
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description,
+  ogSiteName: "Nguyen Tien Hoach portfolio",
+  ogImage: "https://hoachnt.com/social-card.png",
+  twitterCard: "summary_large_image",
+});
 </script>
 
 <template>
