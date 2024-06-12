@@ -27,6 +27,7 @@
     "@iconify-json/lucide": "1.1.190",
     "@nuxt/image": "1.7.0",
     "@nuxt/ui": "2.16.0",
+    "sass": "^1.77.5",
     "vue-use-fixed-header": "^2.0.3"
   }
 }

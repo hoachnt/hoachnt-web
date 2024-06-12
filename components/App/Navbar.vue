@@ -117,7 +117,7 @@ const items = computed(() => {
 }
 .nav-list,
 .nav-item {
-  transition: 0.1s ease-in;
+  transition: 0.2s ease-in-out;
 }
 .nav-list:has(.nav-item:hover) .nav-item:not(:hover) {
   filter: blur(4px);

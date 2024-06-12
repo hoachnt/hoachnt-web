@@ -19,9 +19,6 @@
     <p class="text-gray-900 dark:text-gray-400">
       {{ $t("home.aboutMeText2") }}
     </p>
-    <p class="text-gray-900 dark:text-gray-400">
-      {{ $t("home.aboutMeText3") }}
-    </p>
   </div>
 </template>
 
