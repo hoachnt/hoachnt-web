@@ -113,6 +113,11 @@ const bookmarks = [
     label: "Rakko Tools",
     url: "https://en.rakko.tools/",
   },
+  {
+    id: 16,
+    label: "CSS hover effects",
+    url: "https://freefrontend.com/css-hover-effects/",
+  },
 ];
 
 function getHost(url) {

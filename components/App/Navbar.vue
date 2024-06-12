@@ -15,6 +15,7 @@
           >
             <ULink
               :to="item.path"
+              prefetch
               class="relative px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400"
               active-class="text-primary-600 dark:text-primary-400"
             >
@@ -118,11 +119,8 @@ const items = computed(() => {
 .nav-item {
   transition: 0.1s ease-in;
 }
-.nav-list:hover li {
-  filter: blur(2px);
-}
-.nav-item:hover {
-  filter: blur(0) !important;
+.nav-list:has(.nav-item:hover) .nav-item:not(:hover) {
+  filter: blur(4px);
 }
 @media only screen and (max-width: 768px) {
   .nav-list:hover li {
