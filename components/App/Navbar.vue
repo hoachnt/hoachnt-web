@@ -123,7 +123,7 @@ const items = computed(() => {
   filter: blur(4px);
 }
 @media only screen and (max-width: 768px) {
-  .nav-list:hover li {
+  .nav-list:has(.nav-item:hover) .nav-item:not(:hover) {
     filter: blur(0);
   }
 }
