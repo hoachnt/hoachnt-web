@@ -19,8 +19,16 @@ watch(
   () => route.path,
   () => onAfterEnter()
 );
+onMounted(() => {
+  let details = navigator.userAgent;
+  let regexp = /android|iphone|kindle|ipad/i;
+  let isMobileDevice = regexp.test(details);
 
-useCursor();
+  if (!isMobileDevice) {
+    useCursor();
+  }
+});
+
 useSeoMeta({
   title,
   ogTitle: title,
