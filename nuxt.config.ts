@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   //   },
   // },
 
-  plugins: ["~/plugins/ipad-cursor.client"],
+  plugins: ["~/plugins/ipad-cursor"],
 
   modules: [
     "@nuxt/ui",
