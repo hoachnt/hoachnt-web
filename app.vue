@@ -24,6 +24,8 @@ onMounted(() => {
   let regexp = /android|iphone|kindle|ipad/i;
   let isMobileDevice = regexp.test(details);
 
+  alert(details);
+
   if (!isMobileDevice) {
     useCursor();
   }
