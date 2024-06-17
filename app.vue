@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useCursor } from "ipad-cursor/vue";
-
 const title = "Nguyen Tien Hoach";
 const description =
   "I'm a Fullstack independent software developer currently living in Vietnam.";
@@ -19,17 +17,6 @@ watch(
   () => route.path,
   () => onAfterEnter()
 );
-onMounted(() => {
-  let details = navigator.userAgent;
-  let regexp = /android|iphone|kindle|ipad/i;
-  let isMobileDevice = regexp.test(details);
-
-  alert(details);
-
-  if (!isMobileDevice) {
-    useCursor();
-  }
-});
 
 useSeoMeta({
   title,
