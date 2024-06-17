@@ -12,6 +12,8 @@ export default defineNuxtConfig({
   //   },
   // },
 
+  plugins: ["~/plugins/ipad-cursor.client"],
+
   modules: [
     "@nuxt/ui",
     "nuxt-icon",

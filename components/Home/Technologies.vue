@@ -14,6 +14,7 @@
         external
         prefetch
         class="item duration-200 ease-in-out transition-all"
+        v-cursor-block="{radius: '24px'}"
       >
         <UCard
           :ui="{

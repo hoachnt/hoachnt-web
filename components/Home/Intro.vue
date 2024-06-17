@@ -7,16 +7,18 @@
       sizes="48px sm:64px"
       placeholder
       format="webp"
+      v-cursor-block="{radius: '50%'}"
     />
     <h1
+      v-cursor-text
       class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100 capitalize"
     >
       {{ $t("home.hello") }}.
     </h1>
-    <p class="text-gray-900 dark:text-gray-400">
+    <p class="text-gray-900 dark:text-gray-400" v-cursor-text>
       {{ $t("home.aboutMeText1") }}
     </p>
-    <p class="text-gray-900 dark:text-gray-400">
+    <p class="text-gray-900 dark:text-gray-400" v-cursor-text>
       {{ $t("home.aboutMeText2") }}
     </p>
   </div>

@@ -4,6 +4,7 @@
     :to="project.url"
     target="_blank"
     external
+    v-cursor-block
   >
     <div class="max-w-sm">
       <h3 class="text-sm font-medium group-hover:text-primary-600">

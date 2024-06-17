@@ -11,6 +11,7 @@
           :href="bookmark.url"
           target="_blank"
           class="flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded-lg -m-2 text-sm min-w-0"
+          v-cursor-block
         >
           <UAvatar
             :src="getThumbnail(bookmark.url)"

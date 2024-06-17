@@ -8,9 +8,10 @@
         v-for="link in linksToFollow"
         :key="link.icon"
         :to="link.url"
+        class="flex items-end gap-4 dark:hover:text-gray-300 group"
         target="_blank"
         external
-        class="flex items-end gap-4 dark:hover:text-gray-300 group"
+        v-cursor-block
       >
         <span class="text-sm">
           {{ link.name }}
@@ -31,9 +32,10 @@
         v-for="link in linksForWork"
         :key="link.icon"
         :to="link.url"
+        class="flex items-end gap-4 dark:hover:text-gray-300 group"
         target="_blank"
         external
-        class="flex items-end gap-4 dark:hover:text-gray-300 group"
+        v-cursor-block
       >
         <span class="text-sm">
           {{ link.name }}

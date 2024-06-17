@@ -8,7 +8,12 @@
       <ul
         class="nav-list flex items-center my-9 px-3 text-sm font-medium text-gray-800 rounded-full shadow-lg bg-white/90 shadow-gray-800/5 ring-1 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/20 ring-gray-900/5"
       >
-        <li v-for="item in items" :key="item.path" class="nav-item">
+        <li
+          v-for="item in items"
+          :key="item.path"
+          class="nav-item"
+          v-cursor-block
+        >
           <UTooltip
             :text="item.name"
             :ui="{ popper: { strategy: 'absolute' } }"
@@ -37,10 +42,13 @@
           </UTooltip>
         </li>
         <li class="nav-item flex-1"></li>
-        <li class="nav-item ml-3">
+        <li class="nav-item ml-3" v-cursor-block>
           <AppLanguageSelect />
         </li>
-        <li class="nav-item flex items-center justify-center ml-3">
+        <li
+          class="nav-item flex items-center justify-center ml-3"
+          v-cursor-block
+        >
           <ClientOnly fallback-tag="i">
             <AppThemeToggle />
             <template #fallback>
