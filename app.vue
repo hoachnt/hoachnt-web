@@ -14,6 +14,7 @@ const colorMode = useColorMode({
     cafe: "cafe",
   },
 });
+const { isMobile } = useDevice();
 const cursor = () =>
   useCursor().updateConfig({
     textStyle: {
@@ -46,10 +47,14 @@ watch(
   () => onAfterEnter()
 );
 watch(colorMode, () => {
+  if (isMobile()) return;
+
   cursor();
 });
 
 onMounted(() => {
+  if (isMobile()) return;
+
   cursor();
 }),
   useSeoMeta({
