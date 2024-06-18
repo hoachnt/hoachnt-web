@@ -69,7 +69,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <NuxtLoadingIndicator color="#facc15" />
+  <NuxtLoadingIndicator color="#34d399" />
   <!-- <ClientOnly>
     <AppCursor />
   </ClientOnly> -->
