@@ -8,10 +8,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       // global configurations
       blockStyle: {
         radius: "8px",
-        border: "1px solid #fff",
       },
       enableAutoTextCursor: true,
-      enableLighting: true,
       enableMouseDownEffect: true,
       enableAutoUpdateCursor: true,
     });

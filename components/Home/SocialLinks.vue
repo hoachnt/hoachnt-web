@@ -11,7 +11,6 @@
         class="flex items-end gap-4 dark:hover:text-gray-300 group"
         target="_blank"
         external
-        v-cursor-block
       >
         <span class="text-sm">
           {{ link.name }}
@@ -35,7 +34,6 @@
         class="flex items-end gap-4 dark:hover:text-gray-300 group"
         target="_blank"
         external
-        v-cursor-block
       >
         <span class="text-sm">
           {{ link.name }}

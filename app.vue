@@ -1,11 +1,39 @@
 <script setup lang="ts">
+import { useCursor } from "ipad-cursor/vue";
+import { useColorMode } from "@vueuse/core";
+
 const title = "Nguyen Tien Hoach";
 const description =
   "I'm a Fullstack independent software developer currently living in Vietnam.";
 
 const route = useRoute();
 const { finalizePendingLocaleChange } = useI18n();
-
+const colorMode = useColorMode({
+  emitAuto: true,
+  modes: {
+    cafe: "cafe",
+  },
+});
+const cursor = () =>
+  useCursor().updateConfig({
+    textStyle: {
+      background:
+        colorMode.value === "dark"
+          ? "rgba(255, 255, 255, 0.8)"
+          : colorMode.value === "light"
+            ? "rgba(0, 0, 0, 0.8)"
+            : "rgba(150, 150, 150, 0.5)",
+    },
+    normalStyle: {
+      background:
+        colorMode.value === "auto" || colorMode.value === "cafe"
+          ? "rgba(150, 150, 150, 0.5)"
+          : "rgba(150, 150, 150, 0.2)",
+    },
+    mouseDownStyle: {
+      background: "rgba(150, 150, 150, 0.4)",
+    },
+  });
 const onBeforeEnter = async () => {
   await finalizePendingLocaleChange();
 };
@@ -17,16 +45,22 @@ watch(
   () => route.path,
   () => onAfterEnter()
 );
-
-useSeoMeta({
-  title,
-  ogTitle: title,
-  description,
-  ogDescription: description,
-  ogSiteName: "Nguyen Tien Hoach portfolio",
-  ogImage: "https://hoachnt.com/social-card.png",
-  twitterCard: "summary_large_image",
+watch(colorMode, () => {
+  cursor();
 });
+
+onMounted(() => {
+  cursor();
+}),
+  useSeoMeta({
+    title,
+    ogTitle: title,
+    description,
+    ogDescription: description,
+    ogSiteName: "Nguyen Tien Hoach portfolio",
+    ogImage: "https://hoachnt.com/social-card.png",
+    twitterCard: "summary_large_image",
+  });
 </script>
 
 <template>
