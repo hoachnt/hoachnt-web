@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1
-      class="text-2xl font-bold text-zinc-800 dark:text-zinc-100 capitalize tracking-[.007em]"
+      class="text-2xl font-bold text-zinc-800 dark:text-zinc-100 tracking-[.007em]"
       v-cursor-text
     >
       {{ title }}. <span class="text-zinc-400">{{ description }}.</span>
