@@ -69,7 +69,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <NuxtLoadingIndicator color="#7c7c7c" class="z-[9999]"/>
+  <NuxtLoadingIndicator color="#6d6d6d" class="z-[9999]" />
   <!-- <ClientOnly>
     <AppCursor />
   </ClientOnly> -->
@@ -100,5 +100,10 @@ body {
 .page-enter-from {
   opacity: 0;
   transform: translateY(5px);
+}
+
+::selection {
+  background-color: #000; /* Цвет фона выделенного текста */
+  color: #fff; /* Цвет текста */
 }
 </style>

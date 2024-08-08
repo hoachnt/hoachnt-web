@@ -13,19 +13,19 @@ export default {
   projects: {
     projects: "Projects",
     description:
-      "I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of.",
+      "Take a look",
   },
   articles: {
     articles: "Articles",
-    description: "Articles that I found interesting.",
+    description: "Interesting and informative",
   },
   bookmarks: {
     bookmarks: "Bookmarks",
-    description: "Awesome things I've found on the internet.",
+    description: "You will like",
   },
   lab: {
     lab: "Lab",
-    description: "Some random experiments with UI I find in my free time.",
+    description: "Try It",
   },
   navbar: {
     home: "Home",

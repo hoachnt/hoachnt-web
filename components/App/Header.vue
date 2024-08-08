@@ -1,14 +1,11 @@
 <template>
   <div>
     <h1
-      class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 capitalize"
+      class="text-2xl font-bold text-zinc-800 dark:text-zinc-100 capitalize tracking-[.007em]"
       v-cursor-text
     >
-      {{ title }}
+      {{ title }}. <span class="text-zinc-400">{{ description }}.</span>
     </h1>
-    <p class="mt-6 text-base text-gray-600 dark:text-gray-400" v-cursor-text>
-      {{ description }}
-    </p>
   </div>
 </template>
 

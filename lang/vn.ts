@@ -12,20 +12,19 @@ export default {
   },
   projects: {
     projects: "Dự án",
-    description:
-      "Tôi đã thực hiện rất nhiều dự án nhỏ trong nhiều năm, nhưng đây là những dự án tôi tự hào nhất.",
+    description: "Hãy xem thử",
   },
   articles: {
     articles: "Bài viết",
-    description: "Những bài viết mà tôi thấy thú vị.",
+    description: "Thú vị và bổ ích",
   },
   bookmarks: {
     bookmarks: "Dấu trang",
-    description: "Những điều tuyệt vời tôi đã tìm thấy trên internet.",
+    description: "Bạn sẽ thích",
   },
   lab: {
     lab: "Thí nghiệm",
-    description: "Một số thử nghiệm UI ngẫu nhiên tôi tìm thấy khi rảnh rỗi.",
+    description: "Hãy thử nó",
   },
   navbar: {
     home: "Trang chủ",
