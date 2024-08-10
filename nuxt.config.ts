@@ -83,7 +83,7 @@ export default defineNuxtConfig({
     display: "swap",
     families: {
       Inter: [400, 500, 600, 700, 800, 900],
-      Rubik: [400, 500, 600, 700, 800, 900],
+      Raleway: [400, 500, 600, 700, 800, 900],
     },
   },
 });

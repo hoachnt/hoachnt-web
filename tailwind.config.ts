@@ -35,7 +35,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        "Rubik",
+        "Raleway",
         "Inter",
         "Avenir Next",
         "Roboto",
