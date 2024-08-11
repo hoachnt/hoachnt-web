@@ -1,4 +1,6 @@
 export default defineNuxtRouteMiddleware((to) => {
+  return;
+
   if (import.meta.server || !document.startViewTransition) {
     return;
   }
