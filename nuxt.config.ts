@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   experimental: {
-    viewTransition: true,
+    // viewTransition: true,
   },
   devtools: { enabled: true },
   routeRules: {
