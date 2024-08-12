@@ -26,7 +26,12 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@vueuse/nuxt",
     "nuxt-delay-hydration",
+    "@nuxtjs/sitemap",
   ],
+  site: {
+    url: "https://www.hoachnt.com",
+    name: "Nguyen Tien Hoach",
+  },
   delayHydration: {
     mode: "mount",
     replayClick: true,
