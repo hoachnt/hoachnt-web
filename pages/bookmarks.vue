@@ -10,8 +10,7 @@
         <a
           :href="bookmark.url"
           target="_blank"
-          class="flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded-lg -m-2 text-sm min-w-0"
-          v-cursor-block
+          class="flex items-center gap-3 hover:bg-gray-200 dark:hover:bg-white/10 p-2 rounded-md -m-2 text-sm min-w-0 duration-200"
         >
           <UAvatar
             :src="getThumbnail(bookmark.url)"

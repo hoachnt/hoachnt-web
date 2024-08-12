@@ -11,46 +11,37 @@
         <li
           v-for="item in items"
           :key="item.path"
-          v-cursor-block
           class="hidden lg:block"
+          v-cursor-block
         >
-          <UTooltip
-            :text="item.name"
-            :ui="{ popper: { strategy: 'absolute' } }"
+          <ULink
+            :to="item.path"
+            prefetch
+            class="relative h-10 px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400"
+            active-class="text-primary-600 dark:text-primary-400"
           >
-            <ULink
-              :to="item.path"
-              prefetch
-              class="relative px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400"
-              active-class="text-primary-600 dark:text-primary-400"
-            >
-              <Icon
-                aria-hidden="true"
-                :name="$route.path === item.path ? item.iconActive : item.icon"
-                class="w-5 h-5 z-10"
-              />
-
-              <span
-                v-if="$route.path === item.path"
-                class="active-bg absolute h-8 w-8 z-0 rounded-full bg-gray-500/10 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              ></span>
-              <span class="sr-only">{{ item.name }}</span>
-            </ULink>
-          </UTooltip>
+            <span
+              v-if="$route.path === item.path"
+              class="active-bg absolute h-full w-full z-0 rounded-md bg-gray-500/10 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            ></span>
+            {{ item.name }}
+          </ULink>
         </li>
 
-        <UButton
-          color="primary"
-          variant="outline"
-          size="sm"
-          class="lg:hidden z-10 block"
-          v-cursor-block
-          @click="isOpen = true"
-        >
-          Menu
-        </UButton>
+        <li>
+          <UButton
+            color="primary"
+            variant="outline"
+            size="sm"
+            class="lg:hidden z-10 block"
+            v-cursor-block
+            @click="isOpen = true"
+          >
+            Menu
+          </UButton>
+        </li>
 
-        <LazyAppNavigationMenu
+        <LazyAppNavigationSliderOver
           v-if="isOpen"
           :close="() => close()"
           v-model:is-open="isOpen"

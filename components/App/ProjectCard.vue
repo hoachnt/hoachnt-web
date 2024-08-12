@@ -1,10 +1,9 @@
 <template>
   <NuxtLink
-    class="flex items-end gap-4 group p-2 -m-2 rounded-lg"
+    class="flex items-end gap-4 group p-2 -m-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200"
     :to="project.url"
     target="_blank"
     external
-    v-cursor-block
   >
     <div class="max-w-sm">
       <h3 class="text-sm font-medium group-hover:text-primary-600">

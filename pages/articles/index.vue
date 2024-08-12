@@ -6,7 +6,11 @@
       :description="$t('articles.description')"
     />
     <ul class="space-y-16">
-      <li v-for="(article, id) in articles" :key="id">
+      <li
+        v-for="(article, id) in articles"
+        :key="id"
+        class="hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200"
+      >
         <AppArticleCard :article="article" />
       </li>
     </ul>
@@ -20,13 +24,8 @@ useSeoMeta({
   description,
 });
 const localePath = useLocalePath();
-const route = useRoute();
 
-const { data: articles } = await useAsyncData(
-  "all-articles",
-  () => queryContent(localePath("/articles")).sort({ published: -1 }).find(),
-  {
-    watch: [route.path],
-  }
+const { data: articles } = await useAsyncData("all-articles", () =>
+  queryContent(localePath("/articles")).sort({ published: -1 }).find()
 );
 </script>
