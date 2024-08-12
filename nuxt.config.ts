@@ -99,4 +99,8 @@ export default defineNuxtConfig({
       Raleway: [400, 500, 600, 700, 800, 900],
     },
   },
+  image: {
+    domains: ["hoachnt.com"],
+    format: ["webp"],
+  },
 });

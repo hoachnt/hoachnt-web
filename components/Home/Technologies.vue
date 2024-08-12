@@ -14,7 +14,7 @@
         external
         prefetch
         class="item duration-200 ease-in-out transition-all"
-        v-cursor-block="{radius: '24px'}"
+        v-cursor-block="{ radius: '24px' }"
       >
         <UCard
           :ui="{
@@ -46,12 +46,14 @@
             class="w-full h-full"
             v-if="technology.icon"
           />
-          <img
+          <NuxtImg
             v-else
             :src="technology.iconUrl"
             :alt="technology.title"
             class="w-full h-full object-contain"
+            sizes="66px"
             format="webp"
+            placeholder
           />
         </UCard>
       </NuxtLink>

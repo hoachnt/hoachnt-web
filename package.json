@@ -30,6 +30,7 @@
     "@nuxt/ui": "2.16.0",
     "ipad-cursor": "^0.5.2",
     "sass": "^1.77.5",
+    "sharp": "^0.33.4",
     "vue-use-fixed-header": "^2.0.3"
   }
 }

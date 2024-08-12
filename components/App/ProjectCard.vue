@@ -15,15 +15,21 @@
       class="flex-1 border-b border-dashed border-gray-300 dark:border-gray-800 group-hover:border-gray-700"
     ></div>
     <UAvatar
+      :as="NuxtImg"
       :src="project.thumbnail"
       :ui="{ rounded: 'rounded z-10 relative' }"
-      size="md"
       :alt="project.name"
+      placeholder
+      format="webp"
+      size="md"
+      sizes="40px"
     />
   </NuxtLink>
 </template>
 
 <script setup>
+import { NuxtImg } from "#components";
+
 defineProps({
   project: {
     type: Object,
