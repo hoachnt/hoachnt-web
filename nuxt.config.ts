@@ -25,7 +25,15 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/i18n",
     "@vueuse/nuxt",
+    "nuxt-delay-hydration",
   ],
+  delayHydration: {
+    mode: "mount",
+    replayClick: true,
+    // enables nuxt-delay-hydration in dev mode for testing
+    // NOTE: you should disable this once you've finished testing, it will break HMR
+    debug: process.env.NODE_ENV === "development",
+  },
   i18n: {
     vueI18n: "./i18n.config.ts",
     skipSettingLocaleOnNavigate: true,

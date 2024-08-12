@@ -50,7 +50,11 @@
           Menu
         </UButton>
 
-        <AppNavigationMenu :close="() => close()" v-model:is-open="isOpen" />
+        <LazyAppNavigationMenu
+          v-if="isOpen"
+          :close="() => close()"
+          v-model:is-open="isOpen"
+        />
 
         <li class="nav-item flex-1"></li>
         <li class="nav-item ml-3" v-cursor-block>
