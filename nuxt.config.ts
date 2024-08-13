@@ -2,7 +2,9 @@ export default defineNuxtConfig({
     experimental: {
         // viewTransition: true,
     },
+
     devtools: { enabled: true },
+
     routeRules: {
         "/bookmarks": { prerender: true },
         "/projects": { prerender: true },
@@ -10,6 +12,7 @@ export default defineNuxtConfig({
         "/projects/**": { prerender: true },
         "/sitemap.xml": { prerender: true },
     },
+
     plugins: [
         "~/plugins/ipad-cursor",
         "~/plugins/intersection-observer.client",
@@ -29,11 +32,46 @@ export default defineNuxtConfig({
         "@vueuse/nuxt",
         "nuxt-delay-hydration",
         "@nuxtjs/sitemap",
+        "nuxt-booster",
     ],
+
+    booster: {
+        detection: {
+            performance: true,
+            browserSupport: true,
+            battery: true,
+        },
+        performanceMetrics: {
+            device: {
+                hardwareConcurrency: { min: 2, max: 48 },
+                deviceMemory: { min: 2 },
+            },
+            timing: {
+                fcp: 800,
+                dcl: 1200,
+            },
+        },
+        targetFormats: ["webp", "avif", "jpg|jpeg|png|gif"],
+        optimizeSSR: {
+            cleanPreloads: true,
+            cleanPrefetches: true,
+            inlineStyles: true,
+        },
+
+        componentAutoImport: false,
+        componentPrefix: undefined,
+
+        lazyOffset: {
+            component: "0%",
+            asset: "0%",
+        },
+    },
+
     site: {
         url: "https://www.hoachnt.com",
         name: "Nguyen Tien Hoach",
     },
+
     delayHydration: {
         mode: "mount",
         replayClick: true,
@@ -41,6 +79,7 @@ export default defineNuxtConfig({
         // NOTE: you should disable this once you've finished testing, it will break HMR
         debug: process.env.NODE_ENV === "development",
     },
+
     i18n: {
         vueI18n: "./i18n.config.ts",
         skipSettingLocaleOnNavigate: true,
@@ -74,9 +113,11 @@ export default defineNuxtConfig({
             alwaysRedirect: true,
         },
     },
+
     ui: {
         icons: ["heroicons", "lucide"],
     },
+
     app: {
         pageTransition: { name: "page", mode: "out-in" },
         head: {
@@ -89,11 +130,13 @@ export default defineNuxtConfig({
             },
         },
     },
+
     content: {
         highlight: {
             theme: "github-dark",
         },
     },
+
     googleFonts: {
         display: "swap",
         families: {
@@ -101,6 +144,7 @@ export default defineNuxtConfig({
             Raleway: [400, 500, 600, 700, 800, 900],
         },
     },
+
     image: {
         domains: ["www.hoachnt.com"],
         format: ["webp"],
@@ -122,4 +166,6 @@ export default defineNuxtConfig({
             "80": 80,
         },
     },
+
+    compatibilityDate: "2024-08-14",
 });

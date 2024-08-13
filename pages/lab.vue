@@ -49,6 +49,9 @@
 </template>
 
 <script setup lang="ts">
+const hydrate = useBoosterHydrate();
+const AppHeader = hydrate(() => import("~/components/App/Header.vue"));
+
 import { LazyContentRenderer } from "#components";
 
 const description = "Some random experiments with UI I find in my free time.";
