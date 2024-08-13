@@ -10,7 +10,10 @@ export default defineNuxtConfig({
         "/projects/**": { prerender: true },
         "/sitemap.xml": { prerender: true },
     },
-    plugins: ["~/plugins/ipad-cursor"],
+    plugins: [
+        "~/plugins/ipad-cursor",
+        "~/plugins/intersection-observer.client.ts",
+    ],
 
     modules: [
         "@nuxt/ui",
@@ -100,17 +103,21 @@ export default defineNuxtConfig({
     image: {
         domains: ["www.hoachnt.com"],
         format: ["webp"],
-
         provider: "vercel",
         vercel: {
             baseURL: "https://www.hoachnt.com/_vercel/image",
         },
         screens: {
-            xs: 40,
+            xs: 10,
             sm: 40,
-            md: 50,
+            md: 48, // Add 48
             lg: 50,
             xl: 60,
+            xxl: 64, // Add 64
+            "2xl": 66, // Add 66
+            "3xl": 96, // Add 96
+            "4xl": 128, // Add 128
+            "5xl": 132, // Add 132
         },
     },
 });

@@ -1,12 +1,22 @@
 <script setup lang="ts">
 import { useCursor } from "ipad-cursor/vue";
 import { useColorMode } from "@vueuse/core";
+import { LazyAppFooter } from "#components";
 
 const title = "Nguyen Tien Hoach";
 const description =
     "I'm a Fullstack independent software developer currently living in Vietnam.";
 
-const route = useRoute();
+useSeoMeta({
+    title,
+    ogTitle: title,
+    description,
+    ogDescription: description,
+    ogSiteName: "Nguyen Tien Hoach portfolio",
+    ogImage: "https://hoachnt.com/social-card.png",
+    twitterCard: "summary_large_image",
+});
+
 const colorMode = useColorMode({
     emitAuto: true,
     modes: {
@@ -14,47 +24,40 @@ const colorMode = useColorMode({
     },
 });
 const { isMobile } = useDevice();
-const cursor = () =>
+const showFooter = ref(false);
+
+const cursorStyles = {
+    dark: "rgba(255, 255, 255, 0.8)",
+    light: "rgba(0, 0, 0, 0.8)",
+    auto: "rgba(150, 150, 150, 0.5)",
+    cafe: "rgba(150, 150, 150, 0.5)",
+};
+
+function updateCursor() {
     useCursor().updateConfig({
         textStyle: {
             background:
-                colorMode.value === "dark"
-                    ? "rgba(255, 255, 255, 0.8)"
-                    : colorMode.value === "light"
-                      ? "rgba(0, 0, 0, 0.8)"
-                      : "rgba(150, 150, 150, 0.5)",
+                cursorStyles[colorMode.value] || "rgba(150, 150, 150, 0.5)",
         },
         normalStyle: {
-            background:
-                colorMode.value === "auto" || colorMode.value === "cafe"
-                    ? "rgba(150, 150, 150, 0.5)"
-                    : "rgba(150, 150, 150, 0.2)",
+            background: ["auto", "cafe"].includes(colorMode.value)
+                ? "rgba(150, 150, 150, 0.5)"
+                : "rgba(150, 150, 150, 0.2)",
         },
         mouseDownStyle: {
             background: "rgba(150, 150, 150, 0.4)",
         },
     });
+}
 
-watch(colorMode, () => {
-    if (isMobile()) return;
+if (!isMobile()) {
+    watch(colorMode, updateCursor);
+    onMounted(updateCursor);
+}
 
-    cursor();
-});
-
-onMounted(() => {
-    if (isMobile()) return;
-
-    cursor();
-}),
-    useSeoMeta({
-        title,
-        ogTitle: title,
-        description,
-        ogDescription: description,
-        ogSiteName: "Nguyen Tien Hoach portfolio",
-        ogImage: "https://hoachnt.com/social-card.png",
-        twitterCard: "summary_large_image",
-    });
+function loadMoreContent() {
+    showFooter.value = true;
+}
 </script>
 
 <template>
@@ -65,7 +68,11 @@ onMounted(() => {
         <NuxtPage />
     </UContainer>
     <div class="h-4"></div>
-    <AppFooter />
+    <ClientOnly fallback-tag="span" fallback="Footer">
+        <div v-observe-bottom="loadMoreContent" class="h-1">
+            <LazyAppFooter v-if="showFooter" />
+        </div>
+    </ClientOnly>
 </template>
 
 <style>
@@ -78,6 +85,7 @@ onMounted(() => {
     --selection-bg: #fff;
     --selection-color: #000;
 }
+
 body {
     overflow-x: hidden;
 }
