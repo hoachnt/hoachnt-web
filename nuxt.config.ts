@@ -6,12 +6,6 @@ export default defineNuxtConfig({
     routeRules: {
         "/bookmarks": { prerender: true },
     },
-    nitro: {
-      prerender: {
-        crawlLinks: true,
-      },
-    },
-
     plugins: ["~/plugins/ipad-cursor"],
 
     modules: [
@@ -28,7 +22,6 @@ export default defineNuxtConfig({
         "nuxt-delay-hydration",
         "@nuxtjs/sitemap",
     ],
-
     site: {
         url: "https://www.hoachnt.com",
         name: "Nguyen Tien Hoach",
@@ -103,7 +96,5 @@ export default defineNuxtConfig({
     image: {
         domains: ["hoachnt.com"],
         format: ["webp"],
-    },
-    build: {
     },
 });
