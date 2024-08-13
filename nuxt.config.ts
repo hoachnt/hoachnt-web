@@ -103,7 +103,7 @@ export default defineNuxtConfig({
 
         provider: "vercel",
         vercel: {
-            baseURL: "https://www.hoachnt.com/" 
+            baseURL: "https://www.hoachnt.com/_vercel/image" 
         }
     },
 });
