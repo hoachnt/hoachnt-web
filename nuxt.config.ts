@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     },
     plugins: [
         "~/plugins/ipad-cursor",
-        "~/plugins/intersection-observer.client.ts",
+        "~/plugins/intersection-observer.client",
+        "~/plugins/scroll-behavior.client",
     ],
 
     modules: [
@@ -110,14 +111,15 @@ export default defineNuxtConfig({
         screens: {
             xs: 10,
             sm: 40,
-            md: 48, // Add 48
+            md: 48,
             lg: 50,
             xl: 60,
-            xxl: 64, // Add 64
-            "2xl": 66, // Add 66
-            "3xl": 96, // Add 96
-            "4xl": 128, // Add 128
-            "5xl": 132, // Add 132
+            xxl: 64,
+            "2xl": 66,
+            "3xl": 96,
+            "4xl": 128,
+            "5xl": 132,
+            "80": 80,
         },
     },
 });

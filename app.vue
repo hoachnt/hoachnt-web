@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useCursor } from "ipad-cursor/vue";
 import { useColorMode } from "@vueuse/core";
-import { LazyAppFooter } from "#components";
 
 const title = "Nguyen Tien Hoach";
 const description =
@@ -24,7 +23,6 @@ const colorMode = useColorMode({
     },
 });
 const { isMobile } = useDevice();
-const showFooter = ref(false);
 
 const cursorStyles = {
     dark: "rgba(255, 255, 255, 0.8)",
@@ -54,10 +52,6 @@ if (!isMobile()) {
     watch(colorMode, updateCursor);
     onMounted(updateCursor);
 }
-
-function loadMoreContent() {
-    showFooter.value = true;
-}
 </script>
 
 <template>
@@ -68,11 +62,7 @@ function loadMoreContent() {
         <NuxtPage />
     </UContainer>
     <div class="h-4"></div>
-    <ClientOnly fallback-tag="span" fallback="Footer">
-        <div v-observe-bottom="loadMoreContent" class="h-1">
-            <LazyAppFooter v-if="showFooter" />
-        </div>
-    </ClientOnly>
+    <AppFooter />
 </template>
 
 <style>
@@ -86,6 +76,9 @@ function loadMoreContent() {
     --selection-color: #000;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     overflow-x: hidden;
 }
