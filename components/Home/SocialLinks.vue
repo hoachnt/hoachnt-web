@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="uppercase text-xs font-semibold text-gray-400 mb-4">
+    <h2 :class="headingStyle">
       {{ $t("home.followMeOn") }}
     </h2>
     <div class="space-y-5">
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div>
-    <h2 class="uppercase text-xs font-semibold text-gray-400 mb-4">
+    <h2 :class="headingStyle">
       {{ $t("home.contactsForWork") }}
     </h2>
     <div class="space-y-5">
@@ -48,6 +48,9 @@
 </template>
 
 <script lang="ts" setup>
+const headingStyle =
+  "uppercase text-xs font-semibold text-white p-1 mb-4 bg-black dark:bg-white dark:text-black w-fit";
+
 const linksToFollow = [
   {
     name: "GitHub",

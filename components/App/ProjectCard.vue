@@ -22,7 +22,8 @@
       placeholder
       format="webp"
       size="md"
-      sizes="40px"
+      width="40px"
+      height="40px"
     />
   </NuxtLink>
 </template>
