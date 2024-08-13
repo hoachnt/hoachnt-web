@@ -98,7 +98,7 @@ export default defineNuxtConfig({
         },
     },
     image: {
-        domains: ["hoachnt.com"],
+        domains: ["www.hoachnt.com"],
         format: ["webp"],
     },
 });
