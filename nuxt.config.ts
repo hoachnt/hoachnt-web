@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     routeRules: {
         "/bookmarks": { prerender: true },
+        "/projects": { prerender: true },
+        "/lab": { prerender: true },
+        "/projects/**": { prerender: true },
+        "/sitemap.xml": { prerender: true },
     },
     plugins: ["~/plugins/ipad-cursor"],
 
