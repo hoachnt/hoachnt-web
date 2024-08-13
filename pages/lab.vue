@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 const hydrate = useBoosterHydrate();
-const AppHeader = hydrate(() => import("~/components/App/Header.vue"));
+const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
 
 import { LazyContentRenderer } from "#components";
 

@@ -17,9 +17,9 @@
 
 <script setup lang="ts">
 const hydrate = useBoosterHydrate();
-const AppHeader = hydrate(() => import("~/components/App/Header.vue"));
+const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
 const AppProjectCard = hydrate(
-    () => import("~/components/App/ProjectCard.vue")
+    () => import("@/components/App/ProjectCard.vue")
 );
 
 const description =

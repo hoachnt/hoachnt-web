@@ -19,9 +19,9 @@
 
 <script setup>
 const hydrate = useBoosterHydrate();
-const AppHeader = hydrate(() => import("~/components/App/Header.vue"));
+const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
 const AppArticleCard = hydrate(
-    () => import("~/components/App/ArticleCard.vue")
+    () => import("@/components/App/ArticleCard.vue")
 );
 
 const description = "Interesting articles that I found interesting.";

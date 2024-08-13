@@ -34,7 +34,7 @@
 
 <script setup>
 const hydrate = useBoosterHydrate();
-const AppHeader = hydrate(() => import("~/components/App/Header.vue"));
+const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
 
 const description = "Awesome things I've found on the internet.";
 useSeoMeta({
