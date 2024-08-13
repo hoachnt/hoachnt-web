@@ -100,5 +100,10 @@ export default defineNuxtConfig({
     image: {
         domains: ["www.hoachnt.com"],
         format: ["webp"],
+
+        provider: "vercel",
+        vercel: {
+            baseURL: "https://www.hoachnt.com/" 
+        }
     },
 });
