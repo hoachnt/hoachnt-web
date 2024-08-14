@@ -41,4 +41,4 @@ slug: "dieter-rams"
 
 ## Заключение
 
-Dieter Rams remains a pivotal figure in the world of design. His principles of minimalism and functionality have established him as the father of modern minimalism, leaving a legacy that continues to inspire and shape the industry.
+Дитер Рамс остается ключевой фигурой в мире дизайна. Его принципы минимализма и функциональности утвердили его как отца современного минимализма, оставив наследие, которое продолжает вдохновлять и формировать индустрию.
