@@ -18,7 +18,7 @@ const route = useRoute();
 
 useSeoMeta({
     ogSiteName: `Articles | Nguyen Tien Hoach`,
-    ogImage: `https://hoachnt.com${route.path}`,
+    ogImage: `https://hoachnt.com${route.path}.jpg`,
     twitterCard: "summary_large_image",
 });
 </script>
