@@ -39,6 +39,8 @@ Born in 1932 in Wiesbaden, Germany. In his youth, Rams studied at a technical ar
 9. Good design is environmentally friendly
 10. Good design is as little design as possible
 
+---
+
 ## Conclusion
 
 Dieter Rams remains a pivotal figure in the world of design. His principles of minimalism and functionality have established him as the father of modern minimalism, leaving a legacy that continues to inspire and shape the industry.
