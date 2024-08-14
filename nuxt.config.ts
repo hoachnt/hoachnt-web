@@ -163,7 +163,9 @@ export default defineNuxtConfig({
             "3xl": 96,
             "4xl": 128,
             "5xl": 132,
-            "80": 80,
+            "6xl": 80,
+            "7xl": 600,
+            "8xl": 1200,
         },
     },
 
