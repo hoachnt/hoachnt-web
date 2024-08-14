@@ -11,7 +11,7 @@ useSeoMeta({
     ogTitle: title,
     description,
     ogDescription: description,
-    ogSiteName: "Nguyen Tien Hoach portfolio",
+    ogSiteName: "Nguyen Tien Hoach",
     ogImage: "https://hoachnt.com/social-card.png",
     twitterCard: "summary_large_image",
 });
