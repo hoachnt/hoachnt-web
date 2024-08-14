@@ -101,12 +101,6 @@ const items = computed(() => {
       iconActive: "solar:document-bold",
     },
     {
-      name: t("navbar.bookmarks"),
-      path: localePath("/bookmarks"),
-      icon: "solar:bookmark-outline",
-      iconActive: "solar:bookmark-bold",
-    },
-    {
       name: t("navbar.lab"),
       path: localePath("/lab"),
       icon: "heroicons:beaker",
