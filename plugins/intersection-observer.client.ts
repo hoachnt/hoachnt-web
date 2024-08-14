@@ -1,29 +1,19 @@
-// plugins/intersectionObserver.client.ts
+import type { RouteLocationNormalized } from "vue-router";
 
 export default defineNuxtPlugin((nuxtApp) => {
-    nuxtApp.vueApp.directive("observe-bottom", {
-        mounted(el, binding) {
-            const callback = binding.value;
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    if (entries[0].isIntersecting) {
-                        callback(); // Trigger the provided callback
+    nuxtApp.vueApp.config.globalProperties.$router.afterEach(
+        (to: RouteLocationNormalized) => {
+            if (to.hash) {
+                setTimeout(() => {
+                    const element = document.querySelector(to.hash);
+                    
+                    if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
                     }
-                },
-                {
-                    root: null, // Observe the element in the viewport
-                    threshold: 0.1, // Trigger when 10% of the element is visible
-                }
-            );
-
-            observer.observe(el);
-
-            el._observer = observer; // Store the observer instance for cleanup
-        },
-        unmounted(el) {
-            if (el._observer) {
-                el._observer.disconnect(); // Clean up observer when element is removed
+                }, 0);
+            } else {
+                window.scrollTo(0, 0);
             }
-        },
-    });
+        }
+    );
 });
