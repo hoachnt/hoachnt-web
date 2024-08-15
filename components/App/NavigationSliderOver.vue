@@ -20,6 +20,12 @@ const navlist = computed(() => [
         path: localePath("/lab"),
     },
 ]);
+
+function scrollToTop() {
+    if (window) {
+        window.scrollTo(0, 0);
+    }
+}
 </script>
 
 <template>
@@ -39,13 +45,18 @@ const navlist = computed(() => [
                     @click="close()"
                 />
                 <ULink
-                    v-for="(item, index) in navlist"
+                    v-for="item in navlist"
                     :key="item.path"
                     :to="item.path"
                     active-class="text-primary"
                     class="text-4xl py-4 duration-200 transition ease-in-out w-full text-center"
                     inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
-                    @click="close()"
+                    @click="
+                        () => {
+                            close();
+                            scrollToTop();
+                        }
+                    "
                 >
                     {{ item.name }}
                 </ULink>

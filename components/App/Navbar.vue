@@ -16,6 +16,7 @@
                 >
                     <ULink
                         :to="item.path"
+                        @click="scrollToTop()"
                         prefetch
                         class="relative h-10 px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400"
                         active-class="text-primary-600 dark:text-primary-400"
@@ -116,6 +117,11 @@ const { styles } = useFixedHeader(headerRef, {
 
 function close() {
     isOpen.value = false;
+}
+function scrollToTop() {
+    if (window) {
+        window.scrollTo(0, 0);
+    }
 }
 </script>
 
