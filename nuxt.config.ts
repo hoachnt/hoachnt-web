@@ -133,7 +133,14 @@ export default defineNuxtConfig({
 
     content: {
         highlight: {
-            theme: "github-dark",
+            theme: {
+                // Default theme (same as single string)
+                default: "monokai",
+                // Theme used if `html.dark`
+                dark: "github-dark",
+                // Theme used if `html.sepia`
+                cafe: "monokai",
+            },
         },
     },
 

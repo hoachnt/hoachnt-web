@@ -2,7 +2,7 @@
   <div
     ref="headerRef"
     :style="styles"
-    class="nav-wrapper fixed top-0 w-full z-50 bg-inherit backdrop-blur-md"
+    class="nav-wrapper fixed top-0 w-full z-50 bg-inherit backdrop-blur-3xl"
   >
     <nav class="mx-auto px-3 max-w-2xl">
       <ul
