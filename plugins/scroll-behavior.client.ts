@@ -11,8 +11,6 @@ export default defineNuxtPlugin((nuxtApp) => {
                         element.scrollIntoView({ behavior: "smooth" });
                     }
                 }, 0);
-            } else {
-                window.scrollTo(0, 0);
             }
         }
     );
