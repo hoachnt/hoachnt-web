@@ -142,7 +142,10 @@ export default defineNuxtConfig({
                 cafe: "monokai",
             },
         },
-        documentDriven: true,
+    },
+
+    sitemap: {
+        strictNuxtContentPaths: true,
     },
 
     googleFonts: {
