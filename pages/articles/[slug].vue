@@ -1,6 +1,8 @@
 <template>
     <main class="min-h-screen">
-        <ArticlesSidebar :sections="sections" />
+        <Transition name="fade">
+            <ArticlesSidebar :sections="sections" />
+        </Transition>
         <div
             class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
         >
@@ -34,6 +36,16 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
 .prose h2 a,
 .prose h3 a {
     @apply no-underline;
