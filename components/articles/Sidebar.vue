@@ -2,7 +2,7 @@
     <aside
         ref="headerRef"
         :style="styles"
-        class="p-4 dark:bg-primary-900/50 bg-primary-100/50 backdrop-blur-3xl mb-11 sticky top-0 left-0 max-h-52"
+        class="p-4 dark:bg-primary-900/50 bg-primary-100/50 backdrop-blur-3xl mb-11 sticky top-0 left-0 max-h-52 z-50"
     >
         <ul class="space-y-2">
             <li v-for="section in sections" :key="section.id">
