@@ -9,7 +9,7 @@
         <UInput
             v-model="search"
             name="search"
-            placeholder="Search..."
+            :placeholder="`${$t('articles.search')}...`"
             icon="i-heroicons-magnifying-glass-20-solid"
             autocomplete="off"
             class="mb-10"
@@ -24,6 +24,7 @@
                     icon="i-heroicons-x-mark-20-solid"
                     :padded="false"
                     @click="search = ''"
+                    v-cursor-block
                 />
             </template>
         </UInput>
@@ -34,6 +35,9 @@
                 class="hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200 max-w-2xl"
             >
                 <AppArticleCard :article="article" />
+            </li>
+            <li key="not-found" v-if="results?.length === 0">
+                {{ $t("articles.notFound") }}
             </li>
         </TransitionGroup>
     </main>
@@ -55,6 +59,7 @@ useSeoMeta({
 
 const localePath = useLocalePath();
 const route = useRoute();
+const { t } = useI18n();
 
 const search = ref("");
 
@@ -64,6 +69,7 @@ const { data: articles } = await useAsyncData(
 );
 
 const results = computed(() => filterArticles(articles));
+const notFound = computed(() => t("articles.notFound"));
 
 function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
     const result = articles.value?.filter((article) =>
