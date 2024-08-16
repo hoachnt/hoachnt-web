@@ -48,7 +48,7 @@ function scrollToTop() {
                     v-for="item in navlist"
                     :key="item.path"
                     :to="item.path"
-                    active-class="text-primary"
+                    active-class="text-primary-950 dark:text-primary-50"
                     class="text-4xl py-4 duration-200 transition ease-in-out w-full text-center"
                     inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                     @click="
