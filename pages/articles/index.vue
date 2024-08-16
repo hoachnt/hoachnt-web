@@ -54,11 +54,13 @@ useSeoMeta({
 });
 
 const localePath = useLocalePath();
+const route = useRoute();
 
 const search = ref("");
 
-const { data: articles } = await useAsyncData("all-articles", () =>
-    queryContent(localePath("/articles")).sort({ published: -1 }).find()
+const { data: articles } = await useAsyncData(
+    `all-articles-${route.path}`,
+    () => queryContent(localePath("/articles")).sort({ published: -1 }).find()
 );
 
 const results = computed(() => filterArticles(articles));
