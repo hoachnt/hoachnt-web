@@ -1,5 +1,5 @@
 ---
-title: "YanhoScript"
+title: "YanghoScript"
 description: "YanghoScript is a simple programming language with the ability to work with variables, arithmetic operations and display results. Was built for Vietnamese gangsters😎"
 published: 2024/8/16
 slug: "yangho-script"
@@ -71,4 +71,4 @@ NOILIENTUC 2 MORE THAN 1;
 NOILIENTUC 1 LESS THAN 2;
 ```
 
-Don't forget that YanhoScript is a joke programming language.
+Don't forget that YanghoScript is a joke programming language.
