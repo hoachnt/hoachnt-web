@@ -8,8 +8,9 @@ export default defineNuxtConfig({
     routeRules: {
         "/bookmarks": { prerender: true },
         "/projects": { prerender: true },
+        "/articles": { prerender: true },
+        "/articles/**": { prerender: true },
         "/lab": { prerender: true },
-        "/projects/**": { prerender: true },
         "/sitemap.xml": { prerender: true },
     },
 
@@ -33,6 +34,7 @@ export default defineNuxtConfig({
         "nuxt-delay-hydration",
         "@nuxtjs/sitemap",
         "nuxt-booster",
+        "@vueuse/nuxt",
     ],
 
     booster: {
@@ -140,6 +142,11 @@ export default defineNuxtConfig({
                 dark: "github-dark",
                 // Theme used if `html.sepia`
                 cafe: "monokai",
+            },
+        },
+        experimental: {
+            search: {
+                indexed: true,
             },
         },
     },

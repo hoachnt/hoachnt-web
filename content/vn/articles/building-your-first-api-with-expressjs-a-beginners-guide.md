@@ -76,6 +76,7 @@ let users = [{ name: "Alice" }, { name: "Bob" }];
 app.get('/users', (req, res) => {
   res.json(users);
 });
+
 ```
 
 Bây giờ, nếu bạn truy cập http://localhost:3000/users, bạn sẽ thấy biểu diễn JSON của mảng người dùng.

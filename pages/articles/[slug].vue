@@ -21,6 +21,7 @@
 
 <script setup>
 const route = useRoute();
+
 const sections = ref([]);
 const showArticlesSidebar = ref(false);
 
