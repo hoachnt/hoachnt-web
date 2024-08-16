@@ -1,7 +1,10 @@
 <template>
     <main class="min-h-screen">
         <Transition name="fade">
-            <ArticlesSidebar :sections="sections" />
+            <LazyArticlesSidebar
+                :sections="sections"
+                v-if="showArticlesSidebar"
+            />
         </Transition>
         <div
             class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
@@ -19,6 +22,7 @@
 <script setup>
 const route = useRoute();
 const sections = ref([]);
+const showArticlesSidebar = ref(false);
 
 useSeoMeta({
     ogSiteName: `Articles | Nguyen Tien Hoach`,
@@ -32,6 +36,12 @@ onMounted(() => {
         id: heading.id,
         title: heading.textContent,
     }));
+
+    if (sections.value.length > 0) {
+        showArticlesSidebar.value = true;
+    } else {
+        showArticlesSidebar.value = false;
+    }
 });
 </script>
 
