@@ -27,15 +27,15 @@
                 />
             </template>
         </UInput>
-        <ul class="space-y-16">
+        <TransitionGroup name="list" tag="ul" class="space-y-16">
             <li
                 v-for="(article, id) in results"
                 :key="id"
-                class="hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200"
+                class="hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200 max-w-2xl"
             >
                 <AppArticleCard :article="article" />
             </li>
-        </ul>
+        </TransitionGroup>
     </main>
 </template>
 
@@ -73,3 +73,23 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
     return result;
 }
 </script>
+
+<style>
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+    transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+    position: absolute;
+}
+</style>
