@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :to="article._path" @click="scrollToTop()" class="group">
+    <NuxtLink :to="article._path" class="group">
         <article>
             <time
                 class="relative z-10 order-first mb-3 flex items-center text-sm text-gray-400 dark:text-gray-500 pl-3.5"
@@ -43,6 +43,4 @@ const getReadableDate = (dateString) => {
         day: "numeric",
     });
 };
-
-const scrollToTop = () => window.scrollTo(0, 0);
 </script>

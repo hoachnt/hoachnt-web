@@ -6,20 +6,22 @@
     >
         <ul class="space-y-2">
             <li v-for="section in sections" :key="section.id">
-                <ULink
-                    :to="`#${section.id}`"
+                <a
+                    :href="`#${section.id}`"
                     class="block !text-blue-500 dark:hover:!text-blue-200 hover:!text-blue-800 hover:underline duration-200"
-                    >{{ section.title }}</ULink
+                    >{{ section.title }}</a
                 >
             </li>
         </ul>
     </aside>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useFixedHeader } from "vue-use-fixed-header";
 
-const props = defineProps(["sections"]);
+const props = defineProps<{
+    sections: { id: string; title: string | null }[];
+}>();
 
 const headerRef = ref(null);
 

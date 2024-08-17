@@ -5,6 +5,8 @@ export default defineNuxtConfig({
 
     devtools: { enabled: true },
 
+    scrollBehavior(to: any, from: any, savedPosition: any) {},
+
     routeRules: {
         "/bookmarks": { prerender: true },
         "/projects": { prerender: true },
@@ -14,11 +16,7 @@ export default defineNuxtConfig({
         "/sitemap.xml": { prerender: true },
     },
 
-    plugins: [
-        "~/plugins/ipad-cursor",
-        "~/plugins/intersection-observer.client",
-        "~/plugins/scroll-behavior.client",
-    ],
+    plugins: ["~/plugins/ipad-cursor"],
 
     modules: [
         "@nuxt/ui",
@@ -30,11 +28,9 @@ export default defineNuxtConfig({
         "@nuxthq/studio",
         "@vueuse/nuxt",
         "@nuxtjs/i18n",
-        "@vueuse/nuxt",
         "nuxt-delay-hydration",
         "@nuxtjs/sitemap",
         "nuxt-booster",
-        "@vueuse/nuxt",
     ],
 
     booster: {
@@ -142,11 +138,6 @@ export default defineNuxtConfig({
                 dark: "github-dark",
                 // Theme used if `html.sepia`
                 cafe: "monokai",
-            },
-        },
-        experimental: {
-            search: {
-                indexed: true,
             },
         },
     },

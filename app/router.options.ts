@@ -1,16 +1,26 @@
 import type { RouterConfig } from "@nuxt/schema";
 
 export default <RouterConfig>{
-  async scrollBehavior(to, from, savedPosition) {
-    const nuxtApp = useNuxtApp();
+    async scrollBehavior(to, from, savedPosition) {
+        const nuxtApp = useNuxtApp();
 
-    // make sure the route has changed.
-    if (nuxtApp.$i18n && to.name !== from.name) {
-      // `$i18n` is injected in the `setup` of the nuxtjs/i18n module.
-      // `scrollBehavior` is guarded against being called even when it is not completed
-      await nuxtApp.$i18n.waitForPendingLocaleChange();
-    }
+        // Убедитесь, что маршрут изменился.
+        if (nuxtApp.$i18n && to.name !== from.name) {
+            await nuxtApp.$i18n.waitForPendingLocaleChange();
+        }
 
-    return savedPosition || { top: 0 };
-  },
+        // Если есть якорь (hash) в URL, прокручиваем к нему
+        if (to.hash) {
+            const element = document.querySelector(to.hash);
+            if (element) {
+                return {
+                    el: to.hash,
+                    behavior: "smooth", // или 'auto', если вам не нужна плавная прокрутка
+                };
+            }
+        }
+
+        // Если сохранена позиция, возвращаем её
+        return savedPosition || { top: 0 };
+    },
 };

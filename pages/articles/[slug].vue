@@ -1,11 +1,6 @@
 <template>
     <main class="min-h-screen">
-        <Transition name="fade">
-            <LazyArticlesSidebar
-                :sections="sections"
-                v-if="showArticlesSidebar"
-            />
-        </Transition>
+        <ArticlesSideBar :sections="sections" v-if="showArticlesSidebar" />
         <div
             class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
         >
@@ -19,10 +14,20 @@
     </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
+const hydrate = useBoosterHydrate();
+const ArticlesSideBar = hydrate(
+    () => import("@/components/Articles/Sidebar.client.vue")
+);
+
+interface ISection {
+    id: string;
+    title: string | null;
+}
+
 const route = useRoute();
 
-const sections = ref([]);
+const sections = ref<ISection[]>([]);
 const showArticlesSidebar = ref(false);
 
 useSeoMeta({
@@ -47,16 +52,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
-}
-
 .prose h2 a,
 .prose h3 a {
     @apply no-underline;
