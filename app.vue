@@ -2,16 +2,18 @@
 import { useCursor } from "ipad-cursor/vue";
 import { useColorMode } from "@vueuse/core";
 
-const title = "Nguyen Tien Hoach";
-const description =
-    "I'm a Fullstack independent software developer currently living in Vietnam.";
+const { t } = useI18n();
+
+const seoMeta = ref({
+    title: t("title"),
+    description: t("seo.home.description"),
+});
 
 useSeoMeta({
-    title,
-    ogTitle: title,
-    description,
-    ogDescription: description,
-    ogSiteName: "Nguyen Tien Hoach",
+    ...seoMeta.value,
+    ogTitle: seoMeta.value.title,
+    ogDescription: seoMeta.value.description,
+    ogSiteName: seoMeta.value.title,
     ogImage: "https://hoachnt.com/social-card.png",
     twitterCard: "summary_large_image",
 });

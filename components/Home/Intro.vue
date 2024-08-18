@@ -25,13 +25,7 @@
     </div>
 </template>
 
-<script setup>
-useSeoMeta({
-    title: "Nguyen Tien Hoach",
-    description:
-        "I'm an independent software developer currently living in Vietnam. I'm a Fullstack developer.",
-});
-</script>
+<script setup></script>
 <style scoped>
 h1 {
     view-transition-name: header;

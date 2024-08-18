@@ -7,6 +7,14 @@ const HomeTechnologies = hydrate(
 const HomeSocialLinks = hydrate(
     () => import("@/components/Home/SocialLinks.vue")
 );
+const { t } = useI18n();
+
+const seoMeta = ref({
+    title: t("seo.home.title"),
+    description: t("seo.home.description"),
+});
+
+useSeoMeta({ ...seoMeta.value });
 </script>
 
 <template>

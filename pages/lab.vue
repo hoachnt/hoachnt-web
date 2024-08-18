@@ -54,14 +54,16 @@ const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
 
 import { LazyContentRenderer } from "#components";
 
-const description = "Some random experiments with UI I find in my free time.";
-useSeoMeta({
-    title: "Lab | Nguyen Tien Hoach",
-    description,
+const visibleItems = ref<Set<string>>(new Set());
+const localePath = useLocalePath();
+const { t } = useI18n();
+
+const seoMeta = ref({
+    title: `${t("seo.lab.title")} | ${t("title")}`,
+    description: t("seo.lab.description"),
 });
 
-const localePath = useLocalePath();
-const visibleItems = ref<Set<string>>(new Set());
+useSeoMeta(seoMeta.value);
 
 function handleIntersection(path: string | undefined) {
     if (path) {

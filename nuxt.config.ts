@@ -112,8 +112,16 @@ export default defineNuxtConfig({
         },
     },
 
-    ui: {
-        icons: ["heroicons", "lucide"],
+    icon: {
+        serverBundle: {
+            collections: [
+                "heroicons-solid",
+                "heroicons",
+                "mdi",
+                "solar",
+                "logos",
+            ], // <!--- this
+        },
     },
 
     app: {
@@ -175,6 +183,15 @@ export default defineNuxtConfig({
             "6xl": 80,
             "7xl": 600,
             "8xl": 1200,
+        },
+    },
+
+    mdc: {
+        highlight: {
+            langs: [
+                "bash", 
+                "javascript", 
+            ],
         },
     },
 

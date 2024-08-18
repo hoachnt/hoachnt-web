@@ -37,7 +37,7 @@
                         v-cursor-block
                         @click="isOpen = true"
                     >
-                        Menu
+                        {{ $t("navbar.menu") }}
                     </UButton>
                 </li>
 

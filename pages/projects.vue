@@ -22,15 +22,17 @@ const AppProjectCard = hydrate(
     () => import("@/components/App/ProjectCard.vue")
 );
 
-const description =
-    "I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of.";
-useSeoMeta({
-    title: "Projects | Nguyen Tien Hoach",
-    description,
-});
+const { t } = useI18n();
 
 const localePath = useLocalePath();
 const route = useRoute();
+
+const seoMeta = ref({
+    title: `${t("seo.projects.title")} | ${t("title")}`,
+    description: t("seo.projects.description"),
+});
+
+useSeoMeta(seoMeta.value);
 
 const { data: projects } = await useAsyncData(
     `projects-all-${route.path}`,

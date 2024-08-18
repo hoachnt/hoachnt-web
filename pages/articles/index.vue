@@ -52,14 +52,16 @@ const AppArticleCard = hydrate(
     () => import("@/components/App/ArticleCard.vue")
 );
 
-useSeoMeta({
-    title: "Articles | Nguyen Tien Hoach",
-    description: "Interesting articles that I found interesting",
-});
-
 const localePath = useLocalePath();
 const route = useRoute();
 const { t } = useI18n();
+
+const seoMeta = ref({
+    title: `${t("seo.articles.title")} | ${t("title")}`,
+    description: t("seo.articles.description"),
+});
+
+useSeoMeta(seoMeta.value);
 
 const search = ref("");
 

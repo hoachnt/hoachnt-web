@@ -31,7 +31,6 @@ const sections = ref<ISection[]>([]);
 const showArticlesSidebar = ref(false);
 
 useSeoMeta({
-    ogSiteName: `Articles | Nguyen Tien Hoach`,
     ogImage: `https://hoachnt.com${route.path}.jpg`,
     twitterCard: "summary_large_image",
 });

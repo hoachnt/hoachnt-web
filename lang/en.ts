@@ -1,4 +1,26 @@
 export default {
+    title: "Nguyen Tien Hoach",
+    seo: {
+        home: {
+            title: "Nguyen Tien Hoach",
+            description:
+                "I am an independent Fullstack software developer currently living in Vietnam.",
+        },
+        projects: {
+            title: "Projects",
+            description:
+                "I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of.",
+        },
+        articles: {
+            title: "Articles",
+            description: "Interesting articles that I found interesting.",
+        },
+        lab: {
+            title: "Lab",
+            description:
+                "Some random experiments with UI I find in my free time.",
+        },
+    },
     home: {
         name: "Nguyen Tien Hoach",
         hello: "Hello",
@@ -36,6 +58,7 @@ export default {
         bookmarks: "Bookmarks",
         selectLanguage: "Select language",
         toggleTheme: "Toggle theme",
+        menu: "Menu",
     },
     cursor: {
         title: "Attention!",
