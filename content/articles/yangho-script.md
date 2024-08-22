@@ -69,6 +69,51 @@ NOILIENTUC 'Chao ca lo nha minh nha';
 NOILIENTUC 1 EQUAL 1;
 NOILIENTUC 2 MORE THAN 1;
 NOILIENTUC 1 LESS THAN 2;
+NOILIENTUC 1 MORE EQUALS 1;
+NOILIENTUC 2 LESS EQUALS 2;
+
+NOILIENTUC 2 EQUAL 1;
+NOILIENTUC 2 MORE THAN 3;
+NOILIENTUC 1 LESS THAN 0;
+NOILIENTUC 1 MORE EQUALS 2;
+NOILIENTUC 2 LESS EQUALS 1;
+
 ```
 
-Don't forget that YanghoScript is a joke programming language.
+To run a program, use the following command in the terminal:
+
+```
+npm start
+```
+
+or
+
+```
+yarn start
+```
+
+Ensure that your code is written in the `code.ys` file.
+
+## Code Structure
+
+YanghoScript supports the following constructs:
+
+-   Assignment of values to variables: `variable = value;`
+-   Arithmetic operations: `+, -, *, /`
+-   Use parentheses for correct order of arithmetic operations. For example, for the expression `1 + 2 * 3`, it should be written as `1 + (2 * 3)`.
+
+Examples of correct expressions:
+
+```javascript
+1 + 2 * 3; // Result: 9(incorrect)
+1 + 2 * 3; // Result: 7(correct)
+10 / (2 + 3); // Result: 2(correct)
+```
+
+Using parentheses ensures the correct order of operations and prevents errors in calculations.
+
+## Important
+
+YanghoScript is in an early stage of development and may have some limitations and shortcomings. If you find any bugs or have suggestions for improvements, feel free to report them in the Issues section on GitHub.
+
+Don't forget that YanhoScript is a joke programming language.
