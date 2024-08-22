@@ -107,6 +107,6 @@ Việc sử dụng dấu ngoặc đơn đảm bảo thứ tự đúng của các
 
 ## Quan trọng
 
-YanghoScript đang trong giai đoạn phát triển ban đầu và có thể có một số hạn chế và thiếu sót. Nếu bạn tìm thấy bất kỳ lỗi nào hoặc có đề xuất cải tiến, đừng ngần ngại báo cáo trong phần Issues trên GitHub.
+YanghoScript đang trong giai đoạn phát triển ban đầu và có thể có một số hạn chế và thiếu sót. Nếu bạn tìm thấy bất kỳ lỗi nào hoặc có đề xuất cải tiến, đừng ngần ngại báo cáo trong phần Issues trên [GitHub](https://github.com/hoachnt/YanghoScript).
 
 Đừng quên rằng YanhoScript là một ngôn ngữ lập trình mang tính chất hài hước.

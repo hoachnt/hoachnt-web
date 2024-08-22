@@ -114,6 +114,6 @@ Using parentheses ensures the correct order of operations and prevents errors in
 
 ## Important
 
-YanghoScript is in an early stage of development and may have some limitations and shortcomings. If you find any bugs or have suggestions for improvements, feel free to report them in the Issues section on GitHub.
+YanghoScript is in an early stage of development and may have some limitations and shortcomings. If you find any bugs or have suggestions for improvements, feel free to report them in the Issues section on [GitHub](https://github.com/hoachnt/YanghoScript).
 
 Don't forget that YanhoScript is a joke programming language.
