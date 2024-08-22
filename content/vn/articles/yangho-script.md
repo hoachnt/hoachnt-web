@@ -104,7 +104,8 @@ Ví dụ về các biểu thức đúng:
 ```
 
 Việc sử dụng dấu ngoặc đơn đảm bảo thứ tự đúng của các phép toán và ngăn ngừa lỗi tính toán.
-Quan trọng
+
+## Quan trọng
 
 YanghoScript đang trong giai đoạn phát triển ban đầu và có thể có một số hạn chế và thiếu sót. Nếu bạn tìm thấy bất kỳ lỗi nào hoặc có đề xuất cải tiến, đừng ngần ngại báo cáo trong phần Issues trên GitHub.
 
