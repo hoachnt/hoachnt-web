@@ -4,6 +4,8 @@ import { useColorMode } from "@vueuse/core";
 
 const { t } = useI18n();
 
+const el = ref<HTMLElement | null>(null);
+const y = ref(0);
 const seoMeta = ref({
     title: t("title"),
     description: t("seo.home.description"),
@@ -16,6 +18,20 @@ useSeoMeta({
     ogSiteName: seoMeta.value.title,
     ogImage: "https://hoachnt.com/social-card.png",
     twitterCard: "summary_large_image",
+});
+
+function handleScroll() {
+    y.value = window.scrollY || document.documentElement.scrollTop;
+}
+
+onMounted(() => {
+    el.value = document.body;
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Для инициализации значения сразу при монтировании
+});
+
+onUnmounted(() => {
+    window.removeEventListener("scroll", handleScroll);
 });
 
 const colorMode = useColorMode({
@@ -65,6 +81,9 @@ if (!isMobile()) {
     </UContainer>
     <div class="h-4"></div>
     <AppFooter />
+    <Transition>
+        <AppScrollToTop v-show="y >= 84" />
+    </Transition>
 </template>
 
 <style>
@@ -100,6 +119,16 @@ body {
     transform: translateY(5px);
 }
 
+.v-enter-active,
+.v-leave-active {
+    transition: all 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+    scale: 0.5;
+}
 ::selection {
     background-color: var(--selection-bg);
     color: var(--selection-color);
