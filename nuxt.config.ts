@@ -190,7 +190,7 @@ export default defineNuxtConfig({
         highlight: {
             langs: [
                 "bash", 
-                "javascript", 
+                "javascript",
             ],
         },
     },
