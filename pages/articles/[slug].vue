@@ -1,7 +1,7 @@
 <template>
     <main class="min-h-screen">
         <UButton
-            class="mb-11 hover:!bg-inherit hover:!text-primary cursor-none"
+            class="mb-11 lg:hover:!bg-transparent lg:hover:!text-primary lg:cursor-none lg:duration-200 lg:transition-all"
             size="lg"
             icon="i-heroicons-arrow-left"
             v-cursor-block
