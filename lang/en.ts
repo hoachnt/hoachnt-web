@@ -41,6 +41,9 @@ export default {
         description: "Interesting and informative",
         search: "Search",
         notFound: "Not found",
+        slug: {
+            back: "Back",
+        },
     },
     bookmarks: {
         bookmarks: "Bookmarks",

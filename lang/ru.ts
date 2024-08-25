@@ -43,6 +43,9 @@ export default {
         description: "Интересные и познавательные",
         search: "Поиск",
         notFound: "Не найден",
+        slug: {
+            back: "Назад",
+        },
     },
     bookmarks: {
         bookmarks: "Закладки",

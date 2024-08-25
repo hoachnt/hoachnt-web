@@ -1,6 +1,15 @@
 <template>
     <main class="min-h-screen">
-        <ArticlesSideBar :sections="sections" v-if="showArticlesSidebar" />
+        <UButton
+            class="mb-11"
+            size="lg"
+            icon="i-heroicons-arrow-left"
+            @click="$router.push('/articles')"
+            >{{ $t("articles.slug.back") }}</UButton
+        >
+        <Transition name="fade">
+            <ArticlesSideBar :sections="sections" v-if="showArticlesSidebar" />
+        </Transition>
         <div
             class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
         >
@@ -57,5 +66,15 @@ onMounted(() => {
 }
 h1 {
     view-transition-name: header;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

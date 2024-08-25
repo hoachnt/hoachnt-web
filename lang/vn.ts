@@ -42,6 +42,9 @@ export default {
         description: "Thú vị và bổ ích",
         search: "Tìm kiếm",
         notFound: "Không tìm thấy",
+        slug: {
+            back: "Quay về",
+        },
     },
     bookmarks: {
         bookmarks: "Dấu trang",
