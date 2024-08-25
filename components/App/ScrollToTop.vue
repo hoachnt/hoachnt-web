@@ -1,7 +1,7 @@
 <template>
     <UButton
         icon="i-heroicons-chevron-up"
-        variant="solid"
+        variant="soft"
         size="xl"
         class="fixed bottom-10 right-10"
         :ui="{ rounded: 'rounded-full' }"

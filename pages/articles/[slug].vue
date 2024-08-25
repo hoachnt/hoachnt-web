@@ -1,9 +1,10 @@
 <template>
     <main class="min-h-screen">
         <UButton
-            class="mb-11"
+            class="mb-11 hover:!bg-inherit hover:!text-primary cursor-none"
             size="lg"
             icon="i-heroicons-arrow-left"
+            v-cursor-block
             @click="$router.push('/articles')"
             >{{ $t("articles.slug.back") }}</UButton
         >
