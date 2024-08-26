@@ -3,7 +3,7 @@
         <UButton
             class="mb-11 lg:hover:!bg-transparent lg:hover:!text-primary lg:cursor-none lg:duration-200 lg:transition-all"
             size="lg"
-            icon="i-heroicons-arrow-left"
+            icon="i-heroicons-chevron-left"
             v-cursor-block
             @click="$router.push('/articles')"
             >{{ $t("articles.slug.back") }}</UButton
