@@ -1,11 +1,11 @@
+import type { BoosterConfig } from "./types/boosterConfig";
+
 export default defineNuxtConfig({
     experimental: {
         // viewTransition: true,
     },
 
     devtools: { enabled: true },
-
-    scrollBehavior(to: any, from: any, savedPosition: any) {},
 
     routeRules: {
         "/bookmarks": { prerender: true },
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
             component: "0%",
             asset: "0%",
         },
-    },
+    } as BoosterConfig,
 
     site: {
         url: "https://www.hoachnt.com",
