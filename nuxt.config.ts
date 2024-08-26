@@ -28,6 +28,7 @@ export default defineNuxtConfig({
         "@nuxthq/studio",
         "@vueuse/nuxt",
         "@nuxtjs/i18n",
+        "@nuxtjs/mdc",
         "nuxt-delay-hydration",
         "@nuxtjs/sitemap",
         "nuxt-booster",
@@ -188,10 +189,7 @@ export default defineNuxtConfig({
 
     mdc: {
         highlight: {
-            langs: [
-                "bash", 
-                "javascript",
-            ],
+            langs: ["bash", "javascript", "html", "vue"],
         },
     },
 
