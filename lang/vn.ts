@@ -46,10 +46,6 @@ export default {
             back: "Quay về",
         },
     },
-    bookmarks: {
-        bookmarks: "Dấu trang",
-        description: "Bạn sẽ thích",
-    },
     lab: {
         lab: "Thí nghiệm",
         description: "Hãy thử nó",

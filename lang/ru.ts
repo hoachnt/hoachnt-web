@@ -47,10 +47,6 @@ export default {
             back: "Назад",
         },
     },
-    bookmarks: {
-        bookmarks: "Закладки",
-        description: "Вам понравится",
-    },
     lab: {
         lab: "Лаб",
         description: "Попробуйте",

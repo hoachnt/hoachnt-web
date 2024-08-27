@@ -45,10 +45,6 @@ export default {
             back: "Back",
         },
     },
-    bookmarks: {
-        bookmarks: "Bookmarks",
-        description: "You will like",
-    },
     lab: {
         lab: "Lab",
         description: "Try It",
