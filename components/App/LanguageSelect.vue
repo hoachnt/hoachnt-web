@@ -14,7 +14,7 @@ watch(locale, (newLanguage) => {
             v-model="locale"
             :options="locales"
             option-attribute="name"
-            
+            aria-label="Language select"
         >
             <template #leading>
                 <Icon

@@ -32,6 +32,7 @@ export default defineNuxtConfig({
         "nuxt-delay-hydration",
         "@nuxtjs/sitemap",
         "nuxt-booster",
+        "@nuxtjs/html-validator",
     ],
 
     booster: {
@@ -58,7 +59,6 @@ export default defineNuxtConfig({
         },
 
         componentAutoImport: false,
-        componentPrefix: undefined,
 
         lazyOffset: {
             component: "0%",
@@ -190,6 +190,34 @@ export default defineNuxtConfig({
     mdc: {
         highlight: {
             langs: ["bash", "javascript", "html", "vue"],
+        },
+    },
+
+    htmlValidator: {
+        usePrettier: false,
+        logLevel: "verbose",
+        failOnError: false,
+        /** A list of routes to ignore (that is, not check validity for). */
+        ignore: [/\.(xml|rss|json)$/],
+        options: {
+            extends: [
+                "html-validate:document",
+                "html-validate:recommended",
+                "html-validate:standard",
+            ],
+            rules: {
+                "svg-focusable": "off",
+                "no-unknown-elements": "error",
+                // Conflicts or not needed as we use prettier formatting
+                "void-style": "off",
+                "no-trailing-whitespace": "off",
+                // Conflict with Nuxt defaults
+                "require-sri": "off",
+                "attribute-boolean-style": "off",
+                "doctype-style": "off",
+                // Unreasonable rule
+                "no-inline-style": "off",
+            },
         },
     },
 

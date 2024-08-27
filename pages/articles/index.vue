@@ -7,13 +7,14 @@
         />
 
         <UInput
+            aria-label="{{ $t('articles.search') }}"
             v-model="search"
             name="search"
-            :placeholder="`${$t('articles.search')}...`"
             icon="i-heroicons-magnifying-glass-20-solid"
             autocomplete="off"
             class="mb-10"
             size="xl"
+            :placeholder="`${$t('articles.search')}...`"
             :ui="{ icon: { trailing: { pointer: '' } } }"
         >
             <template #trailing>

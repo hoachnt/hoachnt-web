@@ -15,7 +15,6 @@
                 prefetch
                 class="item duration-200 ease-in-out transition-all"
                 v-cursor-block="{ radius: '24px' }"
-                lo
             >
                 <UCard
                     :ui="{
@@ -44,6 +43,7 @@
                 >
                     <Icon
                         :name="technology.icon"
+                        :alt="technology.title"
                         class="w-full h-full"
                         v-if="technology.icon"
                     />

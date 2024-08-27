@@ -1,3 +1,36 @@
+<script setup lang="ts">
+const hydrate = useBoosterHydrate();
+const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
+
+import { LazyContentRenderer } from "#components";
+
+const visibleItems = ref<Set<string>>(new Set());
+const localePath = useLocalePath();
+const { t } = useI18n();
+
+const seoMeta = ref({
+    title: `${t("seo.lab.title")} | ${t("title")}`,
+    description: t("seo.lab.description"),
+});
+
+useSeoMeta(seoMeta.value);
+
+function handleIntersection(path: string | undefined) {
+    if (path) {
+        if (!visibleItems.value.has(path)) {
+            visibleItems.value.add(path);
+        }
+    }
+}
+
+function pathIsVisible(path: string | undefined): boolean {
+    if (path) {
+        return visibleItems.value.has(path);
+    }
+    return false;
+}
+</script>
+
 <template>
     <main class="min-h-screen">
         <AppHeader
@@ -48,35 +81,4 @@
     </main>
 </template>
 
-<script setup lang="ts">
-const hydrate = useBoosterHydrate();
-const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
-
-import { LazyContentRenderer } from "#components";
-
-const visibleItems = ref<Set<string>>(new Set());
-const localePath = useLocalePath();
-const { t } = useI18n();
-
-const seoMeta = ref({
-    title: `${t("seo.lab.title")} | ${t("title")}`,
-    description: t("seo.lab.description"),
-});
-
-useSeoMeta(seoMeta.value);
-
-function handleIntersection(path: string | undefined) {
-    if (path) {
-        if (!visibleItems.value.has(path)) {
-            visibleItems.value.add(path);
-        }
-    }
-}
-
-function pathIsVisible(path: string | undefined): boolean {
-    if (path) {
-        return visibleItems.value.has(path);
-    }
-    return false;
-}
-</script>
+<style scoped></style>
