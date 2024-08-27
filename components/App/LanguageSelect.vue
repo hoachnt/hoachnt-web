@@ -14,12 +14,7 @@ watch(locale, (newLanguage) => {
             v-model="locale"
             :options="locales"
             option-attribute="name"
-            variant="none"
-            :ui="{
-                variant: {
-                    none: 'bg-primary-100/50 dark:bg-primary-900/50',
-                },
-            }"
+            
         >
             <template #leading>
                 <Icon
