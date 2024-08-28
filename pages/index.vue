@@ -31,8 +31,9 @@ useSeoMeta({ ...seoMeta.value });
                 :enter="{
                     opacity: 1,
                     y: 0,
-                    transition: { delay: 0.2, duration: 0.6 },
                 }"
+                :delay="200"
+                :duration="600"
             />
 
             <!-- Анимация для UIEmblaCarousel -->
@@ -42,8 +43,9 @@ useSeoMeta({ ...seoMeta.value });
                 :enter="{
                     opacity: 1,
                     y: 0,
-                    transition: { delay: 0.6, duration: 0.6 },
                 }"
+                :delay="600"
+                :duration="600"
             >
                 <template #default>
                     <UIEmblaCarouselContent>
@@ -65,24 +67,26 @@ useSeoMeta({ ...seoMeta.value });
                 <template #emblaButtons>
                     <UIEmblaCarouselPrevious
                         v-motion
-                        :initial="{ opacity: 0, scale: 0.8 }"
+                        :initial="{ opacity: 0, scale: 0 }"
                         :enter="{
                             opacity: 1,
                             scale: 1,
-                            transition: { delay: 0.8, duration: 0.4 },
                         }"
+                        :delay="800"
+                        :duration="400"
                         @click="carouselStore.scrollPrev()"
                     />
 
                     <!-- Анимация для UIEmblaCarouselNext -->
                     <UIEmblaCarouselNext
                         v-motion
-                        :initial="{ opacity: 0, scale: 0.8 }"
+                        :initial="{ opacity: 0, scale: 0 }"
                         :enter="{
                             opacity: 1,
                             scale: 1,
-                            transition: { delay: 1.0, duration: 0.4 },
                         }"
+                        :delay="1000"
+                        :duration="400"
                         @click="carouselStore.scrollNext()"
                     />
                 </template>
