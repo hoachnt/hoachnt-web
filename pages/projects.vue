@@ -7,8 +7,19 @@
         />
         <div class="space-y-4">
             <AppProjectCard
-                v-for="(project, id) in projects"
-                :key="id"
+                v-for="(project, index) in projects"
+                v-motion
+                :initial="{ opacity: 0, y: 50 }"
+                :enter="{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        ease: 'easeInOut',
+                    },
+                }"
+                :delay="100 * index"
+                :duration="500"
+                :key="index"
                 :project="project"
             />
         </div>

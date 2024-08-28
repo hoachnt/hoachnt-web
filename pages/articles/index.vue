@@ -31,9 +31,9 @@
         </UInput>
         <TransitionGroup name="list" tag="ul" class="space-y-16">
             <li
-                v-for="(article, id) in results"
-                :key="id"
+                v-for="(article, index) in results"
                 class="hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200 max-w-2xl"
+                :key="index"
             >
                 <AppArticleCard :article="article" />
             </li>
@@ -72,7 +72,6 @@ const { data: articles } = await useAsyncData(
 );
 
 const results = computed(() => filterArticles(articles));
-const notFound = computed(() => t("articles.notFound"));
 
 function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
     const result = articles.value?.filter((article) =>

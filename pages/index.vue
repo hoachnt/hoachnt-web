@@ -67,7 +67,7 @@ useSeoMeta({ ...seoMeta.value });
                 <template #emblaButtons>
                     <UIEmblaCarouselPrevious
                         v-motion
-                        :initial="{ opacity: 0, scale: 0 }"
+                        :initial="{ opacity: 0, scale: 0.5 }"
                         :enter="{
                             opacity: 1,
                             scale: 1,
@@ -80,7 +80,7 @@ useSeoMeta({ ...seoMeta.value });
                     <!-- Анимация для UIEmblaCarouselNext -->
                     <UIEmblaCarouselNext
                         v-motion
-                        :initial="{ opacity: 0, scale: 0 }"
+                        :initial="{ opacity: 0, scale: 0.5 }"
                         :enter="{
                             opacity: 1,
                             scale: 1,
