@@ -106,17 +106,17 @@ body {
 
 .page-enter-active,
 .page-leave-active {
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 
 .page-leave-to {
-    opacity: 0;
     transform: translateY(-5px);
+    opacity: 0;
 }
 
 .page-enter-from {
-    opacity: 0;
     transform: translateY(5px);
+    opacity: 0;
 }
 
 .v-enter-active,

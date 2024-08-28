@@ -24,8 +24,27 @@ useSeoMeta({ ...seoMeta.value });
 <template>
     <main class="min-h-dvh">
         <div class="space-y-24">
-            <HomeIntro />
-            <UIEmblaCarousel>
+            <!-- Анимация для HomeIntro -->
+            <HomeIntro
+                v-motion
+                :initial="{ opacity: 0, y: 50 }"
+                :enter="{
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: 0.2, duration: 0.6 },
+                }"
+            />
+
+            <!-- Анимация для UIEmblaCarousel -->
+            <UIEmblaCarousel
+                v-motion
+                :initial="{ opacity: 0, y: 50 }"
+                :enter="{
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: 0.6, duration: 0.6 },
+                }"
+            >
                 <template #default>
                     <UIEmblaCarouselContent>
                         <UIEmblaCarouselItem class="space-y-24">
@@ -41,11 +60,31 @@ useSeoMeta({ ...seoMeta.value });
                         </UIEmblaCarouselItem>
                     </UIEmblaCarouselContent>
                 </template>
+
+                <!-- Анимация для UIEmblaCarouselPrevious -->
                 <template #emblaButtons>
                     <UIEmblaCarouselPrevious
+                        v-motion
+                        :initial="{ opacity: 0, scale: 0.8 }"
+                        :enter="{
+                            opacity: 1,
+                            scale: 1,
+                            transition: { delay: 0.8, duration: 0.4 },
+                        }"
                         @click="carouselStore.scrollPrev()"
                     />
-                    <UIEmblaCarouselNext @click="carouselStore.scrollNext()" />
+
+                    <!-- Анимация для UIEmblaCarouselNext -->
+                    <UIEmblaCarouselNext
+                        v-motion
+                        :initial="{ opacity: 0, scale: 0.8 }"
+                        :enter="{
+                            opacity: 1,
+                            scale: 1,
+                            transition: { delay: 1.0, duration: 0.4 },
+                        }"
+                        @click="carouselStore.scrollNext()"
+                    />
                 </template>
             </UIEmblaCarousel>
         </div>

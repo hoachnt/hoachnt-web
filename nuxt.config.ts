@@ -19,20 +19,21 @@ export default defineNuxtConfig({
 
     modules: [
         "@nuxt/ui",
-        "nuxt-icon",
-        "@nuxtjs/google-fonts",
-        "@nuxtjs/fontaine",
         "@nuxt/image",
         "@nuxt/content",
-        "@nuxthq/studio",
-        "@vueuse/nuxt",
+        "@nuxtjs/google-fonts",
+        "@nuxtjs/fontaine",
         "@nuxtjs/i18n",
         "@nuxtjs/mdc",
-        "nuxt-delay-hydration",
         "@nuxtjs/sitemap",
-        "nuxt-booster",
         "@nuxtjs/html-validator",
+        "nuxt-icon",
+        "nuxt-delay-hydration",
+        "nuxt-booster",
+        "@vueuse/nuxt",
+        "@vueuse/motion/nuxt",
         "@pinia/nuxt",
+        "@nuxthq/studio",
     ],
 
     pinia: {

@@ -37,6 +37,7 @@
     "@nuxt/image": "1.7.0",
     "@nuxt/types": "^2.18.1",
     "@nuxt/ui": "2.18.4",
+    "@vueuse/motion": "^2.2.3",
     "embla-carousel-auto-height": "^8.2.0",
     "embla-carousel-vue": "^8.2.0",
     "ipad-cursor": "^0.5.2",
