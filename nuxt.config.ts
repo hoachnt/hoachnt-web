@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
 
     routeRules: {
-        "/bookmarks": { prerender: true },
         "/projects": { prerender: true },
         "/articles": { prerender: true },
         "/articles/**": { prerender: true },
