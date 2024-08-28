@@ -79,7 +79,10 @@ if (!isMobile()) {
     <UContainer>
         <NuxtPage />
     </UContainer>
-    <div class="h-4"></div>
+    <div class="h-11"></div>
+    <UContainer>
+        <UDivider />
+    </UContainer>
     <AppFooter />
     <Transition>
         <AppScrollToTop v-show="y >= 84" />
