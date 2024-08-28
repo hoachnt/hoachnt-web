@@ -1,0 +1,50 @@
+<template>
+    <div class="embla">
+        <div class="embla__viewport" ref="emblaRef">
+            <slot />
+        </div>
+        <div class="embla__controls">
+            <div class="embla__buttons space-x-1">
+                <slot name="emblaButtons" />
+            </div>
+        </div>
+    </div>
+</template>
+
+<script lang="ts" setup>
+import AutoHeight from "embla-carousel-auto-height";
+import emblaCarouselVue from "embla-carousel-vue";
+
+const [emblaRef, emblaApi] = emblaCarouselVue({ loop: false }, [AutoHeight()]);
+const carouselStore = useCarouselStore();
+
+onMounted(() => {
+    if (emblaRef.value) {
+        carouselStore.emblaRef = emblaRef.value;
+        carouselStore.emblaApi = emblaApi.value;
+    }
+    
+    if (carouselStore.emblaApi) {
+        carouselStore.updateHeight(); // Initial height update
+        carouselStore.emblaApi.on("select", carouselStore.updateHeight); // Update height on slide change
+    }
+});
+</script>
+
+<style scoped>
+.embla {
+    --slide-spacing: 1rem;
+}
+.embla__viewport {
+    overflow: hidden;
+    transition: height 0.5s ease; /* Transition for height */
+}
+
+.embla__controls {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+}
+</style>

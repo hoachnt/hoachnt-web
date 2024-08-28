@@ -33,7 +33,12 @@ export default defineNuxtConfig({
         "@nuxtjs/sitemap",
         "nuxt-booster",
         "@nuxtjs/html-validator",
+        "@pinia/nuxt",
     ],
+
+    pinia: {
+        storesDirs: ["./stores/**"],
+    },
 
     booster: {
         detection: {

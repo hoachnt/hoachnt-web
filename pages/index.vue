@@ -8,6 +8,7 @@ const HomeSocialLinks = hydrate(
     () => import("@/components/Home/SocialLinks.vue")
 );
 const { t } = useI18n();
+const carouselStore = useCarouselStore();
 
 const seoMeta = ref({
     title: t("seo.home.title"),
@@ -19,10 +20,24 @@ useSeoMeta({ ...seoMeta.value });
 
 <template>
     <main class="min-h-screen">
-        <div class="space-y-24">
-            <HomeIntro />
-            <HomeTechnologies />
-            <HomeSocialLinks />
-        </div>
+        <UIEmblaCarousel>
+            <template #default>
+                <UIEmblaCarouselContent>
+                    <UIEmblaCarouselItem class="space-y-24">
+                        <HomeIntro />
+                    </UIEmblaCarouselItem>
+                    <UIEmblaCarouselItem class="space-y-24">
+                        <HomeTechnologies />
+                    </UIEmblaCarouselItem>
+                    <UIEmblaCarouselItem class="space-y-24">
+                        <HomeSocialLinks />
+                    </UIEmblaCarouselItem>
+                </UIEmblaCarouselContent>
+            </template>
+            <template #emblaButtons>
+                <UIEmblaCarouselPrevious @click="carouselStore.scrollPrev()" />
+                <UIEmblaCarouselNext @click="carouselStore.scrollNext()" />
+            </template>
+        </UIEmblaCarousel>
     </main>
 </template>
