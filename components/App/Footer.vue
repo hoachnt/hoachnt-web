@@ -1,8 +1,10 @@
 <template>
     <footer
-        class="max-w-2xl mx-auto text-black dark:text-white text-sm text-center pb-8"
+        class="max-w-2xl mx-auto text-black dark:text-white text-sm text-center px-4 py-6"
     >
-        <br />
-        <p>© 2024 Nguyen Tien Hoach. All rights reserved.</p>
+        <span class="text-center text-sm text-muted">
+            © {{ new Date().getFullYear() }}, {{ $t("title") }} -
+            {{ $t("all_rights_reserved") }}.</span
+        >
     </footer>
 </template>

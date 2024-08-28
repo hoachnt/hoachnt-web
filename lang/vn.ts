@@ -1,5 +1,6 @@
 export default {
     title: "Nguyen Tien Hoach",
+    all_rights_reserved: "Mọi quyền được bảo lưu",
 
     seo: {
         home: {

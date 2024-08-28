@@ -1,5 +1,6 @@
 export default {
     title: "Nguyen Tien Hoach",
+    all_rights_reserved: "All rights reserved",
     seo: {
         home: {
             title: "Nguyen Tien Hoach",

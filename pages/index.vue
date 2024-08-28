@@ -22,7 +22,7 @@ useSeoMeta({ ...seoMeta.value });
 </script>
 
 <template>
-    <main class="min-h-dvh">
+    <main>
         <div class="space-y-24">
             <!-- Анимация для HomeIntro -->
             <HomeIntro

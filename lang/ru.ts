@@ -1,5 +1,6 @@
 export default {
     title: "Нгуен Тиен Хоач",
+    all_rights_reserved: "Все права защищены",
 
     seo: {
         home: {
