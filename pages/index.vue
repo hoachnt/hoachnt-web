@@ -20,26 +20,26 @@ useSeoMeta({ ...seoMeta.value });
 
 <template>
     <main class="min-h-dvh">
-        <UIEmblaCarousel>
-            <template #default>
-                <UIEmblaCarouselContent>
-                    <UIEmblaCarouselItem class="space-y-24">
-                        <HomeIntro />
-                    </UIEmblaCarouselItem>
-                    <UIEmblaCarouselItem class="space-y-24">
-                        <div class="px-2">
-                            <HomeTechnologies />
-                        </div>
-                    </UIEmblaCarouselItem>
-                    <UIEmblaCarouselItem class="space-y-24">
-                        <HomeSocialLinks />
-                    </UIEmblaCarouselItem>
-                </UIEmblaCarouselContent>
-            </template>
-            <template #emblaButtons>
-                <UIEmblaCarouselPrevious @click="carouselStore.scrollPrev()" />
-                <UIEmblaCarouselNext @click="carouselStore.scrollNext()" />
-            </template>
-        </UIEmblaCarousel>
+        <div class="space-y-24">
+            <HomeIntro />
+            <UIEmblaCarousel>
+                <template #default>
+                    <UIEmblaCarouselContent>
+                        <UIEmblaCarouselItem class="space-y-24">
+                            <HomeTechnologies class="border border-gray-200 dark:border-gray-800 p-4 rounded-xl"/>
+                        </UIEmblaCarouselItem>
+                        <UIEmblaCarouselItem class="space-y-24">
+                            <HomeSocialLinks />
+                        </UIEmblaCarouselItem>
+                    </UIEmblaCarouselContent>
+                </template>
+                <template #emblaButtons>
+                    <UIEmblaCarouselPrevious
+                        @click="carouselStore.scrollPrev()"
+                    />
+                    <UIEmblaCarouselNext @click="carouselStore.scrollNext()" />
+                </template>
+            </UIEmblaCarousel>
+        </div>
     </main>
 </template>
