@@ -10,6 +10,7 @@
                 v-for="(technology, index) in technologies"
                 :key="index"
                 :to="technology.url"
+                :aria-label="technology.title"
                 target="_blank"
                 external
                 prefetch

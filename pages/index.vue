@@ -7,6 +7,9 @@ const HomeTechnologies = hydrate(
 const HomeSocialLinks = hydrate(
     () => import("@/components/Home/SocialLinks.vue")
 );
+
+const HomeWorkLinks = hydrate(() => import("@/components/Home/WorkLinks.vue"));
+
 const { t } = useI18n();
 const carouselStore = useCarouselStore();
 
@@ -26,10 +29,15 @@ useSeoMeta({ ...seoMeta.value });
                 <template #default>
                     <UIEmblaCarouselContent>
                         <UIEmblaCarouselItem class="space-y-24">
-                            <HomeTechnologies class="border border-gray-200 dark:border-gray-800 p-4 rounded-xl"/>
+                            <HomeTechnologies
+                                class="border border-gray-200 dark:border-gray-800 p-4 rounded-xl"
+                            />
                         </UIEmblaCarouselItem>
                         <UIEmblaCarouselItem class="space-y-24">
                             <HomeSocialLinks />
+                        </UIEmblaCarouselItem>
+                        <UIEmblaCarouselItem class="space-y-24">
+                            <HomeWorkLinks />
                         </UIEmblaCarouselItem>
                     </UIEmblaCarouselContent>
                 </template>

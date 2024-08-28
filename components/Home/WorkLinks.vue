@@ -1,11 +1,11 @@
 <template>
     <div>
         <h2 :class="headingStyle">
-            {{ $t("home.followMeOn") }}
+            {{ $t("home.contactsForWork") }}
         </h2>
         <div class="space-y-5">
             <NuxtLink
-                v-for="link in linksToFollow"
+                v-for="link in linksForWork"
                 :key="link.icon"
                 :to="link.url"
                 class="flex items-end gap-4 dark:hover:text-gray-300 group"
@@ -28,16 +28,12 @@
 const headingStyle =
     "uppercase text-xs font-semibold text-white p-1 mb-4 bg-black dark:bg-white dark:text-black w-fit";
 
-const linksToFollow = [
+const linksForWork = [
     {
-        name: "GitHub",
-        url: "https://github.com/hoachnt",
-        icon: "mdi:github",
+        name: "Mail",
+        url: "mailto:hoachprogrammer@gmail.com",
+        icon: "mdi:mail-ru",
     },
-    {
-        name: "Telegram",
-        url: "https://t.me/hoachnt",
-        icon: "mdi:telegram",
-    },
+    { name: "Phone", url: "tel:+84934442006", icon: "mdi:phone" },
 ];
 </script>
