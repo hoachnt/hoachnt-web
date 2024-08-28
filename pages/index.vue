@@ -19,7 +19,7 @@ useSeoMeta({ ...seoMeta.value });
 </script>
 
 <template>
-    <main class="min-h-screen">
+    <main class="min-h-dvh">
         <UIEmblaCarousel>
             <template #default>
                 <UIEmblaCarouselContent>
@@ -27,7 +27,9 @@ useSeoMeta({ ...seoMeta.value });
                         <HomeIntro />
                     </UIEmblaCarouselItem>
                     <UIEmblaCarouselItem class="space-y-24">
-                        <HomeTechnologies />
+                        <div class="px-2">
+                            <HomeTechnologies />
+                        </div>
                     </UIEmblaCarouselItem>
                     <UIEmblaCarouselItem class="space-y-24">
                         <HomeSocialLinks />

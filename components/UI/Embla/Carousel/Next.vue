@@ -1,5 +1,6 @@
 <template>
     <UButton
+        aria-label="embla next"
         icon="i-heroicons-chevron-right"
         size="md"
         color="primary"
