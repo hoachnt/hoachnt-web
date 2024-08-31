@@ -5,7 +5,7 @@ export const useCarouselStore = defineStore("carousel", () => {
 
     const viewportHeight = ref(0);
 
-    watch(viewportHeight, (newHeight) => {
+    watch(viewportHeight, (newHeight: number) => {
         if (emblaRef.value) {
             emblaRef.value.style.height = `${newHeight}px`;
         }

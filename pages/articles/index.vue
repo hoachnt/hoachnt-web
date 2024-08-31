@@ -28,7 +28,7 @@ const { data: articles } = await useAsyncData(
 const results = computed(() => filterArticles(articles));
 
 function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
-    const result = articles.value?.filter((article) =>
+    const result = articles.value?.filter((article: { title: string }) =>
         article.title?.toLowerCase()?.includes(search.value.toLowerCase())
     );
 
@@ -37,7 +37,7 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
 </script>
 
 <template>
-    <main class="min-h-screen">
+    <main>
         <AppHeader
             class="mb-16"
             :title="$t('articles.articles')"

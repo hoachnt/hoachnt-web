@@ -34,26 +34,30 @@ onUnmounted(() => {
     window.removeEventListener("scroll", handleScroll);
 });
 
+const colorModes = {
+    dark: "rgba(255, 255, 255, 0.8)",
+    light: "rgba(0, 0, 0, 0.8)",
+    auto: "rgba(150, 150, 150, 0.5)",
+    cafe: "rgba(150, 150, 150, 0.5)",
+} as const;
+
 const colorMode = useColorMode({
     emitAuto: true,
     modes: {
         cafe: "cafe",
     },
 });
+
+type ColorMode = keyof typeof colorModes;
+
 const { isMobile } = useDevice();
 
-const cursorStyles = {
-    dark: "rgba(255, 255, 255, 0.8)",
-    light: "rgba(0, 0, 0, 0.8)",
-    auto: "rgba(150, 150, 150, 0.5)",
-    cafe: "rgba(150, 150, 150, 0.5)",
-};
-
 function updateCursor() {
+    const currentMode = colorMode.value as ColorMode;
+
     useCursor().updateConfig({
         textStyle: {
-            background:
-                cursorStyles[colorMode.value] || "rgba(150, 150, 150, 0.5)",
+            background: colorModes[currentMode] || "rgba(150, 150, 150, 0.5)",
         },
         normalStyle: {
             background: ["auto", "cafe"].includes(colorMode.value)

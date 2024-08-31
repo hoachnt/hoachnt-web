@@ -42,7 +42,7 @@ const { data: projects } = await useAsyncData(
 </script>
 
 <template>
-    <main class="min-h-screen">
+    <main>
         <AppHeader
             class="mb-12"
             :title="$t('projects.projects')"
