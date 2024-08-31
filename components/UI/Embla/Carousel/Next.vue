@@ -1,5 +1,8 @@
+<script lang="ts" setup></script>
+
 <template>
     <UButton
+        v-cursor-block
         aria-label="embla next"
         icon="i-heroicons-chevron-right"
         size="md"
@@ -7,10 +10,7 @@
         variant="solid"
         class="embla__next cursor-none"
         :ui="{ rounded: 'rounded-full' }"
-        v-cursor-block
     />
 </template>
-
-<script lang="ts" setup></script>
 
 <style scoped></style>

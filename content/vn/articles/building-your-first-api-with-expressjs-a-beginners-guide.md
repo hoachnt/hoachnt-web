@@ -40,16 +40,16 @@ Lệnh này cài đặt Express.js và thêm nó vào phần phụ thuộc của
 Tạo một tệp có tên app.js trong thư mục dự án của bạn. Tệp này sẽ là điểm vào API của bạn. Thêm mã sau vào app.js:
 
 ```js
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get("/", (req, res) => {
+    res.send("Hello World!");
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Example app listening at http://localhost:${port}`);
 });
 ```
 
@@ -73,10 +73,9 @@ Thêm mã sau vào app.js của bạn:
 ```javascript
 let users = [{ name: "Alice" }, { name: "Bob" }];
 
-app.get('/users', (req, res) => {
-  res.json(users);
+app.get("/users", (req, res) => {
+    res.json(users);
 });
-
 ```
 
 Bây giờ, nếu bạn truy cập http://localhost:3000/users, bạn sẽ thấy biểu diễn JSON của mảng người dùng.

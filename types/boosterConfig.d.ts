@@ -1,6 +1,3 @@
-// types/boosterConfig.d.ts
-import { NuxtConfig } from "@nuxt/schema";
-
 export interface BoosterConfig {
     detection?: {
         performance: boolean;

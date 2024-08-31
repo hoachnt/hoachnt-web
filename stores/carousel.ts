@@ -1,5 +1,6 @@
 export const useCarouselStore = defineStore("carousel", () => {
     const emblaRef = ref<HTMLElement>();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const emblaApi = ref<any>();
 
     const viewportHeight = ref(0);

@@ -1,8 +1,8 @@
+<script lang="ts" setup></script>
+
 <template>
     <div class="embla__slide"><slot /></div>
 </template>
-
-<script lang="ts" setup></script>
 
 <style scoped>
 .embla__slide {

@@ -1,3 +1,14 @@
+<script setup>
+import { NuxtImg } from "#components";
+
+defineProps({
+    project: {
+        type: Object,
+        required: true,
+    },
+});
+</script>
+
 <template>
     <NuxtLink
         class="flex items-end gap-4 group p-2 -m-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200"
@@ -13,7 +24,7 @@
         </div>
         <div
             class="flex-1 border-b border-dashed border-gray-300 dark:border-gray-800 group-hover:border-gray-700"
-        ></div>
+        />
         <UAvatar
             :as="NuxtImg"
             :src="project.thumbnail"
@@ -28,14 +39,3 @@
         />
     </NuxtLink>
 </template>
-
-<script setup>
-import { NuxtImg } from "#components";
-
-defineProps({
-    project: {
-        type: Object,
-        required: true,
-    },
-});
-</script>

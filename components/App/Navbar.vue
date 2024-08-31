@@ -1,76 +1,3 @@
-<template>
-    <div
-        ref="headerRef"
-        :style="{ ...styles, position: isArticlesPage ? 'relative' : 'sticky' }"
-        class="nav-wrapper top-0 w-full py-4 z-50 bg-inherit backdrop-blur-3xl"
-    >
-        <nav class="mx-auto px-3 max-w-2xl">
-            <ul
-                class="flex items-center h-[52px] px-3 text-sm font-medium text-gray-800 dark:text-gray-200"
-            >
-                <li
-                    v-for="item in items"
-                    :key="item.path"
-                    class="hidden lg:block"
-                    v-cursor-block
-                >
-                    <ULink
-                        :to="item.path"
-                        prefetch
-                        class="relative h-10 px-3 py-4 flex items-center justify-center transition"
-                        active-class="text-primary"
-                    >
-                        <span
-                            v-if="$route.path === item.path"
-                            class="active-bg absolute h-full w-full z-0 rounded-md bg-gray-500/10 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                        ></span>
-                        {{ item.name }}
-                    </ULink>
-                </li>
-
-                <li>
-                    <UButton
-                        color="white"
-                        variant="outline"
-                        size="sm"
-                        class="lg:hidden z-10 block"
-                        v-cursor-block
-                        @click="isOpen = true"
-                    >
-                        {{ $t("navbar.menu") }}
-                    </UButton>
-                </li>
-
-                <LazyAppNavigationSliderOver
-                    v-if="isOpen"
-                    :close="() => close()"
-                    v-model:is-open="isOpen"
-                />
-
-                <li class="nav-item flex-1"></li>
-                <li class="nav-item ml-3" v-cursor-block>
-                    <AppLanguageSelect />
-                </li>
-                <li
-                    class="nav-item flex items-center justify-center ml-3"
-                    v-cursor-block
-                >
-                    <ClientOnly fallback-tag="i">
-                        <AppThemeToggle />
-                        <template #fallback>
-                            <Icon
-                                aria-hidden="true"
-                                name="solar:laptop-minimalistic-bold"
-                                class="w-5 h-5"
-                            />
-                        </template>
-                    </ClientOnly>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</template>
-
 <script setup>
 import { useFixedHeader } from "vue-use-fixed-header";
 
@@ -118,6 +45,79 @@ function close() {
     isOpen.value = false;
 }
 </script>
+
+<template>
+    <div
+        ref="headerRef"
+        :style="{ ...styles, position: isArticlesPage ? 'relative' : 'sticky' }"
+        class="nav-wrapper top-0 w-full py-4 z-50 bg-inherit backdrop-blur-3xl"
+    >
+        <nav class="mx-auto px-3 max-w-2xl">
+            <ul
+                class="flex items-center h-[52px] px-3 text-sm font-medium text-gray-800 dark:text-gray-200"
+            >
+                <li
+                    v-for="item in items"
+                    :key="item.path"
+                    v-cursor-block
+                    class="hidden lg:block"
+                >
+                    <ULink
+                        :to="item.path"
+                        prefetch
+                        class="relative h-10 px-3 py-4 flex items-center justify-center transition"
+                        active-class="text-primary"
+                    >
+                        <span
+                            v-if="$route.path === item.path"
+                            class="active-bg absolute h-full w-full z-0 rounded-md bg-gray-500/10 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                        />
+                        {{ item.name }}
+                    </ULink>
+                </li>
+
+                <li>
+                    <UButton
+                        v-cursor-block
+                        color="white"
+                        variant="outline"
+                        size="sm"
+                        class="lg:hidden z-10 block"
+                        @click="isOpen = true"
+                    >
+                        {{ $t("navbar.menu") }}
+                    </UButton>
+                </li>
+
+                <LazyAppNavigationSliderOver
+                    v-if="isOpen"
+                    v-model:is-open="isOpen"
+                    :close="() => close()"
+                />
+
+                <li class="nav-item flex-1" />
+                <li v-cursor-block class="nav-item ml-3">
+                    <AppLanguageSelect />
+                </li>
+                <li
+                    v-cursor-block
+                    class="nav-item flex items-center justify-center ml-3"
+                >
+                    <ClientOnly fallback-tag="i">
+                        <AppThemeToggle />
+                        <template #fallback>
+                            <Icon
+                                aria-hidden="true"
+                                name="solar:laptop-minimalistic-bold"
+                                class="w-5 h-5"
+                            />
+                        </template>
+                    </ClientOnly>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</template>
 
 <style scoped>
 .nav-wrapper {

@@ -1,8 +1,8 @@
 {
-  "name": "Simdep10so",
-  "url": "https://www.simdep10so.vn/",
-  "description": "Сайт где вы можете приобрести сим-карты",
-  "thumbnail": "/projects/simdep10so.png",
-  "status": "Active",
-  "opensource": false
+    "name": "Simdep10so",
+    "url": "https://www.simdep10so.vn/",
+    "description": "Сайт где вы можете приобрести сим-карты",
+    "thumbnail": "/projects/simdep10so.png",
+    "status": "Active",
+    "opensource": false
 }

@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         "@nuxt/ui",
         "@nuxt/image",
         "@nuxt/content",
+        "@nuxt/eslint",
         "@nuxtjs/google-fonts",
         "@nuxtjs/fontaine",
         "@nuxtjs/i18n",

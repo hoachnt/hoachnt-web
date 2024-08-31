@@ -29,8 +29,8 @@ Set the width and height of the canvas to match the desired dimensions of your f
 ```js
 let img = new Image();
 img.onload = function () {
-  let ctx = canvas.getContext("2d");
-  ctx.drawImage(img, 0, 0);
+    let ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
 };
 img.src = "data:image/svg+xml;base64," + btoa(svgString);
 ```

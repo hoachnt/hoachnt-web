@@ -1,18 +1,3 @@
-<template>
-    <div class="embla">
-        <div class="embla__viewport" ref="emblaRef">
-            <slot />
-        </div>
-        <div
-            class="embla__controls grid grid-cols-[auto_1fr] justify-between gap-[1.2rem] mt-[1.8rem]"
-        >
-            <div class="embla__buttons space-x-1">
-                <slot name="emblaButtons" />
-            </div>
-        </div>
-    </div>
-</template>
-
 <script lang="ts" setup>
 import AutoHeight from "embla-carousel-auto-height";
 import emblaCarouselVue from "embla-carousel-vue";
@@ -32,6 +17,21 @@ onMounted(() => {
     }
 });
 </script>
+
+<template>
+    <div class="embla">
+        <div ref="emblaRef" class="embla__viewport">
+            <slot />
+        </div>
+        <div
+            class="embla__controls grid grid-cols-[auto_1fr] justify-between gap-[1.2rem] mt-[1.8rem]"
+        >
+            <div class="embla__buttons space-x-1">
+                <slot name="emblaButtons" />
+            </div>
+        </div>
+    </div>
+</template>
 
 <style scoped>
 .embla {

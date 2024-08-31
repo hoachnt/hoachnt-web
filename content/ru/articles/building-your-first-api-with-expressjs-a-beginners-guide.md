@@ -5,7 +5,6 @@ published: 2023/11/2
 slug: "building-your-first-api-with-expressjs-a-beginners-guide"
 ---
 
-
 > Эта статья была создана с использованием ChatGPT и предназначена для использования в качестве заполнителя.
 
 ## Что такое Express.js?
@@ -41,16 +40,16 @@ npm install express --save
 Создайте файл с именем app.js в каталоге вашего проекта. Этот файл будет точкой входа вашего API. Добавьте следующий код в app.js:
 
 ```js
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
- res.send('Привет, мир!');
+app.get("/", (req, res) => {
+    res.send("Привет, мир!");
 });
 
 app.listen(port, () => {
- console.log(`Пример приложения, прослушивающего http://localhost:${port}`);
+    console.log(`Пример приложения, прослушивающего http://localhost:${port}`);
 });
 ```
 

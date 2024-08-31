@@ -1,29 +1,3 @@
-<template>
-    <main class="min-h-screen">
-        <UButton
-            class="mb-11 lg:hover:!bg-transparent lg:hover:!text-primary lg:cursor-none lg:duration-200 lg:transition-all"
-            size="lg"
-            icon="i-heroicons-chevron-left"
-            v-cursor-block
-            @click="$router.push('/articles')"
-            >{{ $t("articles.slug.back") }}</UButton
-        >
-        <Transition name="fade">
-            <ArticlesSideBar :sections="sections" v-if="showArticlesSidebar" />
-        </Transition>
-        <div
-            class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
-        >
-            <ContentDoc v-slot="{ doc }" tag="article">
-                <article>
-                    <h1>{{ doc.title }}</h1>
-                    <ContentRenderer :value="doc" />
-                </article>
-            </ContentDoc>
-        </div>
-    </main>
-</template>
-
 <script setup lang="ts">
 const hydrate = useBoosterHydrate();
 const ArticlesSideBar = hydrate(
@@ -59,6 +33,32 @@ onMounted(() => {
     }
 });
 </script>
+
+<template>
+    <main class="min-h-screen">
+        <UButton
+            v-cursor-block
+            class="mb-11 lg:hover:!bg-transparent lg:hover:!text-primary lg:cursor-none lg:duration-200 lg:transition-all"
+            size="lg"
+            icon="i-heroicons-chevron-left"
+            @click="$router.push('/articles')"
+            >{{ $t("articles.slug.back") }}</UButton
+        >
+        <Transition name="fade">
+            <ArticlesSideBar v-if="showArticlesSidebar" :sections="sections" />
+        </Transition>
+        <div
+            class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
+        >
+            <ContentDoc v-slot="{ doc }" tag="article">
+                <article>
+                    <h1>{{ doc.title }}</h1>
+                    <ContentRenderer :value="doc" />
+                </article>
+            </ContentDoc>
+        </div>
+    </main>
+</template>
 
 <style scoped>
 .prose h2 a,

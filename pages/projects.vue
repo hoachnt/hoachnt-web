@@ -1,31 +1,3 @@
-<template>
-    <main class="min-h-screen">
-        <AppHeader
-            class="mb-12"
-            :title="$t('projects.projects')"
-            :description="$t('projects.description')"
-        />
-        <div class="space-y-4">
-            <AppProjectCard
-                v-for="(project, index) in projects"
-                v-motion
-                :initial="{ opacity: 0, y: 50 }"
-                :enter="{
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                        ease: 'easeInOut',
-                    },
-                }"
-                :delay="100 * index"
-                :duration="500"
-                :key="index"
-                :project="project"
-            />
-        </div>
-    </main>
-</template>
-
 <script setup lang="ts">
 const hydrate = useBoosterHydrate();
 const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
@@ -68,3 +40,31 @@ const { data: projects } = await useAsyncData(
             )
 );
 </script>
+
+<template>
+    <main class="min-h-screen">
+        <AppHeader
+            class="mb-12"
+            :title="$t('projects.projects')"
+            :description="$t('projects.description')"
+        />
+        <div class="space-y-4">
+            <AppProjectCard
+                v-for="(project, index) in projects"
+                :key="index"
+                v-motion
+                :initial="{ opacity: 0, y: 50 }"
+                :enter="{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        ease: 'easeInOut',
+                    },
+                }"
+                :delay="100 * index"
+                :duration="500"
+                :project="project"
+            />
+        </div>
+    </main>
+</template>

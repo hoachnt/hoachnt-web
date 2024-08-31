@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { LazyContentRenderer } from "#components";
+
 const hydrate = useBoosterHydrate();
 const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
-
-import { LazyContentRenderer } from "#components";
 
 const visibleItems = ref<Set<string>>(new Set());
 const localePath = useLocalePath();
@@ -39,25 +39,28 @@ function pathIsVisible(path: string | undefined): boolean {
             :description="$t('lab.description')"
         />
         <div class="space-y-24">
-            <ContentList :path="localePath('/lab')" v-slot="{ list }">
+            <ContentList v-slot="{ list }" :path="localePath('/lab')">
                 <ContentQuery
                     v-for="item in list.slice(0, 3)"
                     :key="item._path"
+                    v-slot="{ data }"
                     :path="item._path"
                     find="one"
-                    v-slot="{ data }"
                 >
                     <ContentRenderer>
                         <ContentRendererMarkdown :value="data" />
                     </ContentRenderer>
                 </ContentQuery>
 
-                <div v-for="item in list.slice(3)" class="min-h-5 h-fit">
+                <div
+                    v-for="item in list.slice(3)"
+                    :key="item._path"
+                    class="min-h-5 h-fit"
+                >
                     <ContentQuery
-                        :key="item._path"
+                        v-slot="{ data }"
                         :path="item._path"
                         find="one"
-                        v-slot="{ data }"
                     >
                         <ClientOnly>
                             <LazyContentRenderer

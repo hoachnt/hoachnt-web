@@ -75,11 +75,11 @@ if (!isMobile()) {
 <template>
     <NuxtLoadingIndicator color="#3b82f6" class="z-[9999]" />
     <AppNavbar />
-    <div class="h-11"></div>
+    <div class="h-11" />
     <UContainer>
         <NuxtPage />
     </UContainer>
-    <div class="h-11"></div>
+    <div class="h-11" />
     <UContainer>
         <UDivider />
     </UContainer>

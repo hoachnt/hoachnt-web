@@ -4,16 +4,16 @@ import { watchEffect } from "vue-demi";
 
 const { t } = useI18n();
 const colorMode = useColorMode({
-  emitAuto: true,
-  modes: {
-    cafe: "cafe",
-  },
+    emitAuto: true,
+    modes: {
+        cafe: "cafe",
+    },
 });
 const { state, next } = useCycleList(
-  ["dark", "light", "auto", "cafe"] as const,
-  {
-    initialValue: colorMode,
-  }
+    ["dark", "light", "auto", "cafe"] as const,
+    {
+        initialValue: colorMode,
+    }
 );
 
 const toggleTheme = computed(() => t("navbar.toggleTheme"));
@@ -21,64 +21,64 @@ const toggleTheme = computed(() => t("navbar.toggleTheme"));
 watchEffect(() => (colorMode.value = state.value));
 </script>
 
+<template>
+    <UTooltip :text="toggleTheme" :ui="{ popper: { strategy: 'absolute' } }">
+        <button
+            class="px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400 relative"
+            @click="next()"
+        >
+            <Transition name="slide-up">
+                <Icon
+                    v-if="state === 'cafe'"
+                    :key="1"
+                    aria-hidden="true"
+                    name="solar:moon-bold"
+                    class="w-5 h-5 absolute"
+                />
+                <Icon
+                    v-else-if="state === 'dark'"
+                    :key="2"
+                    aria-hidden="true"
+                    name="solar:sun-2-bold"
+                    class="w-5 h-5 absolute"
+                />
+                <Icon
+                    v-else-if="state === 'light'"
+                    :key="3"
+                    aria-hidden="true"
+                    name="solar:laptop-minimalistic-bold"
+                    class="w-5 h-5 absolute"
+                />
+                <Icon
+                    v-else-if="state === 'auto'"
+                    :key="4"
+                    aria-hidden="true"
+                    name="solar:tea-cup-bold"
+                    class="w-5 h-5 absolute"
+                />
+            </Transition>
+            <span class="sr-only">Toggle theme</span>
+        </button>
+    </UTooltip>
+</template>
+
 <style>
 html.cafe {
-  filter: sepia(0.9) hue-rotate(315deg) brightness(0.9);
+    filter: sepia(0.9) hue-rotate(315deg) brightness(0.9);
 }
 
 .slide-up-enter-active,
 .slide-up-leave-active {
-  transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
 }
 
 .slide-up-enter-from {
-  opacity: 0;
-  transform: translateY(30px);
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .slide-up-leave-to {
-  opacity: 0;
-  transform: translateY(-30px);
+    opacity: 0;
+    transform: translateY(-30px);
 }
 </style>
-
-<template>
-  <UTooltip :text="toggleTheme" :ui="{ popper: { strategy: 'absolute' } }">
-    <button
-      class="px-3 py-4 flex items-center justify-center transition hover:text-primary-500 dark:hover:text-primary-400 relative"
-      @click="next()"
-    >
-      <Transition name="slide-up">
-        <Icon
-          v-if="state === 'cafe'"
-          aria-hidden="true"
-          name="solar:moon-bold"
-          class="w-5 h-5 absolute"
-          :key="1"
-        />
-        <Icon
-          v-else-if="state === 'dark'"
-          aria-hidden="true"
-          name="solar:sun-2-bold"
-          class="w-5 h-5 absolute"
-          :key="2"
-        />
-        <Icon
-          v-else-if="state === 'light'"
-          aria-hidden="true"
-          name="solar:laptop-minimalistic-bold"
-          class="w-5 h-5 absolute"
-          :key="3"
-        />
-        <Icon
-          v-else-if="state === 'auto'"
-          aria-hidden="true"
-          name="solar:tea-cup-bold"
-          class="w-5 h-5 absolute"
-          :key="4"
-        />
-      </Transition>
-      <span class="sr-only">Toggle theme</span>
-    </button>
-  </UTooltip>
-</template>

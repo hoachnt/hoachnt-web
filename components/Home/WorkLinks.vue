@@ -1,3 +1,17 @@
+<script lang="ts" setup>
+const headingStyle =
+    "uppercase text-xs font-semibold text-white p-1 mb-4 bg-black dark:bg-white dark:text-black w-fit";
+
+const linksForWork = [
+    {
+        name: "Mail",
+        url: "mailto:hoachprogrammer@gmail.com",
+        icon: "mdi:mail-ru",
+    },
+    { name: "Phone", url: "tel:+84934442006", icon: "mdi:phone" },
+];
+</script>
+
 <template>
     <div>
         <h2 :class="headingStyle">
@@ -17,23 +31,9 @@
                 </span>
                 <div
                     class="flex-1 border-b border-dashed border-gray-300 dark:border-gray-800 group-hover:border-gray-700"
-                ></div>
-                <Icon :name="link.icon" class="w-6 h-6" :alt="link.name"></Icon>
+                />
+                <Icon :name="link.icon" class="w-6 h-6" :alt="link.name" />
             </NuxtLink>
         </div>
     </div>
 </template>
-
-<script lang="ts" setup>
-const headingStyle =
-    "uppercase text-xs font-semibold text-white p-1 mb-4 bg-black dark:bg-white dark:text-black w-fit";
-
-const linksForWork = [
-    {
-        name: "Mail",
-        url: "mailto:hoachprogrammer@gmail.com",
-        icon: "mdi:mail-ru",
-    },
-    { name: "Phone", url: "tel:+84934442006", icon: "mdi:phone" },
-];
-</script>

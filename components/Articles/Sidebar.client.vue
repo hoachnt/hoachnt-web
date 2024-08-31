@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import { useFixedHeader } from "vue-use-fixed-header";
+
+defineProps<{
+    sections: { id: string; title: string | null }[];
+}>();
+
+const headerRef = ref(null);
+
+const { styles } = useFixedHeader(headerRef);
+</script>
+
 <template>
     <aside
         ref="headerRef"
@@ -15,18 +27,6 @@
         </ul>
     </aside>
 </template>
-
-<script setup lang="ts">
-import { useFixedHeader } from "vue-use-fixed-header";
-
-const props = defineProps<{
-    sections: { id: string; title: string | null }[];
-}>();
-
-const headerRef = ref(null);
-
-const { styles } = useFixedHeader(headerRef);
-</script>
 
 <style scoped>
 aside {

@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+function scrollToTop() {
+    if (window) {
+        window.scrollTo(0, 0);
+    }
+}
+</script>
+
 <template>
     <UButton
         icon="i-heroicons-chevron-up"
@@ -8,13 +16,5 @@
         @click="scrollToTop()"
     />
 </template>
-
-<script lang="ts" setup>
-function scrollToTop() {
-    if (window) {
-        window.scrollTo(0, 0);
-    }
-}
-</script>
 
 <style></style>
