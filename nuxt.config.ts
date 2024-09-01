@@ -7,12 +7,19 @@ export default defineNuxtConfig({
 
     devtools: { enabled: true },
 
+    nitro: {
+        prerender: {
+            crawlLinks: true,
+            routes: [
+                "/sitemap.xml",
+                "/lab",
+                "/articles",
+                "/projects",
+            ],
+        },
+    },
     routeRules: {
-        "/projects": { prerender: true },
-        "/articles": { prerender: true },
-        "/articles/**": { prerender: true },
-        "/lab": { prerender: true },
-        "/sitemap.xml": { prerender: true },
+        "/": { isr: true, prerender: true },
     },
 
     plugins: ["~/plugins/ipad-cursor"],

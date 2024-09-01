@@ -1,4 +1,5 @@
 export default defineAppConfig({
+    footerName: "Hoachnt",
     ui: {
         primary: "blue",
         gray: "neutral",
