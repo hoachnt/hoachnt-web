@@ -1,4 +1,5 @@
 export default defineAppConfig({
+    appName: "Nguyen Tien Hoach",
     footerName: "Hoachnt",
     ui: {
         primary: "blue",

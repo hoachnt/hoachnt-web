@@ -10,12 +10,7 @@ export default defineNuxtConfig({
     nitro: {
         prerender: {
             crawlLinks: true,
-            routes: [
-                "/sitemap.xml",
-                "/lab",
-                "/articles",
-                "/projects",
-            ],
+            routes: ["/sitemap.xml", "/lab", "/articles", "/projects"],
         },
     },
     routeRules: {
@@ -38,6 +33,7 @@ export default defineNuxtConfig({
         "nuxt-icon",
         "nuxt-delay-hydration",
         "nuxt-booster",
+        "nuxt-svgo",
         "@vueuse/nuxt",
         "@vueuse/motion/nuxt",
         "@pinia/nuxt",
@@ -162,6 +158,10 @@ export default defineNuxtConfig({
                 cafe: "monokai",
             },
         },
+    },
+
+    svgo: {
+        autoImportPath: "./assets/logo/",
     },
 
     sitemap: {
