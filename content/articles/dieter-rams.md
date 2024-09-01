@@ -7,7 +7,7 @@ slug: "dieter-rams"
 
 ![Dieter Rams](/articles/dieter-rams.jpg)
 
-# The Father of Modern Minimalism
+## The Father of Modern Minimalism
 
 Dieter Rams is a legendary designer whose ideas about functional simplicity and minimalism laid the foundation for modern design. His work and philosophy have profoundly influenced the industry, inspiring companies like Apple.
 

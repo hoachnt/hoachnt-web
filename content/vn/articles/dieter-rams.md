@@ -7,7 +7,7 @@ slug: "dieter-rams"
 
 ![Dieter Rams](/articles/dieter-rams.jpg)
 
-# Người Cha của Chủ Nghĩa Tối Giản Hiện Đại
+## Người Cha của Chủ Nghĩa Tối Giản Hiện Đại
 
 Dieter Rams là một nhà thiết kế huyền thoại với những ý tưởng về sự đơn giản chức năng và chủ nghĩa tối giản đã tạo nền tảng cho thiết kế hiện đại. Công việc và triết lý của ông đã ảnh hưởng sâu rộng đến ngành công nghiệp, truyền cảm hứng cho các công ty như Apple.
 

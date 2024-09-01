@@ -31,13 +31,13 @@ Then follow these steps:
 
 1. Clone the repository:
 
-```
+```bash
 git clone https://github.com/hoachnt/YanghoScript.git
 ```
 
 2. Install dependencies:
 
-```
+```bash
 cd YanghoScript
 npm install
 ```
@@ -82,13 +82,13 @@ NOILIENTUC 2 LESS EQUALS 1;
 
 To run a program, use the following command in the terminal:
 
-```
+```bash
 npm start
 ```
 
 or
 
-```
+```bash
 yarn start
 ```
 

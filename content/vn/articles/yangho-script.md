@@ -31,13 +31,13 @@ Sau đó, thực hiện các bước sau:
 
 1. Clone repository:
 
-```
+```bash
 git clone https://github.com/hoachnt/YanghoScript.git
 ```
 
 2. Cài đặt các gói phụ thuộc:
 
-```
+```bash
 cd YanghoScript
 npm install
 ```
@@ -75,13 +75,13 @@ NOILIENTUC 1 LESS THAN 2;
 
 Để chạy chương trình, hãy sử dụng lệnh sau trong terminal:
 
-```
+```bash
 npm start
 ```
 
 hoặc
 
-```
+```bash
 yarn start
 ```
 

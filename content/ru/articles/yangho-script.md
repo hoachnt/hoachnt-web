@@ -31,13 +31,13 @@ YanghoScript — это простой язык программирования
 
 1. Клонируйте репозиторий:
 
-```
+```bash
 git clone https://github.com/hoachnt/YanghoScript.git
 ```
 
 2. Установите зависимости:
 
-```
+```bash
 cd YanghoScript
 npm install
 ```
@@ -74,13 +74,13 @@ NOILIENTUC 1 LESS THAN 2;
 
 Чтобы запустить программу, используйте следующую команду в терминале:
 
-```
+```bash
 npm start
 ```
 
 или
 
-```
+```bash
 yarn start
 ```
 

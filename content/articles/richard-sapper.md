@@ -7,8 +7,6 @@ slug: "richard-sapper"
 
 ![Richard Sapper](/articles/richard-sapper.jpg)
 
-# Richard Sapper: Biography, Iconic Works, and the Man Apple Couldn't Hire
-
 ## Biography
 
 Richard Sapper was born in 1932 in Munich, Germany. After studying philosophy, anatomy, and engineering, Sapper began his career at Mercedes-Benz, where he worked on car design. However, he gained true recognition as an industrial designer who combined functionality, innovation, and aesthetic sophistication in his works. Sapper's designs received numerous awards, making him one of the most influential designers of his time.
