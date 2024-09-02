@@ -38,7 +38,8 @@ onMounted(() => {
     <main class="min-h-screen">
         <UButton
             v-cursor-block
-            class="mb-11 lg:hover:!bg-transparent lg:hover:!text-primary lg:cursor-none lg:duration-200 lg:transition-all"
+            class="mb-11 lg:cursor-none"
+            color="black"
             size="lg"
             icon="i-heroicons-chevron-left"
             @click="$router.push('/articles')"

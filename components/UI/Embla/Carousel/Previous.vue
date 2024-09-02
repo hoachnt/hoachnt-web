@@ -6,7 +6,7 @@
         aria-label="embla previous"
         icon="i-heroicons-chevron-left"
         size="md"
-        color="primary"
+        color="black"
         variant="solid"
         class="embla__prev cursor-none"
         :ui="{ rounded: 'rounded-full' }"

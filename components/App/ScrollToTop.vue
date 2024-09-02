@@ -11,6 +11,7 @@ function scrollToTop() {
         icon="i-heroicons-chevron-up"
         variant="soft"
         size="xl"
+        color="black"
         class="fixed bottom-10 right-10 backdrop-blur-md bg-gray-200/50 text-black hover:!bg-gray-300 dark:bg-gray-800/50 dark:text-white dark:hover:!bg-gray-900 transition duration-200"
         :ui="{ rounded: 'rounded-full' }"
         @click="scrollToTop()"

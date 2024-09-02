@@ -66,7 +66,7 @@ function close() {
                         :to="item.path"
                         prefetch
                         class="relative h-10 px-3 py-4 flex items-center justify-center transition"
-                        active-class="text-primary"
+                        active-class="dark:text-white text-black"
                     >
                         <span
                             v-if="$route.path === item.path"
@@ -79,7 +79,7 @@ function close() {
                 <li>
                     <UButton
                         v-cursor-block
-                        color="white"
+                        color="black"
                         variant="outline"
                         size="sm"
                         class="lg:hidden z-10 block"
