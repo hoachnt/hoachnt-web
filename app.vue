@@ -108,7 +108,7 @@ if (!isMobile()) {
 </script>
 
 <template>
-    <NuxtLoadingIndicator color="#000000" class="z-[9999]" />
+    <NuxtLoadingIndicator class="z-[9999]" />
     <AppNavbar />
     <div class="h-11" />
     <UContainer>
