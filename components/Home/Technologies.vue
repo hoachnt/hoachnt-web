@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-const headingStyle =
-    "uppercase text-xs font-semibold text-white p-1 mb-4 bg-black dark:bg-white dark:text-black w-fit";
+const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
 
 const technologies = [
     { id: 0, title: "Golang", icon: "logos:go", url: "https://go.dev/" },
@@ -87,31 +86,7 @@ const technologies = [
                 prefetch
                 class="item duration-200 ease-in-out transition-all"
             >
-                <UCard
-                    :ui="{
-                        background: 'bg-white dark:bg-gray-900',
-                        divide: 'divide-y divide-gray-200 dark:divide-gray-800',
-                        ring: 'ring-1 ring-gray-200 dark:ring-gray-800',
-                        rounded: 'rounded-lg',
-                        shadow: 'shadow',
-                        body: {
-                            base: 'h-full',
-                            background: '',
-                            padding: 'p-2 sm:p-6',
-                        },
-                        header: {
-                            base: '',
-                            background: '',
-                            padding: 'px-4 py-5 sm:px-6',
-                        },
-                        footer: {
-                            base: '',
-                            background: '',
-                            padding: 'px-4 py-4 sm:px-6',
-                        },
-                    }"
-                    class="duration-200 ease-in-out transition-all md:hover:rounded-3xl md:hover:scale-110 h-full"
-                >
+                <UCard class="duration-200 ease-in-out transition-all h-full">
                     <Icon
                         v-if="technology.icon"
                         :name="technology.icon"

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-const headingStyle =
-    "uppercase text-xs font-semibold text-white p-1 mb-4 bg-black dark:bg-white dark:text-black w-fit";
+const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
 
 const linksForWork = [
     {

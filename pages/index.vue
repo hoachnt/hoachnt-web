@@ -50,9 +50,7 @@ useSeoMeta({ ...seoMeta.value });
                 <template #default>
                     <UIEmblaCarouselContent>
                         <UIEmblaCarouselItem class="space-y-24">
-                            <HomeTechnologies
-                                class="border border-gray-200 dark:border-gray-800 p-4 rounded-xl"
-                            />
+                            <HomeTechnologies />
                         </UIEmblaCarouselItem>
                         <UIEmblaCarouselItem class="space-y-24">
                             <HomeSocialLinks />

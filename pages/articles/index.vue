@@ -58,7 +58,6 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
             <template #trailing>
                 <UButton
                     v-show="search !== ''"
-                    
                     color="gray"
                     variant="link"
                     icon="i-heroicons-x-mark-20-solid"
@@ -71,7 +70,7 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
             <li
                 v-for="(article, index) in results"
                 :key="index"
-                class="hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200 max-w-2xl"
+                class="hover:bg-gray-200 dark:hover:bg-white/10 duration-200 max-w-2xl"
             >
                 <AppArticleCard :article="article" />
             </li>

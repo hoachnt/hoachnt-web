@@ -59,7 +59,6 @@ function close() {
                 <li
                     v-for="item in items"
                     :key="item.path"
-                    
                     class="hidden lg:block"
                 >
                     <ULink
@@ -70,7 +69,7 @@ function close() {
                     >
                         <span
                             v-if="$route.path === item.path"
-                            class="active-bg absolute h-full w-full z-0 rounded-md bg-gray-500/10 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                            class="active-bg absolute h-full w-full z-0 bg-gray-500/10 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                         />
                         {{ item.name }}
                     </ULink>
@@ -78,7 +77,6 @@ function close() {
 
                 <li>
                     <UButton
-                        
                         color="black"
                         variant="outline"
                         size="sm"
@@ -96,13 +94,10 @@ function close() {
                 />
 
                 <li class="nav-item flex-1" />
-                <li  class="nav-item ml-3">
+                <li class="nav-item ml-3">
                     <AppLanguageSelect />
                 </li>
-                <li
-                    
-                    class="nav-item flex items-center justify-center ml-3"
-                >
+                <li class="nav-item flex items-center justify-center ml-3">
                     <ClientOnly fallback-tag="i">
                         <AppThemeToggle />
                         <template #fallback>

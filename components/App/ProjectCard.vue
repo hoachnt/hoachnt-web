@@ -11,7 +11,7 @@ defineProps({
 
 <template>
     <NuxtLink
-        class="flex items-end gap-4 group p-2 -m-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded-md duration-200"
+        class="flex items-end gap-4 group p-2 -m-2 hover:bg-gray-200 dark:hover:bg-white/10 duration-200"
         :to="project.url"
         target="_blank"
         external

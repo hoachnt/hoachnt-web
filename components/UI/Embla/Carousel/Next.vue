@@ -8,7 +8,6 @@
         color="black"
         variant="solid"
         class="embla__next"
-        :ui="{ rounded: 'rounded-full' }"
     />
 </template>
 

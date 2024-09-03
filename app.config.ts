@@ -13,7 +13,7 @@ export default defineAppConfig({
         },
         button: {
             rounded:
-                "rounded-md transition-transform active:scale-x-[0.98] active:scale-y-[0.99]",
+                "rounded-none transition-transform active:scale-x-[0.98] active:scale-y-[0.99]",
         },
         modal: {
             overlay: {
@@ -30,5 +30,16 @@ export default defineAppConfig({
         container: {
             constrained: "max-w-2xl",
         },
+        card: {
+            rounded: "rounded-none",
+            shadow: "shadow-none",
+            ring: "ring-0",
+        },
+        input: {
+            rounded: "rounded-none"
+        },
+        select: {
+            rounded: "rounded-none"
+        }
     },
 });
