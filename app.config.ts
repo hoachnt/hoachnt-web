@@ -36,10 +36,10 @@ export default defineAppConfig({
             ring: "ring-0",
         },
         input: {
-            rounded: "rounded-none"
+            rounded: "rounded-none",
         },
         select: {
-            rounded: "rounded-none"
-        }
+            rounded: "rounded-none",
+        },
     },
 });

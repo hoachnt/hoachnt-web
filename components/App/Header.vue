@@ -14,7 +14,6 @@ defineProps({
 <template>
     <div>
         <h1
-            
             class="text-2xl font-bold text-zinc-800 dark:text-zinc-100 tracking-[.007em]"
         >
             {{ title }}. <span class="text-zinc-400">{{ description }}.</span>

@@ -12,15 +12,14 @@
             format="webp"
         />
         <h1
-            
             class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100 capitalize"
         >
             {{ $t("home.hello") }}.
         </h1>
-        <p  class="text-gray-900 dark:text-gray-400">
+        <p class="text-gray-900 dark:text-gray-400">
             {{ $t("home.aboutMeText1") }}
         </p>
-        <p  class="text-gray-900 dark:text-gray-400">
+        <p class="text-gray-900 dark:text-gray-400">
             {{ $t("home.aboutMeText2") }}
         </p>
     </div>

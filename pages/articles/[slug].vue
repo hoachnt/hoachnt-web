@@ -37,7 +37,6 @@ onMounted(() => {
 <template>
     <main class="min-h-screen">
         <UButton
-            
             class="mb-11"
             color="black"
             size="lg"
