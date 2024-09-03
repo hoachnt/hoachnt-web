@@ -80,7 +80,6 @@ const technologies = [
             <NuxtLink
                 v-for="(technology, index) in technologies"
                 :key="index"
-                v-cursor-block="{ radius: '24px' }"
                 :to="technology.url"
                 :aria-label="technology.title"
                 target="_blank"

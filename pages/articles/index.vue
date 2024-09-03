@@ -58,7 +58,7 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
             <template #trailing>
                 <UButton
                     v-show="search !== ''"
-                    v-cursor-block
+                    
                     color="gray"
                     variant="link"
                     icon="i-heroicons-x-mark-20-solid"

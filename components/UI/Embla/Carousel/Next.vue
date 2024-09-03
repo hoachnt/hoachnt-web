@@ -2,13 +2,12 @@
 
 <template>
     <UButton
-        v-cursor-block
         aria-label="embla next"
         icon="i-heroicons-chevron-right"
         size="md"
         color="black"
         variant="solid"
-        class="embla__next cursor-none"
+        class="embla__next"
         :ui="{ rounded: 'rounded-full' }"
     />
 </template>

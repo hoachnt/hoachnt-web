@@ -4,6 +4,11 @@ export default defineNuxtConfig({
     experimental: {
         // viewTransition: true,
     },
+    runtimeConfig: {
+        public: {
+            enableIpadCursor: false,
+        },
+    },
 
     devtools: { enabled: true },
 

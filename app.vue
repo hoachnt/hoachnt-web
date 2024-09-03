@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { useCursor } from "ipad-cursor/vue";
-import { useColorMode } from "@vueuse/core";
-
 const { t } = useI18n();
 
 const el = ref<HTMLElement | null>(null);
@@ -64,47 +61,6 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener("scroll", handleScroll);
 });
-
-const colorModes = {
-    dark: "rgba(255, 255, 255, 0.8)",
-    light: "rgba(0, 0, 0, 0.8)",
-    auto: "rgba(150, 150, 150, 0.5)",
-    cafe: "rgba(150, 150, 150, 0.5)",
-} as const;
-
-const colorMode = useColorMode({
-    emitAuto: true,
-    modes: {
-        cafe: "cafe",
-    },
-});
-
-type ColorMode = keyof typeof colorModes;
-
-const { isMobile } = useDevice();
-
-function updateCursor() {
-    const currentMode = colorMode.value as ColorMode;
-
-    useCursor().updateConfig({
-        textStyle: {
-            background: colorModes[currentMode] || "rgba(150, 150, 150, 0.5)",
-        },
-        normalStyle: {
-            background: ["auto", "cafe"].includes(colorMode.value)
-                ? "rgba(150, 150, 150, 0.5)"
-                : "rgba(150, 150, 150, 0.2)",
-        },
-        mouseDownStyle: {
-            background: "rgba(150, 150, 150, 0.4)",
-        },
-    });
-}
-
-if (!isMobile()) {
-    watch(colorMode, updateCursor);
-    onMounted(updateCursor);
-}
 </script>
 
 <template>

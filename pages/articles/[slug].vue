@@ -37,8 +37,8 @@ onMounted(() => {
 <template>
     <main class="min-h-screen">
         <UButton
-            v-cursor-block
-            class="mb-11 lg:cursor-none"
+            
+            class="mb-11"
             color="black"
             size="lg"
             icon="i-heroicons-chevron-left"

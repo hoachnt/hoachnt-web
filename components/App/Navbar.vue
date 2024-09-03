@@ -59,7 +59,7 @@ function close() {
                 <li
                     v-for="item in items"
                     :key="item.path"
-                    v-cursor-block
+                    
                     class="hidden lg:block"
                 >
                     <ULink
@@ -78,7 +78,7 @@ function close() {
 
                 <li>
                     <UButton
-                        v-cursor-block
+                        
                         color="black"
                         variant="outline"
                         size="sm"
@@ -96,11 +96,11 @@ function close() {
                 />
 
                 <li class="nav-item flex-1" />
-                <li v-cursor-block class="nav-item ml-3">
+                <li  class="nav-item ml-3">
                     <AppLanguageSelect />
                 </li>
                 <li
-                    v-cursor-block
+                    
                     class="nav-item flex items-center justify-center ml-3"
                 >
                     <ClientOnly fallback-tag="i">
