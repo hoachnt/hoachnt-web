@@ -28,8 +28,8 @@ const { data: articles } = await useAsyncData(
 const results = computed(() => filterArticles(articles));
 
 function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
-    const result = articles.value?.filter((article: { title: string }) =>
-        article.title?.toLowerCase()?.includes(search.value.toLowerCase())
+    const result = articles.value?.filter((article: ParsedContent) =>
+        article.title?.toLowerCase().includes(search.value.toLowerCase())
     );
 
     return result;
