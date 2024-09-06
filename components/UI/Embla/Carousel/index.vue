@@ -1,8 +1,12 @@
 <script lang="ts" setup>
 import AutoHeight from "embla-carousel-auto-height";
 import emblaCarouselVue from "embla-carousel-vue";
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
-const [emblaRef, emblaApi] = emblaCarouselVue({ loop: false }, [AutoHeight()]);
+const [emblaRef, emblaApi] = emblaCarouselVue({ loop: false }, [
+    AutoHeight(),
+    WheelGesturesPlugin(),
+]);
 const carouselStore = useCarouselStore();
 
 onMounted(() => {
