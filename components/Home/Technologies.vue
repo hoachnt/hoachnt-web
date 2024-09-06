@@ -91,7 +91,7 @@ const technologies = [
                         v-if="technology.icon"
                         :name="technology.icon"
                         :alt="technology.title"
-                        class="w-full h-full"
+                        class="w-full h-10"
                     />
                     <NuxtImg
                         v-else

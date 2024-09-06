@@ -1,10 +1,4 @@
 <script setup lang="ts">
-const hydrate = useBoosterHydrate();
-const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
-const AppProjectCard = hydrate(
-    () => import("@/components/App/ProjectCard.vue")
-);
-
 const { t } = useI18n();
 
 const localePath = useLocalePath();
@@ -43,13 +37,13 @@ const { data: projects } = await useAsyncData(
 
 <template>
     <main>
-        <AppHeader
+        <LazyAppHeader
             class="mb-12"
             :title="$t('projects.projects')"
             :description="$t('projects.description')"
         />
         <div class="space-y-4">
-            <AppProjectCard
+            <LazyAppProjectCard
                 v-for="(project, index) in projects"
                 :key="index"
                 v-motion

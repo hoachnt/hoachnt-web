@@ -1,9 +1,4 @@
 <script setup lang="ts">
-const hydrate = useBoosterHydrate();
-const ArticlesSideBar = hydrate(
-    () => import("@/components/Articles/Sidebar.client.vue")
-);
-
 interface ISection {
     id: string;
     title: string | null;
@@ -51,7 +46,10 @@ function returnBack() {
             >{{ $t("articles.slug.back") }}</UButton
         >
         <Transition name="fade">
-            <ArticlesSideBar v-if="showArticlesSidebar" :sections="sections" />
+            <LazyArticlesSideBar
+                v-if="showArticlesSidebar"
+                :sections="sections"
+            />
         </Transition>
         <div
             class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"

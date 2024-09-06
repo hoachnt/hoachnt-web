@@ -1,4 +1,3 @@
-import type { BoosterConfig } from "./types/boosterConfig";
 
 export default defineNuxtConfig({
     experimental: {
@@ -25,60 +24,28 @@ export default defineNuxtConfig({
     plugins: ["~/plugins/ipad-cursor"],
 
     modules: [
-        "@nuxt/ui",
-        "@nuxt/image",
-        "@nuxt/content",
-        "@nuxt/eslint",
-        "@nuxtjs/google-fonts",
-        "@nuxtjs/fontaine",
-        "@nuxtjs/i18n",
-        "@nuxtjs/mdc",
-        "@nuxtjs/sitemap",
-        "@nuxtjs/html-validator",
-        "nuxt-icon",
-        "nuxt-delay-hydration",
-        "nuxt-booster",
-        "nuxt-svgo",
-        "@vueuse/nuxt",
-        "@vueuse/motion/nuxt",
-        "@pinia/nuxt",
-        "@nuxthq/studio",
+      "@nuxt/ui",
+      "@nuxt/image",
+      "@nuxt/content",
+      "@nuxt/eslint",
+      "@nuxtjs/google-fonts",
+      "@nuxtjs/fontaine",
+      "@nuxtjs/i18n",
+      "@nuxtjs/mdc",
+      "@nuxtjs/sitemap",
+      "@nuxtjs/html-validator",
+      "nuxt-delay-hydration",
+      "nuxt-svgo",
+      "@vueuse/nuxt",
+      "@vueuse/motion/nuxt",
+      "@pinia/nuxt",
+      "@nuxthq/studio",
+      "@nuxt/icon",
     ],
 
     pinia: {
         storesDirs: ["./stores/**"],
     },
-
-    booster: {
-        detection: {
-            performance: true,
-            browserSupport: true,
-            battery: true,
-        },
-        performanceMetrics: {
-            device: {
-                hardwareConcurrency: { min: 2, max: 48 },
-                deviceMemory: { min: 2 },
-            },
-            timing: {
-                fcp: 800,
-                dcl: 1200,
-            },
-        },
-        targetFormats: ["webp", "avif", "jpg|jpeg|png|gif"],
-        optimizeSSR: {
-            cleanPreloads: true,
-            cleanPrefetches: true,
-            inlineStyles: true,
-        },
-
-        componentAutoImport: false,
-
-        lazyOffset: {
-            component: "0%",
-            asset: "0%",
-        },
-    } as BoosterConfig,
 
     site: {
         url: "https://www.hoachnt.com",

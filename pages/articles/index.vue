@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import type { ParsedContent } from "@nuxt/content";
 
-const hydrate = useBoosterHydrate();
-const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
-const AppArticleCard = hydrate(
-    () => import("@/components/App/ArticleCard.vue")
-);
-
 const localePath = useLocalePath();
 const route = useRoute();
 const { t } = useI18n();
@@ -38,7 +32,7 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
 
 <template>
     <main>
-        <AppHeader
+        <LazyAppHeader
             class="mb-16"
             :title="$t('articles.articles')"
             :description="$t('articles.description')"
@@ -72,7 +66,7 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
                 :key="index"
                 class="hover:bg-gray-200 dark:hover:bg-white/10 duration-200 max-w-2xl"
             >
-                <AppArticleCard :article="article" />
+                <LazyAppArticleCard :article="article" />
             </li>
             <li v-if="results?.length === 0" key="not-found">
                 {{ $t("articles.notFound") }}

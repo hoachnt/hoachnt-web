@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { LazyContentRenderer } from "#components";
 
-const hydrate = useBoosterHydrate();
-const AppHeader = hydrate(() => import("@/components/App/Header.vue"));
-
 const visibleItems = ref<Set<string>>(new Set());
 const localePath = useLocalePath();
 const { t } = useI18n();
@@ -33,7 +30,7 @@ function pathIsVisible(path: string | undefined): boolean {
 
 <template>
     <main class="min-h-screen">
-        <AppHeader
+        <LazyAppHeader
             class="mb-12"
             :title="$t('lab.lab')"
             :description="$t('lab.description')"
