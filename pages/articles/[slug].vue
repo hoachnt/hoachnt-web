@@ -10,6 +10,8 @@ interface ISection {
 }
 
 const route = useRoute();
+const router = useRouter();
+const localePath = useLocalePath();
 
 const sections = ref<ISection[]>([]);
 const showArticlesSidebar = ref(false);
@@ -32,6 +34,10 @@ onMounted(() => {
         showArticlesSidebar.value = false;
     }
 });
+
+function returnBack() {
+    return router.push(localePath("/articles"));
+}
 </script>
 
 <template>
@@ -41,7 +47,7 @@ onMounted(() => {
             color="black"
             size="lg"
             icon="i-heroicons-chevron-left"
-            @click="$router.push('/articles')"
+            @click="returnBack"
             >{{ $t("articles.slug.back") }}</UButton
         >
         <Transition name="fade">
