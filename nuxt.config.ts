@@ -1,4 +1,3 @@
-
 export default defineNuxtConfig({
     experimental: {
         // viewTransition: true,
@@ -24,24 +23,30 @@ export default defineNuxtConfig({
     plugins: ["~/plugins/ipad-cursor"],
 
     modules: [
-      "@nuxt/ui",
-      "@nuxt/image",
-      "@nuxt/content",
-      "@nuxt/eslint",
-      "@nuxtjs/google-fonts",
-      "@nuxtjs/fontaine",
-      "@nuxtjs/i18n",
-      "@nuxtjs/mdc",
-      "@nuxtjs/sitemap",
-      "@nuxtjs/html-validator",
-      "nuxt-delay-hydration",
-      "nuxt-svgo",
-      "@vueuse/nuxt",
-      "@vueuse/motion/nuxt",
-      "@pinia/nuxt",
-      "@nuxthq/studio",
-      "@nuxt/icon",
+        "@nuxt/ui",
+        "@nuxt/image",
+        "@nuxt/content",
+        "@nuxt/eslint",
+        "@nuxtjs/google-fonts",
+        "@nuxtjs/fontaine",
+        "@nuxtjs/i18n",
+        "@nuxtjs/mdc",
+        "@nuxtjs/sitemap",
+        "@nuxtjs/html-validator",
+        "nuxt-delay-hydration",
+        "nuxt-svgo",
+        "@vueuse/nuxt",
+        "@vueuse/motion/nuxt",
+        "@pinia/nuxt",
+        "@nuxthq/studio",
+        "@nuxt/icon",
     ],
+
+    eslint: {
+        config: {
+            stylistic: true, // <---
+        },
+    },
 
     pinia: {
         storesDirs: ["./stores/**"],
