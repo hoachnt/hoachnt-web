@@ -43,9 +43,7 @@ export default defineNuxtConfig({
     ],
 
     eslint: {
-        config: {
-            stylistic: true, // <---
-        },
+        config: {},
     },
 
     pinia: {

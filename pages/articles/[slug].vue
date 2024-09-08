@@ -43,8 +43,9 @@ function returnBack() {
             size="lg"
             icon="i-heroicons-chevron-left"
             @click="returnBack"
-            >{{ $t("articles.slug.back") }}</UButton
         >
+            {{ $t("articles.slug.back") }}
+        </UButton>
         <Transition name="fade">
             <LazyArticlesSideBar
                 v-if="showArticlesSidebar"

@@ -17,7 +17,9 @@ const tab = ref("preview");
 
 <template>
     <div>
-        <h2 class="text-sm font-semibold">{{ title }}</h2>
+        <h2 class="text-sm font-semibold">
+            {{ title }}
+        </h2>
         <p class="text-gray-500 text-sm">
             {{ description }}
         </p>

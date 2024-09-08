@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const SvgoHoachnt = defineAsyncComponent(
+    () => import("~/assets/logo/hoachnt.svg")
+);
 const { appName } = useAppConfig();
 
 defineProps({

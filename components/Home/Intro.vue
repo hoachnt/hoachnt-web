@@ -24,6 +24,7 @@
         </p>
     </div>
 </template>
+
 <style scoped>
 h1 {
     view-transition-name: header;
