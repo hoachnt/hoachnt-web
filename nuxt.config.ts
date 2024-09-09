@@ -182,7 +182,7 @@ export default defineNuxtConfig({
     },
 
     htmlValidator: {
-        usePrettier: false,
+        usePrettier: true,
         logLevel: "verbose",
         failOnError: false,
         /** A list of routes to ignore (that is, not check validity for). */
