@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
+let intervalId: number;
 
 const technologies = ref([
     { id: 0, title: "Golang", icon: "logos:go", url: "https://go.dev/" },
@@ -74,7 +75,6 @@ const shuffleArray = () => {
         .map(({ value }) => value);
 };
 
-let intervalId: number;
 const startShuffle = () => {
     intervalId = window.setInterval(() => {
         shuffleArray();
