@@ -76,17 +76,15 @@ const technologies = [
         <div
             class="list border-animation grid grid-cols-4 gap-3 sm:grid-cols-5 sm:gap-4"
         >
-            <NuxtLink
+            <UTooltip
                 v-for="(technology, index) in technologies"
                 :key="index"
-                :to="technology.url"
-                :aria-label="technology.title"
-                target="_blank"
-                external
-                prefetch
-                class="item duration-200 ease-in-out transition-all"
+                :text="technology.title"
+                :ui="{ popper: { strategy: 'absolute' } }"
             >
-                <UCard class="duration-200 ease-in-out transition-all h-full">
+                <UCard
+                    class="item duration-200 ease-in-out transition-all h-full w-full"
+                >
                     <Icon
                         v-if="technology.icon"
                         :name="technology.icon"
@@ -105,7 +103,7 @@ const technologies = [
                         loading="lazy"
                     />
                 </UCard>
-            </NuxtLink>
+            </UTooltip>
         </div>
     </div>
 </template>
