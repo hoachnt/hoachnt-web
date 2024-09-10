@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { LazyArticlesSidebar } from '#components';
+
 interface ISection {
     id: string;
     title: string | null;
@@ -47,7 +49,7 @@ function returnBack() {
             {{ $t("articles.slug.back") }}
         </UButton>
         <Transition name="fade">
-            <LazyArticlesSideBar
+            <LazyArticlesSidebar
                 v-if="showArticlesSidebar"
                 :sections="sections"
             />
