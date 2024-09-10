@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
 
-const technologies = [
+const technologies = ref([
     { id: 0, title: "Golang", icon: "logos:go", url: "https://go.dev/" },
     {
         id: 1,
@@ -65,7 +65,34 @@ const technologies = [
         iconUrl: "/icons/directus.png",
         url: "https://directus.io/",
     },
-];
+]);
+
+const shuffleArray = () => {
+    technologies.value = technologies.value
+        .map((value) => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+};
+
+let intervalId: number;
+const startShuffle = () => {
+    intervalId = window.setInterval(() => {
+        shuffleArray();
+    }, 5000);
+};
+
+const stopShuffle = () => {
+    if (intervalId) clearInterval(intervalId);
+};
+
+// Инициализация таймера при монтировании и удаление перед размонтированием
+onMounted(() => {
+    startShuffle();
+});
+
+onBeforeUnmount(() => {
+    stopShuffle();
+});
 </script>
 
 <template>
@@ -74,16 +101,19 @@ const technologies = [
             {{ $t("home.technologyStack") }}
         </h2>
         <div
+            v-auto-animate="{ duration: 500 }"
             class="list border-animation grid grid-cols-4 gap-3 sm:grid-cols-5 sm:gap-4"
         >
             <UTooltip
-                v-for="(technology, index) in technologies"
-                :key="index"
+                v-for="technology in technologies"
+                :key="technology.id"
                 :text="technology.title"
                 :ui="{ popper: { strategy: 'absolute' } }"
             >
                 <UCard
                     class="item duration-200 ease-in-out transition-all h-full w-full"
+                    @mouseenter="stopShuffle"
+                    @mouseleave="startShuffle"
                 >
                     <Icon
                         v-if="technology.icon"
@@ -95,7 +125,7 @@ const technologies = [
                         v-else
                         :src="technology.iconUrl"
                         :alt="technology.title"
-                        class="w-full h-full object-contain"
+                        class="w-full h-full object-contain min-h-[40px]"
                         width="66px"
                         height="66px"
                         format="webp"

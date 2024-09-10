@@ -40,6 +40,7 @@ export default defineNuxtConfig({
         "@pinia/nuxt",
         "@nuxthq/studio",
         "@nuxt/icon",
+        "@formkit/auto-animate/nuxt",
     ],
 
     eslint: {
