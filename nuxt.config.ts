@@ -1,3 +1,9 @@
+import content from "./config/content";
+import htmlValidator from "./config/html-validator";
+import i18nConfig from "./config/i18n";
+import icon from "./config/icon";
+import image from "./config/image";
+
 export default defineNuxtConfig({
     experimental: {
         // viewTransition: true,
@@ -59,56 +65,11 @@ export default defineNuxtConfig({
     delayHydration: {
         mode: "mount",
         replayClick: true,
-        // enables nuxt-delay-hydration in dev mode for testing
-        // NOTE: you should disable this once you've finished testing, it will break HMR
-        debug: process.env.NODE_ENV === "development",
     },
 
-    i18n: {
-        vueI18n: "./i18n.config.ts",
-        skipSettingLocaleOnNavigate: true,
-        defaultLocale: "en",
-        langDir: "lang",
-        strategy: "prefix_except_default",
-        locales: [
-            {
-                name: "English",
-                value: "en",
-                code: "en",
-                file: "en.ts",
-            },
-            {
-                name: "Русский",
-                value: "ru",
-                code: "ru",
-                file: "ru.ts",
-            },
-            {
-                name: "Tiếng việt",
-                value: "vn",
-                code: "vn",
-                file: "vn.ts",
-            },
-        ],
-        detectBrowserLanguage: {
-            useCookie: true,
-            cookieKey: "i18n_redirected",
-            redirectOn: "root", // recommended
-            alwaysRedirect: true,
-        },
-    },
+    i18n: i18nConfig,
 
-    icon: {
-        serverBundle: {
-            collections: [
-                "heroicons-solid",
-                "heroicons",
-                "mdi",
-                "solar",
-                "logos",
-            ], // <!--- this
-        },
-    },
+    icon: icon,
 
     app: {
         pageTransition: { name: "page", mode: "out-in" },
@@ -123,18 +84,7 @@ export default defineNuxtConfig({
         },
     },
 
-    content: {
-        highlight: {
-            theme: {
-                // Default theme (same as single string)
-                default: "monokai",
-                // Theme used if `html.dark`
-                dark: "github-dark",
-                // Theme used if `html.sepia`
-                cafe: "monokai",
-            },
-        },
-    },
+    content: content,
 
     svgo: {
         autoImportPath: "./assets/logo/",
@@ -152,29 +102,7 @@ export default defineNuxtConfig({
         },
     },
 
-    image: {
-        domains: ["www.hoachnt.com"],
-        format: ["webp"],
-        provider: "vercel",
-        vercel: {
-            baseURL: "https://www.hoachnt.com/_vercel/image",
-        },
-        screens: {
-            xs: 10,
-            sm: 40,
-            md: 48,
-            lg: 50,
-            xl: 60,
-            xxl: 64,
-            "2xl": 66,
-            "3xl": 96,
-            "4xl": 128,
-            "5xl": 132,
-            "6xl": 80,
-            "7xl": 600,
-            "8xl": 1200,
-        },
-    },
+    image: image,
 
     mdc: {
         highlight: {
@@ -182,33 +110,7 @@ export default defineNuxtConfig({
         },
     },
 
-    htmlValidator: {
-        usePrettier: true,
-        logLevel: "verbose",
-        failOnError: false,
-        /** A list of routes to ignore (that is, not check validity for). */
-        ignore: [/\.(xml|rss|json)$/],
-        options: {
-            extends: [
-                "html-validate:document",
-                "html-validate:recommended",
-                "html-validate:standard",
-            ],
-            rules: {
-                "svg-focusable": "off",
-                "no-unknown-elements": "error",
-                // Conflicts or not needed as we use prettier formatting
-                "void-style": "off",
-                "no-trailing-whitespace": "off",
-                // Conflict with Nuxt defaults
-                "require-sri": "off",
-                "attribute-boolean-style": "off",
-                "doctype-style": "off",
-                // Unreasonable rule
-                "no-inline-style": "off",
-            },
-        },
-    },
+    htmlValidator: htmlValidator,
 
     compatibilityDate: "2024-08-14",
 });
