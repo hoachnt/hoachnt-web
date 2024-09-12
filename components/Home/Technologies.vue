@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
-let intervalId: number;
+let animationFrameId: number;
+let lastShuffleTime: number = 0;
+const shuffleInterval = 5000; // 5 seconds
 
 const technologies = ref([
     { id: 0, title: "Golang", icon: "logos:go", url: "https://go.dev/" },
@@ -76,15 +78,22 @@ const shuffleArray = () => {
         .map(({ value }) => value);
 };
 
-const startShuffle = () => {
-    intervalId = window.setInterval(() => {
+const shuffleLoop = (timestamp: number) => {
+    if (timestamp - lastShuffleTime >= shuffleInterval) {
         shuffleArray();
         carouselStore.updateHeight();
-    }, 5000);
+        lastShuffleTime = timestamp;
+    }
+    animationFrameId = requestAnimationFrame(shuffleLoop);
+};
+
+const startShuffle = () => {
+    lastShuffleTime = performance.now();
+    animationFrameId = requestAnimationFrame(shuffleLoop);
 };
 
 const stopShuffle = () => {
-    if (intervalId) clearInterval(intervalId);
+    if (animationFrameId) cancelAnimationFrame(animationFrameId);
 };
 
 // Инициализация таймера при монтировании и удаление перед размонтированием
