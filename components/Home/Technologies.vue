@@ -88,6 +88,8 @@ const shuffleLoop = (timestamp: number) => {
 };
 
 const startShuffle = () => {
+    stopShuffle();
+
     lastShuffleTime = performance.now();
     animationFrameId = requestAnimationFrame(shuffleLoop);
 };
@@ -115,36 +117,31 @@ onBeforeUnmount(() => {
             v-auto-animate="{ duration: 500 }"
             class="list border-animation grid grid-cols-4 gap-3 sm:grid-cols-5 sm:gap-4"
         >
-            <UTooltip
+            <UCard
                 v-for="technology in technologies"
                 :key="technology.id"
-                :text="technology.title"
-                :ui="{ popper: { strategy: 'absolute' } }"
+                class="item duration-200 ease-in-out transition-all h-full w-full"
+                @mouseenter="stopShuffle"
+                @mouseleave="startShuffle"
             >
-                <UCard
-                    class="item duration-200 ease-in-out transition-all h-full w-full"
-                    @mouseenter="stopShuffle"
-                    @mouseleave="startShuffle"
-                >
-                    <Icon
-                        v-if="technology.icon"
-                        :name="technology.icon"
-                        :alt="technology.title"
-                        class="w-full h-10"
-                    />
-                    <NuxtImg
-                        v-else
-                        :src="technology.iconUrl"
-                        :alt="technology.title"
-                        class="w-full h-full object-contain min-h-[40px]"
-                        width="66px"
-                        height="66px"
-                        format="webp"
-                        placeholder
-                        loading="lazy"
-                    />
-                </UCard>
-            </UTooltip>
+                <Icon
+                    v-if="technology.icon"
+                    :name="technology.icon"
+                    :alt="technology.title"
+                    class="w-full h-10"
+                />
+                <NuxtImg
+                    v-else
+                    :src="technology.iconUrl"
+                    :alt="technology.title"
+                    class="w-full h-full object-contain min-h-[40px]"
+                    width="66px"
+                    height="66px"
+                    format="webp"
+                    placeholder
+                    loading="lazy"
+                />
+            </UCard>
         </div>
     </div>
 </template>
