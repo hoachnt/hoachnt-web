@@ -67,6 +67,7 @@ const technologies = ref([
         url: "https://directus.io/",
     },
 ]);
+const carouselStore = useCarouselStore();
 
 const shuffleArray = () => {
     technologies.value = technologies.value
@@ -78,6 +79,7 @@ const shuffleArray = () => {
 const startShuffle = () => {
     intervalId = window.setInterval(() => {
         shuffleArray();
+        carouselStore.updateHeight();
     }, 5000);
 };
 
