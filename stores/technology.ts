@@ -69,6 +69,8 @@ export const useTechnologyStore = defineStore("technology", () => {
         },
     ]);
 
+    const carouselStore = useCarouselStore();
+
     const shuffleArray = () => {
         technologies.value = technologies.value
             .map((value) => ({ value, sort: Math.random() }))
@@ -79,17 +81,17 @@ export const useTechnologyStore = defineStore("technology", () => {
     const shuffleLoop = (timestamp: number) => {
         if (timestamp - lastShuffleTime >= shuffleInterval) {
             shuffleArray();
+            carouselStore.updateHeight();
             lastShuffleTime = timestamp;
         }
         animationFrameId = requestAnimationFrame(shuffleLoop);
     };
 
-    const startShuffle = (updateHeight: () => void) => {
+    const startShuffle = () => {
         stopShuffle();
 
         lastShuffleTime = performance.now();
         animationFrameId = requestAnimationFrame(shuffleLoop);
-        updateHeight();
     };
 
     const stopShuffle = () => {

@@ -4,11 +4,10 @@ import { useTechnologyStore } from "@/stores/technology";
 const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
 
 const technologyStore = useTechnologyStore();
-const carouselStore = useCarouselStore();
 
 // Инициализация таймера при монтировании и удаление перед размонтированием
 onMounted(() => {
-    technologyStore.startShuffle(carouselStore.updateHeight);
+    technologyStore.startShuffle();
 });
 
 onBeforeUnmount(() => {
