@@ -1,4 +1,7 @@
 export default {
+    app: {
+        close: "Закрыть",
+    },
     title: "Нгуен Тиен Хоач",
     all_rights_reserved: "Все права защищены",
 

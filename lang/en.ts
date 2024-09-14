@@ -1,4 +1,7 @@
 export default {
+    app: {
+        close: "Close",
+    },
     title: "Nguyen Tien Hoach",
     all_rights_reserved: "All rights reserved",
     seo: {

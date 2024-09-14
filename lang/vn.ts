@@ -1,4 +1,8 @@
 export default {
+    app: {
+        close: "Đóng",
+    },
+
     title: "Nguyen Tien Hoach",
     all_rights_reserved: "Mọi quyền được bảo lưu",
 
