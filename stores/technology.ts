@@ -24,6 +24,12 @@ export const useTechnologyStore = defineStore("technology", () => {
             url: "https://nuxt.com/",
         },
         {
+            id: 11,
+            title: "Angular",
+            icon: "logos:angular-icon",
+            url: "https://angular.dev/",
+        },
+        {
             id: 4,
             title: "Next.js",
             icon: "logos:nextjs-icon",
