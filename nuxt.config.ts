@@ -75,7 +75,6 @@ export default defineNuxtConfig({
     icon: icon,
 
     app: {
-        pageTransition: { name: "page", mode: "out-in" },
         head: {
             htmlAttrs: {
                 lang: "en",

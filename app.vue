@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n();
+const { t, finalizePendingLocaleChange } = useI18n();
 
 const el = ref<HTMLElement | null>(null);
 const y = ref(0);
@@ -49,10 +49,6 @@ useSeoMeta({
     twitterCard: "summary_large_image",
 });
 
-function handleScroll() {
-    y.value = window.scrollY || document.documentElement.scrollTop;
-}
-
 onMounted(() => {
     isMounting.value = true;
 
@@ -64,6 +60,14 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener("scroll", handleScroll);
 });
+
+function handleScroll() {
+    y.value = window.scrollY || document.documentElement.scrollTop;
+}
+
+const onBeforeEnter = async () => {
+    await finalizePendingLocaleChange();
+};
 </script>
 
 <template>
@@ -72,7 +76,13 @@ onUnmounted(() => {
     <AppNavbar />
     <div class="h-11" />
     <UContainer>
-        <NuxtPage />
+        <NuxtPage
+            :transition="{
+                name: 'page',
+                mode: 'out-in',
+                onBeforeEnter,
+            }"
+        />
     </UContainer>
     <div class="h-11" />
     <UContainer>
