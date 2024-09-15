@@ -71,7 +71,7 @@ onBeforeUnmount(() => {
                     }"
                 >
                     <template #header>
-                        <h1>
+                        <h1 class="text-2xl">
                             {{ technologyStore.modalData.technology.title }}
                         </h1>
                     </template>
