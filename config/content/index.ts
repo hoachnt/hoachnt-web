@@ -1,6 +1,6 @@
 import type { ModuleOptions } from "@nuxt/content";
 
-export default <Partial<ModuleOptions>> {
+export default <Partial<ModuleOptions>>{
     highlight: {
         theme: {
             // Default theme (same as single string)
@@ -11,4 +11,4 @@ export default <Partial<ModuleOptions>> {
             cafe: "monokai",
         },
     },
-}
+};

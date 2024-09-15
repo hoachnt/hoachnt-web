@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LazyArticlesSidebar } from '#components';
+import { LazyArticlesSidebar } from "#components";
 
 interface ISection {
     id: string;
