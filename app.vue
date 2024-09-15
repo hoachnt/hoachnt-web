@@ -7,6 +7,7 @@ const seoMeta = ref({
     title: t("title"),
     description: t("seo.home.description"),
 });
+const isMounting = ref(false);
 
 useHead({
     link: [
@@ -53,6 +54,8 @@ function handleScroll() {
 }
 
 onMounted(() => {
+    isMounting.value = true;
+
     el.value = document.body;
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Для инициализации значения сразу при монтировании
@@ -65,6 +68,7 @@ onUnmounted(() => {
 
 <template>
     <NuxtLoadingIndicator class="z-[9999]" />
+    <AppLoader :is-mounting="isMounting" />
     <AppNavbar />
     <div class="h-11" />
     <UContainer>
