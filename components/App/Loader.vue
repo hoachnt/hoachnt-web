@@ -8,7 +8,7 @@ defineProps<{
     <Transition name="fade">
         <div
             v-if="!isMounting"
-            class="bg-black z-[999999] min-w-full min-h-full fixed top-0 left-0 text-white flex justify-center items-center text-5xl"
+            class="bg-black z-[999999] min-w-full min-h-full fixed top-0 left-0 text-white flex justify-center items-center text-5xl uppercase"
         >
             <span class="wave">L</span>
             <span class="wave">o</span>
