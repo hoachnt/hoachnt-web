@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { NuxtImg } from "#components";
 
 defineProps({
@@ -23,6 +23,15 @@ defineProps({
             <p class="text-gray-400 text-sm">
                 {{ project.description }}
             </p>
+            <div class="space-x-1 mt-2">
+                <UBadge
+                    v-for="(tech, index) in project.techStack"
+                    :key="index"
+                    :ui="{ rounded: 'rounded-full' }"
+                    color="black"
+                    >{{ tech }}</UBadge
+                >
+            </div>
         </div>
         <div
             class="flex-1 border-b border-dashed border-gray-300 dark:border-gray-800 group-hover:border-gray-700"

@@ -3,5 +3,6 @@
     "url": "https://vuagac.com",
     "description": "A modern website where you can buy exotic fruits",
     "thumbnail": "/projects/vuagac.jpg",
-    "status": "Active"
+    "status": "Active",
+    "techStack": ["Nuxt 3", "Vue", "Ant design", "Pinia"]
 }

@@ -4,5 +4,6 @@
     "description": "Website where u can buy sim cards",
     "thumbnail": "/projects/simdep10so.png",
     "status": "Active",
-    "opensource": false
+    "opensource": false,
+    "techStack": ["Next.js", "React", "MUI"]
 }

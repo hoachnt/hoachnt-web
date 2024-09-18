@@ -4,5 +4,6 @@
     "description": "A simple virtual list created with sveltejs",
     "thumbnail": "",
     "status": "Active",
-    "opensource": true
+    "opensource": true,
+    "techStack": ["Svelte"]
 }
