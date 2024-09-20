@@ -14,7 +14,7 @@ useSeoMeta({ ...seoMeta.value });
     <main>
         <div class="space-y-24">
             <!-- Анимация для HomeIntro -->
-            <LazyHomeIntro
+            <div
                 v-motion
                 :initial="{ opacity: 0, y: 50 }"
                 :enter="{
@@ -23,7 +23,9 @@ useSeoMeta({ ...seoMeta.value });
                 }"
                 :delay="200"
                 :duration="600"
-            />
+            >
+                <LazyHomeIntro />
+            </div>
 
             <!-- Анимация для UIEmblaCarousel -->
             <UIEmblaCarousel
