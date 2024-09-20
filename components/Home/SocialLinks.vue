@@ -12,6 +12,11 @@ const linksToFollow = [
         url: "https://t.me/hoachnt",
         icon: "mdi:telegram",
     },
+    {
+        name: "Linkedin",
+        url: "https://www.linkedin.com/in/tien-hoach-nguyen-51aa77328/",
+        icon: "mdi:linkedin",
+    },
 ];
 </script>
 
