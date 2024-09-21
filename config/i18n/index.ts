@@ -27,10 +27,4 @@ export default <Partial<NuxtI18nOptions>>{
         },
     ],
     lazy: true,
-    detectBrowserLanguage: {
-        useCookie: true,
-        cookieKey: "i18n_redirected",
-        redirectOn: "root", // recommended
-        alwaysRedirect: true,
-    },
 };
