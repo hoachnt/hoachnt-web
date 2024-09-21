@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const { locale, locales, setLocale, t } = useI18n();
 
-const selectLanguage = computed(() => t("navbar.selectLanguage"));
+onMounted(() => {
+    setLocale(locale.value);
+});
 
 watch(locale, (newLanguage) => {
     setLocale(newLanguage);
@@ -9,7 +11,10 @@ watch(locale, (newLanguage) => {
 </script>
 
 <template>
-    <UTooltip :text="selectLanguage" :ui="{ popper: { strategy: 'absolute' } }">
+    <UTooltip
+        :text="t('navbar.selectLanguage')"
+        :ui="{ popper: { strategy: 'absolute' } }"
+    >
         <USelect
             v-model="locale"
             :options="locales"
