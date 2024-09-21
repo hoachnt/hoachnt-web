@@ -26,7 +26,6 @@ export default <Partial<NuxtI18nOptions>>{
             file: "vn.ts",
         },
     ],
-    lazy: true,
     detectBrowserLanguage: {
         useCookie: true,
         cookieKey: "i18n_redirected",
