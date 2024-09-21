@@ -3,6 +3,10 @@ const { locale, locales, setLocale, t } = useI18n();
 
 const selectLanguage = computed(() => t("navbar.selectLanguage"));
 
+onMounted(() => {
+    setLocale(locale.value);
+});
+
 watch(locale, (newLanguage) => {
     setLocale(newLanguage);
 });
