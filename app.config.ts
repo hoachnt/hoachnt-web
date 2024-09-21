@@ -17,6 +17,9 @@ export default defineAppConfig({
         },
         modal: {
             padding: "p-0",
+            overlay: {
+                background: "backdrop-blur-md",
+            },
         },
         container: {
             constrained: "max-w-2xl",
@@ -30,6 +33,9 @@ export default defineAppConfig({
             rounded: "rounded-none",
         },
         select: {
+            rounded: "rounded-none",
+        },
+        skeleton: {
             rounded: "rounded-none",
         },
     },

@@ -99,7 +99,7 @@ function close() {
                 </li>
                 <li class="nav-item flex items-center justify-center ml-3">
                     <ClientOnly fallback-tag="i">
-                        <AppThemeToggle />
+                        <LazyAppThemeToggle />
                         <template #fallback>
                             <Icon
                                 aria-hidden="true"

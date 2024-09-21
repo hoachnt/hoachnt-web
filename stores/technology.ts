@@ -30,21 +30,21 @@ export const useTechnologyStore = defineStore("technology", () => {
             title: "JavaScript",
             icon: "logos:javascript",
             url: "https://www.javascript.com/",
-            temp: 80,
+            temp: 60,
         },
         {
             id: 2,
             title: "TypeScript",
             icon: "logos:typescript-icon",
             url: "https://www.typescriptlang.org/",
-            temp: 60,
+            temp: 50,
         },
         {
             id: 3,
             title: "Nuxt.js",
             icon: "logos:nuxt-icon",
             url: "https://nuxt.com/",
-            temp: 70,
+            temp: 60,
         },
         {
             id: 11,
@@ -58,14 +58,14 @@ export const useTechnologyStore = defineStore("technology", () => {
             title: "Next.js",
             icon: "logos:nextjs-icon",
             url: "https://nextjs.org/",
-            temp: 60,
+            temp: 55,
         },
         {
             id: 5,
             title: "Linux",
             icon: "logos:linux-tux",
             url: "https://www.linux.org/",
-            temp: 70,
+            temp: 55,
         },
         {
             id: 6,
@@ -102,7 +102,7 @@ export const useTechnologyStore = defineStore("technology", () => {
             icon: "",
             iconUrl: "/icons/directus.png",
             url: "https://directus.io/",
-            temp: 90,
+            temp: 70,
         },
     ]);
 
