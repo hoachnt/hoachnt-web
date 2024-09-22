@@ -3,5 +3,6 @@
     "url": "https://vuagac.com",
     "description": "Một trang web hiện đại nơi bạn có thể mua gấc",
     "thumbnail": "/projects/vuagac.jpg",
-    "status": "Active"
+    "status": "Active",
+    "techStack": ["Nuxt 3", "Vue", "Ant design", "Pinia"]
 }

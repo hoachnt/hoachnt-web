@@ -4,5 +4,6 @@
     "description": "Простой виртуальный список написанный svelte'ом",
     "thumbnail": "",
     "status": "Active",
-    "opensource": true
+    "opensource": true,
+    "techStack": ["Svelte"]
 }

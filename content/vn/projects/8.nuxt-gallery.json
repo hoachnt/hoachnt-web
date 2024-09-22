@@ -4,5 +4,6 @@
     "description": "Nuxt gallery + directus",
     "thumbnail": "/projects/nuxt-gallery.png",
     "status": "Active",
-    "opensource": true
+    "opensource": true,
+    "techStack": ["Nuxt 3", "Directus", "Vue"]
 }

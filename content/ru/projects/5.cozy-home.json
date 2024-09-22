@@ -4,5 +4,7 @@
     "description": "Сервисы для ваши питомцев",
     "thumbnail": "/projects/cozy-home.png",
     "status": "Active",
-    "opensource": false
+    "opensource": false,
+    "techStack": ["Next.js", "React", "MUI", "Tailwindcss"]
+
 }

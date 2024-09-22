@@ -4,5 +4,6 @@
     "description": "Сайт где вы можете приобрести сим-карты",
     "thumbnail": "/projects/simdep10so.png",
     "status": "Active",
-    "opensource": false
+    "opensource": false,
+    "techStack": ["Next.js", "React", "MUI"]
 }
