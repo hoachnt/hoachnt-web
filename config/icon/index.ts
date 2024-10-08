@@ -1,3 +1,5 @@
 import type { ModuleOptions } from "@nuxt/icon";
 
-export default <Partial<ModuleOptions>>{};
+export default <Partial<ModuleOptions>>{
+    serverBundle: "local",
+};
