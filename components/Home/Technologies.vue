@@ -75,7 +75,7 @@ onBeforeUnmount(() => {
                             {{ technologyStore.modalData.technology.title }}
                         </h1>
                     </template>
-                    <UProgress
+                    <LazyUProgress
                         :value="technologyStore.modalData.technology.temp"
                         :max="100"
                         :color="color"
@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
                                 >
                             </div>
                         </template>
-                    </UProgress>
+                    </LazyUProgress>
                     <template #footer>
                         <section class="flex justify-end">
                             <UButton
