@@ -18,7 +18,7 @@ YanghoScript is a simple programming language with the ability to work with vari
 
 ### Upcoming Features (Not Really Soon):
 
--   Conditional statements
+-   Conditional statements(Partially implemented)
 -   Looping constructs
 -   Functions
 -   Error handling
@@ -78,6 +78,16 @@ NOILIENTUC 1 IT HON 0;
 NOILIENTUC 1 NHIEU BANG 2;
 NOILIENTUC 2 IT BANG 1;
 
+// Conditional statements
+NEU (2 BANG 1) {
+    NOILIENTUC 'Yasuo';
+} KO THI {
+    NOILIENTUC 'Kosuo';
+}
+
+NOILIENTUC 'All Works!!!';
+
+// NOILIENTUC 'Hello world' - comment
 ```
 
 To run a program, use the following command in the terminal:

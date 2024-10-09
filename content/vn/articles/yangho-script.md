@@ -18,7 +18,7 @@ YanghoScript là một ngôn ngữ lập trình đơn giản với khả năng l
 
 ### Tính năng sắp tới (Không phải sớm đâu):
 
--   Câu lệnh điều kiện
+-   Câu lệnh điều kiện(Đã triển khai một phần)
 -   Cấu trúc vòng lặp
 -   Hàm
 -   Xử lý lỗi
@@ -78,7 +78,16 @@ NOILIENTUC 1 IT HON 0;
 NOILIENTUC 1 NHIEU BANG 2;
 NOILIENTUC 2 IT BANG 1;
 
-Đừng quên rằng YanghoScript chỉ là một ngôn ngữ lập trình để đùa thôi.
+// Câu lệnh điều kiện
+NEU (2 BANG 1) {
+    NOILIENTUC 'Yasuo';
+} KO THI {
+    NOILIENTUC 'Kosuo';
+}
+
+NOILIENTUC 'All Works!!!';
+
+// NOILIENTUC 'Hello world' - comment
 ```
 
 Để chạy chương trình, hãy sử dụng lệnh sau trong terminal:

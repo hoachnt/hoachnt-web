@@ -18,7 +18,7 @@ YanghoScript — это простой язык программирования
 
 ### Будущие возможности (Не в ближайшее время):
 
--   Условные операторы
+-   Условные операторы(Реализован частично)
 -   Конструкции циклов
 -   Функции
 -   Обработка ошибок
@@ -78,6 +78,16 @@ NOILIENTUC 1 IT HON 0;
 NOILIENTUC 1 NHIEU BANG 2;
 NOILIENTUC 2 IT BANG 1;
 
+// Условные операторы
+NEU (2 BANG 1) {
+    NOILIENTUC 'Yasuo';
+} KO THI {
+    NOILIENTUC 'Kosuo';
+}
+
+NOILIENTUC 'All Works!!!';
+
+// NOILIENTUC 'Hello world' - comment
 ```
 
 Чтобы запустить программу, используйте следующую команду в терминале:
