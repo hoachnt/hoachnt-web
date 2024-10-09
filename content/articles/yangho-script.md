@@ -49,37 +49,30 @@ After installation, you can use YanghoScript to execute programs written in this
 Example code:
 
 ```javascript
-// Assigning a string value to the variable text
-text = 'Hoach';
-// Assigning the result of addition of numbers to the variable summ
-summ = 6 + 5;
+text BAYHETVAODAY 'Hoach';
+summ BAYHETVAODAY 6 + 5;
 
-// Output the contents of variables to the screen
 NOILIENTUC text;
 NOILIENTUC summ;
 
-// Assigning the result of an expression to the variable sumandmin
-sumandmin = summ - ((20 + 2) * 2);
+sumandmin BAYHETVAODAY summ - ((20 + 2) * 2);
 
-// Output the result of the expression and a string to the screen
 NOILIENTUC sumandmin;
 NOILIENTUC 'Chao ca lo nha minh nha';
 
-// True/False operations
-NOILIENTUC 1 BANG 1;
+NOILIENTUC 1 UY TIN 1;
 NOILIENTUC 2 NHIEU HON 1;
 NOILIENTUC 1 IT HON 2;
 NOILIENTUC 1 NHIEU BANG 1;
 NOILIENTUC 2 IT BANG 2;
 
-NOILIENTUC 2 BANG 1;
+NOILIENTUC 2 UY TIN 1;
 NOILIENTUC 2 NHIEU HON 3;
 NOILIENTUC 1 IT HON 0;
 NOILIENTUC 1 NHIEU BANG 2;
 NOILIENTUC 2 IT BANG 1;
 
-// Conditional statements
-NEU (2 BANG 1) {
+NEU (2 UY TIN 1) {
     NOILIENTUC 'Yasuo';
 } KO THI {
     NOILIENTUC 'Kosuo';

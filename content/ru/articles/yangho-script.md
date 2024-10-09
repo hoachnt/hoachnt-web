@@ -49,37 +49,30 @@ npm install
 Пример кода:
 
 ```javascript
-// Присваивание строкового значения переменной text
-text = 'Hoach';
-// Присваивание результата сложения чисел переменной summ
-summ = 6 + 5;
+text BAYHETVAODAY 'Hoach';
+summ BAYHETVAODAY 6 + 5;
 
-// Вывод содержимого переменных на экран
 NOILIENTUC text;
 NOILIENTUC summ;
 
-// Присваивание результата выражения переменной sumandmin
-sumandmin = summ - ((20 + 2) * 2);
+sumandmin BAYHETVAODAY summ - ((20 + 2) * 2);
 
-// Вывод результата выражения и строки на экран
 NOILIENTUC sumandmin;
 NOILIENTUC 'Chao ca lo nha minh nha';
 
-// Операции True/False
-NOILIENTUC 1 BANG 1;
+NOILIENTUC 1 UY TIN 1;
 NOILIENTUC 2 NHIEU HON 1;
 NOILIENTUC 1 IT HON 2;
 NOILIENTUC 1 NHIEU BANG 1;
 NOILIENTUC 2 IT BANG 2;
 
-NOILIENTUC 2 BANG 1;
+NOILIENTUC 2 UY TIN 1;
 NOILIENTUC 2 NHIEU HON 3;
 NOILIENTUC 1 IT HON 0;
 NOILIENTUC 1 NHIEU BANG 2;
 NOILIENTUC 2 IT BANG 1;
 
-// Условные операторы
-NEU (2 BANG 1) {
+NEU (2 UY TIN 1) {
     NOILIENTUC 'Yasuo';
 } KO THI {
     NOILIENTUC 'Kosuo';
@@ -87,8 +80,7 @@ NEU (2 BANG 1) {
 
 NOILIENTUC 'All Works!!!';
 
-// NOILIENTUC 'Hello world' - comment
-```
+// NOILIENTUC 'Hello world' - comment```
 
 Чтобы запустить программу, используйте следующую команду в терминале:
 

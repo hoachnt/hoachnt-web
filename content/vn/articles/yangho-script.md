@@ -49,37 +49,30 @@ Sau khi cài đặt, bạn có thể sử dụng YanghoScript để thực thi c
 Mã ví dụ:
 
 ```javascript
-// Gán giá trị chuỗi cho biến text
-text = 'Hoach';
-// Gán kết quả của phép cộng các số cho biến summ
-summ = 6 + 5;
+text BAYHETVAODAY 'Hoach';
+summ BAYHETVAODAY 6 + 5;
 
-// Hiển thị nội dung của các biến lên màn hình
 NOILIENTUC text;
 NOILIENTUC summ;
 
-// Gán kết quả của một biểu thức cho biến sumandmin
-sumandmin = summ - ((20 + 2) * 2);
+sumandmin BAYHETVAODAY summ - ((20 + 2) * 2);
 
-// Hiển thị kết quả của biểu thức và một chuỗi lên màn hình
 NOILIENTUC sumandmin;
 NOILIENTUC 'Chao ca lo nha minh nha';
 
-// Các phép toán True/False
-NOILIENTUC 1 BANG 1;
+NOILIENTUC 1 UY TIN 1;
 NOILIENTUC 2 NHIEU HON 1;
 NOILIENTUC 1 IT HON 2;
 NOILIENTUC 1 NHIEU BANG 1;
 NOILIENTUC 2 IT BANG 2;
 
-NOILIENTUC 2 BANG 1;
+NOILIENTUC 2 UY TIN 1;
 NOILIENTUC 2 NHIEU HON 3;
 NOILIENTUC 1 IT HON 0;
 NOILIENTUC 1 NHIEU BANG 2;
 NOILIENTUC 2 IT BANG 1;
 
-// Câu lệnh điều kiện
-NEU (2 BANG 1) {
+NEU (2 UY TIN 1) {
     NOILIENTUC 'Yasuo';
 } KO THI {
     NOILIENTUC 'Kosuo';
