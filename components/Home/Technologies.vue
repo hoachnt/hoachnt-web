@@ -125,7 +125,7 @@ onBeforeUnmount(() => {
     </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .list:has(.item:hover) .item:not(:hover) {
     filter: blur(4px);
 }
