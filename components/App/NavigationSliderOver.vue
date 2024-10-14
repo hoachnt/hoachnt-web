@@ -15,10 +15,6 @@ const navlist = computed(() => [
         name: t("navbar.articles"),
         path: localePath("/articles"),
     },
-    {
-        name: t("navbar.lab"),
-        path: localePath("/lab"),
-    },
 ]);
 </script>
 

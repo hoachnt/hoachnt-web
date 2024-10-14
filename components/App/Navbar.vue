@@ -25,12 +25,6 @@ const items = computed(() => {
             icon: "solar:document-outline",
             iconActive: "solar:document-bold",
         },
-        {
-            name: t("navbar.lab"),
-            path: localePath("/lab"),
-            icon: "heroicons:beaker",
-            iconActive: "heroicons:beaker-solid",
-        },
     ];
 });
 
