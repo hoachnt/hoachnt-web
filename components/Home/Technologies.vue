@@ -63,7 +63,10 @@ onBeforeUnmount(() => {
                     loading="lazy"
                 />
             </UCard>
-            <UModal v-model="technologyStore.modalData.isOpen">
+            <LazyUModal
+                v-if="technologyStore.modalData.isOpen"
+                v-model="technologyStore.modalData.isOpen"
+            >
                 <UCard
                     :ui="{
                         ring: '',
@@ -75,8 +78,10 @@ onBeforeUnmount(() => {
                             {{ technologyStore.modalData.technology.title }}
                         </h1>
                     </template>
-                    <LazyUProgress
-                        :value="technologyStore.modalData.technology.temp"
+                    <UProgress
+                        v-model:value="
+                            technologyStore.modalData.technology.temp
+                        "
                         :max="100"
                         :color="color"
                         size="2xl"
@@ -107,7 +112,7 @@ onBeforeUnmount(() => {
                                 >
                             </div>
                         </template>
-                    </LazyUProgress>
+                    </UProgress>
                     <template #footer>
                         <section class="flex justify-end">
                             <UButton
@@ -120,7 +125,7 @@ onBeforeUnmount(() => {
                         </section>
                     </template>
                 </UCard>
-            </UModal>
+            </LazyUModal>
         </div>
     </div>
 </template>
