@@ -48,7 +48,7 @@ npm install
 
 Пример кода:
 
-```javascript
+````javascript
 text BAYHETVAODAY 'Hoach';
 summ BAYHETVAODAY 6 + 5;
 
@@ -86,7 +86,7 @@ NOILIENTUC 'All Works!!!';
 
 ```bash
 npm start
-```
+````
 
 или
 
@@ -108,7 +108,7 @@ YanghoScript поддерживает следующие конструкции:
 
 ```javascript
 1 + 2 * 3; // Result: 9(не корректно)
-1 + 2 * 3; // Result: 7(корректно)
+1 + (2 * 3); // Result: 7(корректно)
 10 / (2 + 3); // Result: 2(корректно)
 ```
 

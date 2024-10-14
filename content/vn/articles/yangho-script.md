@@ -109,7 +109,7 @@ Ví dụ về các biểu thức đúng:
 
 ```javascript
 1 + 2 * 3; // Result: 9(incorrect)
-1 + 2 * 3; // Result: 7(correct)
+1 + (2 * 3); // Result: 7(correct)
 10 / (2 + 3); // Result: 2(correct)
 ```
 
