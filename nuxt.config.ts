@@ -45,7 +45,7 @@ export default defineNuxtConfig({
         "nuxt-delay-hydration",
         "nuxt-svgo",
         "@vueuse/nuxt",
-        "@vueuse/motion/nuxt",
+        "@vueuse/motion",
         "@pinia/nuxt",
         "@nuxthq/studio",
         "@nuxt/icon",
