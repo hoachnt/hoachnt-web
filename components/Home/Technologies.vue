@@ -5,19 +5,6 @@ const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
 
 const technologyStore = useTechnologyStore();
 
-const color = computed(() => {
-    switch (true) {
-        case technologyStore.modalData.technology.temp < 33:
-            return "blue";
-        case technologyStore.modalData.technology.temp < 66:
-            return "amber";
-        case technologyStore.modalData.technology.temp < 100:
-            return "red";
-        default:
-            return "blue";
-    }
-});
-
 // Инициализация таймера при монтировании и удаление перед размонтированием
 onMounted(() => {
     technologyStore.startShuffle();
@@ -79,12 +66,14 @@ onBeforeUnmount(() => {
                         </h1>
                     </template>
                     <UProgress
-                        v-model:value="
-                            technologyStore.modalData.technology.temp
-                        "
+                        :value="technologyStore.modalData.technology.temp"
                         :max="100"
-                        :color="color"
                         size="2xl"
+                        :ui="{
+                            progress: {
+                                color: 'bg-black',
+                            },
+                        }"
                     >
                         <template #indicator="{ percent }">
                             <div
