@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     },
     routeRules: {
         "/": { isr: true, prerender: true },
-        "/projects/**": { isr: true, prerender: true },
+        "/articles/**": { isr: true, prerender: true },
     },
 
     plugins: ["~/plugins/ipad-cursor"],
@@ -45,6 +45,7 @@ export default defineNuxtConfig({
         "nuxt-delay-hydration",
         "nuxt-svgo",
         "@vueuse/nuxt",
+        "@vueuse/motion/nuxt",
         "@pinia/nuxt",
         "@nuxthq/studio",
         "@nuxt/icon",
