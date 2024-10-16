@@ -72,7 +72,7 @@ function close() {
                 <li>
                     <UButton
                         color="black"
-                        variant="outline"
+                        variant="solid"
                         size="sm"
                         class="lg:hidden z-10 block"
                         @click="isOpen = true"
