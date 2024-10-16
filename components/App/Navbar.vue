@@ -44,11 +44,11 @@ function close() {
     <div
         ref="headerRef"
         :style="{ ...styles, position: isArticlesPage ? 'relative' : 'sticky' }"
-        class="nav-wrapper top-0 w-full py-4 z-50 bg-inherit backdrop-blur-3xl"
+        class="nav-wrapper top-0 w-full py-4 z-50 bg-inherit"
     >
         <nav class="mx-auto px-3 max-w-2xl">
             <ul
-                class="flex items-center h-[52px] px-3 text-sm font-medium text-gray-800 dark:text-gray-200"
+                class="flex items-center h-[52px] px-3 text-sm font-medium text-gray-800 dark:text-gray-200 border border-black backdrop-blur-md dark:border-white"
             >
                 <li
                     v-for="item in items"
