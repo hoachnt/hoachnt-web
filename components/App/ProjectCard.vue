@@ -41,6 +41,7 @@ defineProps({
             :src="project.thumbnail"
             :ui="{ rounded: 'rounded z-10 relative' }"
             :alt="project.name"
+            provider="myProvider"
             placeholder
             format="webp"
             size="md"
