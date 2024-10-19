@@ -1,7 +1,7 @@
 {
     "sites": [
         {
-            "slug": "sparse-terabyte-scrawny",
+            "slug": "hoachnt",
             "distDir": "dist",
             "buildCommand": "bun install && bun run generate"
         }
