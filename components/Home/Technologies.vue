@@ -42,7 +42,6 @@ onBeforeUnmount(() => {
                     v-else
                     :src="technology.iconUrl"
                     :alt="technology.title"
-                    provider="myProvider"
                     class="w-full h-full object-contain min-h-[40px]"
                     width="66px"
                     height="66px"
