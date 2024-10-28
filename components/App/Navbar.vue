@@ -15,7 +15,7 @@ const { styles } = useFixedHeader(headerRef, {
     watch: isArticlesPage, // Will perform a check everytime the value changes
 });
 
-const items = [
+const items = computed(() => [
     {
         name: t("navbar.home"),
         path: localePath("/"),
@@ -34,7 +34,7 @@ const items = [
         icon: "solar:document-outline",
         iconActive: "solar:document-bold",
     },
-];
+]);
 
 function close() {
     isOpen.value = false;
