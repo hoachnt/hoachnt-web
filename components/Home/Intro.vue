@@ -44,7 +44,8 @@ const isOpen = ref(false);
 </template>
 
 <style scoped>
-h1 {
+/* Transition api */
+/* h1 {
     view-transition-name: header;
-}
+} */
 </style>

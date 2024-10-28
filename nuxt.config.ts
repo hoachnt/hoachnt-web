@@ -7,6 +7,7 @@ import image from "./config/image";
 export default defineNuxtConfig({
     experimental: {
         componentIslands: true,
+        viewTransition: true,
     },
     runtimeConfig: {
         public: {

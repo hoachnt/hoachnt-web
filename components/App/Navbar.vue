@@ -48,7 +48,7 @@ function close() {
     >
         <nav class="mx-auto px-3 max-w-2xl">
             <ul
-                class="flex items-center h-[52px] px-3 text-sm font-medium text-gray-800 dark:text-gray-200 border border-black backdrop-blur-md dark:border-white"
+                class="flex items-center h-[52px] px-3 text-sm font-medium text-gray-800 dark:text-gray-200 border border-black/20 backdrop-blur-md dark:border-white/30"
             >
                 <li
                     v-for="item in items"
@@ -119,9 +119,7 @@ function close() {
 .active-bg {
     view-transition-name: active-item;
 }
-.active-line {
-    view-transition-name: active-line;
-}
+
 .nav-list,
 .nav-item {
     transition: 0.2s ease-in-out;
