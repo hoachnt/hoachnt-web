@@ -40,13 +40,13 @@ useSeoMeta({ ...seoMeta.value });
             >
                 <template #default>
                     <UIEmblaCarouselContent>
-                        <UIEmblaCarouselItem class="space-y-24">
+                        <UIEmblaCarouselItem class="space-y-24 select-none">
                             <LazyHomeTechnologies />
                         </UIEmblaCarouselItem>
-                        <UIEmblaCarouselItem class="space-y-24">
+                        <UIEmblaCarouselItem class="space-y-24 select-none">
                             <LazyHomeSocialLinks />
                         </UIEmblaCarouselItem>
-                        <UIEmblaCarouselItem class="space-y-24">
+                        <UIEmblaCarouselItem class="space-y-24 select-none">
                             <LazyHomeWorkLinks />
                         </UIEmblaCarouselItem>
                     </UIEmblaCarouselContent>
