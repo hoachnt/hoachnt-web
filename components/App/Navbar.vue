@@ -1,32 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import { useFixedHeader } from "vue-use-fixed-header";
 
 const headerRef = ref(null);
 const isOpen = ref(false);
 
-const isArticlesPage = computed(() => route.name.includes("articles-"));
-const items = computed(() => {
-    return [
-        {
-            name: t("navbar.home"),
-            path: localePath("/"),
-            icon: "solar:home-smile-outline",
-            iconActive: "solar:home-smile-bold",
-        },
-        {
-            name: t("navbar.projects"),
-            path: localePath("/projects"),
-            icon: "solar:folder-outline",
-            iconActive: "solar:folder-bold",
-        },
-        {
-            name: t("navbar.articles"),
-            path: localePath("/articles"),
-            icon: "solar:document-outline",
-            iconActive: "solar:document-bold",
-        },
-    ];
-});
+const isArticlesPage = computed(
+    () => typeof route?.name === "string" && route.name.includes("articles-")
+);
 
 const localePath = useLocalePath();
 const route = useRoute();
@@ -34,6 +14,27 @@ const { t } = useI18n();
 const { styles } = useFixedHeader(headerRef, {
     watch: isArticlesPage, // Will perform a check everytime the value changes
 });
+
+const items = [
+    {
+        name: t("navbar.home"),
+        path: localePath("/"),
+        icon: "solar:home-smile-outline",
+        iconActive: "solar:home-smile-bold",
+    },
+    {
+        name: t("navbar.projects"),
+        path: localePath("/projects"),
+        icon: "solar:folder-outline",
+        iconActive: "solar:folder-bold",
+    },
+    {
+        name: t("navbar.articles"),
+        path: localePath("/articles"),
+        icon: "solar:document-outline",
+        iconActive: "solar:document-bold",
+    },
+];
 
 function close() {
     isOpen.value = false;
