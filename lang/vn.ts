@@ -33,7 +33,7 @@ export default {
         aboutMeText1:
             "Tôi là Nguyễn Tiến Hoạch. Tôi là nhà phát triển phần mềm Fullstack độc lập hiện đang sinh sống tại Việt Nam.",
         aboutMeText2:
-            "Ngoài lập trình, tôi thích đọc manga và manhwa (tôi thích nhất là Legend of the Northern Blade).",
+            "Ngoài lập trình, tôi thích đọc manga, nghiên cứu triết học và khám phá các lĩnh vực liên quan đến lập trình.",
         followMeOn: "Bạn có thể theo dõi tôi ở đây",
         contactsForWork: "Để làm việc với tôi",
         technologyStack: "Công cụ của tôi",

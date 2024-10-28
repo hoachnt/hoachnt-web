@@ -31,7 +31,7 @@ export default {
         aboutMeText1:
             "My name is Nguyen Tien Hoach. I am an independent Fullstack software developer currently living in Vietnam.",
         aboutMeText2:
-            "In addition to programming, I enjoy reading manga and manhwa (my favorite is Legend of the Northern Blade).",
+            "In addition to programming, I enjoy reading manga, studying philosophy, and exploring fields related to programming.",
         followMeOn: "You can follow me on",
         contactsForWork: "To work with me",
         technologyStack: "My stack",
