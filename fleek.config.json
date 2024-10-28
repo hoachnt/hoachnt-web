@@ -1,9 +1,0 @@
-{
-    "sites": [
-        {
-            "slug": "sparse-terabyte-scrawny",
-            "distDir": "dist",
-            "buildCommand": "bun install && bun run generate"
-        }
-    ]
-}
