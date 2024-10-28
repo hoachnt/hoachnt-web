@@ -1,6 +1,6 @@
 ---
 title: "Hoachnt web"
-description: "Hoachnt web portfolio"
+description: "🌟 Công nghệ và Tính năng của Dự án Hoachnt web"
 published: 2024/10/28
 slug: "hoachnt-web"
 ---
@@ -53,4 +53,5 @@ Dự án tuân theo các nguyên tắc thiết kế tối giản, cải thiện 
 
 Dự án này chứng tỏ việc áp dụng các công nghệ hiện đại để tạo ra một ứng dụng web nhanh chóng, thân thiện với người dùng và hấp dẫn về mặt hình ảnh với hiệu suất cao và tối ưu hóa tìm kiếm tốt.
 
-[**Mã nguồn trên GitHub**](https://github.com/hoachnt/hoachnt-web)
+- [**Mã nguồn trên GitHub**](https://github.com/hoachnt/hoachnt-web)
+- [Web link](https://www.hoachnt.com)

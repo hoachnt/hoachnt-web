@@ -1,6 +1,6 @@
 ---
 title: "Hoachnt web"
-description: "Hoachnt web portfolio"
+description: "🌟 Technologies and Features of the Hoachnt web Project"
 published: 2024/10/28
 slug: "hoachnt-web"
 ---
@@ -53,4 +53,5 @@ The project adheres to minimalist design principles, improving usability and foc
 
 This project demonstrates the application of modern technologies to create a fast, user-friendly, and visually appealing web application with high performance and good search engine optimization.
 
-[Source Code on GitHub](https://github.com/hoachnt/hoachnt-web)
+- [Source Code on GitHub](https://github.com/hoachnt/hoachnt-web)
+- [Link to live web](https://www.hoachnt.com)
