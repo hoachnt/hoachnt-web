@@ -33,9 +33,9 @@ onMounted(() => setTimeout(() => (isHide.value = false), 600));
         </ul>
         <button
             :class="[
-                'fixed bottom-0 left-1/2 -translate-x-1/2 flex justify-center items-center p-2 rounded-full transition-all duration-200 delay-300',
+                'fixed bottom-0 left-1/2 -translate-x-1/2 flex justify-center items-center p-2 rounded-full transition-all duration-200',
                 isHide
-                    ? 'w-full'
+                    ? 'w-full delay-300'
                     : 'translate-y-1/2 w-8 text-white dark:text-black bg-primary delay-0',
             ]"
             @click="isHide = !isHide"
