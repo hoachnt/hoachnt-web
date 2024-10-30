@@ -9,14 +9,13 @@ const isHide = ref(false);
 <template>
     <aside
         :class="[
-            'p-4 dark:bg-gray-800/50 bg-gray-200/50 backdrop-blur-3xl mb-11 sticky top-0 left-0 z-50 transition-all duration-200 max-h-min',
-            isHide ? 'max-h-0' : '',
+            'p-4 dark:bg-gray-800/50 bg-gray-200/50 backdrop-blur-3xl mb-11 sticky top-0 left-0 z-50 max-h-min',
         ]"
     >
         <ul
             :class="[
-                'space-y-2 max-h-52 transition-all duration-200',
-                isHide ? 'max-h-0' : '',
+                'space-y-2 transition-all duration-200',
+                isHide ? '!max-h-0' : 'max-h-52',
             ]"
         >
             <li v-for="section in sections" :key="section.id">
