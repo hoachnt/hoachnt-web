@@ -9,7 +9,7 @@ const isHide = ref(false);
 <template>
     <aside
         :class="[
-            'p-4 dark:bg-gray-800/50 bg-gray-200/50 backdrop-blur-3xl mb-11 sticky top-0 left-0 z-50 max-h-min transition-all duration-200',
+            'p-4 dark:bg-gray-800/80 bg-gray-200/80 backdrop-blur-3xl mb-11 sticky top-0 left-0 z-50 max-h-min transition-all duration-200',
             isHide ? 'rounded-full top-1 mx-10 delay-200' : 'rounded-none',
         ]"
     >
