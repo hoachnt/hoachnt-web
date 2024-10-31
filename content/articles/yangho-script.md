@@ -1,7 +1,7 @@
 ---
 title: "YanghoScript"
 description: "YanghoScript is a simple programming language with the ability to work with variables, arithmetic operations and display results. Was built for Vietnamese gangsters😎"
-published: 2024/8/16
+published: 2024/9/16
 slug: "yangho-script"
 ---
 

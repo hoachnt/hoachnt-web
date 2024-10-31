@@ -1,7 +1,7 @@
 ---
 title: "YanghoScript"
 description: "YanghoScript là một ngôn ngữ lập trình đơn giản với khả năng làm việc với các biến, phép toán số học và hiển thị kết quả. Được tạo ra cho các yangho Việt Nam😎"
-published: 2024/8/16
+published: 2024/9/16
 slug: "yangho-script"
 ---
 
