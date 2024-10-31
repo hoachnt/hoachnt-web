@@ -1,7 +1,7 @@
 ---
 title: "Ричард Саппер"
 description: "Биография, Знаковые Работы и Непокорённый Apple"
-published: 2024/8/14
+published: 2024/08/14
 slug: "richard-sapper"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Richard Sapper"
 description: "Biography, Iconic Works, and the Man Apple Couldn't Hire"
-published: 2024/8/14
+published: 2024/08/14
 slug: "richard-sapper"
 ---
 

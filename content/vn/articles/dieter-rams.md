@@ -1,7 +1,7 @@
 ---
 title: "Dieter Rams"
 description: "Người Cha của Chủ Nghĩa Tối Giản Hiện Đại"
-published: 2024/8/14
+published: 2024/08/14
 slug: "dieter-rams"
 ---
 

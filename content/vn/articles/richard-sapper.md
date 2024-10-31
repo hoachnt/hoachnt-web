@@ -1,7 +1,7 @@
 ---
 title: "Richard Sapper"
 description: "Tiểu sử, Tác phẩm biểu tượng và Apple không thể mời"
-published: 2024/8/14
+published: 2024/08/14
 slug: "richard-sapper"
 ---
 

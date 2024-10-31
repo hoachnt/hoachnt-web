@@ -1,7 +1,7 @@
 ---
 title: "Дитер Рамс"
 description: "Отец современного минимализма"
-published: 2024/8/14
+published: 2024/08/14
 slug: "dieter-rams"
 ---
 
