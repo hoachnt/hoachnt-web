@@ -19,10 +19,10 @@ This project is designed to create an image gallery using Nuxt.js integrated wit
 
 ## Features
 
--   📷 Image upload and display with [`Directus files API`](https://docs.directus.io/reference/files.html)
--   🖼️ Image Filters: Apply a variety of filters to your images.
--   💾 Saving: Save your images with applied filters.
--   🎠 Custom Carousel: Includes a custom carousel component that can be adapted for in-house use.
+-   📷 **Image upload** and display with [`Directus files API`](https://docs.directus.io/reference/files.html)
+-   🖼️ **Image Filters**: Apply a variety of filters to your images.
+-   💾 **Saving**: Save your images with applied filters.
+-   🎠 **Custom Carousel**: Includes a custom carousel component that can be adapted for in-house use.
 -   🏃🏻 [View transition API](https://developer.chrome.com/docs/web-platform/view-transitions) The View Transitions API provides a mechanism for easily creating animated transitions between different DOM states while also updating the DOM contents in a single step.
 -   🔑 [Nuxt Auth Utils](https://github.com/Atinux/nuxt-auth-utils) Minimalist Authentication module for Nuxt exposing Vue composables and server utils.
 

@@ -19,10 +19,10 @@ Dự án này được thiết kế để tạo một thư viện ảnh bằng c
 
 ## Các tính năng
 
--   📷 Tải lên và hiển thị hình ảnh qua [`Directus files API`](https://docs.directus.io/reference/files.html)
--   🖼️ Bộ lọc ảnh: Áp dụng nhiều bộ lọc cho ảnh của bạn.
--   💾 Lưu ảnh: Lưu hình ảnh với các bộ lọc đã được áp dụng.
--   🎠 Băng chuyền tùy chỉnh: Bao gồm một thành phần băng chuyền tùy chỉnh có thể sử dụng trong các dự án khác.
+-   📷 **Tải lên và hiển thị hình ảnh** qua [`Directus files API`](https://docs.directus.io/reference/files.html)
+-   🖼️ **Bộ lọc ảnh**: Áp dụng nhiều bộ lọc cho ảnh của bạn.
+-   💾 **Lưu ảnh**: Lưu hình ảnh với các bộ lọc đã được áp dụng.
+-   🎠 **Băng chuyền tùy chỉnh**: Bao gồm một thành phần băng chuyền tùy chỉnh có thể sử dụng trong các dự án khác.
 -   🏃🏻 [View transition API](https://developer.chrome.com/docs/web-platform/view-transitions): API cung cấp cơ chế tạo chuyển đổi động giữa các trạng thái DOM khác nhau và đồng thời cập nhật nội dung DOM.
 -   🔑 [Nuxt Auth Utils](https://github.com/Atinux/nuxt-auth-utils): Mô-đun xác thực tối giản cho Nuxt, cung cấp các API kết hợp cho Vue và các tiện ích trên server.
 
