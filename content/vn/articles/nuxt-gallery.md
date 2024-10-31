@@ -40,7 +40,7 @@ Dự án này được thiết kế để tạo một thư viện ảnh bằng c
 
 ```bash
 git clone https://github.com/hoachnt/nuxt-gallery.git
-cd nuxt-image-gallery-directus
+cd nuxt-gallery
 ```
 
 Đừng quên đổi tên file .env.example thành .env và thêm các giá trị biến của bạn.

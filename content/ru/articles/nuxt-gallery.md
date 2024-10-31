@@ -40,7 +40,7 @@ slug: "nuxt-gallery"
 
 ```bash
 git clone https://github.com/hoachnt/nuxt-gallery.git
-cd nuxt-image-gallery-directus
+cd nuxt-gallery
 ```
 
 Не забудьте переименовать файл .env.example в .env и добавить свои значения переменных.

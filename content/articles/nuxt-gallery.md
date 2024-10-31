@@ -40,7 +40,7 @@ To get started with this repository, clone it and follow the setup instructions 
 
 ```bash
 git clone https://github.com/hoachnt/nuxt-gallery.git
-cd nuxt-image-gallery-directus
+cd nuxt-gallery
 ```
 
 Don't forget to change the .env.example file to .env and add your variable values.
