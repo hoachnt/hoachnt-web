@@ -49,7 +49,7 @@ function close() {
     >
         <nav class="mx-auto px-3 max-w-2xl">
             <ul
-                class="flex items-center h-[52px] px-3 text-sm font-medium text-gray-800 dark:text-gray-200 border border-black/20 backdrop-blur-md dark:border-white/30"
+                class="flex items-center p-2 max-h-[52px] text-sm font-medium rounded-full text-gray-800 dark:text-gray-200 border border-black/20 backdrop-blur-md dark:border-white/30"
             >
                 <li
                     v-for="item in items"
@@ -59,13 +59,10 @@ function close() {
                     <ULink
                         :to="item.path"
                         prefetch
-                        class="relative h-10 px-3 py-4 flex items-center justify-center transition"
-                        active-class="dark:text-white text-black"
+                        class="relative px-3 py-2 rounded-full flex items-center justify-center"
+                        active-class="text-white bg-black dark:text-black dark:bg-white"
+                        :active="$route.path === item.path"
                     >
-                        <span
-                            v-if="$route.path === item.path"
-                            class="active-bg absolute h-full w-full z-0 bg-gray-500/10 dark:bg-white/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                        />
                         {{ item.name }}
                     </ULink>
                 </li>
