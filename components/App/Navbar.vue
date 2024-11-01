@@ -71,8 +71,11 @@ function close() {
                     <UButton
                         color="black"
                         variant="solid"
-                        size="sm"
+                        size="md"
                         class="lg:hidden z-10 block"
+                        :ui="{
+                            rounded: 'rounded-full',
+                        }"
                         @click="isOpen = true"
                     >
                         {{ $t("navbar.menu") }}
@@ -86,10 +89,10 @@ function close() {
                 />
 
                 <li class="nav-item flex-1" />
-                <li class="nav-item ml-3">
+                <li class="nav-item mx-1">
                     <AppLanguageSelect />
                 </li>
-                <li class="nav-item flex items-center justify-center ml-3">
+                <li class="nav-item flex items-center justify-center mx-1">
                     <ClientOnly fallback-tag="i">
                         <LazyAppThemeToggle />
                         <template #fallback>
