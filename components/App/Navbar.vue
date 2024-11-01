@@ -123,9 +123,6 @@ function close() {
 .nav-wrapper::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
 }
-.active-bg {
-    view-transition-name: active-item;
-}
 
 .nav-list,
 .nav-item {

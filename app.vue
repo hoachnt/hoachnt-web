@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { TransitionProps } from "vue";
+
 const { t, finalizePendingLocaleChange } = useI18n();
 
 const el = ref<HTMLElement | null>(null);
@@ -8,6 +10,16 @@ const seoMeta = ref({
     description: t("seo.home.description"),
 });
 const isMounting = ref(false);
+const isViewTransition = import.meta.server || document.startViewTransition;
+const isPageTransition = computed(() =>
+    isViewTransition
+        ? false
+        : ({
+              name: "page",
+              mode: "out-in",
+              onBeforeEnter,
+          } as TransitionProps)
+);
 
 useHead({
     link: [
@@ -76,13 +88,7 @@ const onBeforeEnter = async () => {
     <AppNavbar />
     <div class="h-11" />
     <UContainer>
-        <NuxtPage
-            :transition="{
-                name: 'page',
-                mode: 'out-in',
-                onBeforeEnter,
-            }"
-        />
+        <NuxtPage :transition="isPageTransition" />
     </UContainer>
     <div class="h-11" />
     <UContainer>
