@@ -98,7 +98,9 @@ function close() {
                 <li class="nav-item mx-1">
                     <AppLanguageSelect />
                 </li>
-                <UDivider orientation="vertical" class="h-5 mx-1" size="xs" />
+                <li class="mx-1">
+                    <UDivider orientation="vertical" class="h-5" size="xs" />
+                </li>
                 <li class="nav-item flex items-center justify-center mx-1">
                     <ClientOnly fallback-tag="i">
                         <LazyAppThemeToggle />
