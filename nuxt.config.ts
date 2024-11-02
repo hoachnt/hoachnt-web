@@ -25,7 +25,7 @@ export default defineNuxtConfig({
         },
     },
     routeRules: {
-        "/articles/**": { static: true },
+        "/articles/**": { isr: true },
     },
 
     modules: [
