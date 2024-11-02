@@ -21,13 +21,12 @@ export default defineNuxtConfig({
 
     nitro: {
         prerender: {
-            crawlLinks: true,
-            routes: ["/sitemap.xml", "/articles", "/projects"],
+            routes: ["/sitemap.xml", "/articles", "/projects", "/404"],
         },
     },
     routeRules: {
-        "/": { isr: true },
-        "/articles/**": { isr: true },
+        "/": { static: true },
+        "/articles/**": { static: true },
     },
 
     modules: [
