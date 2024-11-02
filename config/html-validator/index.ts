@@ -5,7 +5,12 @@ export default <Partial<ModuleOptions>>{
     logLevel: "verbose",
     failOnError: false,
     /** A list of routes to ignore (that is, not check validity for). */
-    ignore: [/\.(xml|rss|json|md)$/],
+    ignore: [
+        /\.xml$/,
+        /\.rss$/,
+        /\.json$/,
+        /^\/articles/, // Например, если `.md` файлы рендерятся на этом маршруте
+    ],
     options: {
         extends: [
             "html-validate:document",
