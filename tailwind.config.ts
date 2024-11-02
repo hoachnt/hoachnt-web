@@ -34,7 +34,6 @@ export default <Partial<Config>>{
         fontFamily: {
             sans: [
                 "Raleway",
-                "Inter",
                 "Avenir Next",
                 "Roboto",
                 "-apple-system",
