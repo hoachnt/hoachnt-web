@@ -26,13 +26,14 @@ const isOpen = ref(false);
             {{ $t("home.aboutMeText2") }}
         </p>
     </div>
-    <UModal
+    <LazyUModal
+        v-if="isOpen"
         v-model="isOpen"
         :ui="{
             container: 'items-center',
         }"
     >
-        <NuxtImg
+        <LazyNuxtImg
             src="/avatar.jpg"
             alt="Hoachnt"
             class="border border-gray-300 dark:border-gray-800 transition-all duration-300 bg-gray-200 dark:bg-gray-900 h-full w-full"
@@ -40,7 +41,7 @@ const isOpen = ref(false);
             preload
             format="webp"
         />
-    </UModal>
+    </LazyUModal>
 </template>
 
 <style scoped>
