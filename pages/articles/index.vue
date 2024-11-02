@@ -32,7 +32,7 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
 
 <template>
     <main>
-        <LazyAppHeader
+        <AppHeader
             class="mb-16"
             :title="$t('articles.articles')"
             :description="$t('articles.description')"

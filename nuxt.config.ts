@@ -26,11 +26,9 @@ export default defineNuxtConfig({
         },
     },
     routeRules: {
-        "/": { isr: true, prerender: true },
-        "/articles/**": { isr: true, prerender: true },
+        "/": { isr: true },
+        "/articles/**": { isr: true },
     },
-
-    plugins: ["~/plugins/ipad-cursor"],
 
     modules: [
         "@nuxt/ui",
@@ -79,10 +77,10 @@ export default defineNuxtConfig({
         head: {
             htmlAttrs: {
                 lang: "en",
-                class: "h-full",
+                class: "h-dvh",
             },
             bodyAttrs: {
-                class: "antialiased bg-gray-50 dark:bg-black min-h-screen",
+                class: "antialiased bg-gray-50 dark:bg-black min-h-dvh",
             },
         },
     },

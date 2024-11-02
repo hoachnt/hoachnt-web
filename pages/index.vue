@@ -24,7 +24,7 @@ useSeoMeta({ ...seoMeta.value });
                 :delay="200"
                 :duration="600"
             >
-                <LazyHomeIntro />
+                <HomeIntro />
             </div>
 
             <!-- Анимация для UIEmblaCarousel -->
@@ -41,7 +41,7 @@ useSeoMeta({ ...seoMeta.value });
                 <template #default>
                     <UIEmblaCarouselContent>
                         <UIEmblaCarouselItem class="space-y-24 select-none">
-                            <LazyHomeTechnologies />
+                            <HomeTechnologies />
                         </UIEmblaCarouselItem>
                         <UIEmblaCarouselItem class="space-y-24 select-none">
                             <LazyHomeSocialLinks />

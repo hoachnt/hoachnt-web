@@ -94,7 +94,7 @@ const onBeforeEnter = async () => {
     <UContainer>
         <UDivider />
     </UContainer>
-    <AppFooter />
+    <LazyAppFooter />
     <Transition>
         <AppScrollToTop v-show="y >= 84" />
     </Transition>

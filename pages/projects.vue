@@ -37,7 +37,7 @@ const { data: projects } = await useAsyncData(
 
 <template>
     <main>
-        <LazyAppHeader
+        <AppHeader
             class="mb-12"
             :title="$t('projects.projects')"
             :description="$t('projects.description')"
