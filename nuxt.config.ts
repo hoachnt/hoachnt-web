@@ -97,7 +97,7 @@ export default defineNuxtConfig({
 
     mdc: {
         highlight: {
-            langs: ["bash", "javascript", "html", "vue"],
+            langs: ["bash", "javascript", "html", "vue", "nix"],
         },
     },
 
