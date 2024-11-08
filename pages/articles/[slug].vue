@@ -13,8 +13,12 @@ const localePath = useLocalePath();
 const sections = ref<ISection[]>([]);
 const showArticlesSidebar = ref(false);
 
+const socialCardsPath = computed(
+    () => route.path.split("/")[route.path.split("/").length - 1]
+);
+
 useSeoMeta({
-    ogImage: `https://hoachnt.com/social-cards${route.path}.jpg`,
+    ogImage: `https://hoachnt.com/social-cards/articles/${socialCardsPath.value}.jpg`,
     twitterCard: "summary_large_image",
 });
 
