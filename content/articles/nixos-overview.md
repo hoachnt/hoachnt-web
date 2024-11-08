@@ -9,62 +9,104 @@ slug: "nixos-overview"
 
 ![Nixos](/articles/nixos-overview.png)
 
-A deep dive into the world of declarative system management with a pinch of humor.
+A Deep Dive into Declarative System Management with a Dash of Humor
 
 ## Disclaimer 🛑
 
-Claiming that NixOS is "the best OS" is like saying a penguin has the most stylish tie. Everyone chooses their OS based on personal preferences, like picking a sauce for pasta. This article will simply tell you about NixOS, its quirks, and why some people love it while others see it as a mysterious artifact from the future.
+Claiming that NixOS is the "best OS" is like saying a penguin wears the most stylish tie. Everyone chooses an operating system based on personal preference, like a favorite pasta sauce. In this article, we'll simply walk you through Nix and NixOS, their quirks, and why some people love them while others see them as mysterious artifacts from the future.
 
-## What is NixOS? Or: "How to Manage Your Computer Without Knowing What You're Doing" 🔍
+---
 
-NixOS is an operating system where everything is built on the principle of "tell us what you want, and we'll make it happen, even if we don't fully understand how." It's like handing a wizard a list of wishes and waiting for them to wave their wand. Sometimes it turns out great, and sometimes... well, you get the idea.
+## What is Nix? Or: "How to Manage Software Without Tears and Pain" 🔍
 
-## Why NixOS? Or: "1001 Reasons Why You'll Want to Be a NixOS User" 🎉
+**Nix** is a powerful package manager that flips your understanding of how software should be installed and managed. It's like telling your computer, "Hey, install the latest version of Node.js and make sure it runs independently of other apps." It creates isolated environments for applications, preventing the dreaded "dependency hell."
 
-1. **Reproducibility**: Want your laptop at home and your server at work to be identical? With NixOS, it’s easier than finding two identical snowflakes.
-2. **Versioning**: Forgot what you changed in your system a week ago? No problem! NixOS remembers all your steps, like a detective in a TV show.
-3. **Modularity**: The system is broken down into small building blocks that you can assemble like LEGO. Want to swap out the kernel for a custom one? Go ahead!
-4. **Flexibility**: You can configure everything, from the splash screen color to how a cat should meow when the computer boots up.
-5. **Updates**: Updates in NixOS are like a trip to the toy store. Everything is reliable, predictable, and you won’t break anything important.
+### Why Nix? 🎉
 
-## The Downsides of NixOS? Or: "Why Am I Still Using Windows?" 💻
+1. **Isolation**: Programs installed via Nix run in their own bubble, not interfering with others. It’s like each program has its own table in a restaurant.
+2. **Reproducibility**: Installed something once? Great, the system remembers how it was done and can replicate it anytime. It’s like a bookmark in a book, but for software.
+3. **Instant Rollbacks**: Don’t like that recent update? Tell Nix to "undo that," and return to how things were before, like pressing the undo button in a text editor.
 
--   **Learning Curve**: To understand NixOS, you need to be part programmer, part philosopher, and a bit of a wizard 🧙‍♂️.
--   **Community**: The NixOS community is like an exclusive chess club. Very smart people, but it’s not always easy to find common ground with them.
+### Example of Using Nix:
+
+```bash
+nix-env -iA nixpkgs.firefox
+```
+
+This command installs Firefox in a way that won’t conflict with other apps and their dependencies. Now you can browse memes without the fear of breaking your system.
+
+---
+
+## What is NixOS? Or: "How to Control Your Computer Without Really Knowing How" 🔍
+
+**NixOS** is an operating system built on top of the Nix package manager. Everything here follows the principle: "Tell us what you want, and we’ll do it, even if we don’t fully understand how." It’s like handing a list of wishes to a wizard and waiting for the magic to happen. Sometimes it’s perfect, and other times... well, you get the idea.
+
+---
+
+## Why NixOS? Or: "1001 Reasons to Become a NixOS User" 🎉
+
+1. **System Reproducibility**: Want your home laptop and work server to be identical? With NixOS, it’s easier than finding two identical snowflakes.
+2. **Version Control**: Can’t remember what you changed last week? No problem! NixOS remembers every step, like a detective in a TV show.
+3. **Modularity**: The system is built from tiny building blocks that you can assemble like LEGO. Want to swap out the kernel for your own? Go ahead!
+4. **Flexibility**: You can customize everything — from the boot screen color to how your cat should meow during startup.
+5. **Updates**: Updates in NixOS are like a trip to a toy store. Everything is reliable, predictable, and you won’t break anything important.
+
+---
+
+## Downsides of NixOS? Or: "Why Am I Still Using Windows?" 💻
+
+-   **Learning Curve**: To understand NixOS, you need to be part programmer, part philosopher, and part wizard 🧙‍♂️.
+-   **Community**: The NixOS community feels like an exclusive chess club. Very smart people, but not always easy to communicate with.
 -   **Performance**: Sometimes NixOS can run a bit slower than other systems. But hey, it gives you more time to ponder the meaning of life.
 
-## A Minimal Configuration Example: Or "How to Make Your Computer Do Something Useful"
+---
+
+## A Minimal NixOS Configuration Example: Or "How to Make Your Computer Do Something Useful"
 
 ```nix
 { config, pkgs, ... }:
+
 {
+  # Imports
   imports = [
-    # Import the common configuration
-    <nixpkgs> {}
+    ./hardware-configuration.nix
   ];
 
+  # Install packages
   environment.systemPackages = with pkgs; [
-    # Install the necessary packages
-    firefox # To browse the internet
-    vim     # To write poetry about NixOS
-    git     # To show off your achievements
+    vim
+    git
+    firefox
   ];
+
+  # Hostname
+  networking.hostName = "super-penguin";
+
+  # Enablee SSH
+  services.openssh.enable = true;
+
+  # Auto-updates
+  system.autoUpgrade.enable = true;
 }
 ```
 
-This code tells NixOS: "Please install a browser so I can watch cat videos, a text editor to write letters to my mom, and a version control system to brag to my friends."
+This code tells NixOS: "Please install a browser for watching cat videos, a text editor for writing letters to your mom, and version control software to brag to your friends."
 
-## Who is NixOS For? Or: "Who Needs This Kind of Complexity?" 🤔
+---
+
+## Who Is NixOS For? Or: "Who Needs This Kind of Complexity?" 🤔
 
 ### _NixOS is for those who_:
 
 -   Love solving puzzles and experimenting.
--   Want complete control over their system.
--   Aren’t afraid of complex terms and long commands in the terminal.
+-   Want full control over their system.
+-   Aren’t afraid of complicated terminology and long terminal commands.
 -   Dream of becoming a Linux guru.
 
-## Conclusion: Or "So, Should You Switch to NixOS?"
+---
 
-NixOS isn’t for everyone. It’s a tool for those who want to dive headfirst into the world of system administration. If you’re up for an adventure, NixOS can be your faithful companion. But if you just want to watch cat videos online, a regular operating system might be enough for you.
+## Conclusion: Or "Should You Switch to NixOS?"
 
-**_P.S._** Made it to the end? Congratulations! Now you can proudly say: **_I use Nixos btw_** 😎.
+Nix and NixOS aren’t for everyone. These are tools for those who want to dive deep into the world of system administration. If you’re ready for an adventure, NixOS might be your trusty companion. But if you just want to watch cat videos online, a regular operating system will do just fine.
+
+**_P.S._** Made it to the end? Congrats! You can now proudly say: **_I use NixOS btw_** 😎.
