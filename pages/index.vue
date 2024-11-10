@@ -20,9 +20,12 @@ useSeoMeta({ ...seoMeta.value });
                 :enter="{
                     opacity: 1,
                     y: 0,
+                    transition: {
+                        ease: 'backOut',
+                    },
                 }"
                 :delay="200"
-                :duration="600"
+                :duration="1000"
             >
                 <HomeIntro />
             </div>
@@ -30,13 +33,16 @@ useSeoMeta({ ...seoMeta.value });
             <!-- Анимация для UIEmblaCarousel -->
             <UIEmblaCarousel
                 v-motion
-                :initial="{ opacity: 0, y: 50 }"
+                :initial="{ opacity: 0, y: 25 }"
                 :enter="{
                     opacity: 1,
                     y: 0,
+                    transition: {
+                        ease: 'backOut',
+                    },
                 }"
                 :delay="600"
-                :duration="600"
+                :duration="1000"
             >
                 <template #default>
                     <UIEmblaCarouselContent>
@@ -60,6 +66,9 @@ useSeoMeta({ ...seoMeta.value });
                         :enter="{
                             opacity: 1,
                             scale: 1,
+                            transition: {
+                                ease: 'easeInOut',
+                            },
                         }"
                         :delay="800"
                         :duration="400"
@@ -73,6 +82,9 @@ useSeoMeta({ ...seoMeta.value });
                         :enter="{
                             opacity: 1,
                             scale: 1,
+                            transition: {
+                                ease: 'easeInOut',
+                            },
                         }"
                         :delay="1000"
                         :duration="400"

@@ -52,11 +52,11 @@ const { data: projects } = await useAsyncData(
                     opacity: 1,
                     y: 0,
                     transition: {
-                        ease: 'easeInOut',
+                        ease: 'backOut',
                     },
                 }"
                 :delay="100 * index"
-                :duration="500"
+                :duration="1000"
                 :project="project"
             />
         </div>

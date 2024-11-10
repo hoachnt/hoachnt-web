@@ -25,8 +25,19 @@ onBeforeUnmount(() => {
             class="list border-animation grid grid-cols-4 gap-3 sm:grid-cols-5 sm:gap-4"
         >
             <UCard
-                v-for="technology in technologyStore.technologies"
+                v-for="(technology, index) in technologyStore.technologies"
                 :key="technology.id"
+                v-motion
+                :initial="{ opacity: 0, y: 10 }"
+                :enter="{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        ease: 'backOut',
+                    },
+                }"
+                :delay="200 * index"
+                :duration="1000"
                 class="item duration-200 ease-in-out transition-all h-full w-full cursor-pointer"
                 @mouseenter="technologyStore.stopShuffle"
                 @mouseleave="technologyStore.startShuffle"
