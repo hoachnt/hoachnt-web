@@ -74,7 +74,7 @@ watch(debouncedSearchQuery, (newQuery) => {
                 />
             </template>
         </UInput>
-        <TransitionGroup name="list" tag="ul">
+        <TransitionGroup name="list" tag="ul" class="relative">
             <li
                 v-for="article in results"
                 :key="article.title"
@@ -108,5 +108,6 @@ watch(debouncedSearchQuery, (newQuery) => {
    animations can be calculated correctly. */
 .list-leave-active {
     position: absolute;
+    min-width: 100%;
 }
 </style>
