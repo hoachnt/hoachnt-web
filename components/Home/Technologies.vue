@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
                 }"
                 :delay="200 * index"
                 :duration="1000"
-                class="item duration-200 ease-in-out transition-all h-full w-full cursor-pointer"
+                class="item h-full w-full cursor-pointer"
                 @mouseenter="technologyStore.stopShuffle"
                 @mouseleave="technologyStore.startShuffle"
                 @click="technologyStore.openModal(technology)"
@@ -131,6 +131,9 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+.item {
+    transition: 0.2s;
+}
 .list:has(.item:hover) .item:not(:hover) {
     filter: blur(4px);
 }
