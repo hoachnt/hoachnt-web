@@ -2,7 +2,7 @@ interface ITechnology {
     id: number;
     title: string;
     icon?: string;
-    url: string;
+    url?: string;
     iconUrl?: string;
     temp: number;
 }
@@ -103,6 +103,12 @@ export const useTechnologyStore = defineStore("technology", () => {
             iconUrl: "/icons/directus.png",
             url: "https://directus.io/",
             temp: 70,
+        },
+        {
+            id: 12,
+            title: "Nix",
+            icon: "mdi:nix",
+            temp: 35,
         },
     ]);
 

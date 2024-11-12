@@ -47,7 +47,7 @@ const { data: projects } = await useAsyncData(
                 v-for="(project, index) in projects"
                 :key="index"
                 v-motion
-                :initial="{ opacity: 0, y: 70 }"
+                :initial="{ opacity: 0, y: 10 }"
                 :enter="{
                     opacity: 1,
                     y: 0,

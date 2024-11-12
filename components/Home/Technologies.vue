@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useTechnologyStore } from "@/stores/technology";
-
 const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
 
 const technologyStore = useTechnologyStore();
