@@ -70,7 +70,7 @@ watch(debouncedSearchQuery, (newQuery) => {
                     variant="link"
                     icon="i-heroicons-x-mark-20-solid"
                     :padded="false"
-                    @click="search = ''"
+                    @click="debouncedSearchQuery = ''"
                 />
             </template>
         </UInput>
