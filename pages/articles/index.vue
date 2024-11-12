@@ -12,7 +12,10 @@ const seoMeta = ref({
 
 useSeoMeta(seoMeta.value);
 
+const debouncedSearchQuery = ref("");
 const search = ref("");
+
+let debounceTimer: ReturnType<typeof setTimeout> | null = null;
 
 const { data: articles } = await useAsyncData(
     `all-articles-${route.path}`,
@@ -28,6 +31,17 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
 
     return result;
 }
+
+watch(debouncedSearchQuery, (newQuery) => {
+    if (debounceTimer) {
+        clearTimeout(debounceTimer);
+    }
+
+    debounceTimer = setTimeout(() => {
+        // После задержки выполняется поиск
+        search.value = newQuery;
+    }, 200); // 200ms time out
+});
 </script>
 
 <template>
@@ -39,7 +53,7 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
         />
 
         <UInput
-            v-model="search"
+            v-model="debouncedSearchQuery"
             aria-label="{{ $t('articles.search') }}"
             name="search"
             icon="i-heroicons-magnifying-glass-20-solid"
