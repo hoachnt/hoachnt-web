@@ -60,11 +60,11 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
                 />
             </template>
         </UInput>
-        <TransitionGroup name="list" tag="ul" class="space-y-16">
+        <TransitionGroup name="list" tag="ul">
             <li
-                v-for="(article, index) in results"
-                :key="index"
-                class="hover:bg-gray-200 dark:hover:bg-white/10 duration-200 max-w-2xl"
+                v-for="article in results"
+                :key="article.title"
+                class="hover:bg-gray-200 dark:hover:bg-white/10 max-w-2xl my-8"
             >
                 <LazyAppArticleCard :article="article" />
             </li>
@@ -79,13 +79,15 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
 .list-leave-active {
-    transition: all 0.5s ease;
+    transition: all 1s ease;
 }
 
 .list-enter-from,
 .list-leave-to {
     opacity: 0;
-    transform: translateX(30px);
+    scale: 0.8;
+    filter: blur(10px);
+    transform: translateY(30px);
 }
 
 /* ensure leaving items are taken out of layout flow so that moving
