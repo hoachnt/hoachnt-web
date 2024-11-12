@@ -64,7 +64,7 @@ function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
             <li
                 v-for="article in results"
                 :key="article.title"
-                class="hover:bg-gray-200 dark:hover:bg-white/10 max-w-2xl my-8"
+                class="hover:bg-gray-200 dark:hover:bg-white/10 max-w-2xl my-16"
             >
                 <LazyAppArticleCard :article="article" />
             </li>
