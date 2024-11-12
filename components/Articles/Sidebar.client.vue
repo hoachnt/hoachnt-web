@@ -14,7 +14,7 @@ onMounted(() => setTimeout(() => (isHide.value = false), 600));
             'p-4 dark:bg-gray-800/80 bg-gray-200/80 backdrop-blur-3xl mb-11 sticky top-0 left-0 z-50 max-h-min mx-auto transition-all duration-200',
             isHide
                 ? 'rounded-full top-1 delay-200 max-w-28'
-                : 'rounded-none max-w-full',
+                : 'rounded-sm max-w-full',
         ]"
     >
         <ul
