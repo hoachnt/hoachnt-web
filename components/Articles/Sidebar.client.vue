@@ -7,11 +7,8 @@ const route = useRoute();
 
 const isHide = ref(true);
 const visibleLinks = ref<string[]>([]);
-const currentRoute = ref(`${window.location.origin}${route.path}`);
 
-const links = document.querySelectorAll<HTMLAnchorElement>(
-    'a[href*="#"]:not(aside a)'
-);
+const currentRoute = computed(() => `${window.location.origin}${route.path}`);
 
 let observer: IntersectionObserver;
 
@@ -30,11 +27,13 @@ const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     });
 };
 
-onMounted(() => {
-    observer = new IntersectionObserver(handleIntersection);
+onMounted(async () => {
+    await nextTick();
 
-    // Привязка наблюдателя ко всем ссылкам
-    links.forEach((link) => observer.observe(link));
+    observer = new IntersectionObserver(handleIntersection);
+    document
+        .querySelectorAll<HTMLAnchorElement>('a[href*="#"]:not(aside a)')
+        .forEach((link) => observer?.observe(link));
 
     setTimeout(() => (isHide.value = false), 600);
 });
