@@ -3,9 +3,11 @@ defineProps<{
     sections: { id: string; title: string | null }[];
 }>();
 
-const isHide = ref(true);
+const route = useRoute();
 
+const isHide = ref(true);
 const visibleLinks = ref<string[]>([]);
+const currentRoute = ref(`${window.location.origin}${route.path}`);
 
 const links = document.querySelectorAll<HTMLAnchorElement>(
     'a[href*="#"]:not(aside a)'
@@ -18,11 +20,11 @@ const handleIntersection = (entries: IntersectionObserverEntry[]) => {
         const link = entry.target as HTMLAnchorElement;
         if (entry.isIntersecting) {
             if (!visibleLinks.value.includes(link.href)) {
-                visibleLinks.value.push(link.href);
+                visibleLinks.value.push(decodeURIComponent(link.href));
             }
         } else {
             visibleLinks.value = visibleLinks.value.filter(
-                (href) => href !== link.href
+                (href) => href !== decodeURIComponent(link.href)
             );
         }
     });
@@ -59,7 +61,7 @@ onMounted(() => {
                     :href="`#${section.id}`"
                     :class="[
                         'block hover:text-blue-500 hover:underline duration-200',
-                        visibleLinks.join('').includes(`#${section.id}`)
+                        visibleLinks.includes(`${currentRoute}#${section.id}`)
                             ? '!text-blue-500'
                             : '',
                     ]"
