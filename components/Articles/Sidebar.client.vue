@@ -5,7 +5,37 @@ defineProps<{
 
 const isHide = ref(true);
 
-onMounted(() => setTimeout(() => (isHide.value = false), 600));
+const visibleLinks = ref<string[]>([]);
+
+const links = document.querySelectorAll<HTMLAnchorElement>(
+    'a[href*="#"]:not(aside a)'
+);
+
+let observer: IntersectionObserver;
+
+const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+        const link = entry.target as HTMLAnchorElement;
+        if (entry.isIntersecting) {
+            if (!visibleLinks.value.includes(link.href)) {
+                visibleLinks.value.push(link.href);
+            }
+        } else {
+            visibleLinks.value = visibleLinks.value.filter(
+                (href) => href !== link.href
+            );
+        }
+    });
+};
+
+onMounted(() => {
+    observer = new IntersectionObserver(handleIntersection);
+
+    // Привязка наблюдателя ко всем ссылкам
+    links.forEach((link) => observer.observe(link));
+
+    setTimeout(() => (isHide.value = false), 600);
+});
 </script>
 
 <template>
@@ -25,8 +55,14 @@ onMounted(() => setTimeout(() => (isHide.value = false), 600));
         >
             <li v-for="section in sections" :key="section.id">
                 <a
+                    :id="`#${section.id}`"
                     :href="`#${section.id}`"
-                    class="block !text-blue-500 dark:hover:!text-blue-200 hover:!text-blue-800 hover:underline duration-200"
+                    :class="[
+                        'block hover:text-blue-500 hover:underline duration-200',
+                        visibleLinks.join('').includes(`#${section.id}`)
+                            ? '!text-blue-500'
+                            : '',
+                    ]"
                     >{{ section.title }}</a
                 >
             </li>
