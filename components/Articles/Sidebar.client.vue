@@ -6,7 +6,7 @@ defineProps<{
 const route = useRoute();
 
 const isHide = ref(true);
-const visibleLinks = ref<string[]>([]);
+const visibleLinks = ref(new Set<string>());
 
 const currentRoute = computed(() => `${window.location.origin}${route.path}`);
 
@@ -15,14 +15,12 @@ let observer: IntersectionObserver;
 const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
         const link = entry.target as HTMLAnchorElement;
+        const href = decodeURIComponent(link.href);
+        
         if (entry.isIntersecting) {
-            if (!visibleLinks.value.includes(link.href)) {
-                visibleLinks.value.push(decodeURIComponent(link.href));
-            }
+            visibleLinks.value.add(href);
         } else {
-            visibleLinks.value = visibleLinks.value.filter(
-                (href) => href !== decodeURIComponent(link.href)
-            );
+            visibleLinks.value.delete(href);
         }
     });
 };
@@ -60,7 +58,7 @@ onMounted(async () => {
                     :href="`#${section.id}`"
                     :class="[
                         'block hover:text-blue-500 hover:underline duration-200',
-                        visibleLinks.includes(`${currentRoute}#${section.id}`)
+                        visibleLinks.has(`${currentRoute}#${section.id}`)
                             ? '!text-blue-500'
                             : '',
                     ]"
