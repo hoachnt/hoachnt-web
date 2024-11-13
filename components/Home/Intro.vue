@@ -16,7 +16,6 @@ const isOpen = ref(false);
             }"
             :delay="200"
             :duration="1000"
-            provider="hoachnt"
             src="/avatar.jpg"
             alt="Hoachnt"
             class="cursor-pointer ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 bg-gray-200 dark:bg-gray-900 rounded-full h-12 w-12 sm:h-16 sm:w-16"
@@ -83,7 +82,6 @@ const isOpen = ref(false);
         }"
     >
         <LazyNuxtImg
-            provider="hoachnt"
             src="/avatar.jpg"
             alt="Hoachnt"
             class="border border-gray-300 dark:border-gray-800 transition-all duration-300 bg-gray-200 dark:bg-gray-900 h-full w-full"

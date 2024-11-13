@@ -49,12 +49,9 @@ onBeforeUnmount(() => {
                 />
                 <NuxtImg
                     v-else
-                    provider="hoachnt"
                     :src="technology.iconUrl"
                     :alt="technology.title"
                     class="w-full h-full object-contain min-h-[40px]"
-                    width="66px"
-                    height="66px"
                     format="webp"
                     placeholder
                     loading="lazy"
