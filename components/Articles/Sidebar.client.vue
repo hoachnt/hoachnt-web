@@ -15,8 +15,13 @@ let observer: IntersectionObserver;
 const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
         const link = entry.target as HTMLAnchorElement;
-        const href = decodeURIComponent(link.href);
-        
+
+        // Delete all search params
+        const parsedUrl = new URL(link.href);
+        parsedUrl.search = "";
+
+        const href = decodeURIComponent(parsedUrl.toString());
+
         if (entry.isIntersecting) {
             visibleLinks.value.add(href);
         } else {
