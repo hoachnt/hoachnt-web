@@ -46,13 +46,11 @@ useSeoMeta({ ...seoMeta.value });
                     </UIEmblaCarouselContent>
                 </template>
 
-                <!-- Анимация для UIEmblaCarouselPrevious -->
                 <template #emblaButtons>
                     <UIEmblaCarouselPrevious
                         @click="carouselStore.scrollPrev()"
                     />
 
-                    <!-- Анимация для UIEmblaCarouselNext -->
                     <UIEmblaCarouselNext @click="carouselStore.scrollNext()" />
                 </template>
             </UIEmblaCarousel>

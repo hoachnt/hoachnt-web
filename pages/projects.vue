@@ -55,7 +55,7 @@ const { data: projects } = await useAsyncData(
                         ease: 'backOut',
                     },
                 }"
-                :delay="100 * index"
+                :delay="200 * index"
                 :duration="1000"
                 :project="project"
             />
