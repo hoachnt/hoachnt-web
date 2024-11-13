@@ -16,6 +16,7 @@ const isOpen = ref(false);
             }"
             :delay="200"
             :duration="1000"
+            provider="hoachnt"
             src="/avatar.jpg"
             alt="Hoachnt"
             class="cursor-pointer ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 bg-gray-200 dark:bg-gray-900 rounded-full h-12 w-12 sm:h-16 sm:w-16"
@@ -57,8 +58,8 @@ const isOpen = ref(false);
         >
             {{ $t("home.aboutMeText1") }}
         </p>
-        <p 
-        v-motion
+        <p
+            v-motion
             :initial="{ opacity: 0, y: 10 }"
             :enter="{
                 opacity: 1,
@@ -69,7 +70,8 @@ const isOpen = ref(false);
             }"
             :delay="800"
             :duration="1000"
-        class="text-gray-900 dark:text-gray-400">
+            class="text-gray-900 dark:text-gray-400"
+        >
             {{ $t("home.aboutMeText2") }}
         </p>
     </div>
@@ -81,6 +83,7 @@ const isOpen = ref(false);
         }"
     >
         <LazyNuxtImg
+            provider="hoachnt"
             src="/avatar.jpg"
             alt="Hoachnt"
             class="border border-gray-300 dark:border-gray-800 transition-all duration-300 bg-gray-200 dark:bg-gray-900 h-full w-full"
