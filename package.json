@@ -13,6 +13,7 @@
     "lintfix": "eslint . --fix && prettier --write --list-different ."
   },
   "devDependencies": {
+    "@iconify-json/circle-flags": "^1.2.1",
     "@iconify-json/heroicons": "^1.2.1",
     "@iconify-json/heroicons-solid": "^1.2.0",
     "@iconify-json/logos": "^1.2.3",
