@@ -3,7 +3,7 @@ import ru from "@/i18n/lang/ru";
 import vn from "@/i18n/lang/vn";
 
 export default defineI18nConfig(() => ({
-    legacy: false,
+    legacy: true,
     locale: "en",
     messages: {
         en: en,

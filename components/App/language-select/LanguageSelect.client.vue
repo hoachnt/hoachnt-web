@@ -28,8 +28,14 @@ const selected = ref<ILanguage>(
         languages.value[0]
 );
 
+onMounted(() => {
+    setLocale(selected.value.value);
+});
+
 watch(selected, (newLanguage) => {
     setLocale(newLanguage.value);
+
+    console.log(locale.value, newLanguage.value);
 });
 </script>
 
