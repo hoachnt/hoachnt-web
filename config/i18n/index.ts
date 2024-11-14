@@ -1,7 +1,7 @@
-import type { NuxtI18nOptions } from "@nuxtjs/i18n";
+import type { ModuleOptions } from "@nuxtjs/i18n";
 
-export default <Partial<NuxtI18nOptions>>{
-    vueI18n: "./i18n.config.ts",
+export default <Partial<ModuleOptions>>{
+    vueI18n: "/i18n/config.ts",
     skipSettingLocaleOnNavigate: true,
     defaultLocale: "en",
     langDir: "lang",

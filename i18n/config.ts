@@ -1,6 +1,6 @@
-import en from "@/lang/en";
-import ru from "@/lang/ru";
-import vn from "@/lang/vn";
+import en from "@/i18n/lang/en";
+import ru from "@/i18n/lang/ru";
+import vn from "@/i18n/lang/vn";
 
 export default defineI18nConfig(() => ({
     legacy: false,
