@@ -1,33 +1,51 @@
 <script setup lang="ts">
-const { locale, locales, setLocale, t } = useI18n();
+const { locale, locales, setLocale } = useI18n();
 
-onMounted(() => {
-    setLocale(locale.value);
-});
+interface ILanguage {
+    value: "en" | "ru" | "vn";
+    code: string;
+    icon: string;
+    id: string;
+}
 
-watch(locale, (newLanguage) => {
-    setLocale(newLanguage);
+const languages: globalThis.ComputedRef<ILanguage[]> = computed(() =>
+    locales.value.map((locale) => {
+        return {
+            ...locale,
+            icon:
+                locale.value === "en"
+                    ? "circle-flags:en"
+                    : locale.value === "ru"
+                      ? "circle-flags:ru"
+                      : "circle-flags:vn",
+            id: locale.code,
+        };
+    })
+);
+
+const selected = ref<ILanguage>(
+    languages.value.find((language) => language.value === locale.value) ||
+        languages.value[0]
+);
+
+watch(selected, (newLanguage) => {
+    setLocale(newLanguage.value);
 });
 </script>
 
 <template>
-    <UTooltip
-        :text="t('navbar.selectLanguage')"
-        :ui="{ popper: { strategy: 'absolute' } }"
+    <USelectMenu
+        v-model="selected"
+        :options="languages"
+        option-attribute="name"
+        aria-label="Language select"
     >
-        <USelect
-            v-model="locale"
-            :options="locales"
-            option-attribute="name"
-            aria-label="Language select"
-        >
-            <template #leading>
-                <Icon
-                    aria-hidden="true"
-                    name="heroicons-solid:language"
-                    class="w-5 h-5"
-                />
-            </template>
-        </USelect>
-    </UTooltip>
+        <template #leading>
+            <Icon
+                aria-hidden="true"
+                name="heroicons-solid:language"
+                class="w-5 h-5"
+            />
+        </template>
+    </USelectMenu>
 </template>
