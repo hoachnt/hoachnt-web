@@ -38,5 +38,8 @@ export default defineAppConfig({
         skeleton: {
             rounded: "rounded-sm",
         },
+        alert: {
+            rounded: "rounded-sm",
+        },
     },
 });
