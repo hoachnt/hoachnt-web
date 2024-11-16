@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 defineProps({
     article: {
         type: Object,
@@ -6,7 +6,7 @@ defineProps({
     },
 });
 
-const getReadableDate = (dateString) => {
+const getReadableDate = (dateString: Date) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
         year: "numeric",

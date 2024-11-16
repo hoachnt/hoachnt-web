@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import type { ParsedContent } from "@nuxt/content";
-
 const localePath = useLocalePath();
 const route = useRoute();
 const { t } = useI18n();
-
 const seoMeta = ref({
     title: `${t("seo.articles.title")} | ${t("title")}`,
     description: t("seo.articles.description"),
 });
+const activeIndex = ref<number>(999999);
+const activeArticle = ref<ParsedContent | null>(null);
+const router = useRouter();
 
 useSeoMeta(seoMeta.value);
 
@@ -42,6 +43,45 @@ watch(debouncedSearchQuery, (newQuery) => {
         search.value = newQuery;
     }, 200); // 200ms time out
 });
+
+defineShortcuts({
+    arrowup: {
+        usingInput: "search",
+        handler: () => {
+            if (!results.value) return;
+
+            if (activeIndex.value === 0) {
+                activeIndex.value = results.value?.length - 1;
+            } else {
+                activeIndex.value--;
+            }
+        },
+    },
+    arrowdown: {
+        usingInput: "search",
+        handler: () => {
+            if (!results.value) return;
+
+            if (activeIndex.value === results.value.length - 1) {
+                activeIndex.value = 0;
+            } else {
+                activeIndex.value++;
+            }
+        },
+    },
+    enter: {
+        usingInput: "search",
+        handler: () => {
+            if (!results.value) return;
+
+            activeArticle.value = results.value[activeIndex.value];
+
+            if (activeArticle.value._path === undefined) return;
+
+            router.push(activeArticle.value._path);
+        },
+    },
+});
 </script>
 
 <template>
@@ -62,6 +102,8 @@ watch(debouncedSearchQuery, (newQuery) => {
             size="xl"
             :placeholder="`${$t('articles.search')}...`"
             :ui="{ icon: { trailing: { pointer: '' } } }"
+            @focus="activeIndex = 0"
+            @blur="activeIndex = 999999"
         >
             <template #trailing>
                 <UButton
@@ -76,9 +118,12 @@ watch(debouncedSearchQuery, (newQuery) => {
         </UInput>
         <TransitionGroup name="list" tag="ul" class="relative">
             <li
-                v-for="article in results"
+                v-for="(article, index) in results"
                 :key="article.title"
-                class="hover:bg-gray-200 dark:hover:bg-white/10 max-w-2xl my-16"
+                :class="[
+                    'my-16 duration-100',
+                    index === activeIndex ? 'outline outline-offset-2 outline-2' : '',
+                ]"
             >
                 <LazyAppArticleCard :article="article" />
             </li>
