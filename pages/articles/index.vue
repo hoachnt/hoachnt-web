@@ -3,84 +3,74 @@ import type { ParsedContent } from "@nuxt/content";
 const localePath = useLocalePath();
 const route = useRoute();
 const { t } = useI18n();
+const router = useRouter();
+
+const activeIndex = ref<number>(999999);
+const activeArticle = ref<ParsedContent | null>(null);
 const seoMeta = ref({
     title: `${t("seo.articles.title")} | ${t("title")}`,
     description: t("seo.articles.description"),
 });
-const activeIndex = ref<number>(999999);
-const activeArticle = ref<ParsedContent | null>(null);
-const router = useRouter();
 
+// SEO Metadata
 useSeoMeta(seoMeta.value);
 
-const debouncedSearchQuery = ref("");
-const search = ref("");
-
-let debounceTimer: ReturnType<typeof setTimeout> | null = null;
-
+// Fetching articles
 const { data: articles } = await useAsyncData(
     `all-articles-${route.path}`,
     () => queryContent(localePath("/articles")).sort({ published: -1 }).find()
 );
 
-const results = computed(() => filterArticles(articles));
+// Search-related state
+const searchQuery = ref("");
+const debouncedSearchQuery = ref("");
 
-function filterArticles(articles: globalThis.Ref<ParsedContent[] | null>) {
-    const result = articles.value?.filter((article: ParsedContent) =>
-        article.title?.toLowerCase().includes(search.value.toLowerCase())
+// Filtered results computed property
+const results = computed(() => {
+    if (!articles.value || !searchQuery.value) return articles.value;
+    return articles.value.filter((article) =>
+        article.title?.toLowerCase().includes(searchQuery.value.toLowerCase())
     );
-
-    return result;
-}
-
-watch(debouncedSearchQuery, (newQuery) => {
-    if (debounceTimer) {
-        clearTimeout(debounceTimer);
-    }
-
-    debounceTimer = setTimeout(() => {
-        // После задержки выполняется поиск
-        search.value = newQuery;
-    }, 200); // 200ms time out
 });
 
+// Debounced search handler
+const updateSearchQuery = useDebounceFn((value: string) => {
+    activeIndex.value = 0;
+    searchQuery.value = value;
+}, 500);
+
+watchEffect(() => {
+    updateSearchQuery(debouncedSearchQuery.value);
+});
+
+// Shortcut handlers
+function handleArrowUp() {
+    if (!results.value) return;
+    activeIndex.value =
+        activeIndex.value === 0
+            ? results.value.length - 1
+            : activeIndex.value - 1;
+}
+
+function handleArrowDown() {
+    if (!results.value) return;
+    activeIndex.value =
+        activeIndex.value === results.value.length - 1
+            ? 0
+            : activeIndex.value + 1;
+}
+
+function handleEnter() {
+    if (!results.value || activeIndex.value === 999999) return;
+    activeArticle.value = results.value[activeIndex.value];
+    if (activeArticle.value?._path) router.push(activeArticle.value._path);
+}
+
+// Define shortcuts
 defineShortcuts({
-    arrowup: {
-        usingInput: "search",
-        handler: () => {
-            if (!results.value) return;
-
-            if (activeIndex.value === 0) {
-                activeIndex.value = results.value?.length - 1;
-            } else {
-                activeIndex.value--;
-            }
-        },
-    },
-    arrowdown: {
-        usingInput: "search",
-        handler: () => {
-            if (!results.value) return;
-
-            if (activeIndex.value === results.value.length - 1) {
-                activeIndex.value = 0;
-            } else {
-                activeIndex.value++;
-            }
-        },
-    },
-    enter: {
-        usingInput: "search",
-        handler: () => {
-            if (!results.value) return;
-
-            activeArticle.value = results.value[activeIndex.value];
-
-            if (activeArticle.value._path === undefined) return;
-
-            router.push(activeArticle.value._path);
-        },
-    },
+    arrowup: { usingInput: "search", handler: handleArrowUp },
+    arrowdown: { usingInput: "search", handler: handleArrowDown },
+    enter: { usingInput: "search", handler: handleEnter },
 });
 </script>
 
@@ -92,6 +82,7 @@ defineShortcuts({
             :description="$t('articles.description')"
         />
 
+        <!-- Search Input -->
         <UInput
             v-model="debouncedSearchQuery"
             aria-label="{{ $t('articles.search') }}"
@@ -107,7 +98,7 @@ defineShortcuts({
         >
             <template #trailing>
                 <UButton
-                    v-show="search !== ''"
+                    v-show="searchQuery !== ''"
                     color="gray"
                     variant="link"
                     icon="i-heroicons-x-mark-20-solid"
@@ -116,13 +107,17 @@ defineShortcuts({
                 />
             </template>
         </UInput>
+
+        <!-- Articles List with Transition -->
         <TransitionGroup name="list" tag="ul" class="relative">
             <li
                 v-for="(article, index) in results"
                 :key="article.title"
                 :class="[
                     'my-16 duration-100',
-                    index === activeIndex ? 'outline outline-offset-2 outline-2' : '',
+                    index === activeIndex
+                        ? 'outline outline-offset-2 outline-2'
+                        : '',
                 ]"
             >
                 <LazyAppArticleCard :article="article" />
@@ -134,11 +129,11 @@ defineShortcuts({
     </main>
 </template>
 
-<style>
+<style scoped>
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
 .list-leave-active {
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 
 .list-enter-from,
