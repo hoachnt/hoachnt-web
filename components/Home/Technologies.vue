@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const headingStyle = "uppercase text-xs font-semibold text-gray-400 mb-4";
+const headingStyle = "uppercase text-xs font-semibold  mb-4";
 
 const technologyStore = useTechnologyStore();
 
