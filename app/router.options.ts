@@ -4,23 +4,23 @@ export default <RouterConfig>{
     async scrollBehavior(to, from, savedPosition) {
         const nuxtApp = useNuxtApp();
 
-        // Убедитесь, что маршрут изменился.
+        // Verify that the route has changed.
         if (nuxtApp.$i18n && to.name !== from.name) {
             await nuxtApp.$i18n.waitForPendingLocaleChange();
         }
 
-        // Если есть якорь (hash) в URL, прокручиваем к нему
+        // If there is an anchor (hash) in the URL, scroll to it
         if (to.hash) {
             const element = document.querySelector(to.hash);
             if (element) {
                 return {
                     el: to.hash,
-                    behavior: "smooth", // или 'auto', если вам не нужна плавная прокрутка
+                    behavior: "smooth", // Or 'auto', if u don't need smooth scroll
                 };
             }
         }
 
-        // Если сохранена позиция, возвращаем её
+        // If the position is saved, we return it
         return savedPosition || { top: 0 };
     },
 };
