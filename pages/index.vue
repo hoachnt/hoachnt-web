@@ -14,9 +14,21 @@ useSeoMeta({ ...seoMeta.value });
     <main>
         <div class="space-y-24">
             <!-- Анимация для HomeIntro -->
-            <div>
-                <HomeIntro />
-            </div>
+            <HomeIntro />
+
+            <HomeTechnologies
+                v-motion
+                :initial="{ opacity: 0, y: 10 }"
+                :enter="{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        ease: 'backOut',
+                    },
+                }"
+                :delay="1000"
+                :duration="1000"
+            />
 
             <!-- Анимация для UIEmblaCarousel -->
             <UIEmblaCarousel
@@ -29,17 +41,15 @@ useSeoMeta({ ...seoMeta.value });
                         ease: 'backOut',
                     },
                 }"
-                :delay="1000"
+                :delay="1200"
                 :duration="1000"
             >
                 <template #default>
                     <UIEmblaCarouselContent>
                         <UIEmblaCarouselItem class="space-y-24 select-none">
-                            <HomeTechnologies />
+                            <HomeSocialLinks />
                         </UIEmblaCarouselItem>
-                        <UIEmblaCarouselItem class="space-y-24 select-none">
-                            <LazyHomeSocialLinks />
-                        </UIEmblaCarouselItem>
+
                         <UIEmblaCarouselItem class="space-y-24 select-none">
                             <LazyHomeWorkLinks />
                         </UIEmblaCarouselItem>
