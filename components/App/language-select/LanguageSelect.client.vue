@@ -8,22 +8,21 @@ interface ILanguage {
     id: string;
 }
 
-const languages: globalThis.ComputedRef<ILanguage[]> = computed(() =>
-    locales.value.map((locale) => {
-        return {
-            ...locale,
-            icon:
-                locale.value === "en"
-                    ? "circle-flags:en"
-                    : locale.value === "ru"
-                      ? "circle-flags:ru"
-                      : "circle-flags:vn",
-            id: locale.code,
-        };
-    })
+const languages = computed<ILanguage[]>(() =>
+    locales.value.map((locale) => ({
+        ...locale,
+        value: locale.value,
+        icon:
+            locale.value === "en"
+                ? "circle-flags:en"
+                : locale.value === "ru"
+                  ? "circle-flags:ru"
+                  : "circle-flags:vn",
+        id: locale.code,
+    }))
 );
 
-const selected = ref<ILanguage>(
+const selected = shallowRef<ILanguage>(
     languages.value.find((language) => language.value === locale.value) ||
         languages.value[0]
 );
@@ -32,10 +31,8 @@ onMounted(() => {
     setLocale(selected.value.value);
 });
 
-watch(selected, (newLanguage) => {
-    setLocale(newLanguage.value);
-
-    console.log(locale.value, newLanguage.value);
+watchEffect(() => {
+    setLocale(selected.value.value);
 });
 </script>
 
