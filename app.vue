@@ -5,10 +5,10 @@ const { t, finalizePendingLocaleChange } = useI18n();
 
 const el = ref<HTMLElement | null>(null);
 const y = ref(0);
-const seoMeta = ref({
+const seoMeta = computed(() => ({
     title: t("title"),
     description: t("seo.home.description"),
-});
+}));
 const isMounting = ref(false);
 const isViewTransition = import.meta.server || document.startViewTransition;
 const isPageTransition = computed(() =>
@@ -96,7 +96,7 @@ const onBeforeEnter = async () => {
     </UContainer>
     <LazyAppFooter />
     <Transition>
-        <AppScrollToTop v-show="y >= 84" />
+        <AppScrollToTop v-if="y >= 84" />
     </Transition>
 </template>
 
