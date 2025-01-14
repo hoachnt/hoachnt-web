@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { ParsedContent } from "@nuxt/content";
 const { t } = useI18n();
 
 const localePath = useLocalePath();
-const route = useRoute();
 
 const seoMeta = computed(() => ({
     title: `${t("seo.projects.title")} | ${t("title")}`,
@@ -11,28 +11,23 @@ const seoMeta = computed(() => ({
 
 useSeoMeta(seoMeta.value);
 
-const { data: projects } = await useAsyncData(
-    `projects-all-${route.path}`,
-    () =>
-        queryContent(localePath("/projects"))
-            .find()
-            .then((response) =>
-                response.sort((a, b) => {
-                    const nameA = a._id.toUpperCase();
-                    const nameB = b._id.toUpperCase();
+const projects = ref<ParsedContent[] | null>([]);
 
-                    if (nameA < nameB) {
-                        return 1;
-                    }
+const fetchProjects = async () => {
+    const data = await queryContent(localePath("/projects"))
+        .find()
+        .then((response) =>
+            response.sort((a, b) => b._id.localeCompare(a._id))
+        );
 
-                    if (nameA > nameB) {
-                        return -1;
-                    }
+    projects.value = data;
+};
 
-                    return 0;
-                })
-            )
-);
+await fetchProjects();
+
+watch(localePath, async () => {
+    await fetchProjects();
+});
 </script>
 
 <template>
@@ -47,6 +42,7 @@ const { data: projects } = await useAsyncData(
                 v-for="(project, index) in projects"
                 :key="index"
                 v-motion
+                v-memo="[project]"
                 :initial="{ opacity: 0, y: 10 }"
                 :enter="{
                     opacity: 1,

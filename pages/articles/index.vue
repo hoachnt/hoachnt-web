@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { ParsedContent } from "@nuxt/content";
 const localePath = useLocalePath();
-const route = useRoute();
 const { t } = useI18n();
 const router = useRouter();
 
 const activeIndex = ref<number>(999999);
+const articles = ref<ParsedContent[] | null>(null);
 const activeArticle = ref<ParsedContent | null>(null);
 const seoMeta = computed(() => ({
     title: `${t("seo.articles.title")} | ${t("title")}`,
@@ -16,10 +16,11 @@ const seoMeta = computed(() => ({
 useSeoMeta(seoMeta.value);
 
 // Fetching articles
-const { data: articles } = await useAsyncData(
-    `all-articles-${route.path}`,
-    () => queryContent(localePath("/articles")).sort({ published: -1 }).find()
-);
+const fetchArticles = async () => {
+    const data = await queryContent(localePath("/articles")).sort({ published: -1 }).find();
+
+    articles.value = data;
+};
 
 // Search-related state
 const searchQuery = ref("");
@@ -38,6 +39,12 @@ const updateSearchQuery = useDebounceFn((value: string) => {
     activeIndex.value = 0;
     searchQuery.value = value;
 }, 500);
+
+await fetchArticles();
+
+watch(localePath, async () => {
+    await fetchArticles();
+});
 
 watchEffect(() => {
     updateSearchQuery(debouncedSearchQuery.value);
@@ -113,6 +120,7 @@ defineShortcuts({
             <li
                 v-for="(article, index) in results"
                 :key="article.title"
+                v-memo="[article]"
                 :class="[
                     'my-16 duration-100',
                     index === activeIndex

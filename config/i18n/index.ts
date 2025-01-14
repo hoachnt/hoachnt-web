@@ -2,7 +2,7 @@ import type { ModuleOptions } from "@nuxtjs/i18n";
 
 export default <Partial<ModuleOptions>>{
     vueI18n: "/i18n/config.ts",
-    skipSettingLocaleOnNavigate: false,
+    skipSettingLocaleOnNavigate: true,
     defaultLocale: "en",
     langDir: "lang",
     strategy: "prefix_except_default",
