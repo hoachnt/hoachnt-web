@@ -7,10 +7,10 @@ const router = useRouter();
 
 const activeIndex = ref<number>(999999);
 const activeArticle = ref<ParsedContent | null>(null);
-const seoMeta = ref({
+const seoMeta = computed(() => ({
     title: `${t("seo.articles.title")} | ${t("title")}`,
     description: t("seo.articles.description"),
-});
+}));
 
 // SEO Metadata
 useSeoMeta(seoMeta.value);

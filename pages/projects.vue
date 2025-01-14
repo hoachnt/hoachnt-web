@@ -4,10 +4,10 @@ const { t } = useI18n();
 const localePath = useLocalePath();
 const route = useRoute();
 
-const seoMeta = ref({
+const seoMeta = computed(() => ({
     title: `${t("seo.projects.title")} | ${t("title")}`,
     description: t("seo.projects.description"),
-});
+}));
 
 useSeoMeta(seoMeta.value);
 

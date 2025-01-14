@@ -2,12 +2,12 @@
 const { t } = useI18n();
 const carouselStore = useCarouselStore();
 
-const seoMeta = ref({
+const seoMeta = computed(() => ({
     title: t("seo.home.title"),
     description: t("seo.home.description"),
-});
+}));
 
-useSeoMeta({ ...seoMeta.value });
+useSeoMeta(seoMeta.value);
 </script>
 
 <template>
