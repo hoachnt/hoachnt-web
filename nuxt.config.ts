@@ -10,14 +10,18 @@ export default defineNuxtConfig({
         viewTransition: true,
     },
     runtimeConfig: {
-        public: {
-            enableIpadCursor: false,
-        },
+        public: {},
     },
 
     build: {},
 
-    devtools: { enabled: true },
+    devtools: {
+      enabled: true,
+
+      timeline: {
+        enabled: true,
+      },
+    },
 
     nitro: {
         prerender: {
