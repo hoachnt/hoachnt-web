@@ -16,11 +16,11 @@ export default defineNuxtConfig({
     build: {},
 
     devtools: {
-      enabled: true,
-
-      timeline: {
         enabled: true,
-      },
+
+        timeline: {
+            enabled: true,
+        },
     },
 
     nitro: {
@@ -51,7 +51,38 @@ export default defineNuxtConfig({
         "@nuxt/icon",
         "@formkit/auto-animate/nuxt",
         "@nuxt/fonts",
+
+        "nuxt-booster",
     ],
+
+    booster: {
+        detection: {
+            performance: true,
+            browserSupport: true,
+            battery: true,
+        },
+
+        performanceMetrics: {
+            timing: {
+                fcp: 800,
+                dcl: 1200,
+            },
+        },
+
+        optimizeSSR: {
+            cleanPreloads: true,
+            cleanPrefetches: true,
+            inlineStyles: true,
+        },
+        
+        /**
+         * IntersectionObserver rootMargin for Compoennts and Assets
+         */
+        lazyOffset: {
+            component: "0%",
+            asset: "0%",
+        },
+    },
 
     eslint: {
         config: {},

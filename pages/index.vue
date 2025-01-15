@@ -1,6 +1,15 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const carouselStore = useCarouselStore();
+const hydrate = useBoosterHydrate();
+
+const HomeWorkLinks = hydrate(() => import("@/components/Home/WorkLinks.vue"));
+const UIEmblaCarouselPrevious = hydrate(
+    () => import("@/components/UI/Embla/Carousel/Previous.vue")
+);
+const UIEmblaCarouselNext = hydrate(
+    () => import("@/components/UI/Embla/Carousel/Next.vue")
+);
 
 const seoMeta = computed(() => ({
     title: t("seo.home.title"),
@@ -14,10 +23,11 @@ useSeoMeta(seoMeta.value);
     <main>
         <div class="space-y-24">
             <!-- Анимация для HomeIntro -->
-            <HomeIntro />
+            <HomeIntro critical />
 
             <HomeTechnologies
                 v-motion
+                critical
                 :initial="{ opacity: 0, y: 10 }"
                 :enter="{
                     opacity: 1,
@@ -51,7 +61,7 @@ useSeoMeta(seoMeta.value);
                         </UIEmblaCarouselItem>
 
                         <UIEmblaCarouselItem class="space-y-24 select-none">
-                            <LazyHomeWorkLinks />
+                            <HomeWorkLinks />
                         </UIEmblaCarouselItem>
                     </UIEmblaCarouselContent>
                 </template>
