@@ -3,6 +3,11 @@ import type { ParsedContent } from "@nuxt/content";
 const { t } = useI18n();
 
 const localePath = useLocalePath();
+const hydrate = useBoosterHydrate();
+
+const AppProjectCard = hydrate(
+    () => import("@/components/App/ProjectCard.vue")
+);
 
 const seoMeta = computed(() => ({
     title: `${t("seo.projects.title")} | ${t("title")}`,
@@ -33,12 +38,13 @@ watch(localePath, async () => {
 <template>
     <main>
         <AppHeader
+            critical
             class="mb-12"
             :title="$t('projects.projects')"
             :description="$t('projects.description')"
         />
-        <div class="space-y-4">
-            <LazyAppProjectCard
+        <div class="grid gap-4">
+            <AppProjectCard
                 v-for="(project, index) in projects"
                 :key="index"
                 v-motion

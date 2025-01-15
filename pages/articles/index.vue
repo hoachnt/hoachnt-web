@@ -3,8 +3,14 @@ import type { ParsedContent } from "@nuxt/content";
 const localePath = useLocalePath();
 const { t } = useI18n();
 const router = useRouter();
+const hydrate = useBoosterHydrate();
 
-const activeIndex = ref<number>(999999);
+const AppArticleCard = hydrate(
+    () => import("@/components/App/ArticleCard.vue")
+);
+
+const listRefs = ref<(HTMLElement | null)[]>([]);
+const activeIndex = ref<number>(-1);
 const articles = ref<ParsedContent[] | null>(null);
 const activeArticle = ref<ParsedContent | null>(null);
 const seoMeta = computed(() => ({
@@ -17,7 +23,9 @@ useSeoMeta(seoMeta.value);
 
 // Fetching articles
 const fetchArticles = async () => {
-    const data = await queryContent(localePath("/articles")).sort({ published: -1 }).find();
+    const data = await queryContent(localePath("/articles"))
+        .sort({ published: -1 })
+        .find();
 
     articles.value = data;
 };
@@ -36,7 +44,7 @@ const results = computed(() => {
 
 // Debounced search handler
 const updateSearchQuery = useDebounceFn((value: string) => {
-    activeIndex.value = 0;
+    activeIndex.value = -1;
     searchQuery.value = value;
 }, 500);
 
@@ -44,6 +52,15 @@ await fetchArticles();
 
 watch(localePath, async () => {
     await fetchArticles();
+});
+watch(activeIndex, (newIndex) => {
+    const element = listRefs.value[newIndex];
+    if (element) {
+        element.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+        });
+    }
 });
 
 watchEffect(() => {
@@ -84,6 +101,7 @@ defineShortcuts({
 <template>
     <main>
         <AppHeader
+            critical
             class="mb-16"
             :title="$t('articles.articles')"
             :description="$t('articles.description')"
@@ -92,6 +110,7 @@ defineShortcuts({
         <!-- Search Input -->
         <UInput
             v-model="debouncedSearchQuery"
+            critical
             aria-label="{{ $t('articles.search') }}"
             name="search"
             icon="i-heroicons-magnifying-glass-20-solid"
@@ -100,8 +119,7 @@ defineShortcuts({
             size="xl"
             :placeholder="`${$t('articles.search')}...`"
             :ui="{ icon: { trailing: { pointer: '' } } }"
-            @focus="activeIndex = 0"
-            @blur="activeIndex = 999999"
+            @blur="activeIndex = -1"
         >
             <template #trailing>
                 <UButton
@@ -119,16 +137,17 @@ defineShortcuts({
         <TransitionGroup name="list" tag="ul" class="relative">
             <li
                 v-for="(article, index) in results"
+                :ref="(el) => listRefs[index] = el as HTMLElement"
                 :key="article.title"
-                v-memo="[article]"
+                v-memo="[article, activeIndex === index]"
                 :class="[
-                    'my-16 duration-100',
+                    'my-16 duration-150 hover:rounded-[30px] ease-out overflow-hidden',
                     index === activeIndex
                         ? 'outline outline-offset-2 outline-2'
                         : '',
                 ]"
             >
-                <LazyAppArticleCard :article="article" />
+                <AppArticleCard :article="article" />
             </li>
             <li v-if="results?.length === 0" key="not-found">
                 {{ $t("articles.notFound") }}

@@ -18,7 +18,7 @@ const getReadableDate = (dateString: Date) => {
 
 <template>
     <NuxtLink :to="article._path" class="group">
-        <UCard>
+        <UCard >
             <time
                 class="relative z-10 order-first mb-3 flex items-center text-sm text-gray-400 dark:text-gray-500 pl-3.5"
                 datetime="2022-09-05"
@@ -31,7 +31,7 @@ const getReadableDate = (dateString: Date) => {
                 {{ getReadableDate(article.published) }}
             </time>
             <h2
-                class="text-base font-semibold font-display tracking-tight text-gray-800 dark:text-gray-100 group-hover:text-primary-600"
+                class="text-base font-semibold font-display tracking-tight text-gray-800 dark:text-gray-100 group-hover:text-primary-600 duration-150"
             >
                 {{ article.title }}
             </h2>
