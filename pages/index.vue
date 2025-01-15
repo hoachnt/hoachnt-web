@@ -23,7 +23,7 @@ useSeoMeta(seoMeta.value);
     <main>
         <div class="space-y-24">
             <!-- Анимация для HomeIntro -->
-            <HomeIntro critical />
+            <HomeIntro />
 
             <HomeTechnologies
                 v-motion
