@@ -80,8 +80,8 @@ const onBeforeEnter = async () => {
 
 <template>
     <NuxtLoadingIndicator class="z-[9999]" />
-    <AppLoader :is-mounting="isMounting" />
-    <AppNavbar />
+    <AppLoader :is-mounting="isMounting" critical />
+    <AppNavbar critical />
     <div class="h-11" />
     <UContainer>
         <NuxtPage :transition="isPageTransition" />
