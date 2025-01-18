@@ -102,7 +102,7 @@ onMounted(() => {
 
 <template>
     <section
-        class="relative w-full h-[400px] flex justify-center items-center bg-transparent"
+        class="relative max-w-2xl h-[400px] flex justify-center items-center bg-transparent m-auto cursor-move"
     >
         <div
             ref="threeContainer"
