@@ -85,7 +85,6 @@ const onBeforeEnter = async () => {
 
     <AppThreeModel />
 
-    <div class="h-11" />
     <UContainer>
         <NuxtPage :transition="isPageTransition" />
     </UContainer>

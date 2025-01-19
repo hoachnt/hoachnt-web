@@ -2,110 +2,146 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const threeContainer = ref(null);
+const loading = ref(true);
+const urlDogGLB = "/dog-baked.glb";
+
+// Функция плавного замедления (easeOutCirc)
+function easeOutCirc(x) {
+    return Math.sqrt(1 - Math.pow(x - 1, 4));
+}
 
 onMounted(() => {
-    // Создаем сцену
     const scene = new THREE.Scene();
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const container = threeContainer.value;
+    let frame = 0;
+    let animationId;
+    let model; // Хранение ссылки на загруженную модель
 
-    // Настраиваем камеру
-    const camera = new THREE.PerspectiveCamera(
-        75,
-        threeContainer.value.clientWidth / threeContainer.value.clientHeight,
-        0.1,
-        1000
+    // Настройка камеры
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.01, 50000);
+    const initialCameraPosition = new THREE.Vector3(
+        20 * Math.sin(0.2 * Math.PI),
+        10,
+        20 * Math.cos(0.2 * Math.PI)
     );
-    camera.position.set(0, 2, 6); // Угол обзора камеры
+    const target = new THREE.Vector3(-0.5, 1.2, 0);
 
-    // Настраиваем рендерер
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); // alpha: true для прозрачного фона
-    renderer.setSize(
-        threeContainer.value.clientWidth,
-        threeContainer.value.clientHeight
-    );
-    renderer.setPixelRatio(window.devicePixelRatio); // Учитываем разрешение экрана
-    renderer.shadowMap.enabled = true; // Включаем тени
-    threeContainer.value.appendChild(renderer.domElement);
+    camera.position.copy(initialCameraPosition);
+    camera.lookAt(target);
 
-    // Устанавливаем прозрачный фон
-    scene.background = null; // Прозрачный фон
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    container.appendChild(renderer.domElement);
 
-    // Добавляем освещение
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6); // Мягкий общий свет
+    // Освещение
+    const ambientLight = new THREE.AmbientLight(0xcccccc, Math.PI);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(0, 3, 5); // Позиция света перед и чуть выше собаки
-    directionalLight.castShadow = true; // Тени от света
-    directionalLight.lookAt(new THREE.Vector3(0, 0, 0)); // Направление на собаку
-    scene.add(directionalLight);
-
-    // Загрузка 3D-модели
-    const loader = new GLTFLoader();
-    loader.load("/dog-baked.glb", (gltf) => {
-        const model = gltf.scene;
-        model.position.set(0, -1, 0); // Центрируем модель
-        model.scale.set(0.8, 0.8, 0.8); // Масштабируем модель
-
-        // Применяем плоскую затененность (low-poly стиль)
-        model.traverse((child) => {
-            if (child.isMesh) {
-                child.material.flatShading = true; // Упрощенное освещение
-                child.castShadow = true; // Включаем тени
-                child.receiveShadow = true; // Обработка теней
-            }
-        });
-
-        scene.add(model);
-    });
-
-    // Элементы управления (OrbitControls)
+    // Контроллеры
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.target.set(0, 1, 0);
-    controls.enableDamping = true;
-    controls.update();
+    controls.autoRotate = true;
+    controls.target = target;
 
-    // Ограничиваем взаимодействие с моделью границами секции
-    controls.domElement = threeContainer.value;
+    // Загрузка модели
+    const loader = new GLTFLoader();
+    loader.load(
+        urlDogGLB,
+        (gltf) => {
+            model = gltf.scene;
+            model.position.set(0, -1, 0);
+
+            scene.add(model);
+            updateModelScale(); // Подстройка размера модели при загрузке
+            loading.value = false;
+            animate(); // Начало анимации после загрузки модели
+        },
+        undefined,
+        (error) => {
+            console.error("Error loading model:", error);
+        }
+    );
 
     // Анимация
     const animate = () => {
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
 
-        // Вращение сцены или модели
-        scene.rotation.y += 0.005; // Плавное вращение вокруг оси Y
+        frame = frame <= 100 ? frame + 1 : frame;
 
-        // Обновляем элементы управления
-        controls.update();
+        if (frame <= 100) {
+            const p = initialCameraPosition;
+            const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
 
-        // Рендер сцены
+            camera.position.y = 10;
+            camera.position.x =
+                p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
+            camera.position.z =
+                p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed);
+            camera.lookAt(target);
+        } else {
+            controls.update();
+        }
+
         renderer.render(scene, camera);
     };
 
-    animate();
+    // Обработка изменения размеров окна
+    const handleResize = () => {
+        const width = container.clientWidth;
+        const height = container.clientHeight;
 
-    // Обработка изменения размера окна
-    window.addEventListener("resize", () => {
-        camera.aspect =
-            threeContainer.value.clientWidth /
-            threeContainer.value.clientHeight;
+        renderer.setSize(width, height);
+
+        const aspect = width / height;
+        const scale = height * 0.005 + 4.8;
+
+        camera.left = -scale * aspect;
+        camera.right = scale * aspect;
+        camera.top = scale;
+        camera.bottom = -scale;
         camera.updateProjectionMatrix();
-        renderer.setSize(
-            threeContainer.value.clientWidth,
-            threeContainer.value.clientHeight
-        );
+
+        updateModelScale(); // Обновление масштаба модели при изменении размеров
+    };
+
+    // Функция для обновления масштаба модели
+    const updateModelScale = () => {
+        if (!model) return;
+
+        const containerHeight = container.clientHeight;
+        const containerWidth = container.clientWidth;
+
+        // Примерная настройка масштабирования
+        const scaleFactor = Math.min(containerWidth, containerHeight) * 0.005;
+        model.scale.set(scaleFactor, scaleFactor, scaleFactor);
+    };
+
+    handleResize(); // Обновление размеров при загрузке
+    window.addEventListener("resize", handleResize);
+
+    // Удаление сцены
+    onBeforeUnmount(() => {
+        cancelAnimationFrame(animationId);
+        renderer.dispose();
+        container.removeChild(renderer.domElement);
+        window.removeEventListener("resize", handleResize);
     });
 });
 </script>
 
 <template>
     <section
-        class="relative max-w-2xl h-[400px] flex justify-center items-center bg-transparent m-auto cursor-move"
+        class="relative max-w-2xl h-[300px] flex justify-center items-center bg-transparent m-auto cursor-move"
     >
         <div
             ref="threeContainer"
             class="w-full h-full overflow-hidden flex justify-center items-center"
-        />
+        >
+            <div v-if="loading" class="absolute">Loading...</div>
+        </div>
     </section>
 </template>
