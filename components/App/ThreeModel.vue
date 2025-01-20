@@ -6,9 +6,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 interface Props {
     urlModelGlb: string;
 }
-interface Props {
-    urlModelGlb: string;
-}
 
 const props = defineProps<Props>();
 
