@@ -6,16 +6,40 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 interface Props {
     urlModelGlb: string;
 }
+interface Props {
+    urlModelGlb: string;
+}
 
 const props = defineProps<Props>();
 
 const threeContainer = ref<HTMLDivElement | null>(null);
-const loading = ref(true);
+
+const state = reactive({
+    loading: true,
+    error: null as string | null, // Manage error state
+});
 
 // Функция плавного замедления (easeOutCirc)
 function easeOutCirc(x: number): number {
     return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
+
+const updateModelScale = (model: THREE.Object3D, container: HTMLDivElement) => {
+    const containerHeight = container.clientHeight;
+    const containerWidth = container.clientWidth;
+
+    // Примерная настройка масштабирования
+    const scaleFactor = Math.min(containerWidth, containerHeight) * 0.005;
+    model.scale.set(scaleFactor, scaleFactor, scaleFactor);
+};
+
+// Функция обработки ошибки загрузки модели
+const handleModelError = (error: ErrorEvent) => {
+    console.error("Error loading model:", error);
+
+    state.error = "There was an error loading the 3D model. Please try again.";
+    state.loading = false;
+};
 
 onMounted(() => {
     const scene = new THREE.Scene();
@@ -55,22 +79,22 @@ onMounted(() => {
     loader.load(
         props.urlModelGlb,
         (gltf) => {
-            model = gltf.scene;
-            if (model) {
-                model.position.set(0, -1, 0);
+            try {
+                model = gltf.scene;
+                if (model) {
+                    model.position.set(0, -1, 0);
+                    scene.add(model);
+                    updateModelScale(model, container);
+                    state.loading = false;
+                    animate(); // Начало анимации после загрузки модели
+                }
+            } catch (error) {
+                handleModelError(error as ErrorEvent);
             }
-
-            if (model) {
-                scene.add(model);
-            }
-
-            updateModelScale(); // Подстройка размера модели при загрузке
-            loading.value = false;
-            animate(); // Начало анимации после загрузки модели
         },
         undefined,
         (error) => {
-            console.error("Error loading model:", error);
+            handleModelError(error);
         }
     );
 
@@ -113,20 +137,17 @@ onMounted(() => {
         camera.bottom = -scale;
         camera.updateProjectionMatrix();
 
-        updateModelScale(); // Обновление масштаба модели при изменении размеров
+        if (model) {
+            updateModelScale(model, container); // Обновление масштаба модели при изменении размеров
+        }
     };
 
-    // Функция для обновления масштаба модели
-    const updateModelScale = () => {
-        if (!model) return;
-
-        const containerHeight = container.clientHeight;
-        const containerWidth = container.clientWidth;
-
-        // Примерная настройка масштабирования
-        const scaleFactor = Math.min(containerWidth, containerHeight) * 0.005;
-        model.scale.set(scaleFactor, scaleFactor, scaleFactor);
-    };
+    watch(
+        () => [container.clientWidth, container.clientHeight],
+        () => {
+            if (model) updateModelScale(model, container);
+        }
+    );
 
     handleResize(); // Обновление размеров при загрузке
     window.addEventListener("resize", handleResize);
@@ -149,8 +170,11 @@ onMounted(() => {
             ref="threeContainer"
             class="w-full h-full overflow-hidden flex justify-center items-center"
         >
-            <div v-if="loading" class="absolute">
+            <div v-if="state.loading && !state.error" class="absolute">
                 <UILoaderTerminalLoader />
+            </div>
+            <div v-if="state.error" class="absolute text-red-600">
+                <p>{{ state.error }}</p>
             </div>
         </div>
     </section>
