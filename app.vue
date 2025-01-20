@@ -83,7 +83,7 @@ const onBeforeEnter = async () => {
     <AppLoader :is-mounting="isMounting" critical />
     <AppNavbar critical />
 
-    <AppThreeModel />
+    <AppThreeModel url-model-glb="/dog-baked.glb" />
 
     <UContainer>
         <NuxtPage :transition="isPageTransition" />

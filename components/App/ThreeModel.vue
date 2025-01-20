@@ -1,24 +1,29 @@
-<script setup>
+<script setup lang="ts">
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-const threeContainer = ref(null);
+interface Props {
+    urlModelGlb: string;
+}
+
+const props = defineProps<Props>();
+
+const threeContainer = ref<HTMLDivElement | null>(null);
 const loading = ref(true);
-const urlDogGLB = "/dog-baked.glb";
 
 // Функция плавного замедления (easeOutCirc)
-function easeOutCirc(x) {
+function easeOutCirc(x: number): number {
     return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
 onMounted(() => {
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    const container = threeContainer.value;
+    const container = threeContainer.value as HTMLDivElement;
     let frame = 0;
-    let animationId;
-    let model; // Хранение ссылки на загруженную модель
+    let animationId: number;
+    let model: THREE.Object3D | null = null; // Хранение ссылки на загруженную модель
 
     // Настройка камеры
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.01, 50000);
@@ -34,7 +39,6 @@ onMounted(() => {
 
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.outputEncoding = THREE.sRGBEncoding;
     container.appendChild(renderer.domElement);
 
     // Освещение
@@ -49,12 +53,17 @@ onMounted(() => {
     // Загрузка модели
     const loader = new GLTFLoader();
     loader.load(
-        urlDogGLB,
+        props.urlModelGlb,
         (gltf) => {
             model = gltf.scene;
-            model.position.set(0, -1, 0);
+            if (model) {
+                model.position.set(0, -1, 0);
+            }
 
-            scene.add(model);
+            if (model) {
+                scene.add(model);
+            }
+
             updateModelScale(); // Подстройка размера модели при загрузке
             loading.value = false;
             animate(); // Начало анимации после загрузки модели
