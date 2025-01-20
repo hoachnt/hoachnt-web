@@ -2,7 +2,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const threeContainer = ref(null);
 const loading = ref(true);
@@ -141,7 +140,9 @@ onMounted(() => {
             ref="threeContainer"
             class="w-full h-full overflow-hidden flex justify-center items-center"
         >
-            <div v-if="loading" class="absolute">Loading...</div>
+            <div v-if="loading" class="absolute">
+                <UILoaderTerminalLoader />
+            </div>
         </div>
     </section>
 </template>
