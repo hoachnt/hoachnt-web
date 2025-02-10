@@ -13,7 +13,9 @@ export default defineNuxtConfig({
         public: {},
     },
 
-    build: {},
+    build: {
+        transpile: ["three"],
+    },
 
     devtools: {
         enabled: true,
@@ -28,6 +30,7 @@ export default defineNuxtConfig({
             routes: ["/", "/sitemap.xml", "/articles", "/projects"],
         },
     },
+
     routeRules: {
         "/articles/**": { isr: true },
     },
@@ -74,7 +77,7 @@ export default defineNuxtConfig({
             cleanPrefetches: true,
             inlineStyles: true,
         },
-        
+
         /**
          * IntersectionObserver rootMargin for Compoennts and Assets
          */
