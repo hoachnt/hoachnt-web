@@ -39,7 +39,7 @@ This command installs Express.js and adds it to your project's dependencies.
 
 Create a file named app.js in your project directory. This file will be the entry point of your API. Add the following code to app.js:
 
-```js
+```javascript
 const express = require("express");
 const app = express();
 const port = 3000;

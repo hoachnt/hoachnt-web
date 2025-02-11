@@ -39,6 +39,10 @@ onMounted(() => {
 function returnBack() {
     return router.push(localePath("/articles"));
 }
+
+const { data: doc } = await useAsyncData(route.path, () => {
+    return queryCollection("articlePage").path(route.path).first();
+});
 </script>
 
 <template>
@@ -61,22 +65,22 @@ function returnBack() {
         <div
             class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
         >
-            <ContentDoc>
-                <template #default="{ doc }">
+            <section>
+                <div v-if="doc">
                     <article>
                         <h1>{{ doc.title }}</h1>
                         <ContentRenderer :value="doc" />
                     </article>
-                </template>
-                <template #not-found>
+                </div>
+                <div v-else>
                     <UAlert
                         :ui="{
                             title: 'm-0 text-2xl text-center font-bold',
                         }"
                         title="404 Not Found"
                     />
-                </template>
-            </ContentDoc>
+                </div>
+            </section>
         </div>
     </main>
 </template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { ParsedContent } from "@nuxt/content";
+import type { ProjectCollectionItem } from "@nuxt/content";
+
 const { t } = useI18n();
 
 const localePath = useLocalePath();
@@ -16,16 +17,14 @@ const seoMeta = computed(() => ({
 
 useSeoMeta(seoMeta.value);
 
-const projects = ref<ParsedContent[] | null>([]);
+const projects = ref<ProjectCollectionItem[] | null>([]);
 
 const fetchProjects = async () => {
-    const data = await queryContent(localePath("/projects"))
-        .find()
-        .then((response) =>
-            response.sort((a, b) => b._id.localeCompare(a._id))
-        );
+    const response = await useAsyncData(localePath("/projects"), () => {
+        return queryCollection("project").all();
+    });
 
-    projects.value = data;
+    projects.value = response.data.value;
 };
 
 await fetchProjects();
@@ -50,13 +49,7 @@ watch(localePath, async () => {
                 v-motion
                 v-memo="[project]"
                 :initial="{ opacity: 0, y: 10 }"
-                :enter="{
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                        ease: 'backOut',
-                    },
-                }"
+                :enter="{ opacity: 1, y: 0, transition: { ease: 'backOut' } }"
                 :delay="200 * index"
                 :duration="1000"
                 :project="project"

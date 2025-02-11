@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { ParsedContent } from "@nuxt/content";
+import type { ArticleCollectionItem } from "@nuxt/content";
+
 const localePath = useLocalePath();
 const { t } = useI18n();
 const router = useRouter();
@@ -11,8 +12,8 @@ const AppArticleCard = hydrate(
 
 const listRefs = ref<(HTMLElement | null)[]>([]);
 const activeIndex = ref<number>(-1);
-const articles = ref<ParsedContent[] | null>(null);
-const activeArticle = ref<ParsedContent | null>(null);
+const articles = ref<ArticleCollectionItem[] | null>(null);
+const activeArticle = ref<ArticleCollectionItem | null>(null);
 const seoMeta = computed(() => ({
     title: `${t("seo.articles.title")} | ${t("title")}`,
     description: t("seo.articles.description"),
@@ -23,11 +24,17 @@ useSeoMeta(seoMeta.value);
 
 // Fetching articles
 const fetchArticles = async () => {
-    const data = await queryContent(localePath("/articles"))
-        .sort({ published: -1 })
-        .find();
+    const response = await useAsyncData(localePath("/articles"), () => {
+        return queryCollection("article").all();
+    });
 
-    articles.value = data;
+    const sortedResponse = response.data.value?.sort(
+        (a, b) =>
+            new Date(b.published).getTime() - new Date(a.published).getTime()
+    );
+
+    if (!sortedResponse) return (articles.value = response.data.value);
+    articles.value = sortedResponse;
 };
 
 // Search-related state
@@ -87,7 +94,7 @@ function handleArrowDown() {
 function handleEnter() {
     if (!results.value || activeIndex.value === 999999) return;
     activeArticle.value = results.value[activeIndex.value];
-    if (activeArticle.value?._path) router.push(activeArticle.value._path);
+    if (activeArticle.value?.path) router.push(activeArticle.value.path);
 }
 
 // Define shortcuts
@@ -137,7 +144,7 @@ defineShortcuts({
         <TransitionGroup name="list" tag="ul" class="relative">
             <li
                 v-for="(article, index) in results"
-                :ref="(el) => listRefs[index] = el as HTMLElement"
+                :ref="(el) => (listRefs[index] = el as HTMLElement)"
                 :key="article.title"
                 v-memo="[article, activeIndex === index]"
                 :class="[

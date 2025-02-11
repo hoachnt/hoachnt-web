@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { NuxtImg } from "#components";
+import type { ProjectCollectionItem } from "@nuxt/content";
 
-defineProps({
-    project: {
-        type: Object,
-        required: true,
-    },
-});
+defineProps<{
+    project: ProjectCollectionItem;
+}>();
 </script>
 
 <template>

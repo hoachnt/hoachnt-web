@@ -38,12 +38,12 @@ export default defineNuxtConfig({
     modules: [
         "@nuxt/ui",
         "@nuxt/image",
+        "@nuxtjs/sitemap",
         "@nuxt/content",
         "@nuxt/eslint",
         "@nuxtjs/fontaine",
         "@nuxtjs/i18n",
         "@nuxtjs/mdc",
-        "@nuxtjs/sitemap",
         "@nuxtjs/html-validator",
         "nuxt-delay-hydration",
         "nuxt-svgo",
@@ -125,10 +125,6 @@ export default defineNuxtConfig({
 
     svgo: {
         autoImportPath: "./assets/logo/",
-    },
-
-    sitemap: {
-        strictNuxtContentPaths: true,
     },
 
     image: image,

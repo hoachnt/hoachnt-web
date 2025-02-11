@@ -1,10 +1,9 @@
 <script setup lang="ts">
-defineProps({
-    article: {
-        type: Object,
-        required: true,
-    },
-});
+import type { ArticleCollectionItem } from "@nuxt/content";
+
+defineProps<{
+    article: ArticleCollectionItem;
+}>();
 
 const getReadableDate = (dateString: Date) => {
     const date = new Date(dateString);
@@ -17,8 +16,8 @@ const getReadableDate = (dateString: Date) => {
 </script>
 
 <template>
-    <NuxtLink :to="article._path" class="group">
-        <UCard >
+    <NuxtLink :to="article.path" class="group">
+        <UCard>
             <time
                 class="relative z-10 order-first mb-3 flex items-center text-sm text-gray-400 dark:text-gray-500 pl-3.5"
                 datetime="2022-09-05"
