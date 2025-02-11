@@ -43,14 +43,12 @@ export default defineNuxtConfig({
         "@nuxt/eslint",
         "@nuxtjs/fontaine",
         "@nuxtjs/i18n",
-        "@nuxtjs/mdc",
         "@nuxtjs/html-validator",
         "nuxt-delay-hydration",
         "nuxt-svgo",
         "@vueuse/nuxt",
         "@vueuse/motion/nuxt",
         "@pinia/nuxt",
-        "@nuxthq/studio",
         "@nuxt/icon",
         "@formkit/auto-animate/nuxt",
         "@nuxt/fonts",
@@ -128,12 +126,6 @@ export default defineNuxtConfig({
     },
 
     image: image,
-
-    mdc: {
-        highlight: {
-            langs: ["bash", "javascript", "html", "vue", "nix"],
-        },
-    },
 
     htmlValidator: htmlValidator,
 
