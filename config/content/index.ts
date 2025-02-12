@@ -3,9 +3,8 @@ import type { ModuleOptions } from "@nuxt/content";
 export default <Partial<ModuleOptions>>{
     build: {
         markdown: {
-            langs: ["nix"],
-
             highlight: {
+                langs: ["nix"],
                 theme: {
                     // Default theme (same as single string)
                     default: "monokai",

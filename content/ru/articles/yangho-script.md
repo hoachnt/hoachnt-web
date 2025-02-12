@@ -48,7 +48,7 @@ npm install
 
 Пример кода:
 
-````js
+```js
 text BAYHETVAODAY 'Hoach';
 summ BAYHETVAODAY 6 + 5;
 
@@ -80,8 +80,8 @@ NEU (2 UY TIN 1) {
 
 NOILIENTUC 'All Works!!!';
 
-// NOILIENTUC 'Hello world' - comment```
-````
+// NOILIENTUC 'Hello world' - comment
+```
 
 Чтобы запустить программу, используйте следующую команду в терминале:
 
@@ -109,7 +109,7 @@ YanghoScript поддерживает следующие конструкции:
 
 ```js
 1 + 2 * 3; // Result: 9(не корректно)
-1 + 2 * 3; // Result: 7(корректно)
+1 + (2 * 3); // Result: 7(корректно)
 10 / (2 + 3); // Result: 2(корректно)
 ```
 
