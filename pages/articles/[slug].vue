@@ -9,6 +9,7 @@ interface ISection {
 const route = useRoute();
 const router = useRouter();
 const localePath = useLocalePath();
+const { getCollectionLanguage } = useCollectionLanguage<"articlePage">();
 
 const sections = ref<ISection[]>([]);
 const showArticlesSidebar = ref(false);
@@ -41,7 +42,9 @@ function returnBack() {
 }
 
 const { data: doc } = await useAsyncData(route.path, () => {
-    return queryCollection("articlePage").path(route.path).first();
+    return queryCollection(getCollectionLanguage("articlePage", route.path))
+        .path(route.path)
+        .first();
 });
 </script>
 

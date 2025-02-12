@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import type { ProjectCollectionItem } from "@nuxt/content";
+import type {
+    ProjectCollectionItem,
+    ProjectRuCollectionItem,
+    ProjectVnCollectionItem,
+} from "@nuxt/content";
 
 const { t } = useI18n();
-
 const localePath = useLocalePath();
 const hydrate = useBoosterHydrate();
+const { getCollectionLanguage } = useCollectionLanguage<"project">();
 
 const AppProjectCard = hydrate(
     () => import("@/components/App/ProjectCard.vue")
@@ -17,21 +21,28 @@ const seoMeta = computed(() => ({
 
 useSeoMeta(seoMeta.value);
 
-const projects = ref<ProjectCollectionItem[] | null>([]);
-
-const fetchProjects = async () => {
-    const response = await useAsyncData(localePath("/projects"), () => {
-        return queryCollection("project").all();
-    });
-
-    projects.value = response.data.value;
-};
+const projects = ref<
+    | ProjectCollectionItem[]
+    | ProjectRuCollectionItem[]
+    | ProjectVnCollectionItem[]
+    | null
+>([]);
 
 await fetchProjects();
 
 watch(localePath, async () => {
     await fetchProjects();
 });
+
+async function fetchProjects() {
+    const response = await useAsyncData(localePath("/projects"), () => {
+        return queryCollection(
+            getCollectionLanguage("project", localePath("/projects"))
+        ).all();
+    });
+
+    projects.value = response.data.value;
+}
 </script>
 
 <template>

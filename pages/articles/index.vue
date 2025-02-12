@@ -5,6 +5,7 @@ const localePath = useLocalePath();
 const { t } = useI18n();
 const router = useRouter();
 const hydrate = useBoosterHydrate();
+const { getCollectionLanguage } = useCollectionLanguage<"article">();
 
 const AppArticleCard = hydrate(
     () => import("@/components/App/ArticleCard.vue")
@@ -25,7 +26,9 @@ useSeoMeta(seoMeta.value);
 // Fetching articles
 const fetchArticles = async () => {
     const response = await useAsyncData(localePath("/articles"), () => {
-        return queryCollection("article").all();
+        return queryCollection(
+            getCollectionLanguage("article", localePath("/articles"))
+        ).all();
     });
 
     const sortedResponse = response.data.value?.sort(
