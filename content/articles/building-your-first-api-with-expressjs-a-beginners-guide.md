@@ -39,7 +39,7 @@ This command installs Express.js and adds it to your project's dependencies.
 
 Create a file named app.js in your project directory. This file will be the entry point of your API. Add the following code to app.js:
 
-```javascript
+```js
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -70,7 +70,7 @@ Now, let's expand our server to act as a simple API. For example, let's create a
 
 Add the following code to your app.js:
 
-```javascript
+```js
 let users = [{ name: "Alice" }, { name: "Bob" }];
 
 app.get("/users", (req, res) => {

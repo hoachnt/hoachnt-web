@@ -70,7 +70,7 @@ Bây giờ, hãy mở rộng máy chủ của chúng tôi để hoạt động n
 
 Thêm mã sau vào app.js của bạn:
 
-```javascript
+```js
 let users = [{ name: "Alice" }, { name: "Bob" }];
 
 app.get("/users", (req, res) => {

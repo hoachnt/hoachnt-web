@@ -48,7 +48,7 @@ After installation, you can use YanghoScript to execute programs written in this
 
 Example code:
 
-```javascript
+```js
 text BAYHETVAODAY 'Hoach';
 summ BAYHETVAODAY 6 + 5;
 

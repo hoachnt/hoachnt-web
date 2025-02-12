@@ -48,7 +48,7 @@ Sau khi cài đặt, bạn có thể sử dụng YanghoScript để thực thi c
 
 Mã ví dụ:
 
-```javascript
+```js
 text BAYHETVAODAY 'Hoach';
 summ BAYHETVAODAY 6 + 5;
 
@@ -107,7 +107,7 @@ YanghoScript hỗ trợ các cấu trúc sau:
 
 Ví dụ về các biểu thức đúng:
 
-```javascript
+```js
 1 + 2 * 3; // Result: 9(incorrect)
 1 + (2 * 3); // Result: 7(correct)
 10 / (2 + 3); // Result: 2(correct)
