@@ -8,6 +8,7 @@ interface ISection {
 
 const route = useRoute();
 const router = useRouter();
+const { t } = useI18n();
 const localePath = useLocalePath();
 const { getCollectionLanguage } = useCollectionLanguage<"articlePage">();
 
@@ -17,11 +18,6 @@ const showArticlesSidebar = ref(false);
 const socialCardsPath = computed(
     () => route.path.split("/")[route.path.split("/").length - 1]
 );
-
-useSeoMeta({
-    ogImage: `https://hoachnt.com/social-cards/articles/${socialCardsPath.value}.jpg`,
-    twitterCard: "summary_large_image",
-});
 
 onMounted(() => {
     const headings = document.querySelectorAll("article h2, article h3");
@@ -46,6 +42,14 @@ const { data: doc } = await useAsyncData(route.path, () => {
         .path(route.path)
         .first();
 });
+
+const seoMeta = computed(() => ({
+    title: `${doc.value?.title} | ${t("title")}`,
+    description: doc.value?.description,
+    ogImage: `https://hoachnt.com/social-cards/articles/${socialCardsPath.value}.jpg`,
+}));
+
+useSeoMeta(seoMeta.value);
 </script>
 
 <template>
