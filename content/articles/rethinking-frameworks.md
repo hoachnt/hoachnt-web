@@ -27,7 +27,7 @@ I started valuing stability and predictability. Simple, time-tested technologies
 
 ### Vue as an Example of Stability
 
-Interestingly, Vue has proven to be very stable since version two. The API hardly changes, and new features can be smoothly integrated into projects without requiring a complete code overhaul. This makes it a good choice for those who want a balance between innovation and predictability.
+Interestingly, Vue has proven to be very stable since version 3. The API hardly changes, and new features can be smoothly integrated into projects without requiring a complete code overhaul. This makes it a good choice for those who want a balance between innovation and predictability.
 
 ## Conclusion
 

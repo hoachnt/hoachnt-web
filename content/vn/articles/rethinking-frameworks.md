@@ -27,7 +27,7 @@ Dần dần, tôi nhận ra mình coi trọng sự ổn định và nhất quán
 
 ### Vue – một minh chứng cho sự ổn định
 
-Điều tôi thích ở Vue kể từ phiên bản 2 là sự ổn định của nó. API gần như không thay đổi, và các tính năng mới có thể được tích hợp dần mà không cần phải viết lại toàn bộ codebase. Điều này giúp Vue trở thành một lựa chọn lý tưởng cho những ai muốn cân bằng giữa sự đổi mới và tính bền vững.
+Điều tôi thích ở Vue kể từ phiên bản 3 là sự ổn định của nó. API gần như không thay đổi, và các tính năng mới có thể được tích hợp dần mà không cần phải viết lại toàn bộ codebase. Điều này giúp Vue trở thành một lựa chọn lý tưởng cho những ai muốn cân bằng giữa sự đổi mới và tính bền vững.
 
 ## Kết luận
 
