@@ -6,42 +6,19 @@ interface ISection {
     title: string | null;
 }
 
+// === Dependencies ===
 const route = useRoute();
 const router = useRouter();
 const { t } = useI18n();
 const localePath = useLocalePath();
 const { getCollectionLanguage } = useCollectionLanguage<"articlePage">();
 
+// === Reactive State ===
 const sections = ref<ISection[]>([]);
-const showArticlesSidebar = ref(false);
+const showArticlesSidebar = computed(() => sections.value.length > 0);
 
-const socialCardsPath = computed(
-    () => route.path.split("/")[route.path.split("/").length - 1]
-);
-
-onMounted(() => {
-    const headings = document.querySelectorAll("article h2, article h3");
-    sections.value = Array.from(headings).map((heading) => ({
-        id: heading.id,
-        title: heading.textContent,
-    }));
-
-    if (sections.value.length > 0) {
-        showArticlesSidebar.value = true;
-    } else {
-        showArticlesSidebar.value = false;
-    }
-});
-
-function returnBack() {
-    return router.push(localePath("/articles"));
-}
-
-const { data: doc } = await useAsyncData(route.path, () => {
-    return queryCollection(getCollectionLanguage("articlePage", route.path))
-        .path(route.path)
-        .first();
-});
+// === Computed Values ===
+const socialCardsPath = computed(() => route.path.split("/").pop() || "");
 
 const seoMeta = computed(() => ({
     title: `${doc.value?.title} | ${t("title")}`,
@@ -49,6 +26,30 @@ const seoMeta = computed(() => ({
     ogImage: `https://hoachnt.com/social-cards/articles/${socialCardsPath.value}.jpg`,
 }));
 
+// === Functions ===
+const extractSections = (): ISection[] =>
+    Array.from(document.querySelectorAll("article h2, article h3")).map(
+        (heading) => ({
+            id: heading.id,
+            title: heading.textContent,
+        })
+    );
+
+const returnBack = () => router.push(localePath("/articles"));
+
+// === Lifecycle Hooks ===
+onMounted(() => {
+    sections.value = extractSections();
+});
+
+// === Async Data Fetching ===
+const { data: doc } = await useAsyncData(route.path, () =>
+    queryCollection(getCollectionLanguage("articlePage", route.path))
+        .path(route.path)
+        .first()
+);
+
+// === SEO ===
 useSeoMeta(seoMeta.value);
 </script>
 
@@ -63,12 +64,14 @@ useSeoMeta(seoMeta.value);
         >
             {{ $t("articles.slug.back") }}
         </UButton>
+
         <Transition name="fade">
             <LazyArticlesSidebar
                 v-if="showArticlesSidebar"
                 :sections="sections"
             />
         </Transition>
+
         <div
             class="prose dark:prose-invert prose-blockquote:not-italic prose-pre:bg-gray-900 prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-white/10 prose-img:rounded-lg"
         >
@@ -81,9 +84,7 @@ useSeoMeta(seoMeta.value);
                 </div>
                 <div v-else>
                     <UAlert
-                        :ui="{
-                            title: 'm-0 text-2xl text-center font-bold',
-                        }"
+                        :ui="{ title: 'm-0 text-2xl text-center font-bold' }"
                         title="404 Not Found"
                     />
                 </div>
@@ -97,6 +98,7 @@ useSeoMeta(seoMeta.value);
 .prose h3 a {
     @apply no-underline;
 }
+
 h1 {
     view-transition-name: header;
 }
