@@ -1,110 +1,26 @@
 <script setup lang="ts">
-import type { ArticleCollectionItem } from "@nuxt/content";
+import { useShortcuts } from "@/composables/useShortcuts";
 
-const localePath = useLocalePath();
-const { t } = useI18n();
-const router = useRouter();
-const hydrate = useBoosterHydrate();
-const { getCollectionLanguage } = useCollectionLanguage<"article">();
+const { articles, fetchArticles } = useArticles();
+await fetchArticles();
 
-const AppArticleCard = hydrate(
-    () => import("@/components/App/ArticleCard.vue")
-);
+const { searchQuery, debouncedSearchQuery, results, activeIndex } =
+    useSearch(articles);
+useShortcuts(results, activeIndex);
 
 const listRefs = ref<(HTMLElement | null)[]>([]);
-const activeIndex = ref<number>(-1);
-const articles = ref<ArticleCollectionItem[] | null>(null);
-const activeArticle = ref<ArticleCollectionItem | null>(null);
+const { t } = useI18n();
+
 const seoMeta = computed(() => ({
     title: `${t("seo.articles.title")} | ${t("title")}`,
     description: t("seo.articles.description"),
 }));
 
-// SEO Metadata
 useSeoMeta(seoMeta.value);
 
-// Fetching articles
-const fetchArticles = async () => {
-    const response = await useAsyncData(localePath("/articles"), () => {
-        return queryCollection(
-            getCollectionLanguage("article", localePath("/articles"))
-        ).all();
-    });
-
-    const sortedResponse = response.data.value?.sort(
-        (a, b) =>
-            new Date(b.published).getTime() - new Date(a.published).getTime()
-    );
-
-    if (!sortedResponse) return (articles.value = response.data.value);
-    articles.value = sortedResponse;
-};
-
-// Search-related state
-const searchQuery = ref("");
-const debouncedSearchQuery = ref("");
-
-// Filtered results computed property
-const results = computed(() => {
-    if (!articles.value || !searchQuery.value) return articles.value;
-    return articles.value.filter((article) =>
-        article.title?.toLowerCase().includes(searchQuery.value.toLowerCase())
-    );
-});
-
-// Debounced search handler
-const updateSearchQuery = useDebounceFn((value: string) => {
-    activeIndex.value = -1;
-    searchQuery.value = value;
-}, 500);
-
-await fetchArticles();
-
-watch(localePath, async () => {
-    await fetchArticles();
-});
 watch(activeIndex, (newIndex) => {
     const element = listRefs.value[newIndex];
-    if (element) {
-        element.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-        });
-    }
-});
-
-watchEffect(() => {
-    updateSearchQuery(debouncedSearchQuery.value);
-});
-
-// Shortcut handlers
-function handleArrowUp() {
-    if (!results.value) return;
-    activeIndex.value =
-        activeIndex.value === 0
-            ? results.value.length - 1
-            : activeIndex.value - 1;
-}
-
-function handleArrowDown() {
-    if (!results.value) return;
-    activeIndex.value =
-        activeIndex.value === results.value.length - 1
-            ? 0
-            : activeIndex.value + 1;
-}
-
-function handleEnter() {
-    if (!results.value || activeIndex.value === 999999) return;
-    activeArticle.value = results.value[activeIndex.value];
-    if (activeArticle.value?.path) router.push(activeArticle.value.path);
-}
-
-// Define shortcuts
-defineShortcuts({
-    arrowup: { usingInput: "search", handler: handleArrowUp },
-    arrowdown: { usingInput: "search", handler: handleArrowDown },
-    enter: { usingInput: "search", handler: handleEnter },
+    element?.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 </script>
 
@@ -117,17 +33,16 @@ defineShortcuts({
             :description="$t('articles.description')"
         />
 
-        <!-- Search Input -->
         <UInput
             v-model="debouncedSearchQuery"
             critical
+            :placeholder="`${$t('articles.search')}...`"
             aria-label="{{ $t('articles.search') }}"
             name="search"
-            icon="i-heroicons-magnifying-glass-20-solid"
             autocomplete="off"
+            icon="i-heroicons-magnifying-glass-20-solid"
             class="mb-10"
             size="xl"
-            :placeholder="`${$t('articles.search')}...`"
             :ui="{ icon: { trailing: { pointer: '' } } }"
             @blur="activeIndex = -1"
         >
@@ -143,7 +58,6 @@ defineShortcuts({
             </template>
         </UInput>
 
-        <!-- Articles List with Transition -->
         <TransitionGroup name="list" tag="ul" class="relative">
             <li
                 v-for="(article, index) in results"
@@ -167,7 +81,7 @@ defineShortcuts({
 </template>
 
 <style scoped>
-.list-move, /* apply transition to moving elements */
+.list-move,
 .list-enter-active,
 .list-leave-active {
     transition: all 0.5s ease;
@@ -181,8 +95,6 @@ defineShortcuts({
     transform: translateY(30px);
 }
 
-/* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
 .list-leave-active {
     position: absolute;
     min-width: 100%;
