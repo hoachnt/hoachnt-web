@@ -1,15 +1,19 @@
 export const useDevice = () => {
-    function isMobile() {
-        if (typeof navigator !== "undefined") {
-            const details = navigator.userAgent;
-            const regexp = /android|iphone|kindle|ipad/i;
-            return regexp.test(details);
-        }
+    const getUserAgent = (): string =>
+        typeof navigator !== "undefined" ? navigator.userAgent : "";
 
-        return false;
-    }
+    const isMobile = (userAgent: string = getUserAgent()): boolean => {
+        const mobileRegex = /android|iphone|kindle|ipad/i;
+        return mobileRegex.test(userAgent);
+    };
+
+    const isTablet = (userAgent: string = getUserAgent()): boolean => {
+        const tabletRegex = /ipad|tablet|playbook|silk/i;
+        return tabletRegex.test(userAgent);
+    };
 
     return {
         isMobile,
+        isTablet,
     };
 };
