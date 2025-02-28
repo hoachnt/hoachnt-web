@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import type { TransitionProps } from "vue";
 
-// === Локализация ===
+// === Localization ===
 const { t, finalizePendingLocaleChange } = useI18n();
 
-// === Рефы и реактивные переменные ===
+// === Refs and reactive variables ===
 const el = ref<HTMLElement | null>(null);
 const y = ref(0);
 const isMounting = ref(false);
 const isViewTransition = import.meta.server || document.startViewTransition;
 
-// === SEO и мета-теги ===
+// === SEO and meta tags ===
 const seoMeta = computed(() => ({
     title: t("title"),
     description: t("seo.home.description"),
@@ -45,7 +45,7 @@ useHead({
 
 useSeoMeta(seoMeta.value);
 
-// === Анимация переходов ===
+// === Page transition ===
 const isPageTransition = computed<TransitionProps | false>(() =>
     isViewTransition
         ? false
@@ -56,7 +56,7 @@ const isPageTransition = computed<TransitionProps | false>(() =>
           }
 );
 
-// === Обработчики ===
+// === Handlers ===
 const handleScroll = () => {
     y.value = window.scrollY || document.documentElement.scrollTop;
 };
@@ -114,7 +114,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Анимации */
+/* Animations */
 .page-enter-active,
 .page-leave-active {
     transition: all 0.3s;
