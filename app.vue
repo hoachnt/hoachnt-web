@@ -145,4 +145,11 @@ body {
     background-color: var(--selection-bg);
     color: var(--selection-color);
 }
+
+mjxcontainer {
+    overflow: auto;
+    max-width: 100%;
+    display: block;
+    white-space: nowrap;
+}
 </style>
