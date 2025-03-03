@@ -15,16 +15,10 @@ const { getCollectionLanguage } = useCollectionLanguage<"articlePage">();
 
 // === Reactive State ===
 const sections = ref<ISection[]>([]);
-const showArticlesSidebar = computed(() => sections.value.length > 0);
 
 // === Computed Values ===
+const showArticlesSidebar = computed(() => sections.value.length > 0);
 const socialCardsPath = computed(() => route.path.split("/").pop() || "");
-
-const seoMeta = computed(() => ({
-    title: `${doc.value?.title} | ${t("title")}`,
-    description: doc.value?.description,
-    ogImage: `https://hoachnt.com/social-cards/articles/${socialCardsPath.value}.jpg`,
-}));
 
 // === Functions ===
 const extractSections = (): ISection[] =>
@@ -50,7 +44,14 @@ const { data: doc } = await useAsyncData(route.path, () =>
 );
 
 // === SEO ===
-useSeoMeta(seoMeta.value);
+useSeoMeta({
+    title: computed(() => `${doc.value?.title || ""} | ${t("title")}`),
+    description: computed(() => doc.value?.description || ""),
+    ogImage: computed(
+        () =>
+            `https://hoachnt.com/social-cards/articles/${socialCardsPath.value}.jpg`
+    ),
+});
 </script>
 
 <template>
