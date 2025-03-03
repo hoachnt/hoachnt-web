@@ -2,12 +2,12 @@
 title: "Recursion of Reality: Between Determinism and Chaos"
 description: "This article explores free will, choice, and chaos through the lens of recursion. It examines how different dimensions alter causal relationships and applies mathematical models to analyze these interactions."
 published: 2025/03/03
-slug: "rethinking-frameworks"
+slug: "recursion-of-reality"
 ---
 
 ### 1. Introduction
 
-_Disclaimer: This is a hypothesis and a conceptual exploration rather than a definitive theory._
+> _Disclaimer: This is a hypothesis and a conceptual exploration rather than a definitive theory._
 
 This article explores free will, choice, and chaos through the lens of recursion. It examines how different dimensions alter causal relationships and applies mathematical models to analyze these interactions.
 
