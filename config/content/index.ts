@@ -3,6 +3,9 @@ import type { ModuleOptions } from "@nuxt/content";
 export default <Partial<ModuleOptions>>{
     build: {
         markdown: {
+            remarkPlugins: { "remark-math": {} },
+            rehypePlugins: { "rehype-mathjax": {} },
+
             highlight: {
                 langs: ["nix"],
                 theme: {
