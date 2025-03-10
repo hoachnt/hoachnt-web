@@ -61,8 +61,9 @@ Chạy máy chủ của bạn bằng Node.js:
 
 ```bash
 node app.js
-Truy cập http://localhost:3000 trong trình duyệt của bạn. Bạn sẽ thấy thông báo "Xin chào thế giới!".
 ```
+
+Truy cập http://localhost:3000 trong trình duyệt của bạn. Bạn sẽ thấy thông báo "Xin chào thế giới!".
 
 ## Bước 5: Xây dựng API đơn giản
 
