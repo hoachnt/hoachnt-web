@@ -16,7 +16,7 @@ const seoMeta = computed(() => ({
     description: t("seo.home.description"),
     ogTitle: t("title"),
     ogDescription: t("seo.home.description"),
-    ogSiteName: t("title"),
+    ogSiteName: "Hoachnt",
     ogImage: "https://hoachnt.com/social-card.png",
 }));
 
