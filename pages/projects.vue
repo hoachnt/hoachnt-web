@@ -17,6 +17,8 @@ const AppProjectCard = hydrate(
 const seoMeta = computed(() => ({
     title: `${t("seo.projects.title")} | ${t("title")}`,
     description: t("seo.projects.description"),
+    ogTitle: `${t("seo.projects.title")} | ${t("title")}`,
+    ogDescription: t("seo.projects.description"),
 }));
 
 useSeoMeta(seoMeta.value);

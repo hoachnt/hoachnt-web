@@ -12,6 +12,8 @@ const { t } = useI18n();
 const seoMeta = computed(() => ({
     title: `${t("seo.articles.title")} | ${t("title")}`,
     description: t("seo.articles.description"),
+    ogTitle: `${t("seo.articles.title")} | ${t("title")}`,
+    ogDescription: t("seo.articles.description"),
 }));
 
 useSeoMeta(seoMeta.value);
