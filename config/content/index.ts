@@ -7,7 +7,14 @@ export default <Partial<ModuleOptions>>{
             rehypePlugins: { "rehype-mathjax": {} },
 
             highlight: {
-                langs: ["nix"],
+                langs: [
+                    "nix",
+                    "javascript",
+                    "typescript",
+                    "bash",
+                    "json",
+                    "yaml",
+                ],
                 theme: {
                     // Default theme (same as single string)
                     default: "monokai",
