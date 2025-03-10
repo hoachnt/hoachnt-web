@@ -47,6 +47,9 @@ const { data: doc } = await useAsyncData(route.path, () =>
 useSeoMeta({
     title: computed(() => `${doc.value?.title || ""} | ${t("title")}`),
     description: computed(() => doc.value?.description || ""),
+    
+    ogTitle: computed(() => `${doc.value?.title || ""} | ${t("title")}`),
+    ogDescription: computed(() => doc.value?.description || ""),
     ogImage: computed(
         () =>
             `https://hoachnt.com/social-cards/articles/${socialCardsPath.value}.jpg`
