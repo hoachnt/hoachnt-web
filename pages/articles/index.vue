@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { useShortcuts } from "@/composables/useShortcuts";
-
 const { articles, fetchArticles } = useArticles();
 await fetchArticles();
 
 const { searchQuery, debouncedSearchQuery, results, activeIndex } =
     useSearch(articles);
-useShortcuts(results, activeIndex);
+useShortcutsComposable(results, activeIndex);
 
 const listRefs = ref<(HTMLElement | null)[]>([]);
 const { t } = useI18n();

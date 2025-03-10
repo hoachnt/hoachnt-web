@@ -1,7 +1,7 @@
 import type { ArticleCollectionItem } from "@nuxt/content";
 
 // composables/useShortcuts.ts
-export function useShortcuts(
+export function useShortcutsComposable(
     results: Ref<ArticleCollectionItem[]>,
     activeIndex: Ref<number>
 ) {
