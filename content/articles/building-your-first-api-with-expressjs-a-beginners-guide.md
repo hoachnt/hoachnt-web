@@ -61,8 +61,9 @@ Run your server using Node.js:
 
 ```bash
 node app.js
-Visit http://localhost:3000 in your browser. You should see the message "Hello World!".
 ```
+
+Visit http://localhost:3000 in your browser. You should see the message "Hello World!".
 
 ## Step 5: Building a Simple API
 
