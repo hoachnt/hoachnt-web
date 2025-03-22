@@ -1,6 +1,10 @@
 import type { ModuleOptions } from "@nuxtjs/i18n";
 
 export default <Partial<ModuleOptions>>{
+    bundle: {
+        optimizeTranslationDirective: false,
+    },
+    
     skipSettingLocaleOnNavigate: false,
     defaultLocale: "en",
     langDir: "lang",
