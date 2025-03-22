@@ -1,9 +1,0 @@
-{
-    "name": "NG Kanban",
-    "url": "https://ng-kanban-app.netlify.app/",
-    "description": "Angular Kanban",
-    "thumbnail": "/projects/ng-kanban-app.png",
-    "status": "Active",
-    "opensource": true,
-    "techStack": ["Angular", "Material design"]
-}

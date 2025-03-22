@@ -1,9 +1,0 @@
-{
-    "name": "Dinoland",
-    "url": "https://dinoland-hoach.surge.sh/",
-    "description": "Một landing page đơn giản",
-    "thumbnail": "/projects/dinoland.png",
-    "status": "Active",
-    "opensource": true,
-    "techStack": ["HTML", "CSS", "JS"]
-}

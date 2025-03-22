@@ -1,9 +1,0 @@
-{
-    "name": "Simdep10so",
-    "url": "https://www.simdep10so.vn/",
-    "description": "Trang web nơi bạn có thể mua thẻ sim",
-    "thumbnail": "/projects/simdep10so.png",
-    "status": "Active",
-    "opensource": false,
-    "techStack": ["Next.js", "React", "MUI"]
-}

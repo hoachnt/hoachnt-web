@@ -1,9 +1,0 @@
-{
-    "name": "Nuxt gallery",
-    "url": "https://nuxtd-gallery.netlify.app/",
-    "description": "Nuxt gallery + directus",
-    "thumbnail": "/projects/nuxt-gallery.png",
-    "status": "Active",
-    "opensource": true,
-    "techStack": ["Nuxt 3", "Directus", "Vue"]
-}

@@ -1,9 +1,0 @@
-{
-    "name": "Virtual list",
-    "url": "https://svelte-virtual-list.netlify.app/",
-    "description": "Một danh sách ảo đơn giản được tạo bằng sveltejs",
-    "thumbnail": "",
-    "status": "Active",
-    "opensource": true,
-    "techStack": ["Svelte"]
-}

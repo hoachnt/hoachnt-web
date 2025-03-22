@@ -1,8 +1,0 @@
-{
-    "name": "Vuagac.com",
-    "url": "https://vuagac.com",
-    "description": "Современный вебсайт на котором вы можете купить экзотические фрукты",
-    "thumbnail": "/projects/vuagac.jpg",
-    "status": "Active",
-    "techStack": ["Nuxt 3", "Vue", "Ant design", "Pinia"]
-}

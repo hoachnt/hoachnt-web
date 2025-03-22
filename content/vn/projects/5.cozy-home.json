@@ -1,9 +1,0 @@
-{
-    "name": "Cozy home",
-    "url": "https://cozyhome.hoachnt.com/",
-    "description": "Dịch vụ dành cho thú cưng của bạn",
-    "thumbnail": "/projects/cozy-home.png",
-    "status": "Active",
-    "opensource": false,
-    "techStack": ["Next.js", "React", "MUI", "Tailwindcss"]
-}
