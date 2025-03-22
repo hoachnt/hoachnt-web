@@ -1,4 +1,3 @@
 User-agent: *
-Allow: /
 
-Sitemap: https://www.hoachnt.com/sitemap.xml
+Sitemap: https://hoachnt.com/sitemap-index.xml
