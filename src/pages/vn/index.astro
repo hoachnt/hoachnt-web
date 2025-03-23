@@ -1,10 +1,10 @@
 ---
-import Contact from "../../components/Contact.astro";
-import ContentLink from "../../components/ContentLink.astro";
-import ContentCode from "../../components/ContentAbout.astro";
-import Profile from "../../components/Profile.astro";
-import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
+import Contact from "@components/Contact.astro";
+import ContentLink from "@components/ContentLink.astro";
+import Footer from "@components/Footer.astro";
+import Profile from "@components/Profile.astro";
+import ContentCode from "@components/ContentAbout.astro";
+import Layout from "@layouts/Layout.astro";
 import { fade } from "astro:transitions";
 ---
 
@@ -17,12 +17,12 @@ import { fade } from "astro:transitions";
 		<div
 			class="p-8 lg:p-6 flex flex-col justify-between w-full lg:w-2/5 border-b lg:border-b-0 lg:border-r border-gray-600"
 		>
-			<div transition:animate={fade({duration: 500})}>
+			<div transition:animate={fade({ duration: 500 })}>
 				<Profile />
 			</div>
 
 			<div>
-				<div transition:animate={fade({duration: 600})}>
+				<div transition:animate={fade({ duration: 600 })}>
 					<Contact />
 				</div>
 				<Footer />
