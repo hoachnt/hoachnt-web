@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import { getLangFromUrl } from "../i18n/utils";
 import "../styles/global.css";
 
@@ -55,6 +56,8 @@ const dublinCore = {
 <!doctype html>
 <html lang={lang} class="bg-black text-gray-100 font-mono">
 	<head>
+		<ClientRouter />
+
 		<!-- Crawler & Robots -->
 		<meta
 			name="robots"
