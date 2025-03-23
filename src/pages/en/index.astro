@@ -1,16 +1,16 @@
 ---
 import Contact from "../../components/Contact.astro";
 import ContentLink from "../../components/ContentLink.astro";
-import LanguagePicker from "../../components/LanguagePicker.astro";
 import ContentCode from "../../components/ContentAbout.astro";
 import Profile from "../../components/Profile.astro";
 import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
 ---
 
 <Layout>
 	<!-- Start: Main Wrapper -->
 	<main
-		class="flex flex-col lg:flex-row w-full max-w-full lg:max-w-7xl border border-gray-600 rounded-2xl overflow-hidden shadow-2xl relative bg-black mb-24 lg:mb-4"
+		class="flex flex-col lg:flex-row w-full max-w-full lg:max-w-7xl border border-gray-600 rounded-2xl overflow-hidden shadow-2xl relative bg-black"
 	>
 		<!-- Start: Left / upper card -->
 		<div
@@ -20,8 +20,11 @@ import Layout from "../../layouts/Layout.astro";
 				<Profile />
 			</div>
 
-			<div transition:animate="fade">
-				<Contact />
+			<div>
+				<div transition:animate="fade">
+					<Contact />
+				</div>
+				<Footer />
 			</div>
 		</div>
 		<!-- End: Left / upper card -->
@@ -29,7 +32,7 @@ import Layout from "../../layouts/Layout.astro";
 		<!-- Start: Right / lower card (yes 4/5 instead of 3/5) -->
 		<div class="w-full lg:w-4/5 p-0">
 			<!-- Start: Inner wrapper -->
-			<div class="min-h-full h-[83dvh] flex flex-col overflow-y-scroll">
+			<div class="min-h-full h-[90dvh] flex flex-col overflow-y-scroll">
 				<!-- Use hidden radio buttons to control the tabs -->
 				<div class="tab-controls">
 					<input
@@ -86,23 +89,6 @@ import Layout from "../../layouts/Layout.astro";
 	<!-- End: Main Wrapper -->
 
 	<!-- Credits -->
-	<div
-		class="fixed lg:absolute bottom-0 left-0 right-0 w-full text-center bg-black py-2 z-999999"
-	>
-		<LanguagePicker />
-
-		Built with <a
-			href="https://astro.build"
-			title="Astro"
-			target="_blank"
-			class="text-primary hover:underline">Astro</a
-		> by <a
-			href="https://hoachnt.com/"
-			target="_blank"
-			title="hoachnt"
-			class="text-primary hover:underline">hoachnt</a
-		>
-	</div>
 </Layout>
 
 <style is:global>
