@@ -16,16 +16,20 @@ import Layout from "../../layouts/Layout.astro";
 		<div
 			class="p-8 lg:p-6 flex flex-col justify-between w-full lg:w-2/5 border-b lg:border-b-0 lg:border-r border-gray-600"
 		>
-			<Profile />
+			<div transition:animate="fade">
+				<Profile />
+			</div>
 
-			<Contact />
+			<div transition:animate="fade">
+				<Contact />
+			</div>
 		</div>
 		<!-- End: Left / upper card -->
 
 		<!-- Start: Right / lower card (yes 4/5 instead of 3/5) -->
 		<div class="w-full lg:w-4/5 p-0">
 			<!-- Start: Inner wrapper -->
-			<div class="min-h-full h-[84vh] flex flex-col overflow-y-scroll">
+			<div class="min-h-full h-[83dvh] flex flex-col overflow-y-scroll">
 				<!-- Use hidden radio buttons to control the tabs -->
 				<div class="tab-controls">
 					<input
