@@ -1,13 +1,14 @@
 ---
 import { Picture } from "astro:assets";
 import ProfilePicture from "../assets/profile.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const profile = {
-	name: "Nguyen T. Hoach",
 	title: "Full Stack Developer",
 	location: "Hanoi, Vietnam",
-	description:
-		"I am a developer with expertise in backend, frontend, and DevOps. I focus on creating innovative IT solutions and exploring new approaches in programming and technology.",
 };
 ---
 
@@ -20,8 +21,8 @@ const profile = {
 			formats={["webp"]}
 			width={96}
 			height={96}
-			alt={"Profile picture " + profile.name}
-			title={profile.name}
+			alt={"Profile picture " + t("profile.name")}
+			title={t("profile.name")}
 			class="w-24 h-24 rounded-xl object-cover border-2 border-primary mx-auto sm:mx-0"
 		/>
 
@@ -29,7 +30,7 @@ const profile = {
 			<h1
 				class="text-2xl font-extrabold mb-1 inline-block relative text-text-primary"
 			>
-				{profile.name}
+				{t("profile.name")}
 			</h1>
 
 			<p class="text-sm mb-2 text-primary">
@@ -59,6 +60,6 @@ const profile = {
 	</div>
 
 	<p class="text-sm leading-relaxed mt-4 text-gray-400">
-		{profile.description}
+		{t("profile.description")}
 	</p>
 </div>

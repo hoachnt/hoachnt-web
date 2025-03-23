@@ -1,5 +1,8 @@
 ---
+import { getLangFromUrl } from "../i18n/utils";
 import "../styles/global.css";
+
+const lang = getLangFromUrl(Astro.url);
 
 // Base domain URL without trailing slash
 const domainBaseURL = "https://hoachnt.com";
@@ -50,7 +53,7 @@ const dublinCore = {
 ---
 
 <!doctype html>
-<html lang="en" class="bg-black text-gray-100 font-mono">
+<html lang={lang} class="bg-black text-gray-100 font-mono">
 	<head>
 		<!-- Crawler & Robots -->
 		<meta
